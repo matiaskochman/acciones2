@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_prediccion_acciones2_domain_Company" items="${companys}" z="t4iIymjuSIJOMWnETDCfOrAnsIY=">
+        <table:table data="${companys}" id="l_com_prediccion_acciones2_domain_Company" path="/companys" z="Fg2xpmkqS4u8Q836Sef9ZJdyEF8=">
+            <table:column id="c_com_prediccion_acciones2_domain_Company_title" property="title" z="TriAACi/KOyiJyjgfKjlwmrhpL8="/>
+            <table:column id="c_com_prediccion_acciones2_domain_Company_ticker" property="ticker" z="B3+DqYrZS6755f6WvXPrIDflZL8="/>
+            <table:column id="c_com_prediccion_acciones2_domain_Company_recomendacionBuy" property="recomendacionBuy" z="ZwL8ryVBMWo4EhFeREphKygXu9A="/>
+            <table:column id="c_com_prediccion_acciones2_domain_Company_recomendacionOutPerform" property="recomendacionOutPerform" z="UqYhk9Y5rliOn0U7RC8XMban61s="/>
+            <table:column id="c_com_prediccion_acciones2_domain_Company_recomendacionUnderPerform" property="recomendacionUnderPerform" z="oj5Qp8EZ1gFtcbrPGXJDxqWSFC0="/>
+            <table:column id="c_com_prediccion_acciones2_domain_Company_recomendacionSell" property="recomendacionSell" z="P8UuBnSojuS/iugzVkvHTV8KzaY="/>
+        </table:table>
+    </page:list>
+</div>

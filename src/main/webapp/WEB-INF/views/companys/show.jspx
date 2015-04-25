@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_prediccion_acciones2_domain_Company" object="${company}" path="/companys" z="ayPDQwuLJnFc0kNHDaXNcjdp7Wg=">
+        <field:display field="title" id="s_com_prediccion_acciones2_domain_Company_title" object="${company}" z="MAYpjGLQlZdyk8UXRaGPPg7bpG0="/>
+        <field:display field="ticker" id="s_com_prediccion_acciones2_domain_Company_ticker" object="${company}" z="ni+a50K6J6qmBMEIfYT9kqe9kqo="/>
+        <field:display field="exchange" id="s_com_prediccion_acciones2_domain_Company_exchange" object="${company}" z="1VplQRTw2afsyOzMKdyc4vq/o8g="/>
+        <field:display field="companyId" id="s_com_prediccion_acciones2_domain_Company_companyId" object="${company}" z="qZso/o0AOg6/Thv4Mfz2EXdaKCs="/>
+        <field:display field="localCurrencySymbol" id="s_com_prediccion_acciones2_domain_Company_localCurrencySymbol" object="${company}" z="DGeN81/v+yamxtGyJD3H8lZj43w="/>
+        <field:display field="market" id="s_com_prediccion_acciones2_domain_Company_market" object="${company}" z="gFBPr7jlcPbCCj5PFyf7w6Q6/8A="/>
+        <field:display field="stockValue" id="s_com_prediccion_acciones2_domain_Company_stockValue" object="${company}" z="Nnb+yZ/+e9HIZtOox4HykQMMyY8="/>
+        <field:display field="maxForecastPercentageValue" id="s_com_prediccion_acciones2_domain_Company_maxForecastPercentageValue" object="${company}" z="bjRQZAxXMyVoP+4+7NXT+zrtPqk="/>
+        <field:display field="medForecastPercentageValue" id="s_com_prediccion_acciones2_domain_Company_medForecastPercentageValue" object="${company}" z="/Wbf8rfok3Xh+EHPYQZwMA3ew4k="/>
+        <field:display field="minForecastPercentageValue" id="s_com_prediccion_acciones2_domain_Company_minForecastPercentageValue" object="${company}" z="w1R0UwhJfrdSk7BHenLPiyPuzQU="/>
+        <field:display field="price52WeekPercChange" id="s_com_prediccion_acciones2_domain_Company_price52WeekPercChange" object="${company}" z="Lwm1hXCDy866bvtDBOOnrrGHRlQ="/>
+        <field:display field="recomendacionBuy" id="s_com_prediccion_acciones2_domain_Company_recomendacionBuy" object="${company}" z="52XqpX+QA3jv3u+ZUF5DIpIN8mg="/>
+        <field:display field="recomendacionOutPerform" id="s_com_prediccion_acciones2_domain_Company_recomendacionOutPerform" object="${company}" z="BKo3BT5RBfA9G2fs/cdKdvr1eWM="/>
+        <field:display field="recomendacionHold" id="s_com_prediccion_acciones2_domain_Company_recomendacionHold" object="${company}" z="WkTW6HcWuD7IMUDe+j6aAfgsJHc="/>
+        <field:display field="recomendacionUnderPerform" id="s_com_prediccion_acciones2_domain_Company_recomendacionUnderPerform" object="${company}" z="QtKymLE0B7x3JEDdrT2/5nNM47A="/>
+        <field:display field="recomendacionSell" id="s_com_prediccion_acciones2_domain_Company_recomendacionSell" object="${company}" z="+pNc33A2MEhzEnOvlwLUGZDBYts="/>
+        <field:display field="recomendacionNoOpinion" id="s_com_prediccion_acciones2_domain_Company_recomendacionNoOpinion" object="${company}" z="ebBq4MV/h+xWpYymTIHZ41LkcoE="/>
+        <field:display field="volumenNegociadoAyer" id="s_com_prediccion_acciones2_domain_Company_volumenNegociadoAyer" object="${company}" z="XdGJi19lksrcj3MeSriC7BPgQZc="/>
+        <field:display date="true" dateTimePattern="${company_fechacreacion_date_format}" field="fechaCreacion" id="s_com_prediccion_acciones2_domain_Company_fechaCreacion" object="${company}" z="+4X1tI0iYf4pVq5uoOEzn0C3oZ4="/>
+        <field:display field="marketCap" id="s_com_prediccion_acciones2_domain_Company_marketCap" object="${company}" z="Q27MLQzAy7Jo2I6PiZNnZIIbXMo="/>
+        <field:display field="pe" id="s_com_prediccion_acciones2_domain_Company_pe" object="${company}" z="vJm3CAZnaHQ2NuzAiLM1B0lCCR4="/>
+        <field:display field="recomendacionAverage" id="s_com_prediccion_acciones2_domain_Company_recomendacionAverage" object="${company}" z="O1xY77Fxza68cPj7EZcJWv99WYc="/>
+    </page:show>
+</div>
