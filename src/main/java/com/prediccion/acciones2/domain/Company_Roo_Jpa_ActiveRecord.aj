@@ -12,12 +12,10 @@ import org.springframework.transaction.annotation.Transactional;
 privileged aspect Company_Roo_Jpa_ActiveRecord {
     
     @PersistenceContext
-    transient EntityManager Company.entityManager;
-    
-    public static final List<String> Company.fieldNames4OrderClauseFilter = java.util.Arrays.asList("title", "ticker", "market", "stockValue", "maxForecastPercentageValue", "medForecastPercentageValue", "minForecastPercentageValue", "price52WeekPercChange", "recomendacionAverage", "recomendacionBuy", "recomendacionOutPerform", "recomendacionHold", "recomendacionUnderPerform", "recomendacionSell", "recomendacionNoOpinion", "volumenNegociadoAyer", "fechaCreacion", "marketCap", "pe", "exchange", "companyId", "localCurrencySymbol");
+    transient EntityManager Company._entityManager;
     
     public static final EntityManager Company.entityManager() {
-        EntityManager em = new Company().entityManager;
+        EntityManager em = new Company()._entityManager;
         if (em == null) throw new IllegalStateException("Entity manager has not been injected (is the Spring Aspects JAR configured as an AJC/AJDT aspects library?)");
         return em;
     }
@@ -30,17 +28,6 @@ privileged aspect Company_Roo_Jpa_ActiveRecord {
         return entityManager().createQuery("SELECT o FROM Company o", Company.class).getResultList();
     }
     
-    public static List<Company> Company.findAllCompanys(String sortFieldName, String sortOrder) {
-        String jpaQuery = "SELECT o FROM Company o";
-        if (fieldNames4OrderClauseFilter.contains(sortFieldName)) {
-            jpaQuery = jpaQuery + " ORDER BY " + sortFieldName;
-            if ("ASC".equalsIgnoreCase(sortOrder) || "DESC".equalsIgnoreCase(sortOrder)) {
-                jpaQuery = jpaQuery + " " + sortOrder;
-            }
-        }
-        return entityManager().createQuery(jpaQuery, Company.class).getResultList();
-    }
-    
     public static Company Company.findCompany(Long id) {
         if (id == null) return null;
         return entityManager().find(Company.class, id);
@@ -50,51 +37,40 @@ privileged aspect Company_Roo_Jpa_ActiveRecord {
         return entityManager().createQuery("SELECT o FROM Company o", Company.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
     }
     
-    public static List<Company> Company.findCompanyEntries(int firstResult, int maxResults, String sortFieldName, String sortOrder) {
-        String jpaQuery = "SELECT o FROM Company o";
-        if (fieldNames4OrderClauseFilter.contains(sortFieldName)) {
-            jpaQuery = jpaQuery + " ORDER BY " + sortFieldName;
-            if ("ASC".equalsIgnoreCase(sortOrder) || "DESC".equalsIgnoreCase(sortOrder)) {
-                jpaQuery = jpaQuery + " " + sortOrder;
-            }
-        }
-        return entityManager().createQuery(jpaQuery, Company.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
-    }
-    
     @Transactional
     public void Company.persist() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        this.entityManager.persist(this);
+        if (this._entityManager == null) this._entityManager = entityManager();
+        this._entityManager.persist(this);
     }
     
     @Transactional
     public void Company.remove() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        if (this.entityManager.contains(this)) {
-            this.entityManager.remove(this);
+        if (this._entityManager == null) this._entityManager = entityManager();
+        if (this._entityManager.contains(this)) {
+            this._entityManager.remove(this);
         } else {
             Company attached = Company.findCompany(this.id);
-            this.entityManager.remove(attached);
+            this._entityManager.remove(attached);
         }
     }
     
     @Transactional
     public void Company.flush() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        this.entityManager.flush();
+        if (this._entityManager == null) this._entityManager = entityManager();
+        this._entityManager.flush();
     }
     
     @Transactional
     public void Company.clear() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        this.entityManager.clear();
+        if (this._entityManager == null) this._entityManager = entityManager();
+        this._entityManager.clear();
     }
     
     @Transactional
     public Company Company.merge() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        Company merged = this.entityManager.merge(this);
-        this.entityManager.flush();
+        if (this._entityManager == null) this._entityManager = entityManager();
+        Company merged = this._entityManager.merge(this);
+        this._entityManager.flush();
         return merged;
     }
     

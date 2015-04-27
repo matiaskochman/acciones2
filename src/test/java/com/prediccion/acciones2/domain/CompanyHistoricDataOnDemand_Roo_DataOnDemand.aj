@@ -5,6 +5,7 @@ package com.prediccion.acciones2.domain;
 
 import com.prediccion.acciones2.domain.CompanyHistoric;
 import com.prediccion.acciones2.domain.CompanyHistoricDataOnDemand;
+import com.prediccion.acciones2.service.CompanyHistoricService;
 import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -15,6 +16,7 @@ import java.util.List;
 import java.util.Random;
 import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 privileged aspect CompanyHistoricDataOnDemand_Roo_DataOnDemand {
@@ -24,6 +26,9 @@ privileged aspect CompanyHistoricDataOnDemand_Roo_DataOnDemand {
     private Random CompanyHistoricDataOnDemand.rnd = new SecureRandom();
     
     private List<CompanyHistoric> CompanyHistoricDataOnDemand.data;
+    
+    @Autowired
+    CompanyHistoricService CompanyHistoricDataOnDemand.companyHistoricService;
     
     public CompanyHistoric CompanyHistoricDataOnDemand.getNewTransientCompanyHistoric(int index) {
         CompanyHistoric obj = new CompanyHistoric();
@@ -172,14 +177,14 @@ privileged aspect CompanyHistoricDataOnDemand_Roo_DataOnDemand {
         }
         CompanyHistoric obj = data.get(index);
         Long id = obj.getId();
-        return CompanyHistoric.findCompanyHistoric(id);
+        return companyHistoricService.findCompanyHistoric(id);
     }
     
     public CompanyHistoric CompanyHistoricDataOnDemand.getRandomCompanyHistoric() {
         init();
         CompanyHistoric obj = data.get(rnd.nextInt(data.size()));
         Long id = obj.getId();
-        return CompanyHistoric.findCompanyHistoric(id);
+        return companyHistoricService.findCompanyHistoric(id);
     }
     
     public boolean CompanyHistoricDataOnDemand.modifyCompanyHistoric(CompanyHistoric obj) {
@@ -189,7 +194,7 @@ privileged aspect CompanyHistoricDataOnDemand_Roo_DataOnDemand {
     public void CompanyHistoricDataOnDemand.init() {
         int from = 0;
         int to = 10;
-        data = CompanyHistoric.findCompanyHistoricEntries(from, to);
+        data = companyHistoricService.findCompanyHistoricEntries(from, to);
         if (data == null) {
             throw new IllegalStateException("Find entries implementation for 'CompanyHistoric' illegally returned null");
         }
@@ -201,7 +206,7 @@ privileged aspect CompanyHistoricDataOnDemand_Roo_DataOnDemand {
         for (int i = 0; i < 10; i++) {
             CompanyHistoric obj = getNewTransientCompanyHistoric(i);
             try {
-                obj.persist();
+                companyHistoricService.saveCompanyHistoric(obj);
             } catch (final ConstraintViolationException e) {
                 final StringBuilder msg = new StringBuilder();
                 for (Iterator<ConstraintViolation<?>> iter = e.getConstraintViolations().iterator(); iter.hasNext();) {

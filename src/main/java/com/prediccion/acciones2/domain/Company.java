@@ -8,6 +8,8 @@ import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
 import org.springframework.roo.addon.tostring.RooToString;
 
 import javax.persistence.Column;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
@@ -39,6 +41,9 @@ public class Company {
 		setFechaCreacion(new Date());
 	}
 
+    @PersistenceContext
+    transient EntityManager entityManager;
+	
     @NotNull
     @Column(unique = true)
     private String title;

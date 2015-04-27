@@ -3,9 +3,9 @@
 
 package com.prediccion.acciones2.domain;
 
-import com.prediccion.acciones2.domain.CompanyHistoric;
 import com.prediccion.acciones2.domain.CompanyHistoricDataOnDemand;
 import com.prediccion.acciones2.domain.CompanyHistoricIntegrationTest;
+import com.prediccion.acciones2.service.CompanyHistoricService;
 import java.util.Iterator;
 import java.util.List;
 import javax.validation.ConstraintViolation;
@@ -29,10 +29,13 @@ privileged aspect CompanyHistoricIntegrationTest_Roo_IntegrationTest {
     @Autowired
     CompanyHistoricDataOnDemand CompanyHistoricIntegrationTest.dod;
     
+    @Autowired
+    CompanyHistoricService CompanyHistoricIntegrationTest.companyHistoricService;
+    
     @Test
-    public void CompanyHistoricIntegrationTest.testCountCompanyHistorics() {
+    public void CompanyHistoricIntegrationTest.testCountAllCompanyHistorics() {
         Assert.assertNotNull("Data on demand for 'CompanyHistoric' failed to initialize correctly", dod.getRandomCompanyHistoric());
-        long count = CompanyHistoric.countCompanyHistorics();
+        long count = companyHistoricService.countAllCompanyHistorics();
         Assert.assertTrue("Counter for 'CompanyHistoric' incorrectly reported there were no entries", count > 0);
     }
     
@@ -42,7 +45,7 @@ privileged aspect CompanyHistoricIntegrationTest_Roo_IntegrationTest {
         Assert.assertNotNull("Data on demand for 'CompanyHistoric' failed to initialize correctly", obj);
         Long id = obj.getId();
         Assert.assertNotNull("Data on demand for 'CompanyHistoric' failed to provide an identifier", id);
-        obj = CompanyHistoric.findCompanyHistoric(id);
+        obj = companyHistoricService.findCompanyHistoric(id);
         Assert.assertNotNull("Find method for 'CompanyHistoric' illegally returned null for id '" + id + "'", obj);
         Assert.assertEquals("Find method for 'CompanyHistoric' returned the incorrect identifier", id, obj.getId());
     }
@@ -50,9 +53,9 @@ privileged aspect CompanyHistoricIntegrationTest_Roo_IntegrationTest {
     @Test
     public void CompanyHistoricIntegrationTest.testFindAllCompanyHistorics() {
         Assert.assertNotNull("Data on demand for 'CompanyHistoric' failed to initialize correctly", dod.getRandomCompanyHistoric());
-        long count = CompanyHistoric.countCompanyHistorics();
+        long count = companyHistoricService.countAllCompanyHistorics();
         Assert.assertTrue("Too expensive to perform a find all test for 'CompanyHistoric', as there are " + count + " entries; set the findAllMaximum to exceed this value or set findAll=false on the integration test annotation to disable the test", count < 250);
-        List<CompanyHistoric> result = CompanyHistoric.findAllCompanyHistorics();
+        List<CompanyHistoric> result = companyHistoricService.findAllCompanyHistorics();
         Assert.assertNotNull("Find all method for 'CompanyHistoric' illegally returned null", result);
         Assert.assertTrue("Find all method for 'CompanyHistoric' failed to return any data", result.size() > 0);
     }
@@ -60,11 +63,11 @@ privileged aspect CompanyHistoricIntegrationTest_Roo_IntegrationTest {
     @Test
     public void CompanyHistoricIntegrationTest.testFindCompanyHistoricEntries() {
         Assert.assertNotNull("Data on demand for 'CompanyHistoric' failed to initialize correctly", dod.getRandomCompanyHistoric());
-        long count = CompanyHistoric.countCompanyHistorics();
+        long count = companyHistoricService.countAllCompanyHistorics();
         if (count > 20) count = 20;
         int firstResult = 0;
         int maxResults = (int) count;
-        List<CompanyHistoric> result = CompanyHistoric.findCompanyHistoricEntries(firstResult, maxResults);
+        List<CompanyHistoric> result = companyHistoricService.findCompanyHistoricEntries(firstResult, maxResults);
         Assert.assertNotNull("Find entries method for 'CompanyHistoric' illegally returned null", result);
         Assert.assertEquals("Find entries method for 'CompanyHistoric' returned an incorrect number of entries", count, result.size());
     }
@@ -75,7 +78,7 @@ privileged aspect CompanyHistoricIntegrationTest_Roo_IntegrationTest {
         Assert.assertNotNull("Data on demand for 'CompanyHistoric' failed to initialize correctly", obj);
         Long id = obj.getId();
         Assert.assertNotNull("Data on demand for 'CompanyHistoric' failed to provide an identifier", id);
-        obj = CompanyHistoric.findCompanyHistoric(id);
+        obj = companyHistoricService.findCompanyHistoric(id);
         Assert.assertNotNull("Find method for 'CompanyHistoric' illegally returned null for id '" + id + "'", obj);
         boolean modified =  dod.modifyCompanyHistoric(obj);
         Integer currentVersion = obj.getVersion();
@@ -84,28 +87,28 @@ privileged aspect CompanyHistoricIntegrationTest_Roo_IntegrationTest {
     }
     
     @Test
-    public void CompanyHistoricIntegrationTest.testMergeUpdate() {
+    public void CompanyHistoricIntegrationTest.testUpdateCompanyHistoricUpdate() {
         CompanyHistoric obj = dod.getRandomCompanyHistoric();
         Assert.assertNotNull("Data on demand for 'CompanyHistoric' failed to initialize correctly", obj);
         Long id = obj.getId();
         Assert.assertNotNull("Data on demand for 'CompanyHistoric' failed to provide an identifier", id);
-        obj = CompanyHistoric.findCompanyHistoric(id);
+        obj = companyHistoricService.findCompanyHistoric(id);
         boolean modified =  dod.modifyCompanyHistoric(obj);
         Integer currentVersion = obj.getVersion();
-        CompanyHistoric merged = obj.merge();
+        CompanyHistoric merged = companyHistoricService.updateCompanyHistoric(obj);
         obj.flush();
         Assert.assertEquals("Identifier of merged object not the same as identifier of original object", merged.getId(), id);
         Assert.assertTrue("Version for 'CompanyHistoric' failed to increment on merge and flush directive", (currentVersion != null && obj.getVersion() > currentVersion) || !modified);
     }
     
     @Test
-    public void CompanyHistoricIntegrationTest.testPersist() {
+    public void CompanyHistoricIntegrationTest.testSaveCompanyHistoric() {
         Assert.assertNotNull("Data on demand for 'CompanyHistoric' failed to initialize correctly", dod.getRandomCompanyHistoric());
         CompanyHistoric obj = dod.getNewTransientCompanyHistoric(Integer.MAX_VALUE);
         Assert.assertNotNull("Data on demand for 'CompanyHistoric' failed to provide a new transient entity", obj);
         Assert.assertNull("Expected 'CompanyHistoric' identifier to be null", obj.getId());
         try {
-            obj.persist();
+            companyHistoricService.saveCompanyHistoric(obj);
         } catch (final ConstraintViolationException e) {
             final StringBuilder msg = new StringBuilder();
             for (Iterator<ConstraintViolation<?>> iter = e.getConstraintViolations().iterator(); iter.hasNext();) {
@@ -119,15 +122,15 @@ privileged aspect CompanyHistoricIntegrationTest_Roo_IntegrationTest {
     }
     
     @Test
-    public void CompanyHistoricIntegrationTest.testRemove() {
+    public void CompanyHistoricIntegrationTest.testDeleteCompanyHistoric() {
         CompanyHistoric obj = dod.getRandomCompanyHistoric();
         Assert.assertNotNull("Data on demand for 'CompanyHistoric' failed to initialize correctly", obj);
         Long id = obj.getId();
         Assert.assertNotNull("Data on demand for 'CompanyHistoric' failed to provide an identifier", id);
-        obj = CompanyHistoric.findCompanyHistoric(id);
-        obj.remove();
+        obj = companyHistoricService.findCompanyHistoric(id);
+        companyHistoricService.deleteCompanyHistoric(obj);
         obj.flush();
-        Assert.assertNull("Failed to remove 'CompanyHistoric' with identifier '" + id + "'", CompanyHistoric.findCompanyHistoric(id));
+        Assert.assertNull("Failed to remove 'CompanyHistoric' with identifier '" + id + "'", companyHistoricService.findCompanyHistoric(id));
     }
     
 }

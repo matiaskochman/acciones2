@@ -1,15 +1,16 @@
 package com.prediccion.acciones2.service;
 
+import java.util.List;
 import java.util.Set;
 
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.AbstractJUnit4SpringContextTests;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.prediccion.acciones2.domain.Company;
-import com.prediccion.acciones2.service.CompanyService;
-import com.prediccion.acciones2.service.ParsingService;
 
 @ContextConfiguration(locations = { "/META-INF/spring/applicationContext.xml" })
 public class ParsingServiceTest extends AbstractJUnit4SpringContextTests{
@@ -19,6 +20,9 @@ public class ParsingServiceTest extends AbstractJUnit4SpringContextTests{
 
     @Autowired
     CompanyService companyService;
+
+    @Autowired
+    CompanyHistoricService companyHistoricService;
     
     @Test
     public void test(){
@@ -32,8 +36,13 @@ public class ParsingServiceTest extends AbstractJUnit4SpringContextTests{
     	
     	
     	Integer count =0 ;
+    	
+    	List<Company> listCompanies = companyService.findAllCompanys();
+    	
+    	companyHistoricService.createHistotic(listCompanies);
+    	
     	for (Company company : list) {
-    		//company.merge();
+    		companyService.saveOrUpdate(company);
 			System.out.println(++count +" "+company);
 		}
     	

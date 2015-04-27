@@ -5,8 +5,17 @@ package com.prediccion.acciones2.domain;
 
 import com.prediccion.acciones2.domain.Company;
 import java.util.Date;
+import javax.persistence.EntityManager;
 
 privileged aspect Company_Roo_JavaBean {
+    
+    public EntityManager Company.getEntityManager() {
+        return this.entityManager;
+    }
+    
+    public void Company.setEntityManager(EntityManager entityManager) {
+        this.entityManager = entityManager;
+    }
     
     public String Company.getTitle() {
         return this.title;

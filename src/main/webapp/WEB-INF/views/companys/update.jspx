@@ -25,5 +25,6 @@
         <field:input field="marketCap" id="c_com_prediccion_acciones2_domain_Company_marketCap" validationMessageCode="field_invalid_number" z="lavcbA9EgRwd/oQFUgxZbzlulEM="/>
         <field:input field="pe" id="c_com_prediccion_acciones2_domain_Company_pe" validationMessageCode="field_invalid_number" z="xqSbyTMlmHi8jQ7O6KmQUJf3/z8="/>
         <field:input field="recomendacionAverage" id="c_com_prediccion_acciones2_domain_Company_recomendacionAverage" validationMessageCode="field_invalid_integer" z="WdebVwS6PzkIIwYaydu0VrHbYvY="/>
+        <field:input field="entityManager" id="c_com_prediccion_acciones2_domain_Company_entityManager" z="5XY6pSQHsRUvcoOyPTbtHTngsmE="/>
     </form:update>
 </div>
