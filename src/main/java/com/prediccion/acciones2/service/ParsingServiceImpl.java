@@ -33,6 +33,10 @@ public class ParsingServiceImpl implements ParsingService{
 		List<Company> list = new ArrayList<Company>();
 		
 		Company company = null;
+		if(companyArray!=null || companyArray.length==0){
+			System.out.println("no hay datos para este mercado");
+		}
+		
 		for (CompanyJson c : companyArray) {
 			
 			company = new Company();
@@ -76,6 +80,113 @@ public class ParsingServiceImpl implements ParsingService{
 			list.add(company);
 		}
 		return list;
+	}
+	
+	public String buildQueryForLondon(String numberOfCompanies){
+		
+    	String num=null;
+		
+    	if(numberOfCompanies==null){
+    		num="20";
+    	}else{
+    		num=numberOfCompanies;
+    	}
+		
+		String price_change_52week="-101";
+    	String london_stock_market = "exchange%20%3D%3D%20%22LON%22%29%20%26%20%28";
+    	String london_query = "https://www.google.com/finance?output=json&start=0&"
+    			+ "num="+num
+    			+ "&noIL=1&q=[%28"
+    			+ london_stock_market
+    			+ "market_cap%20%3E%3D%200%29%20%26%20%28"
+    			+ "market_cap%20%3C%3D%20221450000000%29%20%26%20%28"
+    			+ "pe_ratio%20%3E%3D%200%29%20%26%20%28"
+    			+ "pe_ratio%20%3C%3D%20250667%29%20%26%20%28"
+    			+ "dividend_yield%20%3E%3D%200%29%20%26%20%28"
+    			+ "dividend_yield%20%3C%3D%20141%29%20%26%20%28"
+    			+ "price_change_52week%20%3E%3D%20-101%29%20%26%20%28"
+    			+ "price_change_52week%20%3C%3D%20981%29"
+    			+ "]&restype=company&ei=0NA7VZHHLOuJsge4_YHQBw"
+    			+"&sortas=Price52WeekPercChange";
+    	
+    	return london_query;
+		
+	}
+	
+	
+	public String buildQueryForParis(String numberOfCompanies){
+		
+		String paris_stock_market = "exchange%20%3D%3D%20%22EPA%22%29%20%26%20%28";
+		String paris_price_change_52weeks = "-101";
+    	String num=null;
+    	
+    	if(numberOfCompanies==null){
+    		num="20";
+    	}else{
+    		num=numberOfCompanies;
+    	}
+    	
+		String paris_query = "https://www.google.com/finance?output=json&start=0&"
+				+ "num="+num
+				+ "&noIL=1&q=[%28"
+				+ paris_stock_market
+				+ "market_cap%20%3E%3D%200%29%20%26%20%28"
+				+ "market_cap%20%3C%3D%20127180000000%29%20%26%20%28"
+				+ "pe_ratio%20%3E%3D%200%29%20%26%20%28"
+				+ "pe_ratio%20%3C%3D%2010098%29%20%26%20%28"
+				+ "dividend_yield%20%3E%3D%200%29%20%26%20%28"
+				+ "dividend_yield%20%3C%3D%20171%29%20%26%20%28"
+				+ "price_change_52week%20%3E%3D%20"+paris_price_change_52weeks+"%29%20%26%20%28"
+				+ "price_change_52week%20%3C%3D%201010%29]&restype=company&ei=jfs2VZHuH-zwsQfMhoCAAw&"+
+				"sortas=Price52WeekPercChange";
+				//"sortas=MarketCap";
+		
+		return paris_query;
+	}
+	
+	public String buildQueryForUS(String numberOfCompanies){
+		
+    	String num=null;
+    	
+    	if(numberOfCompanies==null){
+    		num="20";
+    	}else{
+    		num=numberOfCompanies;
+    	}
+    	
+		String price_change_52week_from = "-101";
+		String marketCap_from = "1000000";
+		String nasdaq = "exchange%20%3D%3D%20%22NASDAQ%22%29%29%20%26%20%28";
+		String nysemkt = "exchange%20%3D%3D%20%22NYSEMKT%22%29%20%7C%20%28";
+		String nyse = "exchange%20%3D%3D%20%22NYSE%22%29%20%7C%20%28"; 
+		String tcbb = "exchange%20%3D%3D%20%22OTCBB%22%29%20%7C%20%28";
+		String currency = "currency%20%3D%3D%20%22USD%22%20%26%20%28%28";
+		String nyseArca = "exchange%20%3D%3D%20%22NYSEARCA%22%29%20%7C%20%28";
+		String otcmkt = "exchange%20%3D%3D%20%22OTCMKTS%22%29%20%7C%20%28";
+		
+		String us_query = "http://www.google.com/finance?"+
+						"output=json&start=0&num="+num+"&noIL=1&q=["+
+						currency+
+						otcmkt+
+						tcbb+
+						nysemkt+
+						nyseArca+
+						nyse+
+						nasdaq+
+						"market_cap%20%3E%3D%20"+marketCap_from+"%29%20%26%20%28"+
+						"market_cap%20%3C%3D%20726640000000%29%20%26%20%28"+
+						"pe_ratio%20%3E%3D%2010%29%20%26%20%28"+
+						"pe_ratio%20%3C%3D%2078.57%29%20%26%20%28"+
+						"dividend_yield%20%3E%3D%200%29%20%26%20%28"+
+						"dividend_yield%20%3C%3D%201976%29%20%26%20%28"+
+						"price_change_52week%20%3E%3D%20"+price_change_52week_from+"%29%20%26%20%28"+
+						"price_change_52week%20%3C%3D%2019901%29]&"+
+						"restype=company&"+
+						"ei=9LIzVcHMJcmUsQeLtoDQDw"+
+						"&sortas=Price52WeekPercChange";
+						//"&sortas=MarketCap";
+		
+		return us_query;
 	}
 	
 	public Set<Company> getSocksFromGoogleFinance(String query){
@@ -134,72 +245,7 @@ public class ParsingServiceImpl implements ParsingService{
 	}
 	
 	
-	
-	
-	
 }
-/*
-class Equity implements Comparable<Equity>{
-	String symbol;
-	String market;
-	String description;
-	Double maxForecastValue;
-	Double medForecastValue;
-	Double minForecastValue;
-	
-	public Equity(String symbol,String market){
-		this.symbol=symbol;
-		this.market=market;
-	}
-
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((market == null) ? 0 : market.hashCode());
-		result = prime * result + ((symbol == null) ? 0 : symbol.hashCode());
-		return result;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Equity other = (Equity) obj;
-		if (market == null) {
-			if (other.market != null)
-				return false;
-		} else if (!market.equals(other.market))
-			return false;
-		if (symbol == null) {
-			if (other.symbol != null)
-				return false;
-		} else if (!symbol.equals(other.symbol))
-			return false;
-		return true;
-	}
-
-	@Override
-	public int compareTo(Equity o) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public String toString() {
-		return "Equity [symbol=" + symbol + ", market=" + market
-				+ ", description=" + description + ", maxForecastValue="
-				+ maxForecastValue + ", medForecastValue=" + medForecastValue
-				+ ", minForecastValue=" + minForecastValue + "]";
-	}
-	
-	
-}
-*/
 
 class CompanyJson {
 	

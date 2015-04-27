@@ -13,3 +13,5 @@ json all
 web mvc all --package com.prediccion.acciones2.controller
 // Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2015-04-25 15:18:29
 jpa setup --provider HIBERNATE --database MYSQL  
+entity jpa --class ~.domain.CompanyHistoric --testAutomatically
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2015-04-25 17:47:45

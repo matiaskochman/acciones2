@@ -39,24 +39,15 @@ public class Company {
 		setFechaCreacion(new Date());
 	}
 
-	/**
-     */
     @NotNull
     @Column(unique = true)
     private String title;
-
-    /**
-     */
     @NotNull
     private String ticker;
-    
     @NotNull
     private String market;
-
     @Column
     private Double stockValue;
-
-    
     @Column
     private Double maxForecastPercentageValue;
     @Column
@@ -88,20 +79,13 @@ public class Company {
     private Double marketCap;
     @Column
     private Double pe;
-    /**
-     */
     @NotNull
     private String exchange;
-    
-    /**
-     */
     @Column(unique = true)
     private String companyId;
-
     @Column
     private String localCurrencySymbol;
 
-    
     public void setMarket(String exchange){
     	if(exchange.equalsIgnoreCase("NYSE")){
     		this.market = "NYQ";
@@ -168,24 +152,24 @@ public class Company {
 		setMarket(exchange);
 	}
 
-
 	@Override
 	public String toString() {
-		return "Company [ticker=" + ticker + ", market=" + market
+		return "ticker=" + ticker + ", market=" + exchange
 				+ ", price=" + stockValue
-				+ ", maxFPercVal=" + maxForecastPercentageValue
-				+ ", medFPercVal=" + medForecastPercentageValue
-				+ ", minFPercVal=" + minForecastPercentageValue
+				+ ", max=" + maxForecastPercentageValue+"%"
+				+ ", med=" + medForecastPercentageValue+"%"
+				+ ", min=" + minForecastPercentageValue+"%"
 				+ ", opinionAvg= "+ recomendacionAverage
-				+ ", price52WkPerChange=" + price52WeekPercChange
+				+ ", price52WkPercChange=" + price52WeekPercChange
 				+ ", Buy=" + recomendacionBuy
 				+ ", OutPerform=" + recomendacionOutPerform
 				+ ", Hold=" + recomendacionHold
 				+ ", UnderPerform=" + recomendacionUnderPerform
 				+ ", Sell=" + recomendacionSell
-				+ ", NoOpinion=" + recomendacionNoOpinion + "]";
+				+ ", NoOpinion=" + recomendacionNoOpinion
+				+ ", title= "+title
+				+ ", mercado= "+market;
 	}
-
 
 	public void generateOpinionAverage(){
 		if(recomendacionBuy!=null||recomendacionUnderPerform!=null||recomendacionOutPerform!=null||recomendacionSell!=null){
@@ -194,7 +178,6 @@ public class Company {
 		
 	}
 	
-    
     public Integer getRecomendacionBuy() {
         return this.recomendacionBuy;
     }
