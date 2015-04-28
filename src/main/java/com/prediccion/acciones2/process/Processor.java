@@ -15,7 +15,7 @@ public class Processor implements Runnable{
 	Company company;
 	String data;
 	Pattern forecast_porcentaje_pattern = Pattern.compile("-*\\d+(.)\\d*\\s*%");
-	Pattern forecast_valores_pattern = Pattern.compile("\\\"td\\\":\\s*\\[\\s*\\\"-*\\d+(.)\\d\\d\\\"\\,\\s*\\\"-*\\d+(.)\\d\\d\\\",\\s*\\\"-*\\d+(.)\\d\\d\\\"\\s*\\]");
+	Pattern forecast_valores_pattern = Pattern.compile("\\\"td\\\":\\[\\\"\\d+(?:.\\d+)\\\".\"\\d+(?:.\\d+)\\\".\"\\d+(?:.\\d+)\\\"\\]");
 	Pattern precio_accion_pattern = Pattern.compile("results\\\":\\{\\\"span\\\":\\[\\\"\\d+(.)\\d+");
 	
 	Pattern volumen_negociado = Pattern.compile("volume_magnitude\\\".\\\"content\\\":\\\"\\d+(?:.\\d*)[km]");
@@ -184,7 +184,7 @@ public class Processor implements Runnable{
 			
 			final String financialTimes = "http://markets.ft.com/research/Markets/Tearsheets/Forecasts?s="+this.company.getTicker()+":"+this.company.getMarket();
 			final String yql ="select * from html where url='"+financialTimes+"' "+"and xpath='"+porcentajeForecast+"|"+latestRecomendations+"|"+precioAccion+""
-					+ "|"+sharesTraded+"'"; 
+					+ "|"+sharesTraded+"|"+valoresForecast+"'"; 
 			
 			
 			final String fullUrlStr = baseUrl + URLEncoder.encode(yql, "UTF-8") + "&format=json";
@@ -194,6 +194,7 @@ public class Processor implements Runnable{
 			data = HttpConectionUtils.getData(fullUrlStr);
 			
 			extract_forecast_porcentaje();
+			extract_forecast_valoresAbsolutos(forecast_valores_pattern);
 			company.setStockValue(extract_precio_accion(precio_accion_pattern));
 			
 			company.setRecomendacionBuy(extract_recomendacion(recomendacion_buy));
@@ -233,6 +234,22 @@ public class Processor implements Runnable{
 		
 		
 		System.out.println("Finished");
+	}
+
+	private void extract_forecast_valoresAbsolutos(Pattern forecast_valores_absolutos) {
+		
+		Matcher m = forecast_valores_absolutos.matcher(data);
+		 int start1 = 0;
+		 int start2 = 0;
+		 int start3 = 0;
+		 int end1 = 0;
+		 int end2 = 0;
+		 int end3 = 0;
+		 
+		 if(m.find()){
+			 
+		 }
+		
 	}
 
 }
