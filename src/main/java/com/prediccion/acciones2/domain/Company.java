@@ -76,7 +76,7 @@ public class Company {
     @Column
     private Integer recomendacionNoOpinion;
     @Column
-    private Double volumenNegociadoAyer;
+    private String volumenNegociado;
     @Temporal(TemporalType.TIMESTAMP)
     @DateTimeFormat(pattern = "dd/MM/yyyy")
     private Date fechaCreacion;
@@ -157,24 +157,25 @@ public class Company {
 		setMarket(exchange);
 	}
 
+
 	@Override
 	public String toString() {
-		return "ticker=" + ticker + ", market=" + exchange
-				+ ", price=" + stockValue
-				+ ", max=" + maxForecastPercentageValue+"%"
-				+ ", med=" + medForecastPercentageValue+"%"
-				+ ", min=" + minForecastPercentageValue+"%"
-				+ ", opinionAvg= "+ recomendacionAverage
-				+ ", price52WkPercChange=" + price52WeekPercChange
+		return "ticker=" + ticker + ", market=" + market
+				+ ", Val=" + stockValue
+				+ ", max=" + maxForecastPercentageValue
+				+ ", med=" + medForecastPercentageValue
+				+ ", min=" + minForecastPercentageValue
+				+ ", 52Week=" + price52WeekPercChange
+				+ ", Average=" + recomendacionAverage
 				+ ", Buy=" + recomendacionBuy
 				+ ", OutPerform=" + recomendacionOutPerform
 				+ ", Hold=" + recomendacionHold
 				+ ", UnderPerform=" + recomendacionUnderPerform
 				+ ", Sell=" + recomendacionSell
-				+ ", NoOpinion=" + recomendacionNoOpinion
-				+ ", title= "+title
-				+ ", mercado= "+market;
+				+ ", volumenNegociado=" + volumenNegociado + ", marketCap="
+				+ marketCap;
 	}
+
 
 	public void generateOpinionAverage(){
 		if(recomendacionBuy!=null||recomendacionUnderPerform!=null||recomendacionOutPerform!=null||recomendacionSell!=null){

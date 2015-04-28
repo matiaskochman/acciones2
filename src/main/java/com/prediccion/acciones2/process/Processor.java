@@ -18,7 +18,7 @@ public class Processor implements Runnable{
 	Pattern forecast_valores_pattern = Pattern.compile("\\\"td\\\":\\s*\\[\\s*\\\"-*\\d+(.)\\d\\d\\\"\\,\\s*\\\"-*\\d+(.)\\d\\d\\\",\\s*\\\"-*\\d+(.)\\d\\d\\\"\\s*\\]");
 	Pattern precio_accion_pattern = Pattern.compile("results\\\":\\{\\\"span\\\":\\[\\\"\\d+(.)\\d+");
 	
-	Pattern volumen_negociado = Pattern.compile("volume_magnitude\",\\s*\\\"content\\\":\\s*\\\"\\d+(.)\\d\\d[mkb]\\\"\\s*}");
+	Pattern volumen_negociado = Pattern.compile("volume_magnitude\\\".\\\"content\\\":\\\"\\d+(?:.\\d*)[km]");
 	
 	
 	final String common = "\\\"}..\\\"class\\\":\\\"value\\\",((\\\"style\\\":\\\"color:.........\\\",\\\"content\\\":\\\"\\d+)|(\\\"content\\\":\\\"\\d+))";
@@ -39,6 +39,26 @@ public class Processor implements Runnable{
 		this.treeSet = set;
 	}
 
+	private String extract_volumen_negociado(Pattern p){
+		Matcher m = p.matcher(data);
+		if(m.find()){
+			int start=m.start();
+			int end=m.end();
+			String precio = data.substring(start, end);
+			Pattern valor = Pattern.compile("\\d+(?:.\\d*)[km]");
+			Matcher get_value_pattern = valor.matcher(precio);
+			if(get_value_pattern.find()){
+				String valor1 = precio.substring(get_value_pattern.start(), get_value_pattern.end());
+				 //this.company.setRecomendacionOutPerform(new Integer(valor1)) ;
+				return new String(valor1);
+			}else{
+				System.out.println("encontro el match de la recomendacion pero no el valor");
+			}
+			
+		}
+		return "0";
+	}
+	
 	private Integer extract_recomendacion(Pattern p){
 		Matcher m = p.matcher(data);
 		if(m.find()){
@@ -154,6 +174,7 @@ public class Processor implements Runnable{
 			
 			final String precioAccion = "//div[@class=\"contains wsodModuleContent\"]/table/tbody/tr/td[1]/span"; 
 			final String porcentajeForecast = "//table[@class=\"fright\"]/tbody/tr/td[2]/span";
+			final String sharesTraded = "//div[@class=\"contains wsodModuleContent\"]/table/tbody/tr/td[3]/span";
 			final String valoresForecast = "//table[@class=\"fright\"]/tbody/tr/td[3]";
 			
 			final String latestRecomendations = "//div[@class=\"wsodRecommendationRating wsodModuleLastInGridColumn\"]/table";
@@ -162,7 +183,8 @@ public class Processor implements Runnable{
 			String baseUrl = "http://query.yahooapis.com/v1/public/yql?q=";
 			
 			final String financialTimes = "http://markets.ft.com/research/Markets/Tearsheets/Forecasts?s="+this.company.getTicker()+":"+this.company.getMarket();
-			final String yql ="select * from html where url='"+financialTimes+"' "+"and xpath='"+porcentajeForecast+"|"+latestRecomendations+"|"+precioAccion+"'"; 
+			final String yql ="select * from html where url='"+financialTimes+"' "+"and xpath='"+porcentajeForecast+"|"+latestRecomendations+"|"+precioAccion+""
+					+ "|"+sharesTraded+"'"; 
 			
 			
 			final String fullUrlStr = baseUrl + URLEncoder.encode(yql, "UTF-8") + "&format=json";
@@ -183,6 +205,7 @@ public class Processor implements Runnable{
 			
 			company.generateOpinionAverage();
 
+			company.setVolumenNegociado(extract_volumen_negociado(volumen_negociado));
 			
 			System.out.println("equity symbol: "+company.getTicker()+":"+company.getMarket()+"   "+data);
 			System.out.println(countDownLatch.getCount());

@@ -20,11 +20,11 @@
         <field:display field="recomendacionUnderPerform" id="s_com_prediccion_acciones2_domain_Company_recomendacionUnderPerform" object="${company}" z="QtKymLE0B7x3JEDdrT2/5nNM47A="/>
         <field:display field="recomendacionSell" id="s_com_prediccion_acciones2_domain_Company_recomendacionSell" object="${company}" z="+pNc33A2MEhzEnOvlwLUGZDBYts="/>
         <field:display field="recomendacionNoOpinion" id="s_com_prediccion_acciones2_domain_Company_recomendacionNoOpinion" object="${company}" z="ebBq4MV/h+xWpYymTIHZ41LkcoE="/>
-        <field:display field="volumenNegociadoAyer" id="s_com_prediccion_acciones2_domain_Company_volumenNegociadoAyer" object="${company}" z="XdGJi19lksrcj3MeSriC7BPgQZc="/>
         <field:display date="true" dateTimePattern="${company_fechacreacion_date_format}" field="fechaCreacion" id="s_com_prediccion_acciones2_domain_Company_fechaCreacion" object="${company}" z="+4X1tI0iYf4pVq5uoOEzn0C3oZ4="/>
         <field:display field="marketCap" id="s_com_prediccion_acciones2_domain_Company_marketCap" object="${company}" z="Q27MLQzAy7Jo2I6PiZNnZIIbXMo="/>
         <field:display field="pe" id="s_com_prediccion_acciones2_domain_Company_pe" object="${company}" z="vJm3CAZnaHQ2NuzAiLM1B0lCCR4="/>
         <field:display field="recomendacionAverage" id="s_com_prediccion_acciones2_domain_Company_recomendacionAverage" object="${company}" z="O1xY77Fxza68cPj7EZcJWv99WYc="/>
         <field:display field="entityManager" id="s_com_prediccion_acciones2_domain_Company_entityManager" object="${company}" z="zN5VPpNjW+SDSrTA5aY5MwteIRk="/>
+        <field:display field="volumenNegociado" id="s_com_prediccion_acciones2_domain_Company_volumenNegociado" object="${company}" z="DPUq+0jSXclOUHvf7X2DygiK5gI="/>
     </page:show>
 </div>

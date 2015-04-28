@@ -53,7 +53,7 @@ privileged aspect CompanyHistoricDataOnDemand_Roo_DataOnDemand {
         setStockValue(obj, index);
         setTicker(obj, index);
         setTitle(obj, index);
-        setVolumenNegociadoAyer(obj, index);
+        setVolumenNegociado(obj, index);
         return obj;
     }
     
@@ -162,9 +162,9 @@ privileged aspect CompanyHistoricDataOnDemand_Roo_DataOnDemand {
         obj.setTitle(title);
     }
     
-    public void CompanyHistoricDataOnDemand.setVolumenNegociadoAyer(CompanyHistoric obj, int index) {
-        Double volumenNegociadoAyer = new Integer(index).doubleValue();
-        obj.setVolumenNegociadoAyer(volumenNegociadoAyer);
+    public void CompanyHistoricDataOnDemand.setVolumenNegociado(CompanyHistoric obj, int index) {
+        String volumenNegociado = "volumenNegociado_" + index;
+        obj.setVolumenNegociado(volumenNegociado);
     }
     
     public CompanyHistoric CompanyHistoricDataOnDemand.getSpecificCompanyHistoric(int index) {

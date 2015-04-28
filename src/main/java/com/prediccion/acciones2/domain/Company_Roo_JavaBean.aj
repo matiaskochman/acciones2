@@ -101,12 +101,12 @@ privileged aspect Company_Roo_JavaBean {
         this.recomendacionNoOpinion = recomendacionNoOpinion;
     }
     
-    public Double Company.getVolumenNegociadoAyer() {
-        return this.volumenNegociadoAyer;
+    public String Company.getVolumenNegociado() {
+        return this.volumenNegociado;
     }
     
-    public void Company.setVolumenNegociadoAyer(Double volumenNegociadoAyer) {
-        this.volumenNegociadoAyer = volumenNegociadoAyer;
+    public void Company.setVolumenNegociado(String volumenNegociado) {
+        this.volumenNegociado = volumenNegociado;
     }
     
     public Date Company.getFechaCreacion() {

@@ -63,7 +63,7 @@ public class CompanyHistoric {
     private Integer recomendacionNoOpinion;
 
     @Column
-    private Double volumenNegociadoAyer;
+    private String volumenNegociado;
 
     @Temporal(TemporalType.TIMESTAMP)
     @DateTimeFormat(pattern = "dd/MM/yyyy")

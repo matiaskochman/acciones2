@@ -27,9 +27,9 @@ public class ParsingServiceTest extends AbstractJUnit4SpringContextTests{
     @Test
     public void test(){
 
-    	Set<Company> list = parsingService.getSocksFromGoogleFinance(parsingService.buildQueryForParis(null));
-    	Set<Company> list2 = parsingService.getSocksFromGoogleFinance(parsingService.buildQueryForUS(null));
-    	Set<Company> list3 = parsingService.getSocksFromGoogleFinance(parsingService.buildQueryForLondon(null));
+    	Set<Company> list = parsingService.getSocksFromGoogleFinance(parsingService.buildQueryForParis("1500"));
+    	Set<Company> list2 = parsingService.getSocksFromGoogleFinance(parsingService.buildQueryForUS("2000"));
+    	Set<Company> list3 = parsingService.getSocksFromGoogleFinance(parsingService.buildQueryForLondon("1300"));//1300
 
     	list.addAll(list2);
     	list.addAll(list3);

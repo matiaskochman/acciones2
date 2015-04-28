@@ -20,11 +20,11 @@
         <field:input field="recomendacionUnderPerform" id="c_com_prediccion_acciones2_domain_Company_recomendacionUnderPerform" validationMessageCode="field_invalid_integer" z="Gfl1xcBNuptcXjM07SgK1zS1gTo="/>
         <field:input field="recomendacionSell" id="c_com_prediccion_acciones2_domain_Company_recomendacionSell" validationMessageCode="field_invalid_integer" z="buYWnZIXTKRg0CR9qoYJfoCKBhY="/>
         <field:input field="recomendacionNoOpinion" id="c_com_prediccion_acciones2_domain_Company_recomendacionNoOpinion" validationMessageCode="field_invalid_integer" z="Yn8gCLTPXyK3ZbAK4Dk3lVnIo+s="/>
-        <field:input field="volumenNegociadoAyer" id="c_com_prediccion_acciones2_domain_Company_volumenNegociadoAyer" validationMessageCode="field_invalid_number" z="E3xRRWUzkV1UTNbcV7NoI+gFSN4="/>
         <field:datetime dateTimePattern="${company_fechacreacion_date_format}" field="fechaCreacion" id="c_com_prediccion_acciones2_domain_Company_fechaCreacion" z="ov2rYMx7m8h7afKtUYQi5Wg7fZw="/>
         <field:input field="marketCap" id="c_com_prediccion_acciones2_domain_Company_marketCap" validationMessageCode="field_invalid_number" z="lavcbA9EgRwd/oQFUgxZbzlulEM="/>
         <field:input field="pe" id="c_com_prediccion_acciones2_domain_Company_pe" validationMessageCode="field_invalid_number" z="xqSbyTMlmHi8jQ7O6KmQUJf3/z8="/>
         <field:input field="recomendacionAverage" id="c_com_prediccion_acciones2_domain_Company_recomendacionAverage" validationMessageCode="field_invalid_integer" z="WdebVwS6PzkIIwYaydu0VrHbYvY="/>
         <field:input field="entityManager" id="c_com_prediccion_acciones2_domain_Company_entityManager" z="5XY6pSQHsRUvcoOyPTbtHTngsmE="/>
+        <field:input field="volumenNegociado" id="c_com_prediccion_acciones2_domain_Company_volumenNegociado" z="mTA63lA4nvwhPd9kA0p5GaNYyy0="/>
     </form:update>
 </div>

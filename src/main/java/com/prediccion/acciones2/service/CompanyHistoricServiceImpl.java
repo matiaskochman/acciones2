@@ -38,7 +38,7 @@ public class CompanyHistoricServiceImpl implements CompanyHistoricService {
 			ch.setStockValue(company.getStockValue());
 			ch.setTicker(company.getTicker());
 			ch.setTitle(company.getTitle());
-			ch.setVolumenNegociadoAyer(company.getVolumenNegociadoAyer());
+			ch.setVolumenNegociado(company.getVolumenNegociado());
 
 			ch.persist();
 		}
