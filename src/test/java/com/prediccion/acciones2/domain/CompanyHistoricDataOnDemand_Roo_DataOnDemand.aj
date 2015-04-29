@@ -113,7 +113,7 @@ privileged aspect CompanyHistoricDataOnDemand_Roo_DataOnDemand {
     }
     
     public void CompanyHistoricDataOnDemand.setRecomendacionAverage(CompanyHistoric obj, int index) {
-        Integer recomendacionAverage = new Integer(index);
+        Double recomendacionAverage = new Integer(index).doubleValue();
         obj.setRecomendacionAverage(recomendacionAverage);
     }
     

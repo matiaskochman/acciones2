@@ -138,7 +138,7 @@ privileged aspect CompanyDataOnDemand_Roo_DataOnDemand {
     }
     
     public void CompanyDataOnDemand.setRecomendacionAverage(Company obj, int index) {
-        Integer recomendacionAverage = new Integer(index);
+        Double recomendacionAverage = new Integer(index).doubleValue();
         obj.setRecomendacionAverage(recomendacionAverage);
     }
     

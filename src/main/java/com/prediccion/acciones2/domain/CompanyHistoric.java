@@ -42,7 +42,7 @@ public class CompanyHistoric {
     private Double price52WeekPercChange;
 
     @Column
-    private Integer recomendacionAverage;
+    private Double recomendacionAverage;
 
     @Column
     private Integer recomendacionBuy;

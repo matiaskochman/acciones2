@@ -72,11 +72,11 @@ privileged aspect CompanyHistoric_Roo_JavaBean {
         this.price52WeekPercChange = price52WeekPercChange;
     }
     
-    public Integer CompanyHistoric.getRecomendacionAverage() {
+    public Double CompanyHistoric.getRecomendacionAverage() {
         return this.recomendacionAverage;
     }
     
-    public void CompanyHistoric.setRecomendacionAverage(Integer recomendacionAverage) {
+    public void CompanyHistoric.setRecomendacionAverage(Double recomendacionAverage) {
         this.recomendacionAverage = recomendacionAverage;
     }
     

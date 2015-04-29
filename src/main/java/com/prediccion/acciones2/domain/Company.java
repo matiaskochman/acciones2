@@ -67,7 +67,7 @@ public class Company {
     @Column
     private Double price52WeekPercChange;
     @Column
-    private Integer recomendacionAverage;
+    private Double recomendacionAverage;
     @Column
     private Integer recomendacionBuy;
     @Column
@@ -107,6 +107,10 @@ public class Company {
     		this.market = "PAR";
     	}else if(exchange.equalsIgnoreCase("OTCQB")){
     		this.market = "QBB";
+    	}else if(exchange.equalsIgnoreCase("CVE")){
+    		this.market = "CVE";
+    	}else if(exchange.equalsIgnoreCase("TSE")){
+    		this.market = "TOR";
     	}
     }
 
@@ -164,7 +168,10 @@ public class Company {
 
 	public void generateOpinionAverage(){
 		if(recomendacionBuy!=null||recomendacionUnderPerform!=null||recomendacionOutPerform!=null||recomendacionSell!=null){
-			this.recomendacionAverage = recomendacionOutPerform +recomendacionBuy*2 -recomendacionUnderPerform-recomendacionSell*2; 
+			this.recomendacionAverage = recomendacionOutPerform.doubleValue() 
+					+recomendacionBuy.doubleValue()*1.5D
+					- recomendacionUnderPerform.doubleValue()
+					- recomendacionSell.doubleValue()*1.5D; 
 		}
 		
 	}
