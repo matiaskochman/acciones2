@@ -14,6 +14,8 @@ privileged aspect CompanyHistoric_Roo_Jpa_ActiveRecord {
     @PersistenceContext
     transient EntityManager CompanyHistoric.entityManager;
     
+    public static final List<String> CompanyHistoric.fieldNames4OrderClauseFilter = java.util.Arrays.asList("title", "ticker", "market", "stockValue", "maxForecastPercentageValue", "medForecastPercentageValue", "minForecastPercentageValue", "price52WeekPercChange", "recomendacionAverage", "recomendacionBuy", "recomendacionOutPerform", "recomendacionHold", "recomendacionUnderPerform", "recomendacionSell", "recomendacionNoOpinion", "volumenNegociado", "fechaCreacion", "marketCap", "pe", "exchange", "companyId", "localCurrencySymbol");
+    
     public static final EntityManager CompanyHistoric.entityManager() {
         EntityManager em = new CompanyHistoric().entityManager;
         if (em == null) throw new IllegalStateException("Entity manager has not been injected (is the Spring Aspects JAR configured as an AJC/AJDT aspects library?)");
@@ -28,6 +30,17 @@ privileged aspect CompanyHistoric_Roo_Jpa_ActiveRecord {
         return entityManager().createQuery("SELECT o FROM CompanyHistoric o", CompanyHistoric.class).getResultList();
     }
     
+    public static List<CompanyHistoric> CompanyHistoric.findAllCompanyHistorics(String sortFieldName, String sortOrder) {
+        String jpaQuery = "SELECT o FROM CompanyHistoric o";
+        if (fieldNames4OrderClauseFilter.contains(sortFieldName)) {
+            jpaQuery = jpaQuery + " ORDER BY " + sortFieldName;
+            if ("ASC".equalsIgnoreCase(sortOrder) || "DESC".equalsIgnoreCase(sortOrder)) {
+                jpaQuery = jpaQuery + " " + sortOrder;
+            }
+        }
+        return entityManager().createQuery(jpaQuery, CompanyHistoric.class).getResultList();
+    }
+    
     public static CompanyHistoric CompanyHistoric.findCompanyHistoric(Long id) {
         if (id == null) return null;
         return entityManager().find(CompanyHistoric.class, id);
@@ -35,6 +48,17 @@ privileged aspect CompanyHistoric_Roo_Jpa_ActiveRecord {
     
     public static List<CompanyHistoric> CompanyHistoric.findCompanyHistoricEntries(int firstResult, int maxResults) {
         return entityManager().createQuery("SELECT o FROM CompanyHistoric o", CompanyHistoric.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
+    }
+    
+    public static List<CompanyHistoric> CompanyHistoric.findCompanyHistoricEntries(int firstResult, int maxResults, String sortFieldName, String sortOrder) {
+        String jpaQuery = "SELECT o FROM CompanyHistoric o";
+        if (fieldNames4OrderClauseFilter.contains(sortFieldName)) {
+            jpaQuery = jpaQuery + " ORDER BY " + sortFieldName;
+            if ("ASC".equalsIgnoreCase(sortOrder) || "DESC".equalsIgnoreCase(sortOrder)) {
+                jpaQuery = jpaQuery + " " + sortOrder;
+            }
+        }
+        return entityManager().createQuery(jpaQuery, CompanyHistoric.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
     }
     
     @Transactional

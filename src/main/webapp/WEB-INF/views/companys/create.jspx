@@ -24,8 +24,11 @@
         <field:input field="marketCap" id="c_com_prediccion_acciones2_domain_Company_marketCap" validationMessageCode="field_invalid_number" z="lavcbA9EgRwd/oQFUgxZbzlulEM="/>
         <field:input field="pe" id="c_com_prediccion_acciones2_domain_Company_pe" validationMessageCode="field_invalid_number" z="xqSbyTMlmHi8jQ7O6KmQUJf3/z8="/>
         <field:input field="recomendacionAverage" id="c_com_prediccion_acciones2_domain_Company_recomendacionAverage" validationMessageCode="field_invalid_integer" z="WdebVwS6PzkIIwYaydu0VrHbYvY="/>
-        <field:input field="entityManager" id="c_com_prediccion_acciones2_domain_Company_entityManager" z="5XY6pSQHsRUvcoOyPTbtHTngsmE="/>
         <field:input field="volumenNegociado" id="c_com_prediccion_acciones2_domain_Company_volumenNegociado" z="mTA63lA4nvwhPd9kA0p5GaNYyy0="/>
+        <field:input field="entityManager" id="c_com_prediccion_acciones2_domain_Company_entityManager" z="5XY6pSQHsRUvcoOyPTbtHTngsmE="/>
+        <field:input field="maxForecastValue" id="c_com_prediccion_acciones2_domain_Company_maxForecastValue" validationMessageCode="field_invalid_number" z="pIJPOLevDwKE+umE49+6r+fz7eM="/>
+        <field:input field="medForecastValue" id="c_com_prediccion_acciones2_domain_Company_medForecastValue" validationMessageCode="field_invalid_number" z="PDp1AtZPK8mqCPOV93cK7ncZ3NU="/>
+        <field:input field="minForecastValue" id="c_com_prediccion_acciones2_domain_Company_minForecastValue" validationMessageCode="field_invalid_number" z="5CYa2aZpAnXMvwheh71kEghCu9Q="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_com_prediccion_acciones2_domain_Company" render="${not empty dependencies}" z="wYQj9THlSjjqeXTv5NJbNVVoWJA="/>
 </div>

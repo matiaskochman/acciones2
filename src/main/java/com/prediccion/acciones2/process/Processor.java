@@ -1,12 +1,15 @@
 package com.prediccion.acciones2.process;
 
 import java.net.URLEncoder;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.TreeSet;
 import java.util.concurrent.CountDownLatch;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import com.prediccion.acciones2.domain.Company;
+import com.prediccion.acciones2.exception.BusinessException;
 import com.prediccion.acciones2.utils.HttpConectionUtils;
 
 public class Processor implements Runnable{
@@ -102,6 +105,46 @@ public class Processor implements Runnable{
 		
 		return -1D;
 	}
+	
+	private void extract_forecast_valoresAbsolutos(Pattern forecast_valores_absolutos) {
+		
+		Matcher m = forecast_valores_absolutos.matcher(data);
+		 int start1 = 0;
+		 int start2 = 0;
+		 int start3 = 0;
+		 int end1 = 0;
+		 int end2 = 0;
+		 int end3 = 0;
+		 
+		 
+		 List<Double> listVal = new ArrayList<Double>();
+		 
+		 if(m.find()){
+			 start1 = m.start();
+			 end1 = m.end();
+
+			 String val1 = data.substring(start1, end1);
+			 val1.length();
+			 Pattern number_pattern = Pattern.compile("\\d+.\\d\\d");
+			 Matcher number_matcher = number_pattern.matcher(val1);
+			 String value;
+			 for (int i = 1; i <= 3; i++) {
+				if(number_matcher.find()){
+					value = val1.substring(number_matcher.start(), number_matcher.end());
+					listVal.add(Double.valueOf(value));
+					
+				}
+				
+			}
+			 
+			company.setMaxForecastValue(listVal.get(0));
+			company.setMedForecastValue(listVal.get(1));
+			company.setMinForecastValue(listVal.get(2));
+			
+		 }
+		
+	}
+	
 	
 	private void extract_forecast_porcentaje() throws Exception {
 		Matcher m = forecast_porcentaje_pattern.matcher(data);
@@ -211,6 +254,8 @@ public class Processor implements Runnable{
 			System.out.println("equity symbol: "+company.getTicker()+":"+company.getMarket()+"   "+data);
 			System.out.println(countDownLatch.getCount());
 			
+		}catch (BusinessException e) {
+			System.out.println(e.getMessage());
 		}catch (NumberFormatException e) {
 			
 			System.out.println("NumberFormatException en "+company.toString());
@@ -236,20 +281,5 @@ public class Processor implements Runnable{
 		System.out.println("Finished");
 	}
 
-	private void extract_forecast_valoresAbsolutos(Pattern forecast_valores_absolutos) {
-		
-		Matcher m = forecast_valores_absolutos.matcher(data);
-		 int start1 = 0;
-		 int start2 = 0;
-		 int start3 = 0;
-		 int end1 = 0;
-		 int end2 = 0;
-		 int end3 = 0;
-		 
-		 if(m.find()){
-			 
-		 }
-		
-	}
 
 }

@@ -27,12 +27,12 @@ public class ParsingServiceTest extends AbstractJUnit4SpringContextTests{
     @Test
     public void test(){
 
-    	Set<Company> list = parsingService.getSocksFromGoogleFinance(parsingService.buildQueryForParis("1500"));
-    	Set<Company> list2 = parsingService.getSocksFromGoogleFinance(parsingService.buildQueryForUS("2000"));
-    	Set<Company> list3 = parsingService.getSocksFromGoogleFinance(parsingService.buildQueryForLondon("1300"));//1300
+    	Set<Company> list = parsingService.getSocksFromGoogleFinance(parsingService.buildQueryForUS("500"));
+    	//Set<Company> list2 = parsingService.getSocksFromGoogleFinance(parsingService.buildQueryForParis("4"));
+    	//Set<Company> list3 = parsingService.getSocksFromGoogleFinance(parsingService.buildQueryForLondon("5"));//1300
 
-    	list.addAll(list2);
-    	list.addAll(list3);
+    	//list.addAll(list2);
+    	//list.addAll(list3);
     	
     	
     	Integer count =0 ;

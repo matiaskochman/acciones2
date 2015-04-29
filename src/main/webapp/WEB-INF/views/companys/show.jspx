@@ -24,7 +24,10 @@
         <field:display field="marketCap" id="s_com_prediccion_acciones2_domain_Company_marketCap" object="${company}" z="Q27MLQzAy7Jo2I6PiZNnZIIbXMo="/>
         <field:display field="pe" id="s_com_prediccion_acciones2_domain_Company_pe" object="${company}" z="vJm3CAZnaHQ2NuzAiLM1B0lCCR4="/>
         <field:display field="recomendacionAverage" id="s_com_prediccion_acciones2_domain_Company_recomendacionAverage" object="${company}" z="O1xY77Fxza68cPj7EZcJWv99WYc="/>
-        <field:display field="entityManager" id="s_com_prediccion_acciones2_domain_Company_entityManager" object="${company}" z="zN5VPpNjW+SDSrTA5aY5MwteIRk="/>
         <field:display field="volumenNegociado" id="s_com_prediccion_acciones2_domain_Company_volumenNegociado" object="${company}" z="DPUq+0jSXclOUHvf7X2DygiK5gI="/>
+        <field:display field="entityManager" id="s_com_prediccion_acciones2_domain_Company_entityManager" object="${company}" z="zN5VPpNjW+SDSrTA5aY5MwteIRk="/>
+        <field:display field="maxForecastValue" id="s_com_prediccion_acciones2_domain_Company_maxForecastValue" object="${company}" z="pNhQaMbBI5DUFoBLt3/USNOLidY="/>
+        <field:display field="medForecastValue" id="s_com_prediccion_acciones2_domain_Company_medForecastValue" object="${company}" z="RKRC4IX7/jjcmTD3cvHTy/8FZT0="/>
+        <field:display field="minForecastValue" id="s_com_prediccion_acciones2_domain_Company_minForecastValue" object="${company}" z="1LzNMszUZ/pOV7m6vWCIfmi4oGQ="/>
     </page:show>
 </div>

@@ -60,6 +60,12 @@ public class Company {
     @Column
     private Double minForecastPercentageValue;
     @Column
+    private Double maxForecastValue;
+    @Column
+    private Double medForecastValue;
+    @Column
+    private Double minForecastValue;
+    @Column
     private Double price52WeekPercChange;
     @Column
     private Integer recomendacionAverage;
@@ -157,26 +163,6 @@ public class Company {
 		setMarket(exchange);
 	}
 
-
-	@Override
-	public String toString() {
-		return "ticker=" + ticker + ", market=" + market
-				+ ", Val=" + stockValue
-				+ ", max=" + maxForecastPercentageValue
-				+ ", med=" + medForecastPercentageValue
-				+ ", min=" + minForecastPercentageValue
-				+ ", 52Week=" + price52WeekPercChange
-				+ ", Average=" + recomendacionAverage
-				+ ", Buy=" + recomendacionBuy
-				+ ", OutPerform=" + recomendacionOutPerform
-				+ ", Hold=" + recomendacionHold
-				+ ", UnderPerform=" + recomendacionUnderPerform
-				+ ", Sell=" + recomendacionSell
-				+ ", volumenNegociado=" + volumenNegociado + ", marketCap="
-				+ marketCap;
-	}
-
-
 	public void generateOpinionAverage(){
 		if(recomendacionBuy!=null||recomendacionUnderPerform!=null||recomendacionOutPerform!=null||recomendacionSell!=null){
 			this.recomendacionAverage = recomendacionOutPerform +recomendacionBuy*2 -recomendacionUnderPerform-recomendacionSell*2; 
@@ -215,6 +201,39 @@ public class Company {
     public void setRecomendacionSell(Integer recomendacionSell) {
         this.recomendacionSell = recomendacionSell;
     }
+
+
+	public EntityManager getEntityManager() {
+		return entityManager;
+	}
+
+
+	public void setEntityManager(EntityManager entityManager) {
+		this.entityManager = entityManager;
+	}
+
+
+	@Override
+	public String toString() {
+		return "ticker=" + ticker + ", market=" + market
+				+ ", stockValue=" + stockValue
+				+ ", maxPVal=" + maxForecastPercentageValue
+				+ ", medPVal=" + medForecastPercentageValue
+				+ ", minPVal=" + minForecastPercentageValue
+				+ ", maxVal=" + maxForecastValue
+				+ ", medVal=" + medForecastValue
+				+ ", minVal=" + minForecastValue
+				+ ", p52W=" + price52WeekPercChange
+				+ ", Average=" + recomendacionAverage
+				+ ", Buy=" + recomendacionBuy
+				+ ", OutPerform=" + recomendacionOutPerform
+				+ ", Hold=" + recomendacionHold
+				+ ", UnderPerform=" + recomendacionUnderPerform
+				+ ", Sell=" + recomendacionSell
+				+ ", NoOpinion=" + recomendacionNoOpinion
+				+ ", volNegociado=" + volumenNegociado + ", fechaCreacion="
+				+ fechaCreacion;
+	}
     
     
 }

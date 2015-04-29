@@ -27,7 +27,7 @@ import com.prediccion.acciones2.utils.HttpConectionUtils;
 @Transactional
 public class ParsingServiceImpl implements ParsingService{
 
-	int CONCURRENT_THREADS = 200;
+	int CONCURRENT_THREADS = 35;
 	
 	public List<Company> createCompanies(CompanyJson[] companyArray){
 		List<Company> list = new ArrayList<Company>();
@@ -183,8 +183,8 @@ public class ParsingServiceImpl implements ParsingService{
 						"price_change_52week%20%3C%3D%2019901%29]&"+
 						"restype=company&"+
 						"ei=9LIzVcHMJcmUsQeLtoDQDw"+
-						"&sortas=Price52WeekPercChange";
-						//"&sortas=MarketCap";
+						"&sortas=MarketCap";
+						//"&sortas=Price52WeekPercChange";
 		
 		return us_query;
 	}

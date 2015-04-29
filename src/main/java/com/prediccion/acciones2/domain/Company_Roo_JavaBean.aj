@@ -5,17 +5,8 @@ package com.prediccion.acciones2.domain;
 
 import com.prediccion.acciones2.domain.Company;
 import java.util.Date;
-import javax.persistence.EntityManager;
 
 privileged aspect Company_Roo_JavaBean {
-    
-    public EntityManager Company.getEntityManager() {
-        return this.entityManager;
-    }
-    
-    public void Company.setEntityManager(EntityManager entityManager) {
-        this.entityManager = entityManager;
-    }
     
     public String Company.getTitle() {
         return this.title;
@@ -67,6 +58,30 @@ privileged aspect Company_Roo_JavaBean {
     
     public void Company.setMinForecastPercentageValue(Double minForecastPercentageValue) {
         this.minForecastPercentageValue = minForecastPercentageValue;
+    }
+    
+    public Double Company.getMaxForecastValue() {
+        return this.maxForecastValue;
+    }
+    
+    public void Company.setMaxForecastValue(Double maxForecastValue) {
+        this.maxForecastValue = maxForecastValue;
+    }
+    
+    public Double Company.getMedForecastValue() {
+        return this.medForecastValue;
+    }
+    
+    public void Company.setMedForecastValue(Double medForecastValue) {
+        this.medForecastValue = medForecastValue;
+    }
+    
+    public Double Company.getMinForecastValue() {
+        return this.minForecastValue;
+    }
+    
+    public void Company.setMinForecastValue(Double minForecastValue) {
+        this.minForecastValue = minForecastValue;
     }
     
     public Double Company.getPrice52WeekPercChange() {
