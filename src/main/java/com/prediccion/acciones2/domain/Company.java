@@ -38,7 +38,6 @@ public class Company {
 		this.pe = pe;
 		this.localCurrencySymbol=localCurrency;
 		setMarket(exchange);
-		setFechaCreacion(new Date());
 	}
 
     @PersistenceContext

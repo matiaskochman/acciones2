@@ -2,6 +2,7 @@ package com.prediccion.acciones2.process;
 
 import java.net.URLEncoder;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 import java.util.TreeSet;
 import java.util.concurrent.CountDownLatch;
@@ -13,14 +14,14 @@ import com.prediccion.acciones2.exception.BusinessException;
 import com.prediccion.acciones2.utils.HttpConectionUtils;
 
 public class Processor implements Runnable{
-	
+	Calendar cal;
 	CountDownLatch countDownLatch;
 	Company company;
 	String data;
 	Pattern forecast_porcentaje_pattern = Pattern.compile("-*\\d+(.)\\d*\\s*%");
 	Pattern forecast_valores_pattern = Pattern.compile("\\\"td\\\":\\[\\\"\\d+(?:.\\d+)\\\".\"\\d+(?:.\\d+)\\\".\"\\d+(?:.\\d+)\\\"\\]");
-	Pattern precio_accion_pattern = Pattern.compile("results\\\":\\{\\\"span\\\":\\[\\\"\\d+(.)\\d+");
-	
+	//Pattern precio_accion_pattern = Pattern.compile("results\\\":\\{\\\"span\\\":\\[\\\"\\d+(.)\\d+");
+	Pattern precio_accion_pattern = Pattern.compile("lastPrice.{37}\\\"content\\\":\\\"\\d+(?:.\\d+)\\\"");
 	Pattern volumen_negociado = Pattern.compile("volume_magnitude\\\".\\\"content\\\":\\\"\\d+(?:.\\d*)[km]");
 	
 	
@@ -35,11 +36,12 @@ public class Processor implements Runnable{
 			
 	TreeSet<Company> treeSet;
 
-	public Processor(CountDownLatch countDownLatch,Company company,TreeSet<Company> set) {
+	public Processor(CountDownLatch countDownLatch,Company company,TreeSet<Company> set,Calendar cal) {
 		super();
 		this.company=company;
 		this.countDownLatch = countDownLatch;
 		this.treeSet = set;
+		this.cal = cal;
 	}
 
 	private String extract_volumen_negociado(Pattern p){
@@ -246,10 +248,10 @@ public class Processor implements Runnable{
 			company.setRecomendacionUnderPerform(extract_recomendacion(recomendacion_underperform));
 			company.setRecomendacionSell(extract_recomendacion(recomendacion_sell));
 			company.setRecomendacionNoOpinion(extract_recomendacion(recomendacion_no_opinion));
-			
 			company.generateOpinionAverage();
-
 			company.setVolumenNegociado(extract_volumen_negociado(volumen_negociado));
+			company.setFechaCreacion(cal.getTime());
+			
 			
 			System.out.println("equity symbol: "+company.getTicker()+":"+company.getMarket()+"   "+data);
 			System.out.println(countDownLatch.getCount());

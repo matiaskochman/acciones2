@@ -1,6 +1,7 @@
 package com.prediccion.acciones2.service;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Set;
@@ -27,7 +28,7 @@ import com.prediccion.acciones2.utils.HttpConectionUtils;
 @Transactional
 public class ParsingServiceImpl implements ParsingService{
 
-	int CONCURRENT_THREADS = 35;
+	int CONCURRENT_THREADS = 10;
 	
 	public List<Company> createCompanies(CompanyJson[] companyArray){
 		List<Company> list = new ArrayList<Company>();
@@ -226,8 +227,15 @@ public class ParsingServiceImpl implements ParsingService{
 			CountDownLatch countDownLatch=new CountDownLatch(companyList.size());
 			ExecutorService executorService=Executors.newFixedThreadPool(CONCURRENT_THREADS);
 			
+			Calendar cal = Calendar.getInstance();
+			cal.clear(Calendar.MILLISECOND);
+			cal.clear(Calendar.SECOND);
+			cal.clear(Calendar.MINUTE);
+			cal.clear(Calendar.HOUR);
+			cal.clear(Calendar.HOUR_OF_DAY);
+			
 			for (Company company : companyList) {
-				executorService.submit(new Processor(countDownLatch,company,resultSet));
+				executorService.submit(new Processor(countDownLatch,company,resultSet,cal));
 			}
 			try {
 				countDownLatch.await();
