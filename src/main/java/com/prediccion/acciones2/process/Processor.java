@@ -21,7 +21,8 @@ public class Processor implements Runnable{
 	Pattern forecast_porcentaje_pattern = Pattern.compile("-*\\d+(.)\\d*\\s*%");
 	Pattern forecast_valores_pattern = Pattern.compile("\\\"td\\\":\\[\\\"\\d+(?:.\\d+)\\\".\"\\d+(?:.\\d+)\\\".\"\\d+(?:.\\d+)\\\"\\]");
 	//Pattern precio_accion_pattern = Pattern.compile("results\\\":\\{\\\"span\\\":\\[\\\"\\d+(.)\\d+");
-	Pattern precio_accion_pattern = Pattern.compile("lastPrice.{37}\\\"content\\\":\\\"\\d+(?:.\\d+)\\\"");
+	//Pattern precio_accion_pattern = Pattern.compile("lastPrice.{37}\\\"content\\\":\\\"\\d+(?:.\\d+)\\\"");
+	Pattern precio_accion_pattern = Pattern.compile("lastPrice.{37}\\\"content\\\":\\\"\\d+(?:.\\d+)\\\"|\\\"results\\\":.{8}\\[\\\"\\d+(?:.\\d+)\\\"");
 	Pattern volumen_negociado = Pattern.compile("volume_magnitude\\\".\\\"content\\\":\\\"\\d+(?:.\\d*)[km]");
 	
 	
@@ -239,6 +240,11 @@ public class Processor implements Runnable{
 			data = HttpConectionUtils.getData(fullUrlStr);
 			
 			extract_forecast_porcentaje();
+			
+			if(company.getMinForecastPercentageValue()==null){
+				throw new BusinessException("no pudo parsear los valores de forecast y cancelo el resto del parsing:");
+			}
+			
 			extract_forecast_valoresAbsolutos(forecast_valores_pattern);
 			company.setStockValue(extract_precio_accion(precio_accion_pattern));
 			

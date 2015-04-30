@@ -1,7 +1,9 @@
 package com.prediccion.acciones2.service;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Set;
+import java.util.TreeSet;
 
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,12 +29,26 @@ public class ParsingServiceTest extends AbstractJUnit4SpringContextTests{
     @Test
     public void test(){
 
-    	Set<Company> list = parsingService.getSocksFromGoogleFinance(parsingService.buildQueryForUS("20"));
+		Comparator<Company> minComparator = new Comparator<Company>(){
+			@Override
+			public int compare(Company o1, Company o2) {
+				int min = o1.getMinForecastPercentageValue().compareTo(o2.getMinForecastPercentageValue());
+				return min*(-1);
+			}
+		};		    
+    	
+		TreeSet<Company> resultSet = new TreeSet<Company>(minComparator);
+
+    	//Set<Company> list1 = parsingService.getSocksFromGoogleFinance(parsingService.buildQueryForUS("20"));
+    	
     	//Set<Company> list2 = parsingService.getSocksFromGoogleFinance(parsingService.buildQueryForParis("4"));
     	//Set<Company> list3 = parsingService.getSocksFromGoogleFinance(parsingService.buildQueryForLondon("5"));//1300
+    	Set<Company> list4 = parsingService.getSocksFromGoogleFinance(parsingService.buildQueryForCanada("1000"));
 
-    	//list.addAll(list2);
-    	//list.addAll(list3);
+    	//resultSet.addAll(list1);
+    	//resultSet.addAll(list2);
+    	//resultSet.addAll(list3);
+    	resultSet.addAll(list4);
     	
     	
     	Integer count =0 ;
@@ -41,7 +57,7 @@ public class ParsingServiceTest extends AbstractJUnit4SpringContextTests{
     	
     	companyHistoricService.createHistotic(listCompanies);
     	
-    	for (Company company : list) {
+    	for (Company company : resultSet) {
     		companyService.saveOrUpdate(company);
 			System.out.println(++count +" "+company);
 		}
