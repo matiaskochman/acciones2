@@ -2,11 +2,6 @@ package com.prediccion.acciones2.domain;
 import java.util.Calendar;
 import java.util.Date;
 
-import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.roo.addon.javabean.RooJavaBean;
-import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
-import org.springframework.roo.addon.tostring.RooToString;
-
 import javax.persistence.Column;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -14,8 +9,12 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 
+import org.joda.time.DateTime;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.roo.addon.javabean.RooJavaBean;
+import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
 import org.springframework.roo.addon.json.RooJson;
-import org.springframework.transaction.annotation.Transactional;
+import org.springframework.roo.addon.tostring.RooToString;
 
 
 @RooJavaBean
@@ -117,6 +116,8 @@ public class Company {
     		this.market = "X:GER";
     	}else if(exchange.equalsIgnoreCase("BIT")){
     		this.market = ":MIL";
+    	}else if(exchange.equalsIgnoreCase("BME")){
+    		this.market = ":MCE";
     	}
     }
 
@@ -227,6 +228,9 @@ public class Company {
 
 	@Override
 	public String toString() {
+		
+		DateTime dt = new DateTime(this.getFechaCreacion());
+		String dateFormatted = dt.toString("dd:mm:yyyy");
 		return "ticker=" + ticker + ", market=" + market
 				+ ", stockValue=" + stockValue
 				+ ", maxPVal=" + maxForecastPercentageValue
@@ -244,7 +248,7 @@ public class Company {
 				+ ", Sell=" + recomendacionSell
 				+ ", NoOpinion=" + recomendacionNoOpinion
 				+ ", volNegociado=" + volumenNegociado + ", fechaCreacion="
-				+ fechaCreacion;
+				+ dateFormatted;
 	}
     
     

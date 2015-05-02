@@ -30,3 +30,12 @@ jpa setup --provider HIBERNATE --database HYPERSONIC_PERSISTENT
 // Spring Roo 1.3.1.RELEASE [rev f4f5256] log opened at 2015-04-29 12:55:43
 // Spring Roo 1.3.1.RELEASE [rev f4f5256] log closed at 2015-04-29 13:28:49
 // Spring Roo 1.3.1.RELEASE [rev f4f5256] log opened at 2015-04-30 09:02:02
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2015-04-30 21:32:37
+jpa setup --provider HIBERNATE --database MYSQL 
+entity jpa --class ~.domain.QueryLog
+json all 
+service all --interfacePackage com.prediccion.acciones2.service
+field date --type java.util.Date --fieldName fechaQuery
+field string --fieldName market
+field string --fieldName forecastOk
+field number --type java.lang.Integer --fieldName forecastFail

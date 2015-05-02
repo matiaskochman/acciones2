@@ -10,10 +10,12 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import com.prediccion.acciones2.domain.Company;
+import com.prediccion.acciones2.domain.QueryLog;
 import com.prediccion.acciones2.exception.BusinessException;
 import com.prediccion.acciones2.utils.HttpConectionUtils;
 
 public class Processor implements Runnable{
+	QueryLog queryLog;
 	Calendar cal;
 	CountDownLatch countDownLatch;
 	Company company;
@@ -37,12 +39,13 @@ public class Processor implements Runnable{
 			
 	TreeSet<Company> treeSet;
 
-	public Processor(CountDownLatch countDownLatch,Company company,TreeSet<Company> set,Calendar cal) {
+	public Processor(CountDownLatch countDownLatch,Company company,TreeSet<Company> set,Calendar cal, QueryLog queryLog) {
 		super();
 		this.company=company;
 		this.countDownLatch = countDownLatch;
 		this.treeSet = set;
 		this.cal = cal;
+		this.queryLog = queryLog;
 	}
 
 	private String extract_volumen_negociado(Pattern p){
@@ -207,7 +210,7 @@ public class Processor implements Runnable{
 			 
 			 if(company.getMaxForecastPercentageValue()!=null||company.getMinForecastPercentageValue()!=null||company.getMedForecastPercentageValue()!=null){
 				 if(company.getMaxForecastPercentageValue().equals(company.getMinForecastPercentageValue())&&company.getMaxForecastPercentageValue().equals(company.getMedForecastPercentageValue())){
-					throw new Exception("3 values are equal"); 
+					throw new BusinessException("3 values are equal"); 
 				 }
 				 treeSet.add(company);
 			 }
@@ -263,21 +266,33 @@ public class Processor implements Runnable{
 			
 		}catch (BusinessException e) {
 			System.out.println(e.getMessage());
+			queryLog.setForecastFail(queryLog.getForecastFail()+1);
+			
 		}catch (NumberFormatException e) {
 			
 			System.out.println("NumberFormatException en "+company.toString());
+			queryLog.setForecastFail(queryLog.getForecastFail()+1);
+			
 			e.printStackTrace();
 		}catch (NullPointerException e) {
 			
 			System.out.println("error en "+company.toString());
+			queryLog.setForecastFail(queryLog.getForecastFail()+1);
+			
 			e.printStackTrace();
 		}catch (IllegalStateException e) {
 			
 			System.out.println("error en "+data);
+			queryLog.setForecastFail(queryLog.getForecastFail()+1);
+			
 			e.printStackTrace();
 		}  catch (InterruptedException e) {
+			queryLog.setForecastFail(queryLog.getForecastFail()+1);
+			
 			e.printStackTrace();
 		} catch (Exception e) {
+			queryLog.setForecastFail(queryLog.getForecastFail()+1);
+			
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
