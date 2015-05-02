@@ -98,19 +98,25 @@ public class Company {
 
     public void setMarket(String exchange){
     	if(exchange.equalsIgnoreCase("NYSE")){
-    		this.market = "NYQ";
+    		this.market = ":NYQ";
     	}else if(exchange.equalsIgnoreCase("NASDAQ")){
-    		this.market = "NSQ";
+    		this.market = ":NSQ";
     	}else if(exchange.equalsIgnoreCase("LON")){
-    		this.market = "LSE";
+    		this.market = ":LSE";
     	}else if(exchange.equalsIgnoreCase("EPA")){
-    		this.market = "PAR";
+    		this.market = ":PAR";
     	}else if(exchange.equalsIgnoreCase("OTCQB")){
-    		this.market = "QBB";
+    		this.market = ":QBB";
     	}else if(exchange.equalsIgnoreCase("CVE")){
-    		this.market = "CVE";
+    		this.market = ":CVE";
     	}else if(exchange.equalsIgnoreCase("TSE")){
-    		this.market = "TOR";
+    		this.market = ":TOR";
+    	}else if(exchange.equalsIgnoreCase("FRA")){
+    		this.market = ":FRA";
+    	}else if(exchange.equalsIgnoreCase("ETR")){
+    		this.market = "X:GER";
+    	}else if(exchange.equalsIgnoreCase("BIT")){
+    		this.market = ":MIL";
     	}
     }
 

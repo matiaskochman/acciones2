@@ -224,11 +224,10 @@ public class Processor implements Runnable{
 			final String valoresForecast = "//table[@class=\"fright\"]/tbody/tr/td[3]";
 			
 			final String latestRecomendations = "//div[@class=\"wsodRecommendationRating wsodModuleLastInGridColumn\"]/table";
-			String newString = "select * from html where url='http://markets.ft.com/research/Markets/Tearsheets/Forecasts?s=YPF:NYQ' and xpath='//table[@class=\"fright\"]/tbody/tr/td[2]/span|//div[@class=\"contains wsodModuleContent\"]/table/tbody/tr/td[1]/span'";
 					
 			String baseUrl = "http://query.yahooapis.com/v1/public/yql?q=";
 			
-			final String financialTimes = "http://markets.ft.com/research/Markets/Tearsheets/Forecasts?s="+this.company.getTicker()+":"+this.company.getMarket();
+			final String financialTimes = "http://markets.ft.com/research/Markets/Tearsheets/Forecasts?s="+this.company.getTicker()+this.company.getMarket();
 			final String yql ="select * from html where url='"+financialTimes+"' "+"and xpath='"+porcentajeForecast+"|"+latestRecomendations+"|"+precioAccion+""
 					+ "|"+sharesTraded+"|"+valoresForecast+"'"; 
 			
