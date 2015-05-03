@@ -5,7 +5,6 @@ package com.prediccion.acciones2.controller;
 
 import com.prediccion.acciones2.controller.CompanyController;
 import com.prediccion.acciones2.domain.Company;
-import java.util.List;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,30 +12,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 privileged aspect CompanyController_Roo_Controller_Json {
-    
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET, headers = "Accept=application/json")
-    @ResponseBody
-    public ResponseEntity<String> CompanyController.showJson(@PathVariable("id") Long id) {
-        Company company = companyService.findCompany(id);
-        HttpHeaders headers = new HttpHeaders();
-        headers.add("Content-Type", "application/json; charset=utf-8");
-        if (company == null) {
-            return new ResponseEntity<String>(headers, HttpStatus.NOT_FOUND);
-        }
-        return new ResponseEntity<String>(company.toJson(), headers, HttpStatus.OK);
-    }
-    
-    @RequestMapping(headers = "Accept=application/json")
-    @ResponseBody
-    public ResponseEntity<String> CompanyController.listJson() {
-        HttpHeaders headers = new HttpHeaders();
-        headers.add("Content-Type", "application/json; charset=utf-8");
-        List<Company> result = companyService.findAllCompanys();
-        return new ResponseEntity<String>(Company.toJsonArray(result), headers, HttpStatus.OK);
-    }
     
     @RequestMapping(method = RequestMethod.POST, headers = "Accept=application/json")
     public ResponseEntity<String> CompanyController.createFromJson(@RequestBody String json) {

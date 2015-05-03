@@ -39,3 +39,7 @@ field date --type java.util.Date --fieldName fechaQuery
 field string --fieldName market
 field string --fieldName forecastOk
 field number --type java.lang.Integer --fieldName forecastFail
+web mvc json all 
+logging setup --level DEBUG 
+logging setup --level ERROR 
+logging setup --level DEBUG 
