@@ -196,13 +196,11 @@ public class QueryBuilder {
 	public static String buildQueryForSpain(String numberOfCompanies) {
 
     	String num=null;
-    	
     	if(numberOfCompanies==null){
     		num="10";
     	}else{
     		num=numberOfCompanies;
     	}
-		
 		String query = "https://www.google.com/finance?output=json&start=0&"
 				+ "num="+num
 				+ "&noIL=1&q=["
@@ -217,10 +215,36 @@ public class QueryBuilder {
 				+ "price_change_52week%20%3E%3D%20-67.16%29%20%26%20%28"
 				+ "price_change_52week%20%3C%3D%20180%29]&restype=company&ei=_NBEVYGRJMS0sQerq4DwBw&"
 				+ "sortas=MarketCap";		
-		
 		return query;
 	}
 
+	public static String buildQueryForBrasil(String numberOfCompanies) {
+
+    	String num=null;
+    	if(numberOfCompanies==null){
+    		num="10";
+    	}else{
+    		num=numberOfCompanies;
+    	}
+    	
+    	String query = "https://www.google.com/finance?output=json&"
+    			+ "start=0&"
+    			+ "num="+num
+    			+ "&noIL=1&q=["
+    			+ "currency%20%3D%3D%20%22BRL%22%20%26%20%28"
+    			+ "exchange%20%3D%3D%20%22BVMF%22%29%20%26%20%28"
+    			+ "market_cap%20%3E%3D%200%29%20%26%20%28"
+    			+ "market_cap%20%3C%3D%20297700000000%29%20%26%20%28"
+    			+ "pe_ratio%20%3E%3D%200%29%20%26%20%28"
+    			+ "pe_ratio%20%3C%3D%2023801%29%20%26%20%28"
+    			+ "dividend_yield%20%3E%3D%200%29%20%26%20%28"
+    			+ "dividend_yield%20%3C%3D%202097%29%20%26%20%28"
+    			+ "price_change_52week%20%3E%3D%20-84.35%29%20%26%20%28"
+    			+ "price_change_52week%20%3C%3D%20122%29]&restype=company&ei=sWRHVdmSDPTisQfXjYDwDw&"
+    			+ "sortas=MarketCap";
+    	
+		return query;
+	}
 
 	
 	
