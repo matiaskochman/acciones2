@@ -12,7 +12,7 @@
 		memoryStoreEvictionPolicy="LRU" />
 
 	<cache name="companies" maxElementsInMemory="1000"
-		maxElementsOnDisk="1" eternal="false" overflowToDisk="false" timeToIdleSeconds="100" timeToLiveSeconds="100"
+		maxElementsOnDisk="1" eternal="false" overflowToDisk="false" timeToIdleSeconds="15" timeToLiveSeconds="15"
 		memoryStoreEvictionPolicy="LRU" />
 		
 </ehcache>
