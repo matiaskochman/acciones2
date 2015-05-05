@@ -4,11 +4,13 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 
+import com.googlecode.ehcache.annotations.Cacheable;
 import com.prediccion.acciones2.domain.Company;
 
 
 public class CompanyServiceImpl implements CompanyService {
 
+	@Cacheable(cacheName="companies")
     public List<Company> findAllCompanys() {
         return Company.findAllCompanys();
     }

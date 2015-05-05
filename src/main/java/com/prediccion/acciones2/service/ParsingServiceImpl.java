@@ -28,7 +28,7 @@ import com.prediccion.acciones2.utils.HttpConectionUtils;
 @Transactional
 public class ParsingServiceImpl implements ParsingService{
 
-	int CONCURRENT_THREADS = 150;
+	int CONCURRENT_THREADS = 180;
 
     @Autowired
     QueryLogService queryLogService;
