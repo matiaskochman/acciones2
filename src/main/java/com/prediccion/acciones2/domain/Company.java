@@ -1,6 +1,7 @@
 package com.prediccion.acciones2.domain;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.EntityManager;
@@ -118,6 +119,8 @@ public class Company {
     		this.market = ":MIL";
     	}else if(exchange.equalsIgnoreCase("BME")){
     		this.market = ":MCE";
+    	}else if(exchange.equalsIgnoreCase("BVMF")){
+    		this.market = ":SAO";
     	}
     }
 
@@ -251,5 +254,8 @@ public class Company {
 				+ dateFormatted;
 	}
     
+    public static List<Company> findAllCompanys() {
+        return entityManager().createQuery("SELECT o FROM Company o", Company.class).getResultList();
+    }
     
 }

@@ -27,10 +27,6 @@ privileged aspect CompanyServiceImpl_Roo_Service {
         return Company.findCompany(id);
     }
     
-    public List<Company> CompanyServiceImpl.findAllCompanys() {
-        return Company.findAllCompanys();
-    }
-    
     public List<Company> CompanyServiceImpl.findCompanyEntries(int firstResult, int maxResults) {
         return Company.findCompanyEntries(firstResult, maxResults);
     }

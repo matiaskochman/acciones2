@@ -12,7 +12,6 @@ privileged aspect CompanyService_Roo_Service {
     public abstract long CompanyService.countAllCompanys();    
     public abstract void CompanyService.deleteCompany(Company company);    
     public abstract Company CompanyService.findCompany(Long id);    
-    public abstract List<Company> CompanyService.findAllCompanys();    
     public abstract List<Company> CompanyService.findCompanyEntries(int firstResult, int maxResults);    
     public abstract void CompanyService.saveCompany(Company company);    
     public abstract Company CompanyService.updateCompany(Company company);    
