@@ -296,8 +296,11 @@ public class Processor implements Runnable{
 			
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}finally{
+			
+			countDownLatch.countDown();
 		}
-		countDownLatch.countDown();
+		
 		
 		
 		

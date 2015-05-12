@@ -134,16 +134,18 @@ public class ParsingServiceImpl implements ParsingService{
 			cal.clear(Calendar.HOUR);
 			cal.clear(Calendar.HOUR_OF_DAY);
 			
-			for (Company company : companyList) {
-				executorService.submit(new Processor(countDownLatch,company,resultSet,cal,queryLog));
-			}
 			try {
+				for (Company company : companyList) {
+					executorService.submit(new Processor(countDownLatch,company,resultSet,cal,queryLog));
+				}
 				countDownLatch.await();
 			} catch (InterruptedException e) {
 				e.printStackTrace();
+			}finally{
+				
+				executorService.shutdown();
 			}
 			
-			executorService.shutdown();
 			
 		} catch (Exception e) {
 			e.printStackTrace();
