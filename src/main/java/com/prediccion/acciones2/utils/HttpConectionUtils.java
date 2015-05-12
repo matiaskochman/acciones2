@@ -8,6 +8,8 @@ import java.net.InetSocketAddress;
 import java.net.Proxy;
 import java.net.URL;
 
+import com.prediccion.acciones2.exception.BusinessException;
+
 public class HttpConectionUtils {
 	
 	
@@ -16,7 +18,7 @@ public class HttpConectionUtils {
 		Proxy proxy = new Proxy(Proxy.Type.HTTP, new InetSocketAddress("172.18.3.100", 8080));
 		HttpURLConnection conn = (HttpURLConnection) new URL(address).openConnection(proxy);
 		//HttpURLConnection conn = (HttpURLConnection) new URL(address).openConnection();
-		conn.setConnectTimeout(10000);
+		conn.setConnectTimeout(50000);
 		  
 	    URL url = new URL(address);
 	    StringBuffer text = new StringBuffer();
@@ -26,7 +28,7 @@ public class HttpConectionUtils {
 		conn.setRequestProperty("Accept", "application/json");
 		
 		if (conn.getResponseCode() != 200) {
-			throw new RuntimeException("Failed : HTTP error code : "
+			throw new BusinessException("Failed : HTTP error code : "
 					+ conn.getResponseCode());
 		}
 		

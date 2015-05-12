@@ -234,14 +234,11 @@ public class Company {
 		
 		DateTime dt = new DateTime(this.getFechaCreacion());
 		String dateFormatted = dt.toString("dd:mm:yyyy");
-		return "ticker=" + ticker + ", market=" + market
+		return "ticker=" + ticker + ", market=" + getMercado()
 				+ ", stockValue=" + stockValue
-				+ ", maxPVal=" + maxForecastPercentageValue
-				+ ", medPVal=" + medForecastPercentageValue
-				+ ", minPVal=" + minForecastPercentageValue
-				+ ", maxVal=" + maxForecastValue
-				+ ", medVal=" + medForecastValue
-				+ ", minVal=" + minForecastValue
+				+ ", maxPVal=" + maxForecastPercentageValue+"%"
+				+ ", medPVal=" + medForecastPercentageValue+"%"
+				+ ", minPVal=" + minForecastPercentageValue+"%"
 				+ ", p52W=" + price52WeekPercChange
 				+ ", Average=" + recomendacionAverage
 				+ ", Buy=" + recomendacionBuy
@@ -249,13 +246,41 @@ public class Company {
 				+ ", Hold=" + recomendacionHold
 				+ ", UnderPerform=" + recomendacionUnderPerform
 				+ ", Sell=" + recomendacionSell
-				+ ", NoOpinion=" + recomendacionNoOpinion
 				+ ", volNegociado=" + volumenNegociado + ", fechaCreacion="
 				+ dateFormatted;
 	}
     
     public static List<Company> findAllCompanys() {
         return entityManager().createQuery("SELECT o FROM Company o", Company.class).getResultList();
+    }
+    
+    public String getMercado(){
+    	if(exchange.equalsIgnoreCase("NYSE")){
+    		return exchange;
+    	}else if(exchange.equalsIgnoreCase("NASDAQ")){
+    		return exchange;
+    	}else if(exchange.equalsIgnoreCase("LON")){
+    		return "London";
+    	}else if(exchange.equalsIgnoreCase("EPA")){
+    		return "Paris";
+    	}else if(exchange.equalsIgnoreCase("OTCQB")){
+    		return "NEW YORK, "+exchange;
+    	}else if(exchange.equalsIgnoreCase("CVE")){
+    		return "CANADA";
+    	}else if(exchange.equalsIgnoreCase("TSE")){
+    		return "CANADA, TORONTO";
+    	}else if(exchange.equalsIgnoreCase("FRA")){
+    		return "GERMANY, FRANKFURT";
+    	}else if(exchange.equalsIgnoreCase("ETR")){
+    		return "GERMANY";
+    	}else if(exchange.equalsIgnoreCase("BIT")){
+    		return "MILAN";
+    	}else if(exchange.equalsIgnoreCase("BME")){
+    		return "MADRID";
+    	}else if(exchange.equalsIgnoreCase("BVMF")){
+    		return "SAO PAULO";
+    	}
+    	return "INCOGNITA";
     }
     
 }

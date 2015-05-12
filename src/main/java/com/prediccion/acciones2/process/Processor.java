@@ -244,7 +244,8 @@ public class Processor implements Runnable{
 			extract_forecast_porcentaje();
 			
 			if(company.getMinForecastPercentageValue()==null){
-				throw new BusinessException("no pudo parsear los valores de forecast y cancelo el resto del parsing:");
+				throw new BusinessException("no pudo parsear los valores de forecast para "+company.getTicker()+":"+company.getExchange()+" "+
+			"countdownlatch: "+countDownLatch.getCount());
 			}
 			
 			extract_forecast_valoresAbsolutos(forecast_valores_pattern);
