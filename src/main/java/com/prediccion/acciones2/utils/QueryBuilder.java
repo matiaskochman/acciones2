@@ -246,6 +246,61 @@ public class QueryBuilder {
 		return query;
 	}
 
+	public static String buildQueryForBelgium(String numberOfCompanies){
+		
+    	String num=null;
+    	if(numberOfCompanies==null){
+    		num="10";
+    	}else{
+    		num=numberOfCompanies;
+    	}
+    	
+    	String marketCapitalFrom = "1000000";
+		String query = "https://www.google.com/finance?output=json&"
+				+ "start=0"
+				+ "&num="+num
+				+ "&noIL=1&q=[%28"
+				+ "exchange%20%3D%3D%20%22EBR%22%29%20%26%20%28"
+				+ "market_cap%20%3E%3D%20"+marketCapitalFrom+"%29%20%26%20%28"
+				+ "market_cap%20%3C%3D%20172220000000%29%20%26%20%28"
+				+ "pe_ratio%20%3E%3D%200%29%20%26%20%28"
+				+ "pe_ratio%20%3C%3D%2012594%29%20%26%20%28"
+				+ "dividend_yield%20%3E%3D%200%29%20%26%20%28"
+				+ "dividend_yield%20%3C%3D%2017.35%29%20%26%20%28"
+				+ "price_change_52week%20%3E%3D%20-92.73%29%20%26%20%28"
+				+ "price_change_52week%20%3C%3D%20645%29]&"
+				+ "restype=company&ei=lFxTVZmhHNb_mAHZiYGQCw&"
+				+ "sortas=MarketCap";
+		
+		return query;
+	}
 	
+	public static String buildQueryForNetherlands(String numberOfCompanies){
+    	String num=null;
+    	if(numberOfCompanies==null){
+    		num="10";
+    	}else{
+    		num=numberOfCompanies;
+    	}
+    	
+    	String marketCapitalFrom = "1000000";		
+		String query = "https://www.google.com/finance?output=json&"
+				+ "start=0&"
+				+ "num=20"
+				+ "&noIL=1&q=[%28"
+				+ "exchange%20%3D%3D%20%22AMS%22%29%20%26%20%28"
+				+ "market_cap%20%3E%3D%20"+marketCapitalFrom
+				+ "%29%20%26%20%28"
+				+ "market_cap%20%3C%3D%20179560000000%29%20%26%20%28"
+				+ "pe_ratio%20%3E%3D%200%29%20%26%20%28"
+				+ "pe_ratio%20%3C%3D%20553%29%20%26%20%28"
+				+ "dividend_yield%20%3E%3D%200%29%20%26%20%28"
+				+ "dividend_yield%20%3C%3D%208.69%29%20%26%20%28"
+				+ "price_change_52week%20%3E%3D%20-95.01%29%20%26%20%28"
+				+ "price_change_52week%20%3C%3D%20142%29]&restype=company&ei=lFxTVZmhHNb_mAHZiYGQCw&"
+				+ "sortas=MarketCap";
+		
+		return query;
+	}
 	
 }

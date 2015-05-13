@@ -121,6 +121,10 @@ public class Company {
     		this.market = ":MCE";
     	}else if(exchange.equalsIgnoreCase("BVMF")){
     		this.market = ":SAO";
+    	}else if(exchange.equalsIgnoreCase("EBR")){
+    		this.market = ":BRU";
+    	}else if(exchange.equalsIgnoreCase("AMS")){
+    		this.market = ":AEX";
     	}
     }
 
@@ -279,6 +283,10 @@ public class Company {
     		return "MADRID";
     	}else if(exchange.equalsIgnoreCase("BVMF")){
     		return "SAO PAULO";
+    	}else if(exchange.equalsIgnoreCase("EBR")){
+    		return "BRUSSELS";
+    	}else if(exchange.equalsIgnoreCase("AMS")){
+    		return "AMSTERDAM";
     	}
     	return "INCOGNITA";
     }

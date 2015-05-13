@@ -151,9 +151,11 @@ public class ParsingServiceImpl implements ParsingService{
 			e.printStackTrace();
 		}
 		
+		
 		String market=null;
 		if(resultSet!=null && !resultSet.isEmpty()){
 			market = resultSet.iterator().next().getExchange();
+			System.out.println("termino de parsear para market: "+market);
 			queryLog.setFechaQuery(new Date());
 			queryLog.setForecastOk(String.valueOf(resultSet.size()));
 			queryLog.setMarket(market);
