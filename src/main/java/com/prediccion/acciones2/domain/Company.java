@@ -125,6 +125,8 @@ public class Company {
     		this.market = ":BRU";
     	}else if(exchange.equalsIgnoreCase("AMS")){
     		this.market = ":AEX";
+    	}else if(exchange.equalsIgnoreCase("ASX")){
+    		this.market = ":ASX";
     	}
     }
 
@@ -287,6 +289,8 @@ public class Company {
     		return "BRUSSELS";
     	}else if(exchange.equalsIgnoreCase("AMS")){
     		return "AMSTERDAM";
+    	}else if(exchange.equalsIgnoreCase("ASX")){
+    		return "AUSTRALIA";
     	}
     	return "INCOGNITA";
     }
