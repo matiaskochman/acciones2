@@ -12,6 +12,7 @@ import java.util.regex.Pattern;
 import com.prediccion.acciones2.domain.Company;
 import com.prediccion.acciones2.domain.QueryLog;
 import com.prediccion.acciones2.exception.BusinessException;
+import com.prediccion.acciones2.filter.CompanyFilter;
 import com.prediccion.acciones2.utils.HttpConectionUtils;
 
 public class Processor implements Runnable{
@@ -207,13 +208,22 @@ public class Processor implements Runnable{
 			 this.company.setMaxForecastPercentageValue(new Double(val1)) ;
 			 this.company.setMedForecastPercentageValue(new Double(val2));
 			 this.company.setMinForecastPercentageValue(new Double(val3));
+
 			 
+			 treeSet.add(company);
+
+			 /*
 			 if(company.getMaxForecastPercentageValue()!=null||company.getMinForecastPercentageValue()!=null||company.getMedForecastPercentageValue()!=null){
 				 if(company.getMaxForecastPercentageValue().equals(company.getMinForecastPercentageValue())&&company.getMaxForecastPercentageValue().equals(company.getMedForecastPercentageValue())){
 					throw new BusinessException("3 values are equal"); 
 				 }
-				 treeSet.add(company);
+				 
+				 if(CompanyFilter.percentageForecastIntegrityValid(company)){
+				 }else{
+					throw new BusinessException("integrity of max med min percentages values broken."); 
+				 }
 			 }
+			 */
 		 }
 	}
 	

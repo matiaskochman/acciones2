@@ -11,6 +11,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.AbstractJUnit4SpringContextTests;
 
 import com.prediccion.acciones2.domain.Company;
+import com.prediccion.acciones2.filter.CompanyFilter;
 import com.prediccion.acciones2.utils.QueryBuilder;
 
 @ContextConfiguration(locations = { "/META-INF/spring/applicationContext.xml" })
@@ -74,8 +75,12 @@ public class ParsingServiceTest extends AbstractJUnit4SpringContextTests{
     	
     	
     	for (Company company : resultSet) {
-    		companyService.saveOrUpdate(company);
-			System.out.println(++count +" "+company);
+    		
+			 if(CompanyFilter.percentageForecastIntegrityValid(company)&&CompanyFilter.percentageForecastNotEquals(company)){
+				 companyService.saveOrUpdate(company);
+				 System.out.println(++count +" "+company);
+			 }
+    		
 		}
     	
     }
