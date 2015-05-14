@@ -302,5 +302,33 @@ public class QueryBuilder {
 		
 		return query;
 	}
-	
+	public static String buildQueryForAustralia(String numberOfCompanies){
+		
+    	String num=null;
+    	if(numberOfCompanies==null){
+    		num="10";
+    	}else{
+    		num=numberOfCompanies;
+    	}
+    	
+    	String marketCapitalFrom = "1000000";		
+		String query = "https://www.google.com/finance?output=json&"
+				+ "start=0"
+				+ "&num="+num
+				+ "&noIL=1&q=["
+				+ "currency%20%3D%3D%20%22AUD%22%20%26%20%28"
+				+ "exchange%20%3D%3D%20%22ASX%22%29%20%26%20%28"
+				+ "market_cap%20%3E%3D%20"+marketCapitalFrom
+				+ "%29%20%26%20%28"
+				+ "market_cap%20%3C%3D%20166770000000%29%20%26%20%28"
+				+ "pe_ratio%20%3E%3D%200%29%20%26%20%28"
+				+ "pe_ratio%20%3C%3D%203161%29%20%26%20%28"
+				+ "dividend_yield%20%3E%3D%200%29%20%26%20%28"
+				+ "dividend_yield%20%3C%3D%2040.93%29%20%26%20%28"
+				+ "price_change_52week%20%3E%3D%20-97.93%29%20%26%20%28"
+				+ "price_change_52week%20%3C%3D%2063901%29]&restype=company&ei=YIRUVYj2OeCEeZrHgIAC&"
+				+ "sortas=MarketCap";
+		
+		return query;
+	}
 }
