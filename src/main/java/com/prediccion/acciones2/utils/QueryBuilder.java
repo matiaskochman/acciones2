@@ -331,4 +331,36 @@ public class QueryBuilder {
 		
 		return query;
 	}
+	
+	
+	public static String buildQueryForNewZeland(String numberOfCompanies){
+		
+    	String num=null;
+    	if(numberOfCompanies==null){
+    		num="10";
+    	}else{
+    		num=numberOfCompanies;
+    	}
+    	
+    	String marketCapitalFrom = "1000000";			
+		
+		String query ="https://www.google.com/finance?output=json&start=0&"
+				+ "num="+num
+				+ "&noIL=1&q=["
+				+ "currency%20%3D%3D%20%22NZD%22%20%26%20%28"
+				+ "exchange%20%3D%3D%20%22NZE%22%29%20%26%20%28"
+				+ "market_cap%20%3E%3D%20"+marketCapitalFrom
+				+ "%29%20%26%20%28"
+				+ "market_cap%20%3C%3D%207970000000%29%20%26%20%28"
+				+ "pe_ratio%20%3E%3D%200%29%20%26%20%28"
+				+ "pe_ratio%20%3C%3D%20578%29%20%26%20%28"
+				+ "dividend_yield%20%3E%3D%200%29%20%26%20%28"
+				+ "dividend_yield%20%3C%3D%2015.14%29%20%26%20%28"
+				+ "price_change_52week%20%3E%3D%20-94.97%29%20%26%20%28"
+				+ "price_change_52week%20%3C%3D%20512%29]&restype=company&ei=TSlVVbnDG4eVe_mogcAB&"
+				+ "sortas=MarketCap";
+	
+		
+		return query;
+	}
 }

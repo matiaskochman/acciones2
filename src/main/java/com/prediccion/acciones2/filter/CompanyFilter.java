@@ -3,7 +3,6 @@ package com.prediccion.acciones2.filter;
 import com.prediccion.acciones2.domain.Company;
 
 public class CompanyFilter {
-
 	public static Boolean percentageForecastIntegrityValid(Company c){
 		if(c.getMaxForecastPercentageValue()!=null && c.getMedForecastPercentageValue()!=null){
 			if(c.getMaxForecastPercentageValue()<c.getMedForecastPercentageValue()){

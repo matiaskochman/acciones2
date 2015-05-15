@@ -127,6 +127,8 @@ public class Company {
     		this.market = ":AEX";
     	}else if(exchange.equalsIgnoreCase("ASX")){
     		this.market = ":ASX";
+    	}else if(exchange.equalsIgnoreCase("NZE")){
+    		this.market = ":NZC";
     	}
     }
 
@@ -291,6 +293,8 @@ public class Company {
     		return "AMSTERDAM";
     	}else if(exchange.equalsIgnoreCase("ASX")){
     		return "AUSTRALIA";
+    	}else if(exchange.equalsIgnoreCase("NZE")){
+    		return "NEW ZELAND";
     	}
     	return "INCOGNITA";
     }
