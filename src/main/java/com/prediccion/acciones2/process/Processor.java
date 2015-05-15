@@ -12,8 +12,8 @@ import java.util.regex.Pattern;
 import com.prediccion.acciones2.domain.Company;
 import com.prediccion.acciones2.domain.QueryLog;
 import com.prediccion.acciones2.exception.BusinessException;
-import com.prediccion.acciones2.filter.CompanyFilter;
 import com.prediccion.acciones2.utils.HttpConectionUtils;
+import com.prediccion.acciones2.utils.ParsingUtils;
 
 public class Processor implements Runnable{
 	QueryLog queryLog;
@@ -21,22 +21,17 @@ public class Processor implements Runnable{
 	CountDownLatch countDownLatch;
 	Company company;
 	String data;
-	Pattern forecast_porcentaje_pattern = Pattern.compile("-*\\d+(.)\\d*\\s*%");
-	Pattern forecast_valores_pattern = Pattern.compile("\\\"td\\\":\\[\\\"\\d+(?:.\\d+)\\\".\"\\d+(?:.\\d+)\\\".\"\\d+(?:.\\d+)\\\"\\]");
 	//Pattern precio_accion_pattern = Pattern.compile("results\\\":\\{\\\"span\\\":\\[\\\"\\d+(.)\\d+");
 	//Pattern precio_accion_pattern = Pattern.compile("lastPrice.{37}\\\"content\\\":\\\"\\d+(?:.\\d+)\\\"");
-	Pattern precio_accion_pattern = Pattern.compile("lastPrice.{37}\\\"content\\\":\\\"\\d+(?:.\\d+)\\\"|\\\"results\\\":.{8}\\[\\\"\\d+(?:.\\d+)\\\"");
-	Pattern volumen_negociado = Pattern.compile("volume_magnitude\\\".\\\"content\\\":\\\"\\d+(?:.\\d*)[km]");
 	
 	
-	final String common = "\\\"}..\\\"class\\\":\\\"value\\\",((\\\"style\\\":\\\"color:.........\\\",\\\"content\\\":\\\"\\d+)|(\\\"content\\\":\\\"\\d+))";
 	
-	Pattern recomendacion_buy = Pattern.compile("Buy"+common);
-	Pattern recomendacion_outperform = Pattern.compile("Outperform"+common);
-	Pattern recomendacion_hold = Pattern.compile("Hold"+common);
-	Pattern recomendacion_underperform = Pattern.compile("Underperform"+common);
-	Pattern recomendacion_sell = Pattern.compile("Underperform"+common);
-	Pattern recomendacion_no_opinion = Pattern.compile("No opinion"+common);
+	Pattern recomendacion_buy = Pattern.compile("Buy"+ParsingUtils.common);
+	Pattern recomendacion_outperform = Pattern.compile("Outperform"+ParsingUtils.common);
+	Pattern recomendacion_hold = Pattern.compile("Hold"+ParsingUtils.common);
+	Pattern recomendacion_underperform = Pattern.compile("Underperform"+ParsingUtils.common);
+	Pattern recomendacion_sell = Pattern.compile("Underperform"+ParsingUtils.common);
+	Pattern recomendacion_no_opinion = Pattern.compile("No opinion"+ParsingUtils.common);
 			
 	TreeSet<Company> treeSet;
 
@@ -154,7 +149,7 @@ public class Processor implements Runnable{
 	
 	
 	private void extract_forecast_porcentaje() throws Exception {
-		Matcher m = forecast_porcentaje_pattern.matcher(data);
+		Matcher m = ParsingUtils.forecast_porcentaje_pattern.matcher(data);
 		 int start1 = 0;
 		 int start2 = 0;
 		 int start3 = 0;
@@ -231,21 +226,37 @@ public class Processor implements Runnable{
 	public void run() {
 		try {
 			
-			final String precioAccion = "//div[@class=\"contains wsodModuleContent\"]/table/tbody/tr/td[1]/span"; 
-			final String porcentajeForecast = "//table[@class=\"fright\"]/tbody/tr/td[2]/span";
-			final String sharesTraded = "//div[@class=\"contains wsodModuleContent\"]/table/tbody/tr/td[3]/span";
-			final String valoresForecast = "//table[@class=\"fright\"]/tbody/tr/td[3]";
+			StringBuffer sb = new StringBuffer();
 			
-			final String latestRecomendations = "//div[@class=\"wsodRecommendationRating wsodModuleLastInGridColumn\"]/table";
-					
 			String baseUrl = "http://query.yahooapis.com/v1/public/yql?q=";
 			
 			final String financialTimes = "http://markets.ft.com/research/Markets/Tearsheets/Forecasts?s="+this.company.getTicker()+this.company.getMarket();
-			final String yql ="select * from html where url='"+financialTimes+"' "+"and xpath='"+porcentajeForecast+"|"+latestRecomendations+"|"+precioAccion+""
-					+ "|"+sharesTraded+"|"+valoresForecast+"'"; 
+			final String yql ="select * from html where url='"+financialTimes+"' "+"and xpath='"+ParsingUtils.porcentajeForecast+"|"+ParsingUtils.latestRecomendations+"|"+ParsingUtils.precioAccion+""
+					+ "|"+ParsingUtils.sharesTraded+"|"+ParsingUtils.valoresForecast+"'"; 
 			
 			
-			final String fullUrlStr = baseUrl + URLEncoder.encode(yql, "UTF-8") + "&format=json";
+			//sb.append(financialTimes);
+			sb.append("select * from html where url='");
+			sb.append(financialTimes);
+			sb.append("' ");
+			sb.append("and xpath='");
+			sb.append(ParsingUtils.porcentajeForecast);
+			sb.append("|");
+			sb.append(ParsingUtils.latestRecomendations);
+			sb.append("|");
+			sb.append(ParsingUtils.precioAccion);
+			sb.append("|");
+			sb.append(ParsingUtils.sharesTraded);
+			sb.append("|");
+			sb.append(ParsingUtils.valoresForecast);
+			//sb.append("|");
+			//sb.append(ParsingUtils.latestRecomentations_buy);
+			sb.append("'");
+			
+			
+			
+			//final String fullUrlStr = baseUrl + URLEncoder.encode(yql, "UTF-8") + "&format=json";
+			final String fullUrlStr = baseUrl + URLEncoder.encode(sb.toString(), "UTF-8") + "&format=json";
 			
 			System.out.println(fullUrlStr);
 			
@@ -258,8 +269,8 @@ public class Processor implements Runnable{
 			"countdownlatch: "+countDownLatch.getCount());
 			}
 			
-			extract_forecast_valoresAbsolutos(forecast_valores_pattern);
-			company.setStockValue(extract_precio_accion(precio_accion_pattern));
+			extract_forecast_valoresAbsolutos(ParsingUtils.forecast_valores_pattern);
+			company.setStockValue(extract_precio_accion(ParsingUtils.precio_accion_pattern));
 			
 			company.setRecomendacionBuy(extract_recomendacion(recomendacion_buy));
 			company.setRecomendacionOutPerform(extract_recomendacion(recomendacion_outperform));
@@ -268,7 +279,7 @@ public class Processor implements Runnable{
 			company.setRecomendacionSell(extract_recomendacion(recomendacion_sell));
 			company.setRecomendacionNoOpinion(extract_recomendacion(recomendacion_no_opinion));
 			company.generateOpinionAverage();
-			company.setVolumenNegociado(extract_volumen_negociado(volumen_negociado));
+			company.setVolumenNegociado(extract_volumen_negociado(ParsingUtils.volumen_negociado));
 			company.setFechaCreacion(cal.getTime());
 			
 			
