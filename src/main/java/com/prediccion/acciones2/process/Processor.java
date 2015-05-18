@@ -249,8 +249,8 @@ public class Processor implements Runnable{
 			sb.append(ParsingUtils.sharesTraded);
 			sb.append("|");
 			sb.append(ParsingUtils.valoresForecast);
-			//sb.append("|");
-			//sb.append(ParsingUtils.latestRecomentations_buy);
+			sb.append("|");
+			sb.append(ParsingUtils.latestRecomentations_buy);
 			sb.append("'");
 			
 			

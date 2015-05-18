@@ -15,5 +15,5 @@ public class ParsingUtils {
 	
 	public static final String latestRecomendations = "//div[@class=\"wsodRecommendationRating wsodModuleLastInGridColumn\"]/table";
 
-	public static final String latestRecomentations_buy = "//<div class='recommendationsPopup'>.*Buy</td><td class='value'>\\d*";
+	public static final String latestRecomentations_buy = "//body/script[text()[contains(.,\"Last year\")]]";
 }
