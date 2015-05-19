@@ -95,7 +95,19 @@ public class Company {
     private String companyId;
     @Column
     private String localCurrencySymbol;
-
+    @Column
+    private Double recomendacionAverage_last_year;
+    @Column
+    private Integer recomendacionBuy_last_year;
+    @Column
+    private Integer recomendacionOutPerform_last_year;
+    @Column
+    private Integer recomendacionHold_last_year;
+    @Column
+    private Integer recomendacionUnderPerform_last_year;
+    @Column
+    private Integer recomendacionSell_last_year;
+    
     public void setMarket(String exchange){
     	if(exchange.equalsIgnoreCase("NYSE")){
     		this.market = ":NYQ";
@@ -193,6 +205,15 @@ public class Company {
 		}
 		
 	}
+	public void generateOpinionAverage_last_year(){
+		if(recomendacionBuy_last_year!=null||recomendacionUnderPerform_last_year!=null||recomendacionOutPerform_last_year!=null||recomendacionSell_last_year!=null){
+			this.recomendacionAverage_last_year = recomendacionOutPerform_last_year.doubleValue() 
+					+recomendacionBuy_last_year.doubleValue()*1.5D
+					- recomendacionUnderPerform_last_year.doubleValue()
+					- recomendacionSell_last_year.doubleValue()*1.5D; 
+		}
+		
+	}
 	
     public Integer getRecomendacionBuy() {
         return this.recomendacionBuy;
@@ -247,13 +268,20 @@ public class Company {
 				+ ", maxPVal=" + maxForecastPercentageValue+"%"
 				+ ", medPVal=" + medForecastPercentageValue+"%"
 				+ ", minPVal=" + minForecastPercentageValue+"%"
-				+ ", p52W=" + price52WeekPercChange
 				+ ", Average=" + recomendacionAverage
+				+ ", Average_last_Y=" + recomendacionAverage_last_year
+				+ ", p52W=" + price52WeekPercChange
 				+ ", Buy=" + recomendacionBuy
 				+ ", OutPerform=" + recomendacionOutPerform
 				+ ", Hold=" + recomendacionHold
 				+ ", UnderPerform=" + recomendacionUnderPerform
-				+ ", Sell=" + recomendacionSell
+				+ ", Sell_last_Y=" + recomendacionSell_last_year
+				+ ", Buy_last_Y=" + recomendacionBuy_last_year
+				+ ", OutPerform_last_Y=" + recomendacionOutPerform_last_year
+				+ ", Hold_last_Y=" + recomendacionHold_last_year
+				+ ", UnderPerform_last_Y=" + recomendacionUnderPerform_last_year
+				+ ", Sell_last_Y=" + recomendacionSell_last_year
+				
 				+ ", volNegociado=" + volumenNegociado + ", fechaCreacion="
 				+ dateFormatted;
 	}

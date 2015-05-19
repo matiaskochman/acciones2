@@ -147,6 +147,70 @@ public class Processor implements Runnable{
 		
 	}
 	
+	private void extract_recommendationsPopup_lastYear() throws Exception {
+		Matcher m = ParsingUtils.recomendations_popup_last_year.matcher(data);
+		 int start1 = 0;
+		 int end1 = 0;
+
+		 if(m.find()){
+			 start1 = m.start();
+			 end1 = m.end();
+			 String val1 = data.substring(start1, end1);
+			 
+			 if(val1!=null && !val1.equals("")){
+				 Matcher m_buy = ParsingUtils.recomentations_last_year_buy.matcher(val1);		 
+				 Matcher m_hold = ParsingUtils.recomentations_last_year_hold.matcher(val1);		 
+				 Matcher m_outperform = ParsingUtils.recomentations_last_year_outperform.matcher(val1);		 
+				 Matcher m_sell = ParsingUtils.recomentations_last_year_sell.matcher(val1);		 
+				 Matcher m_underperform = ParsingUtils.recomentations_last_year_underperform.matcher(val1);		 
+				 
+				 if(m_buy.find()){
+					 String buy_string = val1.substring(m_buy.start(), m_buy.end());
+					 
+					 Matcher number_matcher = ParsingUtils.number.matcher(buy_string);
+					 
+					 if(number_matcher.find()){
+						 company.setRecomendacionBuy_last_year(Integer.valueOf(buy_string.substring(number_matcher.start(), number_matcher.end())));
+					 }
+				 }
+				 if(m_hold.find()){
+					 String hold_string = val1.substring(m_hold.start(), m_hold.end());
+					 
+					 Matcher number_matcher = ParsingUtils.number.matcher(hold_string);
+					 
+					 if(number_matcher.find()){
+						 company.setRecomendacionHold_last_year(Integer.valueOf(hold_string.substring(number_matcher.start(), number_matcher.end())));
+					 }
+				 }
+				 if(m_outperform.find()){
+					 String outperform_string = val1.substring(m_outperform.start(), m_outperform.end());
+					 Matcher number_matcher = ParsingUtils.number.matcher(outperform_string);
+					 if(number_matcher.find()){
+						 company.setRecomendacionOutPerform_last_year(Integer.valueOf(outperform_string.substring(number_matcher.start(), number_matcher.end())));
+					 }
+					 
+				 }
+				 if(m_sell.find()){
+					 String sell_string = val1.substring(m_sell.start(), m_sell.end());
+					 Matcher number_matcher = ParsingUtils.number.matcher(sell_string);
+					 if(number_matcher.find()){
+						 company.setRecomendacionSell_last_year(Integer.valueOf(sell_string.substring(number_matcher.start(), number_matcher.end())));
+					 }
+				 }
+				 if(m_underperform.find()){
+					 String underperform_string = val1.substring(m_underperform.start(), m_underperform.end());
+					 Matcher number_matcher = ParsingUtils.number.matcher(underperform_string);
+					 if(number_matcher.find()){
+						 company.setRecomendacionUnderPerform_last_year(Integer.valueOf(underperform_string.substring(number_matcher.start(), number_matcher.end())));
+					 }
+				 }
+				 
+			 }
+		 }
+		 
+		 company.generateOpinionAverage_last_year();
+		
+	}
 	
 	private void extract_forecast_porcentaje() throws Exception {
 		Matcher m = ParsingUtils.forecast_porcentaje_pattern.matcher(data);
@@ -231,11 +295,7 @@ public class Processor implements Runnable{
 			String baseUrl = "http://query.yahooapis.com/v1/public/yql?q=";
 			
 			final String financialTimes = "http://markets.ft.com/research/Markets/Tearsheets/Forecasts?s="+this.company.getTicker()+this.company.getMarket();
-			final String yql ="select * from html where url='"+financialTimes+"' "+"and xpath='"+ParsingUtils.porcentajeForecast+"|"+ParsingUtils.latestRecomendations+"|"+ParsingUtils.precioAccion+""
-					+ "|"+ParsingUtils.sharesTraded+"|"+ParsingUtils.valoresForecast+"'"; 
 			
-			
-			//sb.append(financialTimes);
 			sb.append("select * from html where url='");
 			sb.append(financialTimes);
 			sb.append("' ");
@@ -253,9 +313,6 @@ public class Processor implements Runnable{
 			sb.append(ParsingUtils.latestRecomentations_buy);
 			sb.append("'");
 			
-			
-			
-			//final String fullUrlStr = baseUrl + URLEncoder.encode(yql, "UTF-8") + "&format=json";
 			final String fullUrlStr = baseUrl + URLEncoder.encode(sb.toString(), "UTF-8") + "&format=json";
 			
 			System.out.println(fullUrlStr);
@@ -263,6 +320,8 @@ public class Processor implements Runnable{
 			data = HttpConectionUtils.getData(fullUrlStr);
 			
 			extract_forecast_porcentaje();
+			
+			extract_recommendationsPopup_lastYear();
 			
 			if(company.getMinForecastPercentageValue()==null){
 				throw new BusinessException("no pudo parsear los valores de forecast para "+company.getTicker()+":"+company.getExchange()+" "+
@@ -281,6 +340,8 @@ public class Processor implements Runnable{
 			company.generateOpinionAverage();
 			company.setVolumenNegociado(extract_volumen_negociado(ParsingUtils.volumen_negociado));
 			company.setFechaCreacion(cal.getTime());
+			
+			
 			
 			
 			System.out.println("equity symbol: "+company.getTicker()+":"+company.getMarket()+"   "+data);
