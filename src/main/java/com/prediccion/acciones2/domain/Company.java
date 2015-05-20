@@ -10,6 +10,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 
+import org.dozer.Mapping;
 import org.joda.time.DateTime;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.roo.addon.javabean.RooJavaBean;
@@ -45,67 +46,98 @@ public class Company {
 	
     @NotNull
     @Column(unique = true)
+    @Mapping("title")
     private String title;
     @NotNull
+    @Mapping("ticker")
     private String ticker;
     @NotNull
+    @Mapping("market")
     private String market;
     @Column
+    @Mapping("stockValue")
     private Double stockValue;
     @Column
+    @Mapping("maxForecastPercentageValue")
     private Double maxForecastPercentageValue;
     @Column
+    @Mapping("medForecastPercentageValue")
     private Double medForecastPercentageValue;
     @Column
+    @Mapping("minForecastPercentageValue")
     private Double minForecastPercentageValue;
     @Column
+    @Mapping("maxForecastValue")
     private Double maxForecastValue;
     @Column
+    @Mapping("medForecastValue")
     private Double medForecastValue;
     @Column
+    @Mapping("minForecastValue")
     private Double minForecastValue;
     @Column
+    @Mapping("ticker")
     private Double price52WeekPercChange;
     @Column
+    @Mapping("recomendacionAverage")
     private Double recomendacionAverage;
     @Column
+    @Mapping("recomendacionBuy")
     private Integer recomendacionBuy;
     @Column
+    @Mapping("recomendacionOutPerform")
     private Integer recomendacionOutPerform;
     @Column
+    @Mapping("recomendacionHold")
     private Integer recomendacionHold;
     @Column
+    @Mapping("recomendacionUnderPerform")
     private Integer recomendacionUnderPerform;
     @Column
+    @Mapping("recomendacionSell")
     private Integer recomendacionSell;
     @Column
+    @Mapping("recomendacionNoOpinion")
     private Integer recomendacionNoOpinion;
     @Column
+    @Mapping("volumenNegociado")
     private String volumenNegociado;
     @Temporal(TemporalType.TIMESTAMP)
     @DateTimeFormat(pattern = "dd/MM/yyyy")
+    @Mapping("fechaCreacion")
     private Date fechaCreacion;
     @Column
+    @Mapping("marketCap")
     private Double marketCap;
     @Column
+    @Mapping("pe")
     private Double pe;
     @NotNull
+    @Mapping("exchange")
     private String exchange;
     @Column(unique = true)
+    @Mapping("companyId")
     private String companyId;
     @Column
+    @Mapping("localCurrencySymbol")
     private String localCurrencySymbol;
     @Column
+    @Mapping("recomendacionAverage_last_year")
     private Double recomendacionAverage_last_year;
     @Column
+    @Mapping("recomendacionBuy_last_year")
     private Integer recomendacionBuy_last_year;
     @Column
+    @Mapping("recomendacionOutPerform_last_year")
     private Integer recomendacionOutPerform_last_year;
     @Column
+    @Mapping("recomendacionHold_last_year")
     private Integer recomendacionHold_last_year;
     @Column
+    @Mapping("recomendacionUnderPerform_last_year")
     private Integer recomendacionUnderPerform_last_year;
     @Column
+    @Mapping("recomendacionSell_last_year")
     private Integer recomendacionSell_last_year;
     
     public void setMarket(String exchange){
@@ -141,6 +173,12 @@ public class Company {
     		this.market = ":ASX";
     	}else if(exchange.equalsIgnoreCase("NZE")){
     		this.market = ":NZC";
+    	}else if(exchange.equalsIgnoreCase("TPE")){
+    		this.market = ":TAI";
+    	}else if(exchange.equalsIgnoreCase("SGX")){
+    		this.market = ":SES";
+    	}else if(exchange.equalsIgnoreCase("TYO")){
+    		this.market = ":TYO";
     	}
     }
 
@@ -323,6 +361,12 @@ public class Company {
     		return "AUSTRALIA";
     	}else if(exchange.equalsIgnoreCase("NZE")){
     		return "NEW ZELAND";
+    	}else if(exchange.equalsIgnoreCase("TPE")){
+    		return "TAIWAN";
+    	}else if(exchange.equalsIgnoreCase("SGX")){
+    		return "SINGAPORE";
+    	}else if(exchange.equalsIgnoreCase("TYO")){
+    		return "TOKYO";
     	}
     	return "INCOGNITA";
     }

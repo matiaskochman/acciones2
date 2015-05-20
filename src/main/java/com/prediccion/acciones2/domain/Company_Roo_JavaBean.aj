@@ -164,4 +164,52 @@ privileged aspect Company_Roo_JavaBean {
         this.localCurrencySymbol = localCurrencySymbol;
     }
     
+    public Double Company.getRecomendacionAverage_last_year() {
+        return this.recomendacionAverage_last_year;
+    }
+    
+    public void Company.setRecomendacionAverage_last_year(Double recomendacionAverage_last_year) {
+        this.recomendacionAverage_last_year = recomendacionAverage_last_year;
+    }
+    
+    public Integer Company.getRecomendacionBuy_last_year() {
+        return this.recomendacionBuy_last_year;
+    }
+    
+    public void Company.setRecomendacionBuy_last_year(Integer recomendacionBuy_last_year) {
+        this.recomendacionBuy_last_year = recomendacionBuy_last_year;
+    }
+    
+    public Integer Company.getRecomendacionOutPerform_last_year() {
+        return this.recomendacionOutPerform_last_year;
+    }
+    
+    public void Company.setRecomendacionOutPerform_last_year(Integer recomendacionOutPerform_last_year) {
+        this.recomendacionOutPerform_last_year = recomendacionOutPerform_last_year;
+    }
+    
+    public Integer Company.getRecomendacionHold_last_year() {
+        return this.recomendacionHold_last_year;
+    }
+    
+    public void Company.setRecomendacionHold_last_year(Integer recomendacionHold_last_year) {
+        this.recomendacionHold_last_year = recomendacionHold_last_year;
+    }
+    
+    public Integer Company.getRecomendacionUnderPerform_last_year() {
+        return this.recomendacionUnderPerform_last_year;
+    }
+    
+    public void Company.setRecomendacionUnderPerform_last_year(Integer recomendacionUnderPerform_last_year) {
+        this.recomendacionUnderPerform_last_year = recomendacionUnderPerform_last_year;
+    }
+    
+    public Integer Company.getRecomendacionSell_last_year() {
+        return this.recomendacionSell_last_year;
+    }
+    
+    public void Company.setRecomendacionSell_last_year(Integer recomendacionSell_last_year) {
+        this.recomendacionSell_last_year = recomendacionSell_last_year;
+    }
+    
 }

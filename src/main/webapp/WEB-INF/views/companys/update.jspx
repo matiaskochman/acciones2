@@ -29,5 +29,11 @@
         <field:input field="maxForecastValue" id="c_com_prediccion_acciones2_domain_Company_maxForecastValue" validationMessageCode="field_invalid_number" z="pIJPOLevDwKE+umE49+6r+fz7eM="/>
         <field:input field="medForecastValue" id="c_com_prediccion_acciones2_domain_Company_medForecastValue" validationMessageCode="field_invalid_number" z="PDp1AtZPK8mqCPOV93cK7ncZ3NU="/>
         <field:input field="minForecastValue" id="c_com_prediccion_acciones2_domain_Company_minForecastValue" validationMessageCode="field_invalid_number" z="5CYa2aZpAnXMvwheh71kEghCu9Q="/>
+        <field:input field="recomendacionAverage_last_year" id="c_com_prediccion_acciones2_domain_Company_recomendacionAverage_last_year" validationMessageCode="field_invalid_number" z="MR7d1O/h6pQTHkE1rrjPug59lz0="/>
+        <field:input field="recomendacionBuy_last_year" id="c_com_prediccion_acciones2_domain_Company_recomendacionBuy_last_year" validationMessageCode="field_invalid_integer" z="JGLAZtl4Ym5TLu6iTBAUeoVi6I0="/>
+        <field:input field="recomendacionOutPerform_last_year" id="c_com_prediccion_acciones2_domain_Company_recomendacionOutPerform_last_year" validationMessageCode="field_invalid_integer" z="CHrO6SLlz79/cR6V6N3lBn3PqNE="/>
+        <field:input field="recomendacionHold_last_year" id="c_com_prediccion_acciones2_domain_Company_recomendacionHold_last_year" validationMessageCode="field_invalid_integer" z="inV502L2PYyC3JxBGEtZu8xxlIQ="/>
+        <field:input field="recomendacionUnderPerform_last_year" id="c_com_prediccion_acciones2_domain_Company_recomendacionUnderPerform_last_year" validationMessageCode="field_invalid_integer" z="nRtI0dM4P+doflKKeC6W5xAeUHM="/>
+        <field:input field="recomendacionSell_last_year" id="c_com_prediccion_acciones2_domain_Company_recomendacionSell_last_year" validationMessageCode="field_invalid_integer" z="OhuaPu9b7QCQaxPDLIbkhMrLn7g="/>
     </form:update>
 </div>

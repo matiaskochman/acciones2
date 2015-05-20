@@ -14,7 +14,7 @@ privileged aspect CompanyHistoric_Roo_Jpa_ActiveRecord {
     @PersistenceContext
     transient EntityManager CompanyHistoric.entityManager;
     
-    public static final List<String> CompanyHistoric.fieldNames4OrderClauseFilter = java.util.Arrays.asList("title", "ticker", "market", "stockValue", "maxForecastPercentageValue", "medForecastPercentageValue", "minForecastPercentageValue", "price52WeekPercChange", "recomendacionAverage", "recomendacionBuy", "recomendacionOutPerform", "recomendacionHold", "recomendacionUnderPerform", "recomendacionSell", "recomendacionNoOpinion", "volumenNegociado", "fechaCreacion", "marketCap", "pe", "exchange", "companyId", "localCurrencySymbol");
+    public static final List<String> CompanyHistoric.fieldNames4OrderClauseFilter = java.util.Arrays.asList("title", "ticker", "market", "stockValue", "maxForecastPercentageValue", "medForecastPercentageValue", "minForecastPercentageValue", "maxForecastValue", "medForecastValue", "minForecastValue", "price52WeekPercChange", "recomendacionAverage", "recomendacionBuy", "recomendacionOutPerform", "recomendacionHold", "recomendacionUnderPerform", "recomendacionSell", "recomendacionNoOpinion", "volumenNegociado", "fechaCreacion", "marketCap", "pe", "exchange", "companyId", "localCurrencySymbol", "recomendacionAverage_last_year", "recomendacionBuy_last_year", "recomendacionOutPerform_last_year", "recomendacionHold_last_year", "recomendacionUnderPerform_last_year", "recomendacionSell_last_year");
     
     public static final EntityManager CompanyHistoric.entityManager() {
         EntityManager em = new CompanyHistoric().entityManager;

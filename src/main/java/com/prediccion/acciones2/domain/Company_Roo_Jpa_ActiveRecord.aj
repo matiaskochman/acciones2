@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 privileged aspect Company_Roo_Jpa_ActiveRecord {
     
-    public static final List<String> Company.fieldNames4OrderClauseFilter = java.util.Arrays.asList("entityManager", "title", "ticker", "market", "stockValue", "maxForecastPercentageValue", "medForecastPercentageValue", "minForecastPercentageValue", "maxForecastValue", "medForecastValue", "minForecastValue", "price52WeekPercChange", "recomendacionAverage", "recomendacionBuy", "recomendacionOutPerform", "recomendacionHold", "recomendacionUnderPerform", "recomendacionSell", "recomendacionNoOpinion", "volumenNegociado", "fechaCreacion", "marketCap", "pe", "exchange", "companyId", "localCurrencySymbol");
+    public static final List<String> Company.fieldNames4OrderClauseFilter = java.util.Arrays.asList("entityManager", "title", "ticker", "market", "stockValue", "maxForecastPercentageValue", "medForecastPercentageValue", "minForecastPercentageValue", "maxForecastValue", "medForecastValue", "minForecastValue", "price52WeekPercChange", "recomendacionAverage", "recomendacionBuy", "recomendacionOutPerform", "recomendacionHold", "recomendacionUnderPerform", "recomendacionSell", "recomendacionNoOpinion", "volumenNegociado", "fechaCreacion", "marketCap", "pe", "exchange", "companyId", "localCurrencySymbol", "recomendacionAverage_last_year", "recomendacionBuy_last_year", "recomendacionOutPerform_last_year", "recomendacionHold_last_year", "recomendacionUnderPerform_last_year", "recomendacionSell_last_year");
     
     public static final EntityManager Company.entityManager() {
         EntityManager em = new Company().entityManager;

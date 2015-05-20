@@ -29,5 +29,11 @@
         <field:display field="maxForecastValue" id="s_com_prediccion_acciones2_domain_Company_maxForecastValue" object="${company}" z="pNhQaMbBI5DUFoBLt3/USNOLidY="/>
         <field:display field="medForecastValue" id="s_com_prediccion_acciones2_domain_Company_medForecastValue" object="${company}" z="RKRC4IX7/jjcmTD3cvHTy/8FZT0="/>
         <field:display field="minForecastValue" id="s_com_prediccion_acciones2_domain_Company_minForecastValue" object="${company}" z="1LzNMszUZ/pOV7m6vWCIfmi4oGQ="/>
+        <field:display field="recomendacionAverage_last_year" id="s_com_prediccion_acciones2_domain_Company_recomendacionAverage_last_year" object="${company}" z="aDOpTw3KyG9HE83Z5fgp0xhFZJE="/>
+        <field:display field="recomendacionBuy_last_year" id="s_com_prediccion_acciones2_domain_Company_recomendacionBuy_last_year" object="${company}" z="XHPIVkKtQjnmhxNrTQIXLwXrd08="/>
+        <field:display field="recomendacionOutPerform_last_year" id="s_com_prediccion_acciones2_domain_Company_recomendacionOutPerform_last_year" object="${company}" z="j0Vwhx/Xwb5yEfvhO+3NuBOLsYE="/>
+        <field:display field="recomendacionHold_last_year" id="s_com_prediccion_acciones2_domain_Company_recomendacionHold_last_year" object="${company}" z="MBX612CwXUVBBZJEUJFKIH8Brto="/>
+        <field:display field="recomendacionUnderPerform_last_year" id="s_com_prediccion_acciones2_domain_Company_recomendacionUnderPerform_last_year" object="${company}" z="wcGMiT+lYQ2X+mG1n6oBe3HObOM="/>
+        <field:display field="recomendacionSell_last_year" id="s_com_prediccion_acciones2_domain_Company_recomendacionSell_last_year" object="${company}" z="/8BNvqLakuOm3JDrP39hMKPmXrw="/>
     </page:show>
 </div>

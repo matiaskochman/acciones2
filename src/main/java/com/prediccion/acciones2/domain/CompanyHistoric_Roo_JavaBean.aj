@@ -64,6 +64,30 @@ privileged aspect CompanyHistoric_Roo_JavaBean {
         this.minForecastPercentageValue = minForecastPercentageValue;
     }
     
+    public Double CompanyHistoric.getMaxForecastValue() {
+        return this.maxForecastValue;
+    }
+    
+    public void CompanyHistoric.setMaxForecastValue(Double maxForecastValue) {
+        this.maxForecastValue = maxForecastValue;
+    }
+    
+    public Double CompanyHistoric.getMedForecastValue() {
+        return this.medForecastValue;
+    }
+    
+    public void CompanyHistoric.setMedForecastValue(Double medForecastValue) {
+        this.medForecastValue = medForecastValue;
+    }
+    
+    public Double CompanyHistoric.getMinForecastValue() {
+        return this.minForecastValue;
+    }
+    
+    public void CompanyHistoric.setMinForecastValue(Double minForecastValue) {
+        this.minForecastValue = minForecastValue;
+    }
+    
     public Double CompanyHistoric.getPrice52WeekPercChange() {
         return this.price52WeekPercChange;
     }
@@ -182,6 +206,54 @@ privileged aspect CompanyHistoric_Roo_JavaBean {
     
     public void CompanyHistoric.setLocalCurrencySymbol(String localCurrencySymbol) {
         this.localCurrencySymbol = localCurrencySymbol;
+    }
+    
+    public Double CompanyHistoric.getRecomendacionAverage_last_year() {
+        return this.recomendacionAverage_last_year;
+    }
+    
+    public void CompanyHistoric.setRecomendacionAverage_last_year(Double recomendacionAverage_last_year) {
+        this.recomendacionAverage_last_year = recomendacionAverage_last_year;
+    }
+    
+    public Integer CompanyHistoric.getRecomendacionBuy_last_year() {
+        return this.recomendacionBuy_last_year;
+    }
+    
+    public void CompanyHistoric.setRecomendacionBuy_last_year(Integer recomendacionBuy_last_year) {
+        this.recomendacionBuy_last_year = recomendacionBuy_last_year;
+    }
+    
+    public Integer CompanyHistoric.getRecomendacionOutPerform_last_year() {
+        return this.recomendacionOutPerform_last_year;
+    }
+    
+    public void CompanyHistoric.setRecomendacionOutPerform_last_year(Integer recomendacionOutPerform_last_year) {
+        this.recomendacionOutPerform_last_year = recomendacionOutPerform_last_year;
+    }
+    
+    public Integer CompanyHistoric.getRecomendacionHold_last_year() {
+        return this.recomendacionHold_last_year;
+    }
+    
+    public void CompanyHistoric.setRecomendacionHold_last_year(Integer recomendacionHold_last_year) {
+        this.recomendacionHold_last_year = recomendacionHold_last_year;
+    }
+    
+    public Integer CompanyHistoric.getRecomendacionUnderPerform_last_year() {
+        return this.recomendacionUnderPerform_last_year;
+    }
+    
+    public void CompanyHistoric.setRecomendacionUnderPerform_last_year(Integer recomendacionUnderPerform_last_year) {
+        this.recomendacionUnderPerform_last_year = recomendacionUnderPerform_last_year;
+    }
+    
+    public Integer CompanyHistoric.getRecomendacionSell_last_year() {
+        return this.recomendacionSell_last_year;
+    }
+    
+    public void CompanyHistoric.setRecomendacionSell_last_year(Integer recomendacionSell_last_year) {
+        this.recomendacionSell_last_year = recomendacionSell_last_year;
     }
     
 }
