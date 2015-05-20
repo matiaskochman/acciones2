@@ -104,7 +104,7 @@ public class ParsingServiceImpl implements ParsingService{
 
 		
 		try {
-			Pattern p_european = Pattern.compile("\\[\\{\"title\"+[\\x00-\\x7F|€|£]+(?=\\,\\\"mf_searchresults)");
+			Pattern p_european = Pattern.compile("\\[\\{\"title\"+[\\x00-\\x7F|€|£|¥]+(?=\\,\\\"mf_searchresults)");
 			
 			result = HttpConectionUtils.getData(query);
 			
