@@ -183,6 +183,10 @@ public class Company {
     		this.market = ":SHH";
     	}else if(exchange.equalsIgnoreCase("SHE")){
     		this.market = ":SHH";
+    	}else if(exchange.equalsIgnoreCase("VTX")){
+    		this.market = ":VTX";
+    	}else if(exchange.equalsIgnoreCase("SWX")){
+    		this.market = ":SWX";
     	}
     }
 
@@ -375,6 +379,10 @@ public class Company {
     		return "SHANGAI";
     	}else if(exchange.equalsIgnoreCase("SHE")){
     		return "CHINA";
+    	}else if(exchange.equalsIgnoreCase("VTX")){
+    		return "SWISS";
+    	}else if(exchange.equalsIgnoreCase("SWX")){
+    		return "SWISS";
     	}
     	return "INCOGNITA";
     }

@@ -472,4 +472,31 @@ public class QueryBuilder {
     	
     	return query;
 	}
+	public static String buildQueryForSwitzerland(String numberOfCompanies){
+    	String num=null;
+    	if(numberOfCompanies==null){
+    		num="10";
+    	}else{
+    		num=numberOfCompanies;
+    	}
+    	String marketCapitalFrom = "1000000";
+    	
+    	String query="https://www.google.com/finance?output=json&start=0&"
+    			+ "num="+num
+    			+ "&noIL=1&q=[%28%28"
+    			+ "exchange%20%3D%3D%20%22VTX%22%29%20%7C%20%28"
+    			+ "exchange%20%3D%3D%20%22SWX%22%29%29%20%26%20%28"
+    			+ "market_cap%20%3E%3D%20"+marketCapitalFrom
+    			+ "%29%20%26%20%28"
+    			+ "market_cap%20%3C%3D%20262860000000%29%20%26%20%28"
+    			+ "pe_ratio%20%3E%3D%200%29%20%26%20%28"
+    			+ "pe_ratio%20%3C%3D%20241%29%20%26%20%28"
+    			+ "dividend_yield%20%3E%3D%200%29%20%26%20%28"
+    			+ "dividend_yield%20%3C%3D%2016.19%29%20%26%20%28"
+    			+ "price_change_52week%20%3E%3D%20-62.61%29%20%26%20%28"
+    			+ "price_change_52week%20%3C%3D%20893%29]&restype=company&ei=V5hcVaG8IMXcmAHK8ICwCg&"
+    			+ "sortas=MarketCap";
+
+    	return query;
+	}
 }
