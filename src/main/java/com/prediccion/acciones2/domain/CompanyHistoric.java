@@ -2,6 +2,8 @@ package com.prediccion.acciones2.domain;
 import java.util.Date;
 
 import javax.persistence.Column;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
@@ -18,6 +20,10 @@ import org.springframework.roo.addon.json.RooJson;
 @RooJson
 public class CompanyHistoric {
 
+    @PersistenceContext
+    transient EntityManager entityManager;
+	
+	
     @Column
     private String title;
     @NotNull
@@ -67,7 +73,7 @@ public class CompanyHistoric {
     private Double pe;
     @NotNull
     private String exchange;
-    @Column(unique = true)
+    @Column
     private String companyId;
     @Column
     private String localCurrencySymbol;
@@ -83,4 +89,13 @@ public class CompanyHistoric {
     private Integer recomendacionUnderPerform_last_year;
     @Column
     private Integer recomendacionSell_last_year;
+    
+    public void save() {
+        if (entityManager.contains(this)) {
+        	entityManager.merge(this);
+        } else {
+        	entityManager.persist(this);
+        }
+        entityManager.flush();
+    }    
 }

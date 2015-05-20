@@ -14,15 +14,11 @@ public class CompanyHistoricServiceImpl implements CompanyHistoricService {
 	@Override
 	@Transactional
 	public void createHistotic(List<Company> companyList) {
-		
 		Mapper mapper = new DozerBeanMapper();
-		
 		
 		CompanyHistoric ch = null;
 		for (Company company : companyList) {
-			
 			ch = new CompanyHistoric();
-			
 			mapper.map(company, ch);		
 			/*
 			ch.setCompanyId(company.getCompanyId());
@@ -49,7 +45,9 @@ public class CompanyHistoricServiceImpl implements CompanyHistoricService {
 			ch.setTitle(company.getTitle());
 			ch.setVolumenNegociado(company.getVolumenNegociado());
 			*/
-			ch.persist();
+			
+			//ch.persist();
+			ch.save();
 		}
 		
 		for (Company company : companyList) {

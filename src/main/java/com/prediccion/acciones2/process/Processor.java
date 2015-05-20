@@ -98,8 +98,9 @@ public class Processor implements Runnable{
 			Matcher m_precio_accion = valor.matcher(precio);
 			if(m_precio_accion.find()){
 				String valor_precio_accion = precio.substring(m_precio_accion.start(), m_precio_accion.end());
-				 //this.company.setStockValue(new Double(valor_precio_accion)) ;
-				 return new Double(valor_precio_accion);
+				//this.company.setStockValue(new Double(valor_precio_accion)) ;
+				valor_precio_accion=valor_precio_accion.replaceAll(",", ".");
+				return new Double(valor_precio_accion);
 			}
 		}else {
 			System.out.println("yql extract -- la accion no tiene precio");
@@ -133,6 +134,7 @@ public class Processor implements Runnable{
 			 for (int i = 1; i <= 3; i++) {
 				if(number_matcher.find()){
 					value = val1.substring(number_matcher.start(), number_matcher.end());
+					value = value.replaceAll(",",".");
 					listVal.add(Double.valueOf(value));
 					
 				}
@@ -264,9 +266,9 @@ public class Processor implements Runnable{
 				 System.out.println("mal parseado: "+data);
 			 }
 			 
-			 this.company.setMaxForecastPercentageValue(new Double(val1)) ;
-			 this.company.setMedForecastPercentageValue(new Double(val2));
-			 this.company.setMinForecastPercentageValue(new Double(val3));
+			 this.company.setMaxForecastPercentageValue(new Double(val1.replaceAll(",", "."))) ;
+			 this.company.setMedForecastPercentageValue(new Double(val2.replaceAll(",", ".")));
+			 this.company.setMinForecastPercentageValue(new Double(val3.replaceAll(",", ".")));
 
 			 
 			 treeSet.add(company);

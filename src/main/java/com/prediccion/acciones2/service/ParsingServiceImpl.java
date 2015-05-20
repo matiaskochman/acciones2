@@ -28,7 +28,7 @@ import com.prediccion.acciones2.utils.HttpConectionUtils;
 @Transactional
 public class ParsingServiceImpl implements ParsingService{
 
-	int CONCURRENT_THREADS = 180;
+	private int CONCURRENT_THREADS = 180;
 
     @Autowired
     QueryLogService queryLogService;
@@ -87,9 +87,14 @@ public class ParsingServiceImpl implements ParsingService{
 	}
 	
 	
-	public Set<Company> getSocksFromGoogleFinance(String query){
+	public Set<Company> getSocksFromGoogleFinance(String query, Integer amountOfThreads){
 		List<Company> companyList = null;
 		
+		if(amountOfThreads!=null){
+			
+			CONCURRENT_THREADS = amountOfThreads; 
+		}
+				
 		String result="";
 		Comparator<Company> minComparator = new Comparator<Company>(){
 			@Override
