@@ -179,6 +179,10 @@ public class Company {
     		this.market = ":SES";
     	}else if(exchange.equalsIgnoreCase("TYO")){
     		this.market = ":TYO";
+    	}else if(exchange.equalsIgnoreCase("SHA")){
+    		this.market = ":SHH";
+    	}else if(exchange.equalsIgnoreCase("SHE")){
+    		this.market = ":SHH";
     	}
     }
 
@@ -367,6 +371,10 @@ public class Company {
     		return "SINGAPORE";
     	}else if(exchange.equalsIgnoreCase("TYO")){
     		return "TOKYO";
+    	}else if(exchange.equalsIgnoreCase("SHA")){
+    		return "SHANGAI";
+    	}else if(exchange.equalsIgnoreCase("SHE")){
+    		return "CHINA";
     	}
     	return "INCOGNITA";
     }
