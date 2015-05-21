@@ -9,6 +9,8 @@ public class ParsingUtils {
 	public static final Pattern volumen_negociado = Pattern.compile("volume_magnitude\\\".\\\"content\\\":\\\"\\d+(?:.\\d*)[km]");
 	
 	public static final Pattern recomendations_popup_last_year = Pattern.compile("Last\\syear(.*?).<.table><.div>");
+	public static final Pattern recomendations_popup_3_months = Pattern.compile("3\\smonths\\sago(.*?).<.table><.div>");
+	
 	public static final Pattern recomentations_last_year_buy = Pattern.compile("Buy(.*?)\\d");
 	public static final Pattern recomentations_last_year_outperform = Pattern.compile("Outperform(.*?)\\d");
 	public static final Pattern recomentations_last_year_hold = Pattern.compile("Hold(.*?)\\d");
