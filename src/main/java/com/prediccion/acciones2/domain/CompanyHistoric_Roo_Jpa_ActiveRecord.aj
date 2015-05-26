@@ -6,14 +6,16 @@ package com.prediccion.acciones2.domain;
 import com.prediccion.acciones2.domain.CompanyHistoric;
 import java.util.List;
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import org.springframework.transaction.annotation.Transactional;
 
 privileged aspect CompanyHistoric_Roo_Jpa_ActiveRecord {
     
-    public static final List<String> CompanyHistoric.fieldNames4OrderClauseFilter = java.util.Arrays.asList("entityManager", "title", "ticker", "market", "stockValue", "maxForecastPercentageValue", "medForecastPercentageValue", "minForecastPercentageValue", "maxForecastValue", "medForecastValue", "minForecastValue", "price52WeekPercChange", "recomendacionAverage", "recomendacionBuy", "recomendacionOutPerform", "recomendacionHold", "recomendacionUnderPerform", "recomendacionSell", "recomendacionNoOpinion", "volumenNegociado", "fechaCreacion", "marketCap", "pe", "exchange", "companyId", "localCurrencySymbol", "recomendacionAverage_last_year", "recomendacionBuy_last_year", "recomendacionOutPerform_last_year", "recomendacionHold_last_year", "recomendacionUnderPerform_last_year", "recomendacionSell_last_year");
+    @PersistenceContext
+    transient EntityManager CompanyHistoric._entityManager;
     
     public static final EntityManager CompanyHistoric.entityManager() {
-        EntityManager em = new CompanyHistoric().entityManager;
+        EntityManager em = new CompanyHistoric()._entityManager;
         if (em == null) throw new IllegalStateException("Entity manager has not been injected (is the Spring Aspects JAR configured as an AJC/AJDT aspects library?)");
         return em;
     }
@@ -26,17 +28,6 @@ privileged aspect CompanyHistoric_Roo_Jpa_ActiveRecord {
         return entityManager().createQuery("SELECT o FROM CompanyHistoric o", CompanyHistoric.class).getResultList();
     }
     
-    public static List<CompanyHistoric> CompanyHistoric.findAllCompanyHistorics(String sortFieldName, String sortOrder) {
-        String jpaQuery = "SELECT o FROM CompanyHistoric o";
-        if (fieldNames4OrderClauseFilter.contains(sortFieldName)) {
-            jpaQuery = jpaQuery + " ORDER BY " + sortFieldName;
-            if ("ASC".equalsIgnoreCase(sortOrder) || "DESC".equalsIgnoreCase(sortOrder)) {
-                jpaQuery = jpaQuery + " " + sortOrder;
-            }
-        }
-        return entityManager().createQuery(jpaQuery, CompanyHistoric.class).getResultList();
-    }
-    
     public static CompanyHistoric CompanyHistoric.findCompanyHistoric(Long id) {
         if (id == null) return null;
         return entityManager().find(CompanyHistoric.class, id);
@@ -46,51 +37,40 @@ privileged aspect CompanyHistoric_Roo_Jpa_ActiveRecord {
         return entityManager().createQuery("SELECT o FROM CompanyHistoric o", CompanyHistoric.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
     }
     
-    public static List<CompanyHistoric> CompanyHistoric.findCompanyHistoricEntries(int firstResult, int maxResults, String sortFieldName, String sortOrder) {
-        String jpaQuery = "SELECT o FROM CompanyHistoric o";
-        if (fieldNames4OrderClauseFilter.contains(sortFieldName)) {
-            jpaQuery = jpaQuery + " ORDER BY " + sortFieldName;
-            if ("ASC".equalsIgnoreCase(sortOrder) || "DESC".equalsIgnoreCase(sortOrder)) {
-                jpaQuery = jpaQuery + " " + sortOrder;
-            }
-        }
-        return entityManager().createQuery(jpaQuery, CompanyHistoric.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
-    }
-    
     @Transactional
     public void CompanyHistoric.persist() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        this.entityManager.persist(this);
+        if (this._entityManager == null) this._entityManager = entityManager();
+        this._entityManager.persist(this);
     }
     
     @Transactional
     public void CompanyHistoric.remove() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        if (this.entityManager.contains(this)) {
-            this.entityManager.remove(this);
+        if (this._entityManager == null) this._entityManager = entityManager();
+        if (this._entityManager.contains(this)) {
+            this._entityManager.remove(this);
         } else {
             CompanyHistoric attached = CompanyHistoric.findCompanyHistoric(this.id);
-            this.entityManager.remove(attached);
+            this._entityManager.remove(attached);
         }
     }
     
     @Transactional
     public void CompanyHistoric.flush() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        this.entityManager.flush();
+        if (this._entityManager == null) this._entityManager = entityManager();
+        this._entityManager.flush();
     }
     
     @Transactional
     public void CompanyHistoric.clear() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        this.entityManager.clear();
+        if (this._entityManager == null) this._entityManager = entityManager();
+        this._entityManager.clear();
     }
     
     @Transactional
     public CompanyHistoric CompanyHistoric.merge() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        CompanyHistoric merged = this.entityManager.merge(this);
-        this.entityManager.flush();
+        if (this._entityManager == null) this._entityManager = entityManager();
+        CompanyHistoric merged = this._entityManager.merge(this);
+        this._entityManager.flush();
         return merged;
     }
     

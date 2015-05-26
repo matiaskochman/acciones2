@@ -26,10 +26,8 @@ public class CompanyHistoric {
 	
     @Column
     private String title;
-    @NotNull
     @Column
     private String ticker;
-    @NotNull
     @Column
     private String market;
     @Column
@@ -71,7 +69,7 @@ public class CompanyHistoric {
     private Double marketCap;
     @Column
     private Double pe;
-    @NotNull
+    @Column
     private String exchange;
     @Column
     private String companyId;
@@ -96,6 +94,6 @@ public class CompanyHistoric {
         } else {
         	entityManager.persist(this);
         }
-        entityManager.flush();
+        //entityManager.flush();
     }    
 }

@@ -19,7 +19,9 @@ public class CompanyHistoricServiceImpl implements CompanyHistoricService {
 		CompanyHistoric ch = null;
 		for (Company company : companyList) {
 			ch = new CompanyHistoric();
-			mapper.map(company, ch);		
+			mapper.map(company, ch);
+			ch.setId(null);
+			ch.setVersion(null);
 			/*
 			ch.setCompanyId(company.getCompanyId());
 			ch.setExchange(company.getExchange());

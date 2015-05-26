@@ -104,7 +104,7 @@ public class QueryBuilder {
     	}
     	
 		String price_change_52week_from = "-101";
-		String marketCap_from = "1000000";
+		String marketCap_from = "50000";
 		String nasdaq = "exchange%20%3D%3D%20%22NASDAQ%22%29%29%20%26%20%28";
 		String nysemkt = "exchange%20%3D%3D%20%22NYSEMKT%22%29%20%7C%20%28";
 		String nyse = "exchange%20%3D%3D%20%22NYSE%22%29%20%7C%20%28"; 
@@ -145,13 +145,15 @@ public class QueryBuilder {
     	}else{
     		num=numberOfCompanies;
     	}
-		
+    	String marketCapitalFrom = "10000";
+
 		String query = "https://www.google.com/finance?output=json&start=0&"
 				+ "num="+num
 				+ "&noIL=1&q=[%28%28"
 				+ "exchange%20%3D%3D%20%22ETR%22%29%20%7C%20%28"
 				+ "exchange%20%3D%3D%20%22FRA%22%29%29%20%26%20%28"
-				+ "market_cap%20%3E%3D%20100000%29%20%26%20%28"
+				+ "market_cap%20%3E%3D%20"+marketCapitalFrom
+				+ "%29%20%26%20%28"
 				+ "market_cap%20%3C%3D%20109270000000%29%20%26%20%28"
 				+ "pe_ratio%20%3E%3D%200%29%20%26%20%28"
 				+ "pe_ratio%20%3C%3D%205130000%29%20%26%20%28"
@@ -174,14 +176,16 @@ public class QueryBuilder {
     	}else{
     		num=numberOfCompanies;
     	}
-		
+    	String marketCapitalFrom = "10000";
+
 		String query = "https://www.google.com/finance?output=json&start=0"+
 						"&num="+num+
 						"&noIL=1&q=[%28%28"+
 						"exchange%20%3D%3D%20%22TSE%22%29%20%7C%20%28"+
 						"exchange%20%3D%3D%20%22CVE%22%29%20%7C%20%28"+
 						"exchange%20%3D%3D%20%22CNSX%22%29%29%20%26%20%28"+
-						"market_cap%20%3E%3D%200.35%29%20%26%20%28"+
+						"market_cap%20%3E%3D%20"+marketCapitalFrom
+						+ "%29%20%26%20%28"+
 						"market_cap%20%3C%3D%209310000000000%29%20%26%20%28"+
 						"pe_ratio%20%3E%3D%200%29%20%26%20%28"+
 						"pe_ratio%20%3C%3D%202096%29%20%26%20%28"+
@@ -201,12 +205,15 @@ public class QueryBuilder {
     	}else{
     		num=numberOfCompanies;
     	}
+    	String marketCapitalFrom = "10000";
+    	
 		String query = "https://www.google.com/finance?output=json&start=0&"
 				+ "num="+num
 				+ "&noIL=1&q=["
 				+ "currency%20%3D%3D%20%22EUR%22%20%26%20%28"
 				+ "exchange%20%3D%3D%20%22BME%22%29%20%26%20%28"
-				+ "market_cap%20%3E%3D%2017840000%29%20%26%20%28"
+				+ "market_cap%20%3E%3D%20"+marketCapitalFrom
+				+ "%29%20%26%20%28"
 				+ "market_cap%20%3C%3D%2097060000000%29%20%26%20%28"
 				+ "pe_ratio%20%3E%3D%200%29%20%26%20%28"
 				+ "pe_ratio%20%3C%3D%20273%29%20%26%20%28"
@@ -255,7 +262,7 @@ public class QueryBuilder {
     		num=numberOfCompanies;
     	}
     	
-    	String marketCapitalFrom = "1000000";
+    	String marketCapitalFrom = "10000";
 		String query = "https://www.google.com/finance?output=json&"
 				+ "start=0"
 				+ "&num="+num
@@ -283,7 +290,7 @@ public class QueryBuilder {
     		num=numberOfCompanies;
     	}
     	
-    	String marketCapitalFrom = "1000000";		
+    	String marketCapitalFrom = "10000";		
 		String query = "https://www.google.com/finance?output=json&"
 				+ "start=0&"
 				+ "num=20"
@@ -311,7 +318,7 @@ public class QueryBuilder {
     		num=numberOfCompanies;
     	}
     	
-    	String marketCapitalFrom = "1000000";		
+    	String marketCapitalFrom = "10000";		
 		String query = "https://www.google.com/finance?output=json&"
 				+ "start=0"
 				+ "&num="+num
@@ -342,7 +349,7 @@ public class QueryBuilder {
     		num=numberOfCompanies;
     	}
     	
-    	String marketCapitalFrom = "1000000";			
+    	String marketCapitalFrom = "10000";			
 		
 		String query ="https://www.google.com/finance?output=json&start=0&"
 				+ "num="+num
@@ -397,7 +404,7 @@ public class QueryBuilder {
     	}else{
     		num=numberOfCompanies;
     	}
-    	String marketCapitalFrom = "1000000";			
+    	String marketCapitalFrom = "10000";			
 		
 		String query = "https://www.google.com/finance?output=json&start=0&"
 				+ "num="+num

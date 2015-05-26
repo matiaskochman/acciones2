@@ -14,6 +14,7 @@ import java.util.GregorianCalendar;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
+import javax.persistence.EntityManager;
 import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +34,7 @@ privileged aspect CompanyHistoricDataOnDemand_Roo_DataOnDemand {
     public CompanyHistoric CompanyHistoricDataOnDemand.getNewTransientCompanyHistoric(int index) {
         CompanyHistoric obj = new CompanyHistoric();
         setCompanyId(obj, index);
+        setEntityManager(obj, index);
         setExchange(obj, index);
         setFechaCreacion(obj, index);
         setLocalCurrencySymbol(obj, index);
@@ -69,6 +71,11 @@ privileged aspect CompanyHistoricDataOnDemand_Roo_DataOnDemand {
     public void CompanyHistoricDataOnDemand.setCompanyId(CompanyHistoric obj, int index) {
         String companyId = "companyId_" + index;
         obj.setCompanyId(companyId);
+    }
+    
+    public void CompanyHistoricDataOnDemand.setEntityManager(CompanyHistoric obj, int index) {
+        EntityManager entityManager = null;
+        obj.setEntityManager(entityManager);
     }
     
     public void CompanyHistoricDataOnDemand.setExchange(CompanyHistoric obj, int index) {
