@@ -160,11 +160,11 @@ public class Processor implements Runnable{
 			 String val1 = data.substring(start1, end1);
 			 
 			 if(val1!=null && !val1.equals("")){
-				 Matcher m_buy = ParsingUtils.recomentations_last_year_buy.matcher(val1);		 
-				 Matcher m_hold = ParsingUtils.recomentations_last_year_hold.matcher(val1);		 
-				 Matcher m_outperform = ParsingUtils.recomentations_last_year_outperform.matcher(val1);		 
-				 Matcher m_sell = ParsingUtils.recomentations_last_year_sell.matcher(val1);		 
-				 Matcher m_underperform = ParsingUtils.recomentations_last_year_underperform.matcher(val1);		 
+				 Matcher m_buy = ParsingUtils.recomentations_buy.matcher(val1);		 
+				 Matcher m_hold = ParsingUtils.recomentations_hold.matcher(val1);		 
+				 Matcher m_outperform = ParsingUtils.recomentations_outperform.matcher(val1);		 
+				 Matcher m_sell = ParsingUtils.recomentations_sell.matcher(val1);		 
+				 Matcher m_underperform = ParsingUtils.recomentations_underperform.matcher(val1);		 
 				 
 				 if(m_buy.find()){
 					 String buy_string = val1.substring(m_buy.start(), m_buy.end());
@@ -213,6 +213,202 @@ public class Processor implements Runnable{
 		 company.generateOpinionAverage_last_year();
 		
 	}
+	
+	
+	private void extract_recommendationsPopup_last3months() throws Exception {
+		Matcher m = ParsingUtils.recomendations_popup_3_months.matcher(data);
+		 int start1 = 0;
+		 int end1 = 0;
+
+		 if(m.find()){
+			 start1 = m.start();
+			 end1 = m.end();
+			 String val1 = data.substring(start1, end1);
+			 
+			 if(val1!=null && !val1.equals("")){
+				 Matcher m_buy = ParsingUtils.recomentations_buy.matcher(val1);		 
+				 Matcher m_hold = ParsingUtils.recomentations_hold.matcher(val1);		 
+				 Matcher m_outperform = ParsingUtils.recomentations_outperform.matcher(val1);		 
+				 Matcher m_sell = ParsingUtils.recomentations_sell.matcher(val1);		 
+				 Matcher m_underperform = ParsingUtils.recomentations_underperform.matcher(val1);		 
+				 
+				 if(m_buy.find()){
+					 String buy_string = val1.substring(m_buy.start(), m_buy.end());
+					 
+					 Matcher number_matcher = ParsingUtils.number.matcher(buy_string);
+					 
+					 if(number_matcher.find()){
+						 company.setRecomendacionBuy_last_3months(Integer.valueOf(buy_string.substring(number_matcher.start(), number_matcher.end())));
+					 }
+				 }
+				 if(m_hold.find()){
+					 String hold_string = val1.substring(m_hold.start(), m_hold.end());
+					 
+					 Matcher number_matcher = ParsingUtils.number.matcher(hold_string);
+					 
+					 if(number_matcher.find()){
+						 company.setRecomendacionHold_last_3months(Integer.valueOf(hold_string.substring(number_matcher.start(), number_matcher.end())));
+					 }
+				 }
+				 if(m_outperform.find()){
+					 String outperform_string = val1.substring(m_outperform.start(), m_outperform.end());
+					 Matcher number_matcher = ParsingUtils.number.matcher(outperform_string);
+					 if(number_matcher.find()){
+						 company.setRecomendacionOutPerform_last_3months(Integer.valueOf(outperform_string.substring(number_matcher.start(), number_matcher.end())));
+					 }
+					 
+				 }
+				 if(m_sell.find()){
+					 String sell_string = val1.substring(m_sell.start(), m_sell.end());
+					 Matcher number_matcher = ParsingUtils.number.matcher(sell_string);
+					 if(number_matcher.find()){
+						 company.setRecomendacionSell_last_3months(Integer.valueOf(sell_string.substring(number_matcher.start(), number_matcher.end())));
+					 }
+				 }
+				 if(m_underperform.find()){
+					 String underperform_string = val1.substring(m_underperform.start(), m_underperform.end());
+					 Matcher number_matcher = ParsingUtils.number.matcher(underperform_string);
+					 if(number_matcher.find()){
+						 company.setRecomendacionUnderPerform_last_3months(Integer.valueOf(underperform_string.substring(number_matcher.start(), number_matcher.end())));
+					 }
+				 }
+				 
+			 }
+		 }
+		 
+		 company.generateOpinionAverage_last_3months();
+		
+	}	
+
+	private void extract_recommendationsPopup_last2months() throws Exception {
+		Matcher m = ParsingUtils.recomendations_popup_3_months.matcher(data);
+		 int start1 = 0;
+		 int end1 = 0;
+
+		 if(m.find()){
+			 start1 = m.start();
+			 end1 = m.end();
+			 String val1 = data.substring(start1, end1);
+			 
+			 if(val1!=null && !val1.equals("")){
+				 Matcher m_buy = ParsingUtils.recomentations_buy.matcher(val1);		 
+				 Matcher m_hold = ParsingUtils.recomentations_hold.matcher(val1);		 
+				 Matcher m_outperform = ParsingUtils.recomentations_outperform.matcher(val1);		 
+				 Matcher m_sell = ParsingUtils.recomentations_sell.matcher(val1);		 
+				 Matcher m_underperform = ParsingUtils.recomentations_underperform.matcher(val1);		 
+				 
+				 if(m_buy.find()){
+					 String buy_string = val1.substring(m_buy.start(), m_buy.end());
+					 
+					 Matcher number_matcher = ParsingUtils.number.matcher(buy_string);
+					 
+					 if(number_matcher.find()){
+						 company.setRecomendacionBuy_last_2months(Integer.valueOf(buy_string.substring(number_matcher.start(), number_matcher.end())));
+					 }
+				 }
+				 if(m_hold.find()){
+					 String hold_string = val1.substring(m_hold.start(), m_hold.end());
+					 
+					 Matcher number_matcher = ParsingUtils.number.matcher(hold_string);
+					 
+					 if(number_matcher.find()){
+						 company.setRecomendacionHold_last_2months(Integer.valueOf(hold_string.substring(number_matcher.start(), number_matcher.end())));
+					 }
+				 }
+				 if(m_outperform.find()){
+					 String outperform_string = val1.substring(m_outperform.start(), m_outperform.end());
+					 Matcher number_matcher = ParsingUtils.number.matcher(outperform_string);
+					 if(number_matcher.find()){
+						 company.setRecomendacionOutPerform_last_2months(Integer.valueOf(outperform_string.substring(number_matcher.start(), number_matcher.end())));
+					 }
+					 
+				 }
+				 if(m_sell.find()){
+					 String sell_string = val1.substring(m_sell.start(), m_sell.end());
+					 Matcher number_matcher = ParsingUtils.number.matcher(sell_string);
+					 if(number_matcher.find()){
+						 company.setRecomendacionSell_last_2months(Integer.valueOf(sell_string.substring(number_matcher.start(), number_matcher.end())));
+					 }
+				 }
+				 if(m_underperform.find()){
+					 String underperform_string = val1.substring(m_underperform.start(), m_underperform.end());
+					 Matcher number_matcher = ParsingUtils.number.matcher(underperform_string);
+					 if(number_matcher.find()){
+						 company.setRecomendacionUnderPerform_last_2months(Integer.valueOf(underperform_string.substring(number_matcher.start(), number_matcher.end())));
+					 }
+				 }
+				 
+			 }
+		 }
+		 
+		 company.generateOpinionAverage_last_2months();
+		
+	}	
+
+	private void extract_recommendationsPopup_last4weeks() throws Exception {
+		Matcher m = ParsingUtils.recomendations_popup_3_months.matcher(data);
+		 int start1 = 0;
+		 int end1 = 0;
+
+		 if(m.find()){
+			 start1 = m.start();
+			 end1 = m.end();
+			 String val1 = data.substring(start1, end1);
+			 
+			 if(val1!=null && !val1.equals("")){
+				 Matcher m_buy = ParsingUtils.recomentations_buy.matcher(val1);		 
+				 Matcher m_hold = ParsingUtils.recomentations_hold.matcher(val1);		 
+				 Matcher m_outperform = ParsingUtils.recomentations_outperform.matcher(val1);		 
+				 Matcher m_sell = ParsingUtils.recomentations_sell.matcher(val1);		 
+				 Matcher m_underperform = ParsingUtils.recomentations_underperform.matcher(val1);		 
+				 
+				 if(m_buy.find()){
+					 String buy_string = val1.substring(m_buy.start(), m_buy.end());
+					 
+					 Matcher number_matcher = ParsingUtils.number.matcher(buy_string);
+					 
+					 if(number_matcher.find()){
+						 company.setRecomendacionBuy_last_4weeks(Integer.valueOf(buy_string.substring(number_matcher.start(), number_matcher.end())));
+					 }
+				 }
+				 if(m_hold.find()){
+					 String hold_string = val1.substring(m_hold.start(), m_hold.end());
+					 
+					 Matcher number_matcher = ParsingUtils.number.matcher(hold_string);
+					 
+					 if(number_matcher.find()){
+						 company.setRecomendacionHold_last_4weeks(Integer.valueOf(hold_string.substring(number_matcher.start(), number_matcher.end())));
+					 }
+				 }
+				 if(m_outperform.find()){
+					 String outperform_string = val1.substring(m_outperform.start(), m_outperform.end());
+					 Matcher number_matcher = ParsingUtils.number.matcher(outperform_string);
+					 if(number_matcher.find()){
+						 company.setRecomendacionOutPerform_last_4weeks(Integer.valueOf(outperform_string.substring(number_matcher.start(), number_matcher.end())));
+					 }
+					 
+				 }
+				 if(m_sell.find()){
+					 String sell_string = val1.substring(m_sell.start(), m_sell.end());
+					 Matcher number_matcher = ParsingUtils.number.matcher(sell_string);
+					 if(number_matcher.find()){
+						 company.setRecomendacionSell_last_4weeks(Integer.valueOf(sell_string.substring(number_matcher.start(), number_matcher.end())));
+					 }
+				 }
+				 if(m_underperform.find()){
+					 String underperform_string = val1.substring(m_underperform.start(), m_underperform.end());
+					 Matcher number_matcher = ParsingUtils.number.matcher(underperform_string);
+					 if(number_matcher.find()){
+						 company.setRecomendacionUnderPerform_last_4weeks(Integer.valueOf(underperform_string.substring(number_matcher.start(), number_matcher.end())));
+					 }
+				 }
+				 
+			 }
+		 }
+		 
+		 company.generateOpinionAverage_last_4weeks();
+		
+	}	
 	
 	private void extract_forecast_porcentaje() throws Exception {
 		Matcher m = ParsingUtils.forecast_porcentaje_pattern.matcher(data);
@@ -324,6 +520,12 @@ public class Processor implements Runnable{
 			extract_forecast_porcentaje();
 			
 			extract_recommendationsPopup_lastYear();
+			
+			extract_recommendationsPopup_last3months();
+			
+			extract_recommendationsPopup_last2months();
+			
+			extract_recommendationsPopup_last4weeks();
 			
 			if(company.getMinForecastPercentageValue()==null){
 				throw new BusinessException("no pudo parsear los valores de forecast para "+company.getTicker()+":"+company.getExchange()+" "+

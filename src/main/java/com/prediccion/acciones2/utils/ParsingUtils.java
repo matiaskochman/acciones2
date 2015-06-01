@@ -10,12 +10,14 @@ public class ParsingUtils {
 	
 	public static final Pattern recomendations_popup_last_year = Pattern.compile("Last\\syear(.*?).<.table><.div>");
 	public static final Pattern recomendations_popup_3_months = Pattern.compile("3\\smonths\\sago(.*?).<.table><.div>");
+	public static final Pattern recomendations_popup_2_months = Pattern.compile("2\\smonths\\sago(.*?).<.table><.div>");
+	public static final Pattern recomendations_popup_4_weeks = Pattern.compile("4\\sweeks\\sago(.*?).<.table><.div>");
 	
-	public static final Pattern recomentations_last_year_buy = Pattern.compile("Buy(.*?)\\d");
-	public static final Pattern recomentations_last_year_outperform = Pattern.compile("Outperform(.*?)\\d");
-	public static final Pattern recomentations_last_year_hold = Pattern.compile("Hold(.*?)\\d");
-	public static final Pattern recomentations_last_year_underperform = Pattern.compile("Underperform(.*?)\\d");
-	public static final Pattern recomentations_last_year_sell = Pattern.compile("Sell(.*?)\\d");
+	public static final Pattern recomentations_buy = Pattern.compile("Buy(.*?)\\d");
+	public static final Pattern recomentations_outperform = Pattern.compile("Outperform(.*?)\\d");
+	public static final Pattern recomentations_hold = Pattern.compile("Hold(.*?)\\d");
+	public static final Pattern recomentations_underperform = Pattern.compile("Underperform(.*?)\\d");
+	public static final Pattern recomentations_sell = Pattern.compile("Sell(.*?)\\d");
 
 	public static final Pattern number = Pattern.compile("\\d+");
 	

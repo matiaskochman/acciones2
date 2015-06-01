@@ -506,4 +506,33 @@ public class QueryBuilder {
 
     	return query;
 	}
+	public static String buildQueryForPoland(String numberOfCompanies){
+		
+    	String num=null;
+    	if(numberOfCompanies==null){
+    		num="10";
+    	}else{
+    		num=numberOfCompanies;
+    	}
+    	String marketCapitalFrom = "100000";
+    	
+		String query = "https://www.google.com/finance?output=json&start=0&"
+				+ "num="+num
+				+ "&noIL=1&q=["
+				+ "currency%20%3D%3D%20%22PLN%22%20%26%20%28"
+				+ "exchange%20%3D%3D%20%22WSE%22%29%20%26%20%28"
+				+ "market_cap%20%3E%3D%20"+marketCapitalFrom
+				+ "%29%20%26%20%28"
+				+ "market_cap%20%3C%3D%2049190000000%29%20%26%20%28"
+				+ "pe_ratio%20%3E%3D%200%29%20%26%20%28"
+				+ "pe_ratio%20%3C%3D%202945%29%20%26%20%28"
+				+ "dividend_yield%20%3E%3D%200%29%20%26%20%28"
+				+ "dividend_yield%20%3C%3D%2089.13%29%20%26%20%28"
+				+ "price_change_52week%20%3E%3D%20-96.95%29%20%26%20%28"
+				+ "price_change_52week%20%3C%3D%20289%29]&restype=company&ei=GspsVZnID8T4evyYg8gG&"
+				+ "sortas=MarketCap";
+		
+		
+		return query;
+	}
 }

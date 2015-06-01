@@ -49,17 +49,35 @@ privileged aspect CompanyDataOnDemand_Roo_DataOnDemand {
         setPe(obj, index);
         setPrice52WeekPercChange(obj, index);
         setRecomendacionAverage(obj, index);
+        setRecomendacionAverage_last_2months(obj, index);
+        setRecomendacionAverage_last_3months(obj, index);
+        setRecomendacionAverage_last_4weeks(obj, index);
         setRecomendacionAverage_last_year(obj, index);
         setRecomendacionBuy(obj, index);
+        setRecomendacionBuy_last_2months(obj, index);
+        setRecomendacionBuy_last_3months(obj, index);
+        setRecomendacionBuy_last_4weeks(obj, index);
         setRecomendacionBuy_last_year(obj, index);
         setRecomendacionHold(obj, index);
+        setRecomendacionHold_last_2months(obj, index);
+        setRecomendacionHold_last_3months(obj, index);
+        setRecomendacionHold_last_4weeks(obj, index);
         setRecomendacionHold_last_year(obj, index);
         setRecomendacionNoOpinion(obj, index);
         setRecomendacionOutPerform(obj, index);
+        setRecomendacionOutPerform_last_2months(obj, index);
+        setRecomendacionOutPerform_last_3months(obj, index);
+        setRecomendacionOutPerform_last_4weeks(obj, index);
         setRecomendacionOutPerform_last_year(obj, index);
         setRecomendacionSell(obj, index);
+        setRecomendacionSell_last_2months(obj, index);
+        setRecomendacionSell_last_3months(obj, index);
+        setRecomendacionSell_last_4weeks(obj, index);
         setRecomendacionSell_last_year(obj, index);
         setRecomendacionUnderPerform(obj, index);
+        setRecomendacionUnderPerform_last_2months(obj, index);
+        setRecomendacionUnderPerform_last_3months(obj, index);
+        setRecomendacionUnderPerform_last_4weeks(obj, index);
         setRecomendacionUnderPerform_last_year(obj, index);
         setStockValue(obj, index);
         setTicker(obj, index);
@@ -148,6 +166,21 @@ privileged aspect CompanyDataOnDemand_Roo_DataOnDemand {
         obj.setRecomendacionAverage(recomendacionAverage);
     }
     
+    public void CompanyDataOnDemand.setRecomendacionAverage_last_2months(Company obj, int index) {
+        Double recomendacionAverage_last_2months = new Integer(index).doubleValue();
+        obj.setRecomendacionAverage_last_2months(recomendacionAverage_last_2months);
+    }
+    
+    public void CompanyDataOnDemand.setRecomendacionAverage_last_3months(Company obj, int index) {
+        Double recomendacionAverage_last_3months = new Integer(index).doubleValue();
+        obj.setRecomendacionAverage_last_3months(recomendacionAverage_last_3months);
+    }
+    
+    public void CompanyDataOnDemand.setRecomendacionAverage_last_4weeks(Company obj, int index) {
+        Double recomendacionAverage_last_4weeks = new Integer(index).doubleValue();
+        obj.setRecomendacionAverage_last_4weeks(recomendacionAverage_last_4weeks);
+    }
+    
     public void CompanyDataOnDemand.setRecomendacionAverage_last_year(Company obj, int index) {
         Double recomendacionAverage_last_year = new Integer(index).doubleValue();
         obj.setRecomendacionAverage_last_year(recomendacionAverage_last_year);
@@ -158,6 +191,21 @@ privileged aspect CompanyDataOnDemand_Roo_DataOnDemand {
         obj.setRecomendacionBuy(recomendacionBuy);
     }
     
+    public void CompanyDataOnDemand.setRecomendacionBuy_last_2months(Company obj, int index) {
+        Integer recomendacionBuy_last_2months = new Integer(index);
+        obj.setRecomendacionBuy_last_2months(recomendacionBuy_last_2months);
+    }
+    
+    public void CompanyDataOnDemand.setRecomendacionBuy_last_3months(Company obj, int index) {
+        Integer recomendacionBuy_last_3months = new Integer(index);
+        obj.setRecomendacionBuy_last_3months(recomendacionBuy_last_3months);
+    }
+    
+    public void CompanyDataOnDemand.setRecomendacionBuy_last_4weeks(Company obj, int index) {
+        Integer recomendacionBuy_last_4weeks = new Integer(index);
+        obj.setRecomendacionBuy_last_4weeks(recomendacionBuy_last_4weeks);
+    }
+    
     public void CompanyDataOnDemand.setRecomendacionBuy_last_year(Company obj, int index) {
         Integer recomendacionBuy_last_year = new Integer(index);
         obj.setRecomendacionBuy_last_year(recomendacionBuy_last_year);
@@ -166,6 +214,21 @@ privileged aspect CompanyDataOnDemand_Roo_DataOnDemand {
     public void CompanyDataOnDemand.setRecomendacionHold(Company obj, int index) {
         Integer recomendacionHold = new Integer(index);
         obj.setRecomendacionHold(recomendacionHold);
+    }
+    
+    public void CompanyDataOnDemand.setRecomendacionHold_last_2months(Company obj, int index) {
+        Integer recomendacionHold_last_2months = new Integer(index);
+        obj.setRecomendacionHold_last_2months(recomendacionHold_last_2months);
+    }
+    
+    public void CompanyDataOnDemand.setRecomendacionHold_last_3months(Company obj, int index) {
+        Integer recomendacionHold_last_3months = new Integer(index);
+        obj.setRecomendacionHold_last_3months(recomendacionHold_last_3months);
+    }
+    
+    public void CompanyDataOnDemand.setRecomendacionHold_last_4weeks(Company obj, int index) {
+        Integer recomendacionHold_last_4weeks = new Integer(index);
+        obj.setRecomendacionHold_last_4weeks(recomendacionHold_last_4weeks);
     }
     
     public void CompanyDataOnDemand.setRecomendacionHold_last_year(Company obj, int index) {
@@ -183,6 +246,21 @@ privileged aspect CompanyDataOnDemand_Roo_DataOnDemand {
         obj.setRecomendacionOutPerform(recomendacionOutPerform);
     }
     
+    public void CompanyDataOnDemand.setRecomendacionOutPerform_last_2months(Company obj, int index) {
+        Integer recomendacionOutPerform_last_2months = new Integer(index);
+        obj.setRecomendacionOutPerform_last_2months(recomendacionOutPerform_last_2months);
+    }
+    
+    public void CompanyDataOnDemand.setRecomendacionOutPerform_last_3months(Company obj, int index) {
+        Integer recomendacionOutPerform_last_3months = new Integer(index);
+        obj.setRecomendacionOutPerform_last_3months(recomendacionOutPerform_last_3months);
+    }
+    
+    public void CompanyDataOnDemand.setRecomendacionOutPerform_last_4weeks(Company obj, int index) {
+        Integer recomendacionOutPerform_last_4weeks = new Integer(index);
+        obj.setRecomendacionOutPerform_last_4weeks(recomendacionOutPerform_last_4weeks);
+    }
+    
     public void CompanyDataOnDemand.setRecomendacionOutPerform_last_year(Company obj, int index) {
         Integer recomendacionOutPerform_last_year = new Integer(index);
         obj.setRecomendacionOutPerform_last_year(recomendacionOutPerform_last_year);
@@ -193,6 +271,21 @@ privileged aspect CompanyDataOnDemand_Roo_DataOnDemand {
         obj.setRecomendacionSell(recomendacionSell);
     }
     
+    public void CompanyDataOnDemand.setRecomendacionSell_last_2months(Company obj, int index) {
+        Integer recomendacionSell_last_2months = new Integer(index);
+        obj.setRecomendacionSell_last_2months(recomendacionSell_last_2months);
+    }
+    
+    public void CompanyDataOnDemand.setRecomendacionSell_last_3months(Company obj, int index) {
+        Integer recomendacionSell_last_3months = new Integer(index);
+        obj.setRecomendacionSell_last_3months(recomendacionSell_last_3months);
+    }
+    
+    public void CompanyDataOnDemand.setRecomendacionSell_last_4weeks(Company obj, int index) {
+        Integer recomendacionSell_last_4weeks = new Integer(index);
+        obj.setRecomendacionSell_last_4weeks(recomendacionSell_last_4weeks);
+    }
+    
     public void CompanyDataOnDemand.setRecomendacionSell_last_year(Company obj, int index) {
         Integer recomendacionSell_last_year = new Integer(index);
         obj.setRecomendacionSell_last_year(recomendacionSell_last_year);
@@ -201,6 +294,21 @@ privileged aspect CompanyDataOnDemand_Roo_DataOnDemand {
     public void CompanyDataOnDemand.setRecomendacionUnderPerform(Company obj, int index) {
         Integer recomendacionUnderPerform = new Integer(index);
         obj.setRecomendacionUnderPerform(recomendacionUnderPerform);
+    }
+    
+    public void CompanyDataOnDemand.setRecomendacionUnderPerform_last_2months(Company obj, int index) {
+        Integer recomendacionUnderPerform_last_2months = new Integer(index);
+        obj.setRecomendacionUnderPerform_last_2months(recomendacionUnderPerform_last_2months);
+    }
+    
+    public void CompanyDataOnDemand.setRecomendacionUnderPerform_last_3months(Company obj, int index) {
+        Integer recomendacionUnderPerform_last_3months = new Integer(index);
+        obj.setRecomendacionUnderPerform_last_3months(recomendacionUnderPerform_last_3months);
+    }
+    
+    public void CompanyDataOnDemand.setRecomendacionUnderPerform_last_4weeks(Company obj, int index) {
+        Integer recomendacionUnderPerform_last_4weeks = new Integer(index);
+        obj.setRecomendacionUnderPerform_last_4weeks(recomendacionUnderPerform_last_4weeks);
     }
     
     public void CompanyDataOnDemand.setRecomendacionUnderPerform_last_year(Company obj, int index) {

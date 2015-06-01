@@ -35,5 +35,23 @@
         <field:display field="recomendacionHold_last_year" id="s_com_prediccion_acciones2_domain_Company_recomendacionHold_last_year" object="${company}" z="MBX612CwXUVBBZJEUJFKIH8Brto="/>
         <field:display field="recomendacionUnderPerform_last_year" id="s_com_prediccion_acciones2_domain_Company_recomendacionUnderPerform_last_year" object="${company}" z="wcGMiT+lYQ2X+mG1n6oBe3HObOM="/>
         <field:display field="recomendacionSell_last_year" id="s_com_prediccion_acciones2_domain_Company_recomendacionSell_last_year" object="${company}" z="/8BNvqLakuOm3JDrP39hMKPmXrw="/>
+        <field:display field="recomendacionAverage_last_3months" id="s_com_prediccion_acciones2_domain_Company_recomendacionAverage_last_3months" object="${company}" z="/06iGncYya7e7Z74mU/nbaBM9WI="/>
+        <field:display field="recomendacionBuy_last_3months" id="s_com_prediccion_acciones2_domain_Company_recomendacionBuy_last_3months" object="${company}" z="3NXVoGJx9EN1g9f048QifPqxo9U="/>
+        <field:display field="recomendacionOutPerform_last_3months" id="s_com_prediccion_acciones2_domain_Company_recomendacionOutPerform_last_3months" object="${company}" z="3wzkIXGDqStQApBkw/rd/peIzcE="/>
+        <field:display field="recomendacionHold_last_3months" id="s_com_prediccion_acciones2_domain_Company_recomendacionHold_last_3months" object="${company}" z="Py4EdDRPYtA/4bD7oHwCFHDXNvk="/>
+        <field:display field="recomendacionUnderPerform_last_3months" id="s_com_prediccion_acciones2_domain_Company_recomendacionUnderPerform_last_3months" object="${company}" z="Da5LrlSIDnmdIjyUARqG44GaRRk="/>
+        <field:display field="recomendacionSell_last_3months" id="s_com_prediccion_acciones2_domain_Company_recomendacionSell_last_3months" object="${company}" z="vnTl+JZdocVD83HI2iJMkfMHzPs="/>
+        <field:display field="recomendacionAverage_last_2months" id="s_com_prediccion_acciones2_domain_Company_recomendacionAverage_last_2months" object="${company}" z="Pn0UPL0pVTX2D2LVDF5ClSQoYPg="/>
+        <field:display field="recomendacionBuy_last_2months" id="s_com_prediccion_acciones2_domain_Company_recomendacionBuy_last_2months" object="${company}" z="KwojowVcpuPBJuGiZHAW296HY5U="/>
+        <field:display field="recomendacionOutPerform_last_2months" id="s_com_prediccion_acciones2_domain_Company_recomendacionOutPerform_last_2months" object="${company}" z="o+hBjOvX/uqhjKtZXIjNMXZ3FR8="/>
+        <field:display field="recomendacionHold_last_2months" id="s_com_prediccion_acciones2_domain_Company_recomendacionHold_last_2months" object="${company}" z="7E3iaQ+M8He/4qiJFjI0LbPFAoc="/>
+        <field:display field="recomendacionUnderPerform_last_2months" id="s_com_prediccion_acciones2_domain_Company_recomendacionUnderPerform_last_2months" object="${company}" z="50hhTsJBJWdB9+50WJoKY1fjavE="/>
+        <field:display field="recomendacionSell_last_2months" id="s_com_prediccion_acciones2_domain_Company_recomendacionSell_last_2months" object="${company}" z="qhUXL8ysdnJrp/vRbphp4WkAOUY="/>
+        <field:display field="recomendacionAverage_last_4weeks" id="s_com_prediccion_acciones2_domain_Company_recomendacionAverage_last_4weeks" object="${company}" z="wuJrmQqqKXo20BSq7nyYV7rO82k="/>
+        <field:display field="recomendacionBuy_last_4weeks" id="s_com_prediccion_acciones2_domain_Company_recomendacionBuy_last_4weeks" object="${company}" z="4DaWrZZ1ERSztewy6NZgwqbVPuk="/>
+        <field:display field="recomendacionOutPerform_last_4weeks" id="s_com_prediccion_acciones2_domain_Company_recomendacionOutPerform_last_4weeks" object="${company}" z="6T5C+HXUL9RSeqXdyGlw5xMTnrE="/>
+        <field:display field="recomendacionHold_last_4weeks" id="s_com_prediccion_acciones2_domain_Company_recomendacionHold_last_4weeks" object="${company}" z="Cb5nBwiY/9XFTUIkT6CO8WDfeBs="/>
+        <field:display field="recomendacionUnderPerform_last_4weeks" id="s_com_prediccion_acciones2_domain_Company_recomendacionUnderPerform_last_4weeks" object="${company}" z="LMGszzwW4YqIyEQvHxhu4Zv/iFs="/>
+        <field:display field="recomendacionSell_last_4weeks" id="s_com_prediccion_acciones2_domain_Company_recomendacionSell_last_4weeks" object="${company}" z="YpVxoDOSFABdZLOijHacGMwAj54="/>
     </page:show>
 </div>

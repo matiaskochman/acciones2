@@ -35,6 +35,24 @@
         <field:input field="recomendacionHold_last_year" id="c_com_prediccion_acciones2_domain_Company_recomendacionHold_last_year" validationMessageCode="field_invalid_integer" z="inV502L2PYyC3JxBGEtZu8xxlIQ="/>
         <field:input field="recomendacionUnderPerform_last_year" id="c_com_prediccion_acciones2_domain_Company_recomendacionUnderPerform_last_year" validationMessageCode="field_invalid_integer" z="nRtI0dM4P+doflKKeC6W5xAeUHM="/>
         <field:input field="recomendacionSell_last_year" id="c_com_prediccion_acciones2_domain_Company_recomendacionSell_last_year" validationMessageCode="field_invalid_integer" z="OhuaPu9b7QCQaxPDLIbkhMrLn7g="/>
+        <field:input field="recomendacionAverage_last_3months" id="c_com_prediccion_acciones2_domain_Company_recomendacionAverage_last_3months" validationMessageCode="field_invalid_number" z="Ia5N3jdPsK/C6B/aK+6lFfYdlc4="/>
+        <field:input field="recomendacionBuy_last_3months" id="c_com_prediccion_acciones2_domain_Company_recomendacionBuy_last_3months" validationMessageCode="field_invalid_integer" z="lLaxnp1HycWyGb3NNYXfK9hEATg="/>
+        <field:input field="recomendacionOutPerform_last_3months" id="c_com_prediccion_acciones2_domain_Company_recomendacionOutPerform_last_3months" validationMessageCode="field_invalid_integer" z="y0aTOGt6qAFTbwgf8s+KzjzEqZU="/>
+        <field:input field="recomendacionHold_last_3months" id="c_com_prediccion_acciones2_domain_Company_recomendacionHold_last_3months" validationMessageCode="field_invalid_integer" z="UCmuyvBHByrXh+juZDMmrTymQgk="/>
+        <field:input field="recomendacionUnderPerform_last_3months" id="c_com_prediccion_acciones2_domain_Company_recomendacionUnderPerform_last_3months" validationMessageCode="field_invalid_integer" z="PWAzlmdBDoPfsGlM7juo9udlh9s="/>
+        <field:input field="recomendacionSell_last_3months" id="c_com_prediccion_acciones2_domain_Company_recomendacionSell_last_3months" validationMessageCode="field_invalid_integer" z="SMQYuOXvCU/QxpQon8gtac7zNa0="/>
+        <field:input field="recomendacionAverage_last_2months" id="c_com_prediccion_acciones2_domain_Company_recomendacionAverage_last_2months" validationMessageCode="field_invalid_number" z="FfU/pDMoplPPUN607O+TMnRa6qo="/>
+        <field:input field="recomendacionBuy_last_2months" id="c_com_prediccion_acciones2_domain_Company_recomendacionBuy_last_2months" validationMessageCode="field_invalid_integer" z="HEfLMnqtBV4Weog4cjqmbIVajis="/>
+        <field:input field="recomendacionOutPerform_last_2months" id="c_com_prediccion_acciones2_domain_Company_recomendacionOutPerform_last_2months" validationMessageCode="field_invalid_integer" z="j0+c6/XIghztogQNg8swdBV0gZI="/>
+        <field:input field="recomendacionHold_last_2months" id="c_com_prediccion_acciones2_domain_Company_recomendacionHold_last_2months" validationMessageCode="field_invalid_integer" z="5eQ+M6C4o3BgUnXLJoppV+wEODQ="/>
+        <field:input field="recomendacionUnderPerform_last_2months" id="c_com_prediccion_acciones2_domain_Company_recomendacionUnderPerform_last_2months" validationMessageCode="field_invalid_integer" z="N67MeRoqszJMyflxwyHRBGWyxv8="/>
+        <field:input field="recomendacionSell_last_2months" id="c_com_prediccion_acciones2_domain_Company_recomendacionSell_last_2months" validationMessageCode="field_invalid_integer" z="snJ2NrMVuPplWNaOV1BJsUoHt1k="/>
+        <field:input field="recomendacionAverage_last_4weeks" id="c_com_prediccion_acciones2_domain_Company_recomendacionAverage_last_4weeks" validationMessageCode="field_invalid_number" z="5YcpTJGBMAzK4XVlZe9X9GKvR/k="/>
+        <field:input field="recomendacionBuy_last_4weeks" id="c_com_prediccion_acciones2_domain_Company_recomendacionBuy_last_4weeks" validationMessageCode="field_invalid_integer" z="4dzjKdw4QvEDeqgINStglTZCBdY="/>
+        <field:input field="recomendacionOutPerform_last_4weeks" id="c_com_prediccion_acciones2_domain_Company_recomendacionOutPerform_last_4weeks" validationMessageCode="field_invalid_integer" z="niZokH/M4NHYg6F5m9tKv5KZ3c0="/>
+        <field:input field="recomendacionHold_last_4weeks" id="c_com_prediccion_acciones2_domain_Company_recomendacionHold_last_4weeks" validationMessageCode="field_invalid_integer" z="A9Mr5e76jvhPYAAnv7k3DJQ5w8g="/>
+        <field:input field="recomendacionUnderPerform_last_4weeks" id="c_com_prediccion_acciones2_domain_Company_recomendacionUnderPerform_last_4weeks" validationMessageCode="field_invalid_integer" z="tnYO4jXFNcw9a38deP83/cZag08="/>
+        <field:input field="recomendacionSell_last_4weeks" id="c_com_prediccion_acciones2_domain_Company_recomendacionSell_last_4weeks" validationMessageCode="field_invalid_integer" z="cwGpefJzBsV45nEtJn8sOAoyYqA="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_com_prediccion_acciones2_domain_Company" render="${not empty dependencies}" z="wYQj9THlSjjqeXTv5NJbNVVoWJA="/>
 </div>

@@ -6,13 +6,12 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.constraints.NotNull;
 
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
-import org.springframework.roo.addon.tostring.RooToString;
 import org.springframework.roo.addon.json.RooJson;
+import org.springframework.roo.addon.tostring.RooToString;
 
 @RooJavaBean
 @RooToString
@@ -87,6 +86,45 @@ public class CompanyHistoric {
     private Integer recomendacionUnderPerform_last_year;
     @Column
     private Integer recomendacionSell_last_year;
+    
+    @Column
+    private Double recomendacionAverage_last_3months;
+    @Column
+    private Integer recomendacionBuy_last_3months;
+    @Column
+    private Integer recomendacionOutPerform_last_3months;
+    @Column
+    private Integer recomendacionHold_last_3months;
+    @Column
+    private Integer recomendacionUnderPerform_last_3months;
+    @Column
+    private Integer recomendacionSell_last_3months;
+
+    @Column
+    private Double recomendacionAverage_last_2months;
+    @Column
+    private Integer recomendacionBuy_last_2months;
+    @Column
+    private Integer recomendacionOutPerform_last_2months;
+    @Column
+    private Integer recomendacionHold_last_2months;
+    @Column
+    private Integer recomendacionUnderPerform_last_2months;
+    @Column
+    private Integer recomendacionSell_last_2months;
+
+    @Column
+    private Double recomendacionAverage_last_4weeks;
+    @Column
+    private Integer recomendacionBuy_last_4weeks;
+    @Column
+    private Integer recomendacionOutPerform_last_4weeks;
+    @Column
+    private Integer recomendacionHold_last_4weeks;
+    @Column
+    private Integer recomendacionUnderPerform_last_4weeks;
+    @Column
+    private Integer recomendacionSell_last_4weeks;    
     
     public void save() {
         if (entityManager.contains(this)) {

@@ -139,6 +139,62 @@ public class Company {
     @Column
     @Mapping("recomendacionSell_last_year")
     private Integer recomendacionSell_last_year;
+    @Column
+    @Mapping("recomendacionAverage_last_3months")
+    private Double recomendacionAverage_last_3months;
+    @Column
+    @Mapping("recomendacionBuy_last_3months")
+    private Integer recomendacionBuy_last_3months;
+    @Column
+    @Mapping("recomendacionOutPerform_last_3months")
+    private Integer recomendacionOutPerform_last_3months;
+    @Column
+    @Mapping("recomendacionHold_last_3months")
+    private Integer recomendacionHold_last_3months;
+    @Column
+    @Mapping("recomendacionUnderPerform_last_3months")
+    private Integer recomendacionUnderPerform_last_3months;
+    @Column
+    @Mapping("recomendacionSell_last_3months")
+    private Integer recomendacionSell_last_3months;
+
+    @Column
+    @Mapping("recomendacionAverage_last_2months")
+    private Double recomendacionAverage_last_2months;
+    @Column
+    @Mapping("recomendacionBuy_last_2months")
+    private Integer recomendacionBuy_last_2months;
+    @Column
+    @Mapping("recomendacionOutPerform_last_2months")
+    private Integer recomendacionOutPerform_last_2months;
+    @Column
+    @Mapping("recomendacionHold_last_2months")
+    private Integer recomendacionHold_last_2months;
+    @Column
+    @Mapping("recomendacionUnderPerform_last_2months")
+    private Integer recomendacionUnderPerform_last_2months;
+    @Column
+    @Mapping("recomendacionSell_last_2months")
+    private Integer recomendacionSell_last_2months;
+
+    @Column
+    @Mapping("recomendacionAverage_last_4weeks")
+    private Double recomendacionAverage_last_4weeks;
+    @Column
+    @Mapping("recomendacionBuy_last_4weeks")
+    private Integer recomendacionBuy_last_4weeks;
+    @Column
+    @Mapping("recomendacionOutPerform_last_4weeks")
+    private Integer recomendacionOutPerform_last_4weeks;
+    @Column
+    @Mapping("recomendacionHold_last_4weeks")
+    private Integer recomendacionHold_last_4weeks;
+    @Column
+    @Mapping("recomendacionUnderPerform_last_4weeks")
+    private Integer recomendacionUnderPerform_last_4weeks;
+    @Column
+    @Mapping("recomendacionSell_last_4weeks")
+    private Integer recomendacionSell_last_4weeks;
     
     public void setMarket(String exchange){
     	if(exchange.equalsIgnoreCase("NYSE")){
@@ -187,6 +243,8 @@ public class Company {
     		this.market = ":VTX";
     	}else if(exchange.equalsIgnoreCase("SWX")){
     		this.market = ":SWX";
+    	}else if(exchange.equalsIgnoreCase("WSE")){
+    		this.market = ":WSE";
     	}
     }
 
@@ -257,6 +315,34 @@ public class Company {
 					+recomendacionBuy_last_year.doubleValue()*1.5D
 					- recomendacionUnderPerform_last_year.doubleValue()
 					- recomendacionSell_last_year.doubleValue()*1.5D; 
+		}
+		
+	}
+	public void generateOpinionAverage_last_3months(){
+		if(recomendacionBuy_last_3months!=null||recomendacionUnderPerform_last_3months!=null||recomendacionOutPerform_last_3months!=null||recomendacionSell_last_3months!=null){
+			this.recomendacionAverage_last_3months = recomendacionOutPerform_last_3months.doubleValue() 
+					+recomendacionBuy_last_3months.doubleValue()*1.5D
+					- recomendacionUnderPerform_last_3months.doubleValue()
+					- recomendacionSell_last_3months.doubleValue()*1.5D; 
+		}
+		
+	}
+	public void generateOpinionAverage_last_2months(){
+		if(recomendacionBuy_last_2months!=null||recomendacionUnderPerform_last_2months!=null||recomendacionOutPerform_last_2months!=null||recomendacionSell_last_2months!=null){
+			this.recomendacionAverage_last_2months = recomendacionOutPerform_last_2months.doubleValue() 
+					+recomendacionBuy_last_2months.doubleValue()*1.5D
+					- recomendacionUnderPerform_last_2months.doubleValue()
+					- recomendacionSell_last_2months.doubleValue()*1.5D; 
+		}
+		
+	}
+
+	public void generateOpinionAverage_last_4weeks(){
+		if(recomendacionBuy_last_4weeks!=null||recomendacionUnderPerform_last_4weeks!=null||recomendacionOutPerform_last_4weeks!=null||recomendacionSell_last_4weeks!=null){
+			this.recomendacionAverage_last_4weeks = recomendacionOutPerform_last_4weeks.doubleValue() 
+					+recomendacionBuy_last_4weeks.doubleValue()*1.5D
+					- recomendacionUnderPerform_last_4weeks.doubleValue()
+					- recomendacionSell_last_4weeks.doubleValue()*1.5D; 
 		}
 		
 	}
@@ -383,6 +469,8 @@ public class Company {
     		return "SWISS";
     	}else if(exchange.equalsIgnoreCase("SWX")){
     		return "SWISS";
+    	}else if(exchange.equalsIgnoreCase("WSE")){
+    		return "POLAND";
     	}
     	return "INCOGNITA";
     }
