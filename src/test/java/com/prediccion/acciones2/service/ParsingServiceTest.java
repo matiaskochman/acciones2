@@ -41,12 +41,14 @@ public class ParsingServiceTest extends AbstractJUnit4SpringContextTests{
 		TreeSet<Company> resultSet = new TreeSet<Company>(minComparator);
 
 		/*
-		Set<Company> list1 = parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForUS("6000"),180);//21000
+		Set<Company> list21 = parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForSouthAfrica("350"),1); //237
+		 */
+		Set<Company> list1 = parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForUS("6000"),200);//21000
 		Set<Company> list5 = parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForGermany("1600"),180); //1600
 		Set<Company> list4 = parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForCanada("4000"),180);//4000
     	Set<Company> list2 = parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForParis("1500"),150);//1500
-    	Set<Company> list3 = parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForLondon("1300"),150);//1300
-    	Set<Company> list6 = parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForItaly("350"),100); //350
+    	Set<Company> list3 = parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForLondon("1300"),180);//1300
+    	Set<Company> list6 = parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForItaly("350"),180); //350
     	Set<Company> list7 = parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForSpain("140"),140); //140
     	Set<Company> list8 = parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForBrasil("1000"),180); //1000
     	Set<Company> list9 = parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForBelgium("140"),140); //159
@@ -54,14 +56,15 @@ public class ParsingServiceTest extends AbstractJUnit4SpringContextTests{
     	Set<Company> list11 = parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForAustralia("1700"),180); //1964
     	Set<Company> list12 = parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForNewZeland("140"),140); //152
     	Set<Company> list13 = parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForTaiwan("890"),180); //897
-    	Set<Company> list14 = parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForSingapore("700"),150); //759
+    	Set<Company> list14 = parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForSingapore("700"),180); //759
     	Set<Company> list15 = parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForJapan("3000"),180); //3656
     	Set<Company> list16 = parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForChina("2500"),180); //2830
     	Set<Company> list17 = parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForSwitzerland("230"),180); //237
-		 */
     	Set<Company> list18 = parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForPoland("400"),180); //237
+    	Set<Company> list19 = parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForTurkey("390"),180); //237
+    	Set<Company> list20 = parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForSweden("290"),180); //237
+    	Set<Company> list22 = parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForRussia("275"),180); //237
 
-    	/*
 		resultSet.addAll(list1);
     	resultSet.addAll(list2);
     	resultSet.addAll(list3);
@@ -79,8 +82,13 @@ public class ParsingServiceTest extends AbstractJUnit4SpringContextTests{
     	resultSet.addAll(list15);
     	resultSet.addAll(list16);
     	resultSet.addAll(list17);
-    	 */
     	resultSet.addAll(list18);
+    	resultSet.addAll(list19);
+    	resultSet.addAll(list20);
+    	resultSet.addAll(list22);
+    	/*
+    	resultSet.addAll(list21);
+    	 */
     	
     	Integer count =0 ;
     	

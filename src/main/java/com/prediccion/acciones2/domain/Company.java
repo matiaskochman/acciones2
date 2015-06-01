@@ -245,6 +245,14 @@ public class Company {
     		this.market = ":SWX";
     	}else if(exchange.equalsIgnoreCase("WSE")){
     		this.market = ":WSE";
+    	}else if(exchange.equalsIgnoreCase("IST")){
+    		this.market = ":IST";
+    	}else if(exchange.equalsIgnoreCase("STO")){
+    		this.market = ":STO";
+    	}else if(exchange.equalsIgnoreCase("JSE")){
+    		this.market = ":JNB";
+    	}else if(exchange.equalsIgnoreCase("MCX")){
+    		this.market = ":MCX";
     	}
     }
 
@@ -471,6 +479,14 @@ public class Company {
     		return "SWISS";
     	}else if(exchange.equalsIgnoreCase("WSE")){
     		return "POLAND";
+    	}else if(exchange.equalsIgnoreCase("IST")){
+    		return "TURKEY";
+    	}else if(exchange.equalsIgnoreCase("STO")){
+    		return "SWEEDEN";
+    	}else if(exchange.equalsIgnoreCase("JSE")){
+    		return "SOUTH AFRICA";
+    	}else if(exchange.equalsIgnoreCase("MCX")){
+    		return "RUSSIA";
     	}
     	return "INCOGNITA";
     }

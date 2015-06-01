@@ -535,4 +535,115 @@ public class QueryBuilder {
 		
 		return query;
 	}
+	public static String buildQueryForTurkey(String numberOfCompanies){
+		
+    	String num=null;
+    	if(numberOfCompanies==null){
+    		num="10";
+    	}else{
+    		num=numberOfCompanies;
+    	}
+    	String marketCapitalFrom = "100000";
+    	
+		String query = "https://www.google.com/finance?output=json&start=0&"
+				+ "num="+num
+				+ "&noIL=1&q=[currency%20%3D%3D%20%22TRY%22%20%26%20%28"
+				+ "exchange%20%3D%3D%20%22IST%22%29%20%26%20%28"
+				+ "market_cap%20%3E%3D%20"+marketCapitalFrom
+				+ "%29%20%26%20%28"
+				+ "market_cap%20%3C%3D%2035410000000%29%20%26%20%28"
+				+ "pe_ratio%20%3E%3D%200%29%20%26%20%28"
+				+ "pe_ratio%20%3C%3D%2020799%29%20%26%20%28"
+				+ "dividend_yield%20%3E%3D%200%29%20%26%20%28"
+				+ "dividend_yield%20%3C%3D%2022.24%29%20%26%20%28"
+				+ "price_change_52week%20%3E%3D%20-93.8%29%20%26%20%28"
+				+ "price_change_52week%20%3C%3D%20489%29]&restype=company&ei=GspsVZnID8T4evyYg8gG&"
+				+ "sortas=MarketCap";
+		
+		return query;
+	}
+	public static String buildQueryForSweden(String numberOfCompanies){
+		
+    	String num=null;
+    	if(numberOfCompanies==null){
+    		num="10";
+    	}else{
+    		num=numberOfCompanies;
+    	}
+    	String marketCapitalFrom = "100000";
+    	
+    	String query = "https://www.google.com/finance?output=json&"
+    			+ "start=0&"
+    			+ "num="+num
+    			+ "&noIL=1&q=[%28"
+    			+ "exchange%20%3D%3D%20%22STO%22%29%20%26%20%28"
+    			+ "market_cap%20%3E%3D%20"+marketCapitalFrom
+    			+ "%29%20%26%20%28"
+    			+ "market_cap%20%3C%3D%20491080000000%29%20%26%20%28"
+    			+ "pe_ratio%20%3E%3D%200%29%20%26%20%28"
+    			+ "pe_ratio%20%3C%3D%201301%29%20%26%20%28"
+    			+ "dividend_yield%20%3E%3D%200%29%20%26%20%28"
+    			+ "dividend_yield%20%3C%3D%2072.04%29%20%26%20%28"
+    			+ "price_change_52week%20%3E%3D%20-95.27%29%20%26%20%28"
+    			+ "price_change_52week%20%3C%3D%20313%29]&restype=company&ei=GspsVZnID8T4evyYg8gG&"
+    			+ "sortas=MarketCap";
+    	
+    	return query;
+	}
+	public static String buildQueryForSouthAfrica(String numberOfCompanies){
+		
+    	String num=null;
+    	if(numberOfCompanies==null){
+    		num="10";
+    	}else{
+    		num=numberOfCompanies;
+    	}
+    	String marketCapitalFrom = "100000";
+    	
+		String query = "https://www.google.com/finance?output=json&"
+				+ "start=0&"
+				+ "num="+num
+				+ "&noIL=1&q=[%28"
+				+ "currency%20%3D%3D%20%22ZAR%22%20%7C%20"
+				+ "currency%20%3D%3D%20%22ZAC%22%29%20%26%20%28"
+				+ "exchange%20%3D%3D%20%22JSE%22%29%20%26%20%28"
+				+ "market_cap%20%3E%3D%20"+marketCapitalFrom
+				+ "%29%20%26%20%28"
+				+ "market_cap%20%3C%3D%201050000000000%29%20%26%20%28"
+				+ "pe_ratio%20%3E%3D%200%29%20%26%20%28"
+				+ "pe_ratio%20%3C%3D%209334%29%20%26%20%28"
+				+ "dividend_yield%20%3E%3D%200%29%20%26%20%28"
+				+ "dividend_yield%20%3C%3D%2089.3%29%20%26%20%28"
+				+ "price_change_52week%20%3E%3D%20-96.57%29%20%26%20%28"
+				+ "price_change_52week%20%3C%3D%20436%29]&restype=company&ei=GspsVZnID8T4evyYg8gG&"
+				+ "sortas=MarketCap";
+		
+		return query;
+	}
+	public static String buildQueryForRussia(String numberOfCompanies){
+    	String num=null;
+    	if(numberOfCompanies==null){
+    		num="10";
+    	}else{
+    		num=numberOfCompanies;
+    	}
+    	String marketCapitalFrom = "100000";		
+		
+		String query = "https://www.google.com/finance?output=json&start=0&"
+				+ "num="+num
+				+ "&noIL=1&q=[currency%20%3D%3D%20%22RUB%22%20%26%20%28"
+				+ "exchange%20%3D%3D%20%22MCX%22%29%20%26%20%28"
+				+ "market_cap%20%3E%3D%20"+marketCapitalFrom
+				+ "%29%20%26%20%28"
+				+ "market_cap%20%3C%3D%203300000000000%29%20%26%20%28"
+				+ "pe_ratio%20%3E%3D%200%29%20%26%20%28"
+				+ "pe_ratio%20%3C%3D%2065394%29%20%26%20%28"
+				+ "dividend_yield%20%3E%3D%200%29%20%26%20%28"
+				+ "dividend_yield%20%3C%3D%2025.75%29%20%26%20%28"
+				+ "price_change_52week%20%3E%3D%20-86.7%29%20%26%20%28"
+				+ "price_change_52week%20%3C%3D%20357%29]&restype=company&ei=GspsVZnID8T4evyYg8gG&"
+				+ "sortas=MarketCap";
+		
+		return query;
+	}
 }
