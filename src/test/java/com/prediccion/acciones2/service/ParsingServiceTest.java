@@ -45,6 +45,7 @@ public class ParsingServiceTest extends AbstractJUnit4SpringContextTests{
 		 */
 		
 		/*
+		 */
 		Set<Company> list1 = parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForUS("6000"),180);//21000
 		Set<Company> list5 = parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForGermany("1600"),180); //1600
 		Set<Company> list4 = parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForCanada("4000"),180);//4000
@@ -65,10 +66,10 @@ public class ParsingServiceTest extends AbstractJUnit4SpringContextTests{
     	Set<Company> list18 = parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForPoland("400"),180); //237
     	Set<Company> list19 = parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForTurkey("390"),180); //237
     	Set<Company> list20 = parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForSweden("290"),180); //237
-    	*/
     	Set<Company> list22 = parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForRussia("275"),180); //237
 
     	/*
+    	 */
 		resultSet.addAll(list1);
     	resultSet.addAll(list2);
     	resultSet.addAll(list3);
@@ -89,8 +90,8 @@ public class ParsingServiceTest extends AbstractJUnit4SpringContextTests{
     	resultSet.addAll(list18);
     	resultSet.addAll(list19);
     	resultSet.addAll(list20);
-    	*/
     	resultSet.addAll(list22);
+    	
     	
     	/*
     	resultSet.addAll(list21);

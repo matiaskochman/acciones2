@@ -51,10 +51,11 @@ public class CompanyHistoricServiceImpl implements CompanyHistoricService {
 			//ch.persist();
 			ch.save();
 		}
-		
+		/*
 		for (Company company : companyList) {
 			company.remove();
 		}
+		*/
 	}
 
 }
