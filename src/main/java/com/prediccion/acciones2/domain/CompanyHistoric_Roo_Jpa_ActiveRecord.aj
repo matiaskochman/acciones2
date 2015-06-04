@@ -6,16 +6,14 @@ package com.prediccion.acciones2.domain;
 import com.prediccion.acciones2.domain.CompanyHistoric;
 import java.util.List;
 import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import org.springframework.transaction.annotation.Transactional;
 
 privileged aspect CompanyHistoric_Roo_Jpa_ActiveRecord {
     
-    @PersistenceContext
-    transient EntityManager CompanyHistoric._entityManager;
+    public static final List<String> CompanyHistoric.fieldNames4OrderClauseFilter = java.util.Arrays.asList("entityManager", "title", "ticker", "market", "stockValue", "maxForecastPercentageValue", "medForecastPercentageValue", "minForecastPercentageValue", "maxForecastValue", "medForecastValue", "minForecastValue", "price52WeekPercChange", "recomendacionAverage", "recomendacionBuy", "recomendacionOutPerform", "recomendacionHold", "recomendacionUnderPerform", "recomendacionSell", "recomendacionNoOpinion", "volumenNegociado", "fechaCreacion", "marketCap", "pe", "exchange", "companyId", "localCurrencySymbol", "recomendacionAverage_last_year", "recomendacionBuy_last_year", "recomendacionOutPerform_last_year", "recomendacionHold_last_year", "recomendacionUnderPerform_last_year", "recomendacionSell_last_year", "recomendacionAverage_last_3months", "recomendacionBuy_last_3months", "recomendacionOutPerform_last_3months", "recomendacionHold_last_3months", "recomendacionUnderPerform_last_3months", "recomendacionSell_last_3months", "recomendacionAverage_last_2months", "recomendacionBuy_last_2months", "recomendacionOutPerform_last_2months", "recomendacionHold_last_2months", "recomendacionUnderPerform_last_2months", "recomendacionSell_last_2months", "recomendacionAverage_last_4weeks", "recomendacionBuy_last_4weeks", "recomendacionOutPerform_last_4weeks", "recomendacionHold_last_4weeks", "recomendacionUnderPerform_last_4weeks", "recomendacionSell_last_4weeks");
     
     public static final EntityManager CompanyHistoric.entityManager() {
-        EntityManager em = new CompanyHistoric()._entityManager;
+        EntityManager em = new CompanyHistoric().entityManager;
         if (em == null) throw new IllegalStateException("Entity manager has not been injected (is the Spring Aspects JAR configured as an AJC/AJDT aspects library?)");
         return em;
     }
@@ -28,6 +26,17 @@ privileged aspect CompanyHistoric_Roo_Jpa_ActiveRecord {
         return entityManager().createQuery("SELECT o FROM CompanyHistoric o", CompanyHistoric.class).getResultList();
     }
     
+    public static List<CompanyHistoric> CompanyHistoric.findAllCompanyHistorics(String sortFieldName, String sortOrder) {
+        String jpaQuery = "SELECT o FROM CompanyHistoric o";
+        if (fieldNames4OrderClauseFilter.contains(sortFieldName)) {
+            jpaQuery = jpaQuery + " ORDER BY " + sortFieldName;
+            if ("ASC".equalsIgnoreCase(sortOrder) || "DESC".equalsIgnoreCase(sortOrder)) {
+                jpaQuery = jpaQuery + " " + sortOrder;
+            }
+        }
+        return entityManager().createQuery(jpaQuery, CompanyHistoric.class).getResultList();
+    }
+    
     public static CompanyHistoric CompanyHistoric.findCompanyHistoric(Long id) {
         if (id == null) return null;
         return entityManager().find(CompanyHistoric.class, id);
@@ -37,40 +46,51 @@ privileged aspect CompanyHistoric_Roo_Jpa_ActiveRecord {
         return entityManager().createQuery("SELECT o FROM CompanyHistoric o", CompanyHistoric.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
     }
     
+    public static List<CompanyHistoric> CompanyHistoric.findCompanyHistoricEntries(int firstResult, int maxResults, String sortFieldName, String sortOrder) {
+        String jpaQuery = "SELECT o FROM CompanyHistoric o";
+        if (fieldNames4OrderClauseFilter.contains(sortFieldName)) {
+            jpaQuery = jpaQuery + " ORDER BY " + sortFieldName;
+            if ("ASC".equalsIgnoreCase(sortOrder) || "DESC".equalsIgnoreCase(sortOrder)) {
+                jpaQuery = jpaQuery + " " + sortOrder;
+            }
+        }
+        return entityManager().createQuery(jpaQuery, CompanyHistoric.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
+    }
+    
     @Transactional
     public void CompanyHistoric.persist() {
-        if (this._entityManager == null) this._entityManager = entityManager();
-        this._entityManager.persist(this);
+        if (this.entityManager == null) this.entityManager = entityManager();
+        this.entityManager.persist(this);
     }
     
     @Transactional
     public void CompanyHistoric.remove() {
-        if (this._entityManager == null) this._entityManager = entityManager();
-        if (this._entityManager.contains(this)) {
-            this._entityManager.remove(this);
+        if (this.entityManager == null) this.entityManager = entityManager();
+        if (this.entityManager.contains(this)) {
+            this.entityManager.remove(this);
         } else {
             CompanyHistoric attached = CompanyHistoric.findCompanyHistoric(this.id);
-            this._entityManager.remove(attached);
+            this.entityManager.remove(attached);
         }
     }
     
     @Transactional
     public void CompanyHistoric.flush() {
-        if (this._entityManager == null) this._entityManager = entityManager();
-        this._entityManager.flush();
+        if (this.entityManager == null) this.entityManager = entityManager();
+        this.entityManager.flush();
     }
     
     @Transactional
     public void CompanyHistoric.clear() {
-        if (this._entityManager == null) this._entityManager = entityManager();
-        this._entityManager.clear();
+        if (this.entityManager == null) this.entityManager = entityManager();
+        this.entityManager.clear();
     }
     
     @Transactional
     public CompanyHistoric CompanyHistoric.merge() {
-        if (this._entityManager == null) this._entityManager = entityManager();
-        CompanyHistoric merged = this._entityManager.merge(this);
-        this._entityManager.flush();
+        if (this.entityManager == null) this.entityManager = entityManager();
+        CompanyHistoric merged = this.entityManager.merge(this);
+        this.entityManager.flush();
         return merged;
     }
     

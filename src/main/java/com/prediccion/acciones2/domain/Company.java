@@ -25,175 +25,253 @@ import org.springframework.roo.addon.tostring.RooToString;
 @RooJson
 public class Company {
 
-	public Company(String title, String ticker, String exchange,
-			String companyId, String localCurrencySymbol,
-			Double price52WeekPercChange,Double marketCap,Double pe,String localCurrency) {
+
+
+	public Company(EntityManager entityManager, String title, String ticker,
+			String market, Double stockValue,
+			Double maxForecastPercentageValue,
+			Double medForecastPercentageValue,
+			Double minForecastPercentageValue, Double maxForecastValue,
+			Double medForecastValue, Double minForecastValue,
+			Double price52WeekPercChange, Double recomendacionAverage,
+			Integer recomendacionBuy, Integer recomendacionOutPerform,
+			Integer recomendacionHold, Integer recomendacionUnderPerform,
+			Integer recomendacionSell, Integer recomendacionNoOpinion,
+			String volumenNegociado, Date fechaCreacion, Double marketCap,
+			Double pe, String exchange, String companyId,
+			String localCurrencySymbol, Double recomendacionAverage_last_year,
+			Integer recomendacionBuy_last_year,
+			Integer recomendacionOutPerform_last_year,
+			Integer recomendacionHold_last_year,
+			Integer recomendacionUnderPerform_last_year,
+			Integer recomendacionSell_last_year,
+			Double recomendacionAverage_last_3months,
+			Integer recomendacionBuy_last_3months,
+			Integer recomendacionOutPerform_last_3months,
+			Integer recomendacionHold_last_3months,
+			Integer recomendacionUnderPerform_last_3months,
+			Integer recomendacionSell_last_3months,
+			Double recomendacionAverage_last_2months,
+			Integer recomendacionBuy_last_2months,
+			Integer recomendacionOutPerform_last_2months,
+			Integer recomendacionHold_last_2months,
+			Integer recomendacionUnderPerform_last_2months,
+			Integer recomendacionSell_last_2months,
+			Double recomendacionAverage_last_4weeks,
+			Integer recomendacionBuy_last_4weeks,
+			Integer recomendacionOutPerform_last_4weeks,
+			Integer recomendacionHold_last_4weeks,
+			Integer recomendacionUnderPerform_last_4weeks,
+			Integer recomendacionSell_last_4weeks) {
 		super();
+		this.entityManager = entityManager;
 		this.title = title;
 		this.ticker = ticker;
+		this.market = market;
+		this.stockValue = stockValue;
+		this.maxForecastPercentageValue = maxForecastPercentageValue;
+		this.medForecastPercentageValue = medForecastPercentageValue;
+		this.minForecastPercentageValue = minForecastPercentageValue;
+		this.maxForecastValue = maxForecastValue;
+		this.medForecastValue = medForecastValue;
+		this.minForecastValue = minForecastValue;
+		this.price52WeekPercChange = price52WeekPercChange;
+		this.recomendacionAverage = recomendacionAverage;
+		this.recomendacionBuy = recomendacionBuy;
+		this.recomendacionOutPerform = recomendacionOutPerform;
+		this.recomendacionHold = recomendacionHold;
+		this.recomendacionUnderPerform = recomendacionUnderPerform;
+		this.recomendacionSell = recomendacionSell;
+		this.recomendacionNoOpinion = recomendacionNoOpinion;
+		this.volumenNegociado = volumenNegociado;
+		this.fechaCreacion = fechaCreacion;
+		this.marketCap = marketCap;
+		this.pe = pe;
 		this.exchange = exchange;
 		this.companyId = companyId;
 		this.localCurrencySymbol = localCurrencySymbol;
-		this.price52WeekPercChange =price52WeekPercChange;
-		this.marketCap = marketCap;
-		this.pe = pe;
-		this.localCurrencySymbol=localCurrency;
+		this.recomendacionAverage_last_year = recomendacionAverage_last_year;
+		this.recomendacionBuy_last_year = recomendacionBuy_last_year;
+		this.recomendacionOutPerform_last_year = recomendacionOutPerform_last_year;
+		this.recomendacionHold_last_year = recomendacionHold_last_year;
+		this.recomendacionUnderPerform_last_year = recomendacionUnderPerform_last_year;
+		this.recomendacionSell_last_year = recomendacionSell_last_year;
+		this.recomendacionAverage_last_3months = recomendacionAverage_last_3months;
+		this.recomendacionBuy_last_3months = recomendacionBuy_last_3months;
+		this.recomendacionOutPerform_last_3months = recomendacionOutPerform_last_3months;
+		this.recomendacionHold_last_3months = recomendacionHold_last_3months;
+		this.recomendacionUnderPerform_last_3months = recomendacionUnderPerform_last_3months;
+		this.recomendacionSell_last_3months = recomendacionSell_last_3months;
+		this.recomendacionAverage_last_2months = recomendacionAverage_last_2months;
+		this.recomendacionBuy_last_2months = recomendacionBuy_last_2months;
+		this.recomendacionOutPerform_last_2months = recomendacionOutPerform_last_2months;
+		this.recomendacionHold_last_2months = recomendacionHold_last_2months;
+		this.recomendacionUnderPerform_last_2months = recomendacionUnderPerform_last_2months;
+		this.recomendacionSell_last_2months = recomendacionSell_last_2months;
+		this.recomendacionAverage_last_4weeks = recomendacionAverage_last_4weeks;
+		this.recomendacionBuy_last_4weeks = recomendacionBuy_last_4weeks;
+		this.recomendacionOutPerform_last_4weeks = recomendacionOutPerform_last_4weeks;
+		this.recomendacionHold_last_4weeks = recomendacionHold_last_4weeks;
+		this.recomendacionUnderPerform_last_4weeks = recomendacionUnderPerform_last_4weeks;
+		this.recomendacionSell_last_4weeks = recomendacionSell_last_4weeks;
+		
 		setMarket(exchange);
 	}
+
 
     @PersistenceContext
     transient EntityManager entityManager;
 	
     @NotNull
     @Column(unique = true)
-    @Mapping("title")
+    //@Mapping("title")
     private String title;
     @NotNull
-    @Mapping("ticker")
+    //@Mapping("ticker")
     private String ticker;
     @NotNull
-    @Mapping("market")
+    //@Mapping("market")
     private String market;
     @Column
-    @Mapping("stockValue")
+    //@Mapping("stockValue")
     private Double stockValue;
     @Column
-    @Mapping("maxForecastPercentageValue")
+    //@Mapping("maxForecastPercentageValue")
     private Double maxForecastPercentageValue;
     @Column
-    @Mapping("medForecastPercentageValue")
+    //@Mapping("medForecastPercentageValue")
     private Double medForecastPercentageValue;
     @Column
-    @Mapping("minForecastPercentageValue")
+    //@Mapping("minForecastPercentageValue")
     private Double minForecastPercentageValue;
     @Column
-    @Mapping("maxForecastValue")
+    //@Mapping("maxForecastValue")
     private Double maxForecastValue;
     @Column
-    @Mapping("medForecastValue")
+    //@Mapping("medForecastValue")
     private Double medForecastValue;
     @Column
-    @Mapping("minForecastValue")
+    //@Mapping("minForecastValue")
     private Double minForecastValue;
     @Column
-    @Mapping("ticker")
+    //@Mapping("ticker")
     private Double price52WeekPercChange;
     @Column
-    @Mapping("recomendacionAverage")
+    //@Mapping("recomendacionAverage")
     private Double recomendacionAverage;
     @Column
-    @Mapping("recomendacionBuy")
+    //@Mapping("recomendacionBuy")
     private Integer recomendacionBuy;
     @Column
-    @Mapping("recomendacionOutPerform")
+    //@Mapping("recomendacionOutPerform")
     private Integer recomendacionOutPerform;
     @Column
-    @Mapping("recomendacionHold")
+    //@Mapping("recomendacionHold")
     private Integer recomendacionHold;
     @Column
-    @Mapping("recomendacionUnderPerform")
+    //@Mapping("recomendacionUnderPerform")
     private Integer recomendacionUnderPerform;
     @Column
-    @Mapping("recomendacionSell")
+    //@Mapping("recomendacionSell")
     private Integer recomendacionSell;
     @Column
-    @Mapping("recomendacionNoOpinion")
+    //@Mapping("recomendacionNoOpinion")
     private Integer recomendacionNoOpinion;
     @Column
-    @Mapping("volumenNegociado")
+    //@Mapping("volumenNegociado")
     private String volumenNegociado;
     @Temporal(TemporalType.TIMESTAMP)
     @DateTimeFormat(pattern = "dd/MM/yyyy")
-    @Mapping("fechaCreacion")
+    //@Mapping("fechaCreacion")
     private Date fechaCreacion;
     @Column
-    @Mapping("marketCap")
+    //@Mapping("marketCap")
     private Double marketCap;
     @Column
-    @Mapping("pe")
+    //@Mapping("pe")
     private Double pe;
     @NotNull
-    @Mapping("exchange")
+    //@Mapping("exchange")
     private String exchange;
     @Column(unique = true)
-    @Mapping("companyId")
+    //@Mapping("companyId")
     private String companyId;
     @Column
-    @Mapping("localCurrencySymbol")
+    //@Mapping("localCurrencySymbol")
     private String localCurrencySymbol;
     @Column
-    @Mapping("recomendacionAverage_last_year")
+    //@Mapping("recomendacionAverage_last_year")
     private Double recomendacionAverage_last_year;
     @Column
-    @Mapping("recomendacionBuy_last_year")
+    //@Mapping("recomendacionBuy_last_year")
     private Integer recomendacionBuy_last_year;
     @Column
-    @Mapping("recomendacionOutPerform_last_year")
+    //@Mapping("recomendacionOutPerform_last_year")
     private Integer recomendacionOutPerform_last_year;
     @Column
-    @Mapping("recomendacionHold_last_year")
+    //@Mapping("recomendacionHold_last_year")
     private Integer recomendacionHold_last_year;
     @Column
-    @Mapping("recomendacionUnderPerform_last_year")
+    //@Mapping("recomendacionUnderPerform_last_year")
     private Integer recomendacionUnderPerform_last_year;
     @Column
-    @Mapping("recomendacionSell_last_year")
+    //@Mapping("recomendacionSell_last_year")
     private Integer recomendacionSell_last_year;
     @Column
-    @Mapping("recomendacionAverage_last_3months")
+    //@Mapping("recomendacionAverage_last_3months")
     private Double recomendacionAverage_last_3months;
     @Column
-    @Mapping("recomendacionBuy_last_3months")
+    //@Mapping("recomendacionBuy_last_3months")
     private Integer recomendacionBuy_last_3months;
     @Column
-    @Mapping("recomendacionOutPerform_last_3months")
+    //@Mapping("recomendacionOutPerform_last_3months")
     private Integer recomendacionOutPerform_last_3months;
     @Column
-    @Mapping("recomendacionHold_last_3months")
+    //@Mapping("recomendacionHold_last_3months")
     private Integer recomendacionHold_last_3months;
     @Column
-    @Mapping("recomendacionUnderPerform_last_3months")
+    //@Mapping("recomendacionUnderPerform_last_3months")
     private Integer recomendacionUnderPerform_last_3months;
     @Column
-    @Mapping("recomendacionSell_last_3months")
+    //@Mapping("recomendacionSell_last_3months")
     private Integer recomendacionSell_last_3months;
 
     @Column
-    @Mapping("recomendacionAverage_last_2months")
+    //@Mapping("recomendacionAverage_last_2months")
     private Double recomendacionAverage_last_2months;
     @Column
-    @Mapping("recomendacionBuy_last_2months")
+    //@Mapping("recomendacionBuy_last_2months")
     private Integer recomendacionBuy_last_2months;
     @Column
-    @Mapping("recomendacionOutPerform_last_2months")
+    //@Mapping("recomendacionOutPerform_last_2months")
     private Integer recomendacionOutPerform_last_2months;
     @Column
-    @Mapping("recomendacionHold_last_2months")
+    //@Mapping("recomendacionHold_last_2months")
     private Integer recomendacionHold_last_2months;
     @Column
-    @Mapping("recomendacionUnderPerform_last_2months")
+    //@Mapping("recomendacionUnderPerform_last_2months")
     private Integer recomendacionUnderPerform_last_2months;
     @Column
-    @Mapping("recomendacionSell_last_2months")
+    //@Mapping("recomendacionSell_last_2months")
     private Integer recomendacionSell_last_2months;
 
     @Column
-    @Mapping("recomendacionAverage_last_4weeks")
+    //@Mapping("recomendacionAverage_last_4weeks")
     private Double recomendacionAverage_last_4weeks;
     @Column
-    @Mapping("recomendacionBuy_last_4weeks")
+    //@Mapping("recomendacionBuy_last_4weeks")
     private Integer recomendacionBuy_last_4weeks;
     @Column
-    @Mapping("recomendacionOutPerform_last_4weeks")
+    //@Mapping("recomendacionOutPerform_last_4weeks")
     private Integer recomendacionOutPerform_last_4weeks;
     @Column
-    @Mapping("recomendacionHold_last_4weeks")
+    //@Mapping("recomendacionHold_last_4weeks")
     private Integer recomendacionHold_last_4weeks;
     @Column
-    @Mapping("recomendacionUnderPerform_last_4weeks")
+    //@Mapping("recomendacionUnderPerform_last_4weeks")
     private Integer recomendacionUnderPerform_last_4weeks;
     @Column
-    @Mapping("recomendacionSell_last_4weeks")
+    //@Mapping("recomendacionSell_last_4weeks")
     private Integer recomendacionSell_last_4weeks;
     
     public void setMarket(String exchange){

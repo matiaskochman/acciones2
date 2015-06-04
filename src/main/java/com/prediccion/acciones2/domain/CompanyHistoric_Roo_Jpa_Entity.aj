@@ -24,6 +24,10 @@ privileged aspect CompanyHistoric_Roo_Jpa_Entity {
     @Column(name = "version")
     private Integer CompanyHistoric.version;
     
+    public CompanyHistoric.new() {
+        super();
+    }
+
     public Long CompanyHistoric.getId() {
         return this.id;
     }

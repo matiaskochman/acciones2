@@ -5,17 +5,8 @@ package com.prediccion.acciones2.domain;
 
 import com.prediccion.acciones2.domain.CompanyHistoric;
 import java.util.Date;
-import javax.persistence.EntityManager;
 
 privileged aspect CompanyHistoric_Roo_JavaBean {
-    
-    public EntityManager CompanyHistoric.getEntityManager() {
-        return this.entityManager;
-    }
-    
-    public void CompanyHistoric.setEntityManager(EntityManager entityManager) {
-        this.entityManager = entityManager;
-    }
     
     public String CompanyHistoric.getTitle() {
         return this.title;
@@ -263,6 +254,150 @@ privileged aspect CompanyHistoric_Roo_JavaBean {
     
     public void CompanyHistoric.setRecomendacionSell_last_year(Integer recomendacionSell_last_year) {
         this.recomendacionSell_last_year = recomendacionSell_last_year;
+    }
+    
+    public Double CompanyHistoric.getRecomendacionAverage_last_3months() {
+        return this.recomendacionAverage_last_3months;
+    }
+    
+    public void CompanyHistoric.setRecomendacionAverage_last_3months(Double recomendacionAverage_last_3months) {
+        this.recomendacionAverage_last_3months = recomendacionAverage_last_3months;
+    }
+    
+    public Integer CompanyHistoric.getRecomendacionBuy_last_3months() {
+        return this.recomendacionBuy_last_3months;
+    }
+    
+    public void CompanyHistoric.setRecomendacionBuy_last_3months(Integer recomendacionBuy_last_3months) {
+        this.recomendacionBuy_last_3months = recomendacionBuy_last_3months;
+    }
+    
+    public Integer CompanyHistoric.getRecomendacionOutPerform_last_3months() {
+        return this.recomendacionOutPerform_last_3months;
+    }
+    
+    public void CompanyHistoric.setRecomendacionOutPerform_last_3months(Integer recomendacionOutPerform_last_3months) {
+        this.recomendacionOutPerform_last_3months = recomendacionOutPerform_last_3months;
+    }
+    
+    public Integer CompanyHistoric.getRecomendacionHold_last_3months() {
+        return this.recomendacionHold_last_3months;
+    }
+    
+    public void CompanyHistoric.setRecomendacionHold_last_3months(Integer recomendacionHold_last_3months) {
+        this.recomendacionHold_last_3months = recomendacionHold_last_3months;
+    }
+    
+    public Integer CompanyHistoric.getRecomendacionUnderPerform_last_3months() {
+        return this.recomendacionUnderPerform_last_3months;
+    }
+    
+    public void CompanyHistoric.setRecomendacionUnderPerform_last_3months(Integer recomendacionUnderPerform_last_3months) {
+        this.recomendacionUnderPerform_last_3months = recomendacionUnderPerform_last_3months;
+    }
+    
+    public Integer CompanyHistoric.getRecomendacionSell_last_3months() {
+        return this.recomendacionSell_last_3months;
+    }
+    
+    public void CompanyHistoric.setRecomendacionSell_last_3months(Integer recomendacionSell_last_3months) {
+        this.recomendacionSell_last_3months = recomendacionSell_last_3months;
+    }
+    
+    public Double CompanyHistoric.getRecomendacionAverage_last_2months() {
+        return this.recomendacionAverage_last_2months;
+    }
+    
+    public void CompanyHistoric.setRecomendacionAverage_last_2months(Double recomendacionAverage_last_2months) {
+        this.recomendacionAverage_last_2months = recomendacionAverage_last_2months;
+    }
+    
+    public Integer CompanyHistoric.getRecomendacionBuy_last_2months() {
+        return this.recomendacionBuy_last_2months;
+    }
+    
+    public void CompanyHistoric.setRecomendacionBuy_last_2months(Integer recomendacionBuy_last_2months) {
+        this.recomendacionBuy_last_2months = recomendacionBuy_last_2months;
+    }
+    
+    public Integer CompanyHistoric.getRecomendacionOutPerform_last_2months() {
+        return this.recomendacionOutPerform_last_2months;
+    }
+    
+    public void CompanyHistoric.setRecomendacionOutPerform_last_2months(Integer recomendacionOutPerform_last_2months) {
+        this.recomendacionOutPerform_last_2months = recomendacionOutPerform_last_2months;
+    }
+    
+    public Integer CompanyHistoric.getRecomendacionHold_last_2months() {
+        return this.recomendacionHold_last_2months;
+    }
+    
+    public void CompanyHistoric.setRecomendacionHold_last_2months(Integer recomendacionHold_last_2months) {
+        this.recomendacionHold_last_2months = recomendacionHold_last_2months;
+    }
+    
+    public Integer CompanyHistoric.getRecomendacionUnderPerform_last_2months() {
+        return this.recomendacionUnderPerform_last_2months;
+    }
+    
+    public void CompanyHistoric.setRecomendacionUnderPerform_last_2months(Integer recomendacionUnderPerform_last_2months) {
+        this.recomendacionUnderPerform_last_2months = recomendacionUnderPerform_last_2months;
+    }
+    
+    public Integer CompanyHistoric.getRecomendacionSell_last_2months() {
+        return this.recomendacionSell_last_2months;
+    }
+    
+    public void CompanyHistoric.setRecomendacionSell_last_2months(Integer recomendacionSell_last_2months) {
+        this.recomendacionSell_last_2months = recomendacionSell_last_2months;
+    }
+    
+    public Double CompanyHistoric.getRecomendacionAverage_last_4weeks() {
+        return this.recomendacionAverage_last_4weeks;
+    }
+    
+    public void CompanyHistoric.setRecomendacionAverage_last_4weeks(Double recomendacionAverage_last_4weeks) {
+        this.recomendacionAverage_last_4weeks = recomendacionAverage_last_4weeks;
+    }
+    
+    public Integer CompanyHistoric.getRecomendacionBuy_last_4weeks() {
+        return this.recomendacionBuy_last_4weeks;
+    }
+    
+    public void CompanyHistoric.setRecomendacionBuy_last_4weeks(Integer recomendacionBuy_last_4weeks) {
+        this.recomendacionBuy_last_4weeks = recomendacionBuy_last_4weeks;
+    }
+    
+    public Integer CompanyHistoric.getRecomendacionOutPerform_last_4weeks() {
+        return this.recomendacionOutPerform_last_4weeks;
+    }
+    
+    public void CompanyHistoric.setRecomendacionOutPerform_last_4weeks(Integer recomendacionOutPerform_last_4weeks) {
+        this.recomendacionOutPerform_last_4weeks = recomendacionOutPerform_last_4weeks;
+    }
+    
+    public Integer CompanyHistoric.getRecomendacionHold_last_4weeks() {
+        return this.recomendacionHold_last_4weeks;
+    }
+    
+    public void CompanyHistoric.setRecomendacionHold_last_4weeks(Integer recomendacionHold_last_4weeks) {
+        this.recomendacionHold_last_4weeks = recomendacionHold_last_4weeks;
+    }
+    
+    public Integer CompanyHistoric.getRecomendacionUnderPerform_last_4weeks() {
+        return this.recomendacionUnderPerform_last_4weeks;
+    }
+    
+    public void CompanyHistoric.setRecomendacionUnderPerform_last_4weeks(Integer recomendacionUnderPerform_last_4weeks) {
+        this.recomendacionUnderPerform_last_4weeks = recomendacionUnderPerform_last_4weeks;
+    }
+    
+    public Integer CompanyHistoric.getRecomendacionSell_last_4weeks() {
+        return this.recomendacionSell_last_4weeks;
+    }
+    
+    public void CompanyHistoric.setRecomendacionSell_last_4weeks(Integer recomendacionSell_last_4weeks) {
+        this.recomendacionSell_last_4weeks = recomendacionSell_last_4weeks;
     }
     
 }

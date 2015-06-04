@@ -13,27 +13,33 @@ import java.util.List;
 privileged aspect QueryLog_Roo_Json {
     
     public String QueryLog.toJson() {
-        return new JSONSerializer().exclude("*.class").serialize(this);
+        return new JSONSerializer()
+        .exclude("*.class").serialize(this);
     }
     
     public String QueryLog.toJson(String[] fields) {
-        return new JSONSerializer().include(fields).exclude("*.class").serialize(this);
+        return new JSONSerializer()
+        .include(fields).exclude("*.class").serialize(this);
     }
     
     public static QueryLog QueryLog.fromJsonToQueryLog(String json) {
-        return new JSONDeserializer<QueryLog>().use(null, QueryLog.class).deserialize(json);
+        return new JSONDeserializer<QueryLog>()
+        .use(null, QueryLog.class).deserialize(json);
     }
     
     public static String QueryLog.toJsonArray(Collection<QueryLog> collection) {
-        return new JSONSerializer().exclude("*.class").serialize(collection);
+        return new JSONSerializer()
+        .exclude("*.class").serialize(collection);
     }
     
     public static String QueryLog.toJsonArray(Collection<QueryLog> collection, String[] fields) {
-        return new JSONSerializer().include(fields).exclude("*.class").serialize(collection);
+        return new JSONSerializer()
+        .include(fields).exclude("*.class").serialize(collection);
     }
     
     public static Collection<QueryLog> QueryLog.fromJsonArrayToQueryLogs(String json) {
-        return new JSONDeserializer<List<QueryLog>>().use(null, ArrayList.class).use("values", QueryLog.class).deserialize(json);
+        return new JSONDeserializer<List<QueryLog>>()
+        .use("values", QueryLog.class).deserialize(json);
     }
     
 }
