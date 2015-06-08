@@ -92,7 +92,8 @@ privileged aspect CompanyController_Roo_Controller {
     }
     
     void CompanyController.addDateTimeFormatPatterns(Model uiModel) {
-        uiModel.addAttribute("company_fechacreacion_date_format", "dd/MM/yyyy");
+        uiModel.addAttribute("company_fechacreacion_date_format", "dd/MM/yyyy HH:mm:ss");
+        uiModel.addAttribute("company_fechamodificacion_date_format", "dd/MM/yyyy HH:mm:ss");
     }
     
     void CompanyController.populateEditForm(Model uiModel, Company company) {

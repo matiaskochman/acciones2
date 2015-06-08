@@ -2,13 +2,14 @@ package com.prediccion.acciones2.domain;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
-import org.dozer.Mapping;
+
 import org.joda.time.DateTime;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.roo.addon.javabean.RooJavaBean;
@@ -74,209 +75,181 @@ public class Company {
         this.recomendacionHold_last_4weeks = recomendacionHold_last_4weeks;
         this.recomendacionUnderPerform_last_4weeks = recomendacionUnderPerform_last_4weeks;
         this.recomendacionSell_last_4weeks = recomendacionSell_last_4weeks;
+        this.fechaCreacion = new Date();
+		this.fechaModificacion = this.fechaCreacion;
         setMarket(exchange);
     }
 
-    @PersistenceContext
+    
+    public Company() {
+		super();
+		this.fechaCreacion = new Date();
+		this.fechaModificacion = this.fechaCreacion;
+		
+		// TODO Auto-generated constructor stub
+	}
+
+
+	@PersistenceContext
     transient EntityManager entityManager;
 
     @NotNull
     @Column(unique = true)
-    //@Mapping("title")
     private String title;
 
     @NotNull
-    //@Mapping("ticker")
     private String ticker;
 
     @NotNull
-    //@Mapping("market")
     private String market;
 
     @Column
-    //@Mapping("stockValue")
     private Double stockValue;
 
     @Column
-    //@Mapping("maxForecastPercentageValue")
     private Double maxForecastPercentageValue;
 
     @Column
-    //@Mapping("medForecastPercentageValue")
     private Double medForecastPercentageValue;
 
     @Column
-    //@Mapping("minForecastPercentageValue")
     private Double minForecastPercentageValue;
 
     @Column
-    //@Mapping("maxForecastValue")
     private Double maxForecastValue;
 
     @Column
-    //@Mapping("medForecastValue")
     private Double medForecastValue;
 
     @Column
-    //@Mapping("minForecastValue")
     private Double minForecastValue;
 
     @Column
-    //@Mapping("ticker")
     private Double price52WeekPercChange;
 
     @Column
-    //@Mapping("recomendacionAverage")
     private Double recomendacionAverage;
 
     @Column
-    //@Mapping("recomendacionBuy")
     private Integer recomendacionBuy;
 
     @Column
-    //@Mapping("recomendacionOutPerform")
     private Integer recomendacionOutPerform;
 
     @Column
-    //@Mapping("recomendacionHold")
     private Integer recomendacionHold;
 
     @Column
-    //@Mapping("recomendacionUnderPerform")
     private Integer recomendacionUnderPerform;
 
     @Column
-    //@Mapping("recomendacionSell")
     private Integer recomendacionSell;
 
     @Column
-    //@Mapping("recomendacionNoOpinion")
     private Integer recomendacionNoOpinion;
 
     @Column
-    //@Mapping("volumenNegociado")
     private String volumenNegociado;
 
     @Temporal(TemporalType.TIMESTAMP)
-    @DateTimeFormat(pattern = "dd/MM/yyyy")
-    //@Mapping("fechaCreacion")
+    @DateTimeFormat(pattern = "dd/MM/yyyy HH:mm:ss")
+    @Column
     private Date fechaCreacion;
 
+    @Temporal(TemporalType.TIMESTAMP)
+    @DateTimeFormat(pattern = "dd/MM/yyyy HH:mm:ss")
     @Column
-    //@Mapping("marketCap")
+    private Date fechaModificacion;
+    
+    @Column
     private Double marketCap;
 
     @Column
-    //@Mapping("pe")
     private Double pe;
 
     @NotNull
-    //@Mapping("exchange")
     private String exchange;
 
     @Column(unique = true)
-    //@Mapping("companyId")
     private String companyId;
 
     @Column
-    //@Mapping("localCurrencySymbol")
     private String localCurrencySymbol;
 
     @Column
-    //@Mapping("recomendacionAverage_last_year")
     private Double recomendacionAverage_last_year;
 
     @Column
-    //@Mapping("recomendacionBuy_last_year")
     private Integer recomendacionBuy_last_year;
 
     @Column
-    //@Mapping("recomendacionOutPerform_last_year")
     private Integer recomendacionOutPerform_last_year;
 
     @Column
-    //@Mapping("recomendacionHold_last_year")
     private Integer recomendacionHold_last_year;
 
     @Column
-    //@Mapping("recomendacionUnderPerform_last_year")
     private Integer recomendacionUnderPerform_last_year;
 
     @Column
-    //@Mapping("recomendacionSell_last_year")
     private Integer recomendacionSell_last_year;
 
     @Column
-    //@Mapping("recomendacionAverage_last_3months")
     private Double recomendacionAverage_last_3months;
 
     @Column
-    //@Mapping("recomendacionBuy_last_3months")
     private Integer recomendacionBuy_last_3months;
 
     @Column
-    //@Mapping("recomendacionOutPerform_last_3months")
     private Integer recomendacionOutPerform_last_3months;
 
     @Column
-    //@Mapping("recomendacionHold_last_3months")
     private Integer recomendacionHold_last_3months;
 
     @Column
-    //@Mapping("recomendacionUnderPerform_last_3months")
     private Integer recomendacionUnderPerform_last_3months;
 
     @Column
-    //@Mapping("recomendacionSell_last_3months")
     private Integer recomendacionSell_last_3months;
 
     @Column
-    //@Mapping("recomendacionAverage_last_2months")
     private Double recomendacionAverage_last_2months;
 
     @Column
-    //@Mapping("recomendacionBuy_last_2months")
     private Integer recomendacionBuy_last_2months;
 
     @Column
-    //@Mapping("recomendacionOutPerform_last_2months")
     private Integer recomendacionOutPerform_last_2months;
 
     @Column
-    //@Mapping("recomendacionHold_last_2months")
     private Integer recomendacionHold_last_2months;
 
     @Column
-    //@Mapping("recomendacionUnderPerform_last_2months")
     private Integer recomendacionUnderPerform_last_2months;
 
     @Column
-    //@Mapping("recomendacionSell_last_2months")
     private Integer recomendacionSell_last_2months;
 
     @Column
-    //@Mapping("recomendacionAverage_last_4weeks")
     private Double recomendacionAverage_last_4weeks;
 
     @Column
-    //@Mapping("recomendacionBuy_last_4weeks")
     private Integer recomendacionBuy_last_4weeks;
 
     @Column
-    //@Mapping("recomendacionOutPerform_last_4weeks")
     private Integer recomendacionOutPerform_last_4weeks;
 
     @Column
-    //@Mapping("recomendacionHold_last_4weeks")
     private Integer recomendacionHold_last_4weeks;
 
     @Column
-    //@Mapping("recomendacionUnderPerform_last_4weeks")
     private Integer recomendacionUnderPerform_last_4weeks;
 
     @Column
-    //@Mapping("recomendacionSell_last_4weeks")
     private Integer recomendacionSell_last_4weeks;
+    
+    @Column
+    private String city;
 
     public void setMarket(String exchange) {
         if (exchange.equalsIgnoreCase("NYSE")) {
@@ -376,6 +349,7 @@ public class Company {
     public void setExchange(String exchange) {
         this.exchange = exchange;
         setMarket(exchange);
+        setMercado();
     }
 
     public void generateOpinionAverage() {
@@ -452,71 +426,75 @@ public class Company {
     public String toString() {
         DateTime dt = new DateTime(this.getFechaCreacion());
         String dateFormatted = dt.toString("dd:mm:yyyy");
-        return "ticker=" + ticker + ", market=" + getMercado() + ", stockValue=" + stockValue + ", maxPVal=" + maxForecastPercentageValue + "%" + ", medPVal=" + medForecastPercentageValue + "%" + ", minPVal=" + minForecastPercentageValue + "%" + ", Average=" + recomendacionAverage + ", Average_last_Y=" + recomendacionAverage_last_year + ", p52W=" + price52WeekPercChange + ", Buy=" + recomendacionBuy + ", OutPerform=" + recomendacionOutPerform + ", Hold=" + recomendacionHold + ", UnderPerform=" + recomendacionUnderPerform + ", Sell_last_Y=" + recomendacionSell_last_year + ", Buy_last_Y=" + recomendacionBuy_last_year + ", OutPerform_last_Y=" + recomendacionOutPerform_last_year + ", Hold_last_Y=" + recomendacionHold_last_year + ", UnderPerform_last_Y=" + recomendacionUnderPerform_last_year + ", Sell_last_Y=" + recomendacionSell_last_year + ", volNegociado=" + volumenNegociado + ", fechaCreacion=" + dateFormatted;
+        return "ticker=" + ticker + ", market=" + this.city + ", stockValue=" + stockValue + ", maxPVal=" + maxForecastPercentageValue + "%" + ", medPVal=" + medForecastPercentageValue + "%" + ", minPVal=" + minForecastPercentageValue + "%" + ", Average=" + recomendacionAverage + ", Average_last_Y=" + recomendacionAverage_last_year + ", p52W=" + price52WeekPercChange + ", Buy=" + recomendacionBuy + ", OutPerform=" + recomendacionOutPerform + ", Hold=" + recomendacionHold + ", UnderPerform=" + recomendacionUnderPerform + ", Sell_last_Y=" + recomendacionSell_last_year + ", Buy_last_Y=" + recomendacionBuy_last_year + ", OutPerform_last_Y=" + recomendacionOutPerform_last_year + ", Hold_last_Y=" + recomendacionHold_last_year + ", UnderPerform_last_Y=" + recomendacionUnderPerform_last_year + ", Sell_last_Y=" + recomendacionSell_last_year + ", volNegociado=" + volumenNegociado + ", fechaCreacion=" + dateFormatted;
     }
 
     public static List<Company> findAllCompanys() {
         return entityManager().createQuery("SELECT o FROM Company o", Company.class).getResultList();
     }
 
-    public String getMercado() {
+    public String setMercado() {
         if (exchange.equalsIgnoreCase("NYSE")) {
-            return exchange;
+        	this.city = exchange;
         } else if (exchange.equalsIgnoreCase("NASDAQ")) {
-            return exchange;
+        	this.city = exchange;        	
         } else if (exchange.equalsIgnoreCase("LON")) {
-            return "London";
+        	this.city = "LONDON";
         } else if (exchange.equalsIgnoreCase("EPA")) {
-            return "Paris";
+            this.city =  "PARIS";
         } else if (exchange.equalsIgnoreCase("OTCQB")) {
-            return "NEW YORK, " + exchange;
+            this.city =  "NEW YORK, " + exchange;
         } else if (exchange.equalsIgnoreCase("CVE")) {
-            return "CANADA";
+            this.city =  "TORONTO";
         } else if (exchange.equalsIgnoreCase("TSE")) {
-            return "CANADA, TORONTO";
+            this.city =  "TORONTO";
         } else if (exchange.equalsIgnoreCase("FRA")) {
-            return "GERMANY, FRANKFURT";
+            this.city =  "FRANKFURT";
         } else if (exchange.equalsIgnoreCase("ETR")) {
-            return "GERMANY";
+            this.city =  "GERMANY";
         } else if (exchange.equalsIgnoreCase("BIT")) {
-            return "MILAN";
+            this.city =  "MILAN";
         } else if (exchange.equalsIgnoreCase("BME")) {
-            return "MADRID";
+            this.city =  "MADRID";
         } else if (exchange.equalsIgnoreCase("BVMF")) {
-            return "SAO PAULO";
+            this.city =  "SAO PAULO";
         } else if (exchange.equalsIgnoreCase("EBR")) {
-            return "BRUSSELS";
+            this.city =  "BRUSSELS";
         } else if (exchange.equalsIgnoreCase("AMS")) {
-            return "AMSTERDAM";
+            this.city =  "AMSTERDAM";
         } else if (exchange.equalsIgnoreCase("ASX")) {
-            return "AUSTRALIA";
+            this.city =  "AUSTRALIA";
         } else if (exchange.equalsIgnoreCase("NZE")) {
-            return "NEW ZELAND";
+            this.city =  "NEW ZELAND";
         } else if (exchange.equalsIgnoreCase("TPE")) {
-            return "TAIWAN";
+            this.city =  "TAIWAN";
         } else if (exchange.equalsIgnoreCase("SGX")) {
-            return "SINGAPORE";
+            this.city =  "SINGAPORE";
         } else if (exchange.equalsIgnoreCase("TYO")) {
-            return "TOKYO";
+            this.city =  "TOKYO";
         } else if (exchange.equalsIgnoreCase("SHA")) {
-            return "SHANGAI";
+            this.city =  "SHANGAI";
         } else if (exchange.equalsIgnoreCase("SHE")) {
-            return "CHINA";
+            this.city =  "SHANGAI";
         } else if (exchange.equalsIgnoreCase("VTX")) {
-            return "SWISS";
+            this.city =  "SWISS";
         } else if (exchange.equalsIgnoreCase("SWX")) {
-            return "SWISS";
+            this.city =  "SWISS";
         } else if (exchange.equalsIgnoreCase("WSE")) {
-            return "POLAND";
+            this.city =  "WARSAW";
         } else if (exchange.equalsIgnoreCase("IST")) {
-            return "TURKEY";
+            this.city =  "ISTAMBUL";
         } else if (exchange.equalsIgnoreCase("STO")) {
-            return "SWEEDEN";
+            this.city =  "STOCKOLM";
         } else if (exchange.equalsIgnoreCase("JSE")) {
-            return "SOUTH AFRICA";
+            this.city =  "JOHANESBOURG";
         } else if (exchange.equalsIgnoreCase("MCX")) {
-            return "RUSSIA";
+            this.city =  "MOSCOW";
+        }else{
+        	
+        	this.city =  "UNKWONW";
         }
-        return "INCOGNITA";
+        
+        return city;
     }
 }

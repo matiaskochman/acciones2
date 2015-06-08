@@ -53,5 +53,7 @@
         <field:display field="recomendacionHold_last_4weeks" id="s_com_prediccion_acciones2_domain_Company_recomendacionHold_last_4weeks" object="${company}" z="Cb5nBwiY/9XFTUIkT6CO8WDfeBs="/>
         <field:display field="recomendacionUnderPerform_last_4weeks" id="s_com_prediccion_acciones2_domain_Company_recomendacionUnderPerform_last_4weeks" object="${company}" z="LMGszzwW4YqIyEQvHxhu4Zv/iFs="/>
         <field:display field="recomendacionSell_last_4weeks" id="s_com_prediccion_acciones2_domain_Company_recomendacionSell_last_4weeks" object="${company}" z="YpVxoDOSFABdZLOijHacGMwAj54="/>
+        <field:display date="true" dateTimePattern="${company_fechamodificacion_date_format}" field="fechaModificacion" id="s_com_prediccion_acciones2_domain_Company_fechaModificacion" object="${company}" z="Ep4F41zbUMVLzB1l90bQYGqTOKo="/>
+        <field:display field="city" id="s_com_prediccion_acciones2_domain_Company_city" object="${company}" z="pQdh7csR4fbtev/kCLEFxjGrc+w="/>
     </page:show>
 </div>

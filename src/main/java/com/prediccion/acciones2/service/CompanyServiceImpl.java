@@ -1,5 +1,6 @@
 package com.prediccion.acciones2.service;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -34,6 +35,7 @@ public class CompanyServiceImpl implements CompanyService {
 			c.setId(comp.getId());
 			mapper.map(c, comp);
 			comp.setVersion(comp.getVersion());
+			comp.setFechaModificacion(new Date());
 			comp.merge();
 		}catch( EmptyResultDataAccessException e){
 			c.persist();

@@ -33,10 +33,12 @@ privileged aspect CompanyDataOnDemand_Roo_DataOnDemand {
     
     public Company CompanyDataOnDemand.getNewTransientCompany(int index) {
         Company obj = new Company();
+        setCity(obj, index);
         setCompanyId(obj, index);
         setEntityManager(obj, index);
         setExchange(obj, index);
         setFechaCreacion(obj, index);
+        setFechaModificacion(obj, index);
         setLocalCurrencySymbol(obj, index);
         setMarket(obj, index);
         setMarketCap(obj, index);
@@ -86,6 +88,11 @@ privileged aspect CompanyDataOnDemand_Roo_DataOnDemand {
         return obj;
     }
     
+    public void CompanyDataOnDemand.setCity(Company obj, int index) {
+        String city = "city_" + index;
+        obj.setCity(city);
+    }
+    
     public void CompanyDataOnDemand.setCompanyId(Company obj, int index) {
         String companyId = "companyId_" + index;
         obj.setCompanyId(companyId);
@@ -104,6 +111,11 @@ privileged aspect CompanyDataOnDemand_Roo_DataOnDemand {
     public void CompanyDataOnDemand.setFechaCreacion(Company obj, int index) {
         Date fechaCreacion = new GregorianCalendar(Calendar.getInstance().get(Calendar.YEAR), Calendar.getInstance().get(Calendar.MONTH), Calendar.getInstance().get(Calendar.DAY_OF_MONTH), Calendar.getInstance().get(Calendar.HOUR_OF_DAY), Calendar.getInstance().get(Calendar.MINUTE), Calendar.getInstance().get(Calendar.SECOND) + new Double(Math.random() * 1000).intValue()).getTime();
         obj.setFechaCreacion(fechaCreacion);
+    }
+    
+    public void CompanyDataOnDemand.setFechaModificacion(Company obj, int index) {
+        Date fechaModificacion = new GregorianCalendar(Calendar.getInstance().get(Calendar.YEAR), Calendar.getInstance().get(Calendar.MONTH), Calendar.getInstance().get(Calendar.DAY_OF_MONTH), Calendar.getInstance().get(Calendar.HOUR_OF_DAY), Calendar.getInstance().get(Calendar.MINUTE), Calendar.getInstance().get(Calendar.SECOND) + new Double(Math.random() * 1000).intValue()).getTime();
+        obj.setFechaModificacion(fechaModificacion);
     }
     
     public void CompanyDataOnDemand.setLocalCurrencySymbol(Company obj, int index) {

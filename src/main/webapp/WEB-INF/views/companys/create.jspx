@@ -53,6 +53,8 @@
         <field:input field="recomendacionHold_last_4weeks" id="c_com_prediccion_acciones2_domain_Company_recomendacionHold_last_4weeks" validationMessageCode="field_invalid_integer" z="A9Mr5e76jvhPYAAnv7k3DJQ5w8g="/>
         <field:input field="recomendacionUnderPerform_last_4weeks" id="c_com_prediccion_acciones2_domain_Company_recomendacionUnderPerform_last_4weeks" validationMessageCode="field_invalid_integer" z="tnYO4jXFNcw9a38deP83/cZag08="/>
         <field:input field="recomendacionSell_last_4weeks" id="c_com_prediccion_acciones2_domain_Company_recomendacionSell_last_4weeks" validationMessageCode="field_invalid_integer" z="cwGpefJzBsV45nEtJn8sOAoyYqA="/>
+        <field:datetime dateTimePattern="${company_fechamodificacion_date_format}" field="fechaModificacion" id="c_com_prediccion_acciones2_domain_Company_fechaModificacion" z="8JM1962XKigSf7X5uQGxCYKe564="/>
+        <field:input field="city" id="c_com_prediccion_acciones2_domain_Company_city" z="/pkKoZrPndTbtcnisaNZZpVBHOg="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_com_prediccion_acciones2_domain_Company" render="${not empty dependencies}" z="wYQj9THlSjjqeXTv5NJbNVVoWJA="/>
 </div>
