@@ -215,6 +215,8 @@ public class CompanyHistoric {
     private Integer recomendacionUnderPerform_last_4weeks;
     @Column
     private Integer recomendacionSell_last_4weeks;    
+    @Column
+    private String city;
     
     public void save() {
         if (entityManager.contains(this)) {

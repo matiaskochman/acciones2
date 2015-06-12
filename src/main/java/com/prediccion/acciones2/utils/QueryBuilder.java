@@ -93,8 +93,10 @@ public class QueryBuilder {
 		return paris_query;
 	}
 	
-	public static String buildQueryForUS(String numberOfCompanies){
+	public static String buildQueryForUS(String numberOfCompanies,String market_from,String market_to){
 		
+		String marketCap_from = "1000000";
+		String marketCap_to ="7266400000";
     	String num=null;
     	
     	if(numberOfCompanies==null){
@@ -102,9 +104,15 @@ public class QueryBuilder {
     	}else{
     		num=numberOfCompanies;
     	}
+    	if(market_from != null && market_to !=null){
+    		marketCap_from = market_from;
+    		marketCap_to = market_to;
+    	}
     	
 		String price_change_52week_from = "-101";
-		String marketCap_from = "50000";
+		String price_change_52week_to = "40101";
+		String pe_from = "0";
+		String pe_to = "8157";
 		String nasdaq = "exchange%20%3D%3D%20%22NASDAQ%22%29%29%20%26%20%28";
 		String nysemkt = "exchange%20%3D%3D%20%22NYSEMKT%22%29%20%7C%20%28";
 		String nyse = "exchange%20%3D%3D%20%22NYSE%22%29%20%7C%20%28"; 
@@ -116,24 +124,27 @@ public class QueryBuilder {
 		String us_query = "http://www.google.com/finance?"+
 						"output=json&start=0&num="+num+"&noIL=1&q=["+
 						currency+
-						otcmkt+
-						tcbb+
-						nysemkt+
-						nyseArca+
+						//otcmkt+
+						//tcbb+
+						//nysemkt+
+						//nyseArca+
 						nyse+
 						nasdaq+
 						"market_cap%20%3E%3D%20"+marketCap_from+"%29%20%26%20%28"+
-						"market_cap%20%3C%3D%20726640000000%29%20%26%20%28"+
-						"pe_ratio%20%3E%3D%2010%29%20%26%20%28"+
-						"pe_ratio%20%3C%3D%2078.57%29%20%26%20%28"+
+						"market_cap%20%3C%3D%20"+marketCap_to
+						+ "%29%20%26%20%28"+
+						"pe_ratio%20%3E%3D%20"+pe_from
+						+ "%29%20%26%20%28"+
+						"pe_ratio%20%3C%3D%20"+pe_to
+						+ "%29%20%26%20%28"+
 						"dividend_yield%20%3E%3D%200%29%20%26%20%28"+
-						"dividend_yield%20%3C%3D%201976%29%20%26%20%28"+
+						"dividend_yield%20%3C%3D%203900000%29%20%26%20%28"+
 						"price_change_52week%20%3E%3D%20"+price_change_52week_from+"%29%20%26%20%28"+
-						"price_change_52week%20%3C%3D%2019901%29]&"+
+						"price_change_52week%20%3C%3D%20"+price_change_52week_to
+						+ "%29]&"+
 						"restype=company&"+
 						"ei=9LIzVcHMJcmUsQeLtoDQDw"+
 						"&sortas=MarketCap";
-						//"&sortas=Price52WeekPercChange";
 		
 		return us_query;
 	}
@@ -486,7 +497,7 @@ public class QueryBuilder {
     	}else{
     		num=numberOfCompanies;
     	}
-    	String marketCapitalFrom = "1000000";
+    	String marketCapitalFrom = "100000";
     	
     	String query="https://www.google.com/finance?output=json&start=0&"
     			+ "num="+num
