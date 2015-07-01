@@ -14,7 +14,7 @@ privileged aspect QueryLog_Roo_Jpa_ActiveRecord {
     @PersistenceContext
     transient EntityManager QueryLog.entityManager;
     
-    public static final List<String> QueryLog.fieldNames4OrderClauseFilter = java.util.Arrays.asList("fechaQuery", "market", "forecastOk", "forecastFail");
+    public static final List<String> QueryLog.fieldNames4OrderClauseFilter = java.util.Arrays.asList("fechaQuery", "market", "forecastOk", "forecastFail", "data");
     
     public static final EntityManager QueryLog.entityManager() {
         EntityManager em = new QueryLog().entityManager;

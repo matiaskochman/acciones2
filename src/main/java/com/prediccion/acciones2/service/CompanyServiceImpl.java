@@ -38,7 +38,14 @@ public class CompanyServiceImpl implements CompanyService {
 			comp.setFechaModificacion(new Date());
 			comp.merge();
 		}catch( EmptyResultDataAccessException e){
-			c.persist();
+			try{
+				c.persist();
+				
+			}catch(Exception ex){
+				ex.printStackTrace();
+			}
+		}catch(Exception exep){
+			exep.printStackTrace();
 		}
 		
 	}

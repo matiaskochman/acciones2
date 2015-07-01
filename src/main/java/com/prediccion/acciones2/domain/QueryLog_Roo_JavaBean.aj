@@ -36,8 +36,12 @@ privileged aspect QueryLog_Roo_JavaBean {
         return this.forecastFail;
     }
     
-    public void QueryLog.setForecastFail(Integer forecastFail) {
-        this.forecastFail = forecastFail;
+    public String QueryLog.getData() {
+        return this.data;
+    }
+    
+    public void QueryLog.setData(String data) {
+        this.data = data;
     }
     
 }

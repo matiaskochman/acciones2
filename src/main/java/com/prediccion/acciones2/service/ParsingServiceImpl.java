@@ -2,6 +2,7 @@ package com.prediccion.acciones2.service;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
@@ -37,11 +38,16 @@ public class ParsingServiceImpl implements ParsingService{
 		List<Company> list = new ArrayList<Company>();
 		
 		Company company = null;
-		if(companyArray!=null || companyArray.length==0){
+		if(companyArray==null || companyArray.length==0){
 			System.out.println("no hay datos para este mercado");
 		}
 		
 		for (CompanyJson c : companyArray) {
+			
+			if(c.ticker == null || c.ticker.isEmpty() || c.exchange == null || c.exchange.isEmpty()){
+				System.out.println("empty ticker or exchange");
+				continue;
+			}
 			
 			company = new Company();
 			
@@ -55,30 +61,29 @@ public class ParsingServiceImpl implements ParsingService{
 
 				try{
 					if(StringUtils.isEmpty(col.field)||StringUtils.isEmpty(col.value)){
-						throw new Exception();
+						System.out.println("field or value empty property skipped");
+
 					}else{
 						if(col.field.equalsIgnoreCase("MarketCap")){
-							if(col.value.contains("B")){
-								int i = col.value.indexOf("B");
-								String sub1 = col.value.substring(0,i);
-								Double val = Double.valueOf(sub1)*1000000000D;
-								col.value = val.toString();
-							}
-							company.setMarketCap(Double.valueOf(col.value));
+							company.setMarketCap(col.value);
 						}else if(col.field.equalsIgnoreCase("PE")){
-							company.setPe(Double.valueOf(col.value));
+							if(col.value != null && isNumeric(col.value)){
+								company.setPe(Double.valueOf(col.value));
+							}
 							
 						}else if(col.field.equalsIgnoreCase("Price52WeekPercChange")){
-							company.setPrice52WeekPercChange(Double.valueOf(col.value));
+							
+							if(col.value!=null && isNumeric(col.value)){
+								company.setPrice52WeekPercChange(Double.valueOf(col.value));
+							}else{
+								System.out.println("price52 null");
+							}
 							
 						}
 					}
 					
 				}catch(NumberFormatException e){
-					System.out.println("numberFormatException property skipped");
-				}catch(Exception e){
-					e.printStackTrace();
-					System.out.println("field or value empty property skipped");
+					System.out.println("numberFormatException property skipped col.field="+col.field);
 				}
 			}
 			list.add(company);
@@ -86,8 +91,11 @@ public class ParsingServiceImpl implements ParsingService{
 		return list;
 	}
 	
+	public static boolean isNumeric(String string) {
+	      return string.matches("^[-+]?\\d+(\\.\\d+)?$");
+	}	
 	
-	public Set<Company> getSocksFromGoogleFinance(String query, Integer amountOfThreads){
+	public void getSocksFromGoogleFinance(String query, Integer amountOfThreads,Set<Company> set){
 		List<Company> companyList = null;
 		
 		if(amountOfThreads!=null){
@@ -103,13 +111,11 @@ public class ParsingServiceImpl implements ParsingService{
 				return min*(-1);
 			}
 		};		    
-		TreeSet<Company> resultSet = new TreeSet<Company>(minComparator);
-
 		QueryLog queryLog = new QueryLog();
 
 		
 		try {
-			Pattern p_european = Pattern.compile("\\[\\{\"title\"+[\\x00-\\x7F|€|£|¥]+(?=\\,\\\"mf_searchresults)");
+			Pattern p_european = Pattern.compile("\\[\\{\"title\"(.*?)(?=\\,\\\"mf_searchresults)");
 			
 			result = HttpConectionUtils.getData(query);
 			
@@ -127,28 +133,31 @@ public class ParsingServiceImpl implements ParsingService{
 				System.out.println("no encontro "+"\\[\\{(\"title\")+[\\x00-\\x7F]+(?=\\,\\\"mf_searchresults)");
 			}
 			
-		    companyList = createCompanies(companyArray);
-		    
-			CountDownLatch countDownLatch=new CountDownLatch(companyList.size());
-			ExecutorService executorService=Executors.newFixedThreadPool(CONCURRENT_THREADS);
-			
-			Calendar cal = Calendar.getInstance();
-			cal.clear(Calendar.MILLISECOND);
-			cal.clear(Calendar.SECOND);
-			cal.clear(Calendar.MINUTE);
-			cal.clear(Calendar.HOUR);
-			cal.clear(Calendar.HOUR_OF_DAY);
-			
-			try {
-				for (Company company : companyList) {
-					executorService.submit(new Processor(countDownLatch,company,resultSet,cal,queryLog));
-				}
-				countDownLatch.await();
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}finally{
+			if(companyArray != null && companyArray.length > 0){
 				
-				executorService.shutdown();
+				companyList = createCompanies(companyArray);
+				
+				CountDownLatch countDownLatch=new CountDownLatch(companyList.size());
+				ExecutorService executorService=Executors.newFixedThreadPool(CONCURRENT_THREADS);
+				
+				Calendar cal = Calendar.getInstance();
+				cal.clear(Calendar.MILLISECOND);
+				cal.clear(Calendar.SECOND);
+				cal.clear(Calendar.MINUTE);
+				cal.clear(Calendar.HOUR);
+				cal.clear(Calendar.HOUR_OF_DAY);
+				
+				try {
+					for (Company company : companyList) {
+						executorService.submit(new Processor(countDownLatch,company,set,cal,queryLog));
+					}
+					countDownLatch.await();
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}finally{
+					
+					executorService.shutdown();
+				}
 			}
 			
 			
@@ -158,16 +167,17 @@ public class ParsingServiceImpl implements ParsingService{
 		
 		
 		String market=null;
-		if(resultSet!=null && !resultSet.isEmpty()){
-			market = resultSet.iterator().next().getExchange();
+		if(set!=null && !set.isEmpty()){
+			market = set.iterator().next().getExchange();
 			System.out.println("termino de parsear para market: "+market);
 			queryLog.setFechaQuery(new Date());
-			queryLog.setForecastOk(String.valueOf(resultSet.size()));
+			queryLog.setForecastOk(String.valueOf(set.size()));
 			queryLog.setMarket(market);
+			//queryLog.setData(result);
 			queryLogService.saveQueryLog(queryLog);
 		}
 
-		return resultSet;
+		//return set;
 	}
 
 	

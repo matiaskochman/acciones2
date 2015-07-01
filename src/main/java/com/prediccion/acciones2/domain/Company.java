@@ -23,7 +23,7 @@ import org.springframework.roo.addon.tostring.RooToString;
 @RooJpaActiveRecord(finders = { "findCompanysByCompanyIdEquals" })
 public class Company {
 
-    public Company(EntityManager entityManager, String title, String ticker, String market, Double stockValue, Double maxForecastPercentageValue, Double medForecastPercentageValue, Double minForecastPercentageValue, Double maxForecastValue, Double medForecastValue, Double minForecastValue, Double price52WeekPercChange, Double recomendacionAverage, Integer recomendacionBuy, Integer recomendacionOutPerform, Integer recomendacionHold, Integer recomendacionUnderPerform, Integer recomendacionSell, Integer recomendacionNoOpinion, String volumenNegociado, Date fechaCreacion, Double marketCap, Double pe, String exchange, String companyId, String localCurrencySymbol, Double recomendacionAverage_last_year, Integer recomendacionBuy_last_year, Integer recomendacionOutPerform_last_year, Integer recomendacionHold_last_year, Integer recomendacionUnderPerform_last_year, Integer recomendacionSell_last_year, Double recomendacionAverage_last_3months, Integer recomendacionBuy_last_3months, Integer recomendacionOutPerform_last_3months, Integer recomendacionHold_last_3months, Integer recomendacionUnderPerform_last_3months, Integer recomendacionSell_last_3months, Double recomendacionAverage_last_2months, Integer recomendacionBuy_last_2months, Integer recomendacionOutPerform_last_2months, Integer recomendacionHold_last_2months, Integer recomendacionUnderPerform_last_2months, Integer recomendacionSell_last_2months, Double recomendacionAverage_last_4weeks, Integer recomendacionBuy_last_4weeks, Integer recomendacionOutPerform_last_4weeks, Integer recomendacionHold_last_4weeks, Integer recomendacionUnderPerform_last_4weeks, Integer recomendacionSell_last_4weeks) {
+    public Company(EntityManager entityManager, String title, String ticker, String market, Double stockValue, Double maxForecastPercentageValue, Double medForecastPercentageValue, Double minForecastPercentageValue, Double maxForecastValue, Double medForecastValue, Double minForecastValue, Double price52WeekPercChange, Double recomendacionAverage, Integer recomendacionBuy, Integer recomendacionOutPerform, Integer recomendacionHold, Integer recomendacionUnderPerform, Integer recomendacionSell, Integer recomendacionNoOpinion, String volumenNegociado, Date fechaCreacion, String marketCap, Double pe, String exchange, String companyId, String localCurrencySymbol, Double recomendacionAverage_last_year, Integer recomendacionBuy_last_year, Integer recomendacionOutPerform_last_year, Integer recomendacionHold_last_year, Integer recomendacionUnderPerform_last_year, Integer recomendacionSell_last_year, Double recomendacionAverage_last_3months, Integer recomendacionBuy_last_3months, Integer recomendacionOutPerform_last_3months, Integer recomendacionHold_last_3months, Integer recomendacionUnderPerform_last_3months, Integer recomendacionSell_last_3months, Double recomendacionAverage_last_2months, Integer recomendacionBuy_last_2months, Integer recomendacionOutPerform_last_2months, Integer recomendacionHold_last_2months, Integer recomendacionUnderPerform_last_2months, Integer recomendacionSell_last_2months, Double recomendacionAverage_last_4weeks, Integer recomendacionBuy_last_4weeks, Integer recomendacionOutPerform_last_4weeks, Integer recomendacionHold_last_4weeks, Integer recomendacionUnderPerform_last_4weeks, Integer recomendacionSell_last_4weeks) {
         super();
         this.entityManager = entityManager;
         this.title = title;
@@ -93,8 +93,7 @@ public class Company {
 	@PersistenceContext
     transient EntityManager entityManager;
 
-    @NotNull
-    @Column(unique = true)
+    @Column
     private String title;
 
     @NotNull
@@ -162,7 +161,7 @@ public class Company {
     private Date fechaModificacion;
     
     @Column
-    private Double marketCap;
+    private String marketCap;
 
     @Column
     private Double pe;
@@ -312,30 +311,34 @@ public class Company {
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = prime * result + ((exchange == null) ? 0 : exchange.hashCode());
-        result = prime * result + ((ticker == null) ? 0 : ticker.hashCode());
-        return result;
-    }
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result
+				+ ((companyId == null) ? 0 : companyId.hashCode());
+		return result;
+	}
 
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
-        if (getClass() != obj.getClass()) return false;
-        Company other = (Company) obj;
-        if (exchange == null) {
-            if (other.exchange != null) return false;
-        } else if (!exchange.equals(other.exchange)) return false;
-        if (ticker == null) {
-            if (other.ticker != null) return false;
-        } else if (!ticker.equals(other.ticker)) return false;
-        return true;
-    }
 
-    public void setFechaCreacion(Date date) {
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Company other = (Company) obj;
+		if (companyId == null) {
+			if (other.companyId != null)
+				return false;
+		} else if (!companyId.equals(other.companyId))
+			return false;
+		return true;
+	}
+
+
+	public void setFechaCreacion(Date date) {
         Calendar c = Calendar.getInstance();
         c.setTime(date);
         c.clear(Calendar.SECOND);
@@ -425,6 +428,7 @@ public class Company {
     @Override
     public String toString() {
         DateTime dt = new DateTime(this.getFechaCreacion());
+
         String dateFormatted = dt.toString("dd:mm:yyyy");
         return "ticker=" + ticker + ", market=" + this.city + ", stockValue=" + stockValue + ", maxPVal=" + maxForecastPercentageValue + "%" + ", medPVal=" + medForecastPercentageValue + "%" + ", minPVal=" + minForecastPercentageValue + "%" + ", Average=" + recomendacionAverage + ", Average_last_Y=" + recomendacionAverage_last_year + ", p52W=" + price52WeekPercChange + ", Buy=" + recomendacionBuy + ", OutPerform=" + recomendacionOutPerform + ", Hold=" + recomendacionHold + ", UnderPerform=" + recomendacionUnderPerform + ", Sell_last_Y=" + recomendacionSell_last_year + ", Buy_last_Y=" + recomendacionBuy_last_year + ", OutPerform_last_Y=" + recomendacionOutPerform_last_year + ", Hold_last_Y=" + recomendacionHold_last_year + ", UnderPerform_last_Y=" + recomendacionUnderPerform_last_year + ", Sell_last_Y=" + recomendacionSell_last_year + ", volNegociado=" + volumenNegociado + ", fechaCreacion=" + dateFormatted;
     }

@@ -31,8 +31,15 @@ public class QueryBuilder {
 		return query;
 	}
 	
-	public static String buildQueryForLondon(String numberOfCompanies){
-		
+	public static String buildQueryForLondon(String numberOfCompanies,String market_from,String market_to){
+			
+		String marketCap_from = "0";
+		String marketCap_to ="202120000000";
+		if(market_from != null && market_to !=null){
+			marketCap_from = market_from;
+			marketCap_to = market_to;
+		}		
+			
     	String num=null;
 		
     	if(numberOfCompanies==null){
@@ -42,21 +49,30 @@ public class QueryBuilder {
     	}
 		
 		String price_change_52week="-101";
-    	String london_stock_market = "exchange%20%3D%3D%20%22LON%22%29%20%26%20%28";
+    	
+    	
     	String london_query = "https://www.google.com/finance?output=json&start=0&"
     			+ "num="+num
     			+ "&noIL=1&q=[%28"
-    			+ london_stock_market
-    			+ "market_cap%20%3E%3D%200%29%20%26%20%28"
-    			+ "market_cap%20%3C%3D%20221450000000%29%20%26%20%28"
-    			+ "pe_ratio%20%3E%3D%200%29%20%26%20%28"
-    			+ "pe_ratio%20%3C%3D%20250667%29%20%26%20%28"
-    			+ "dividend_yield%20%3E%3D%200%29%20%26%20%28"
-    			+ "dividend_yield%20%3C%3D%20141%29%20%26%20%28"
-    			+ "price_change_52week%20%3E%3D%20-101%29%20%26%20%28"
-    			+ "price_change_52week%20%3C%3D%20981%29"
-    			+ "]&restype=company&ei=0NA7VZHHLOuJsge4_YHQBw"
-    			+"&sortas=Price52WeekPercChange";
+    			+ "exchange%20%3D%3D%20%22LON"
+    			+ "%22%29%20%26%20%28"
+    			+ "market_cap%20%3E%3D%20"+marketCap_from
+    			+ "%29%20%26%20%28"
+    			+ "market_cap%20%3C%3D%20"+marketCap_to
+    			+ "%29%20%26%20%28"
+    			+ "pe_ratio%20%3E%3D%200"
+    			+ "%29%20%26%20%28"
+    			+ "pe_ratio%20%3C%3D%20250667"
+    			+ "%29%20%26%20%28"
+    			+ "dividend_yield%20%3E%3D%200"
+    			+ "%29%20%26%20%28"
+    			+ "dividend_yield%20%3C%3D%20141"
+    			+ "%29%20%26%20%28"
+    			+ "price_change_52week%20%3E%3D%20-99.11"
+    			+ "%29%20%26%20%28"
+    			+ "price_change_52week%20%3C%3D%201358"
+    			+ "%29]&restype=company&ei=uzyAVenlNIePmAGrlICYAQ&";
+    			//+ "sortas=MarketCap";
     	
     	return london_query;
 		
@@ -97,6 +113,11 @@ public class QueryBuilder {
 		
 		String marketCap_from = "1000000";
 		String marketCap_to ="7266400000";
+		if(market_from != null && market_to !=null){
+			marketCap_from = market_from;
+			marketCap_to = market_to;
+		}
+		
     	String num=null;
     	
     	if(numberOfCompanies==null){
@@ -104,15 +125,14 @@ public class QueryBuilder {
     	}else{
     		num=numberOfCompanies;
     	}
-    	if(market_from != null && market_to !=null){
-    		marketCap_from = market_from;
-    		marketCap_to = market_to;
-    	}
     	
+    	String ei="xk-JVfCDOJDDe6aWp0A";
+    	String dividend_from = "0";
+    	String dividend_to="30";
 		String price_change_52week_from = "-101";
-		String price_change_52week_to = "40101";
+		String price_change_52week_to = "50901";
 		String pe_from = "0";
-		String pe_to = "8157";
+		String pe_to = "10465";
 		String nasdaq = "exchange%20%3D%3D%20%22NASDAQ%22%29%29%20%26%20%28";
 		String nysemkt = "exchange%20%3D%3D%20%22NYSEMKT%22%29%20%7C%20%28";
 		String nyse = "exchange%20%3D%3D%20%22NYSE%22%29%20%7C%20%28"; 
@@ -143,9 +163,10 @@ public class QueryBuilder {
 						"price_change_52week%20%3C%3D%20"+price_change_52week_to
 						+ "%29]&"+
 						"restype=company&"+
-						"ei=9LIzVcHMJcmUsQeLtoDQDw"+
-						"&sortas=MarketCap";
+						"ei="+ei;
+						//+"&sortas=MarketCap";
 		
+		System.out.println(us_query);
 		return us_query;
 	}
 	public static String buildQueryForGermany(String numberOfCompanies) {
@@ -172,8 +193,8 @@ public class QueryBuilder {
 				+ "dividend_yield%20%3C%3D%20227%29%20%26%20%28"
 				+ "price_change_52week%20%3E%3D%20-99.91%29%20%26%20%28"
 				+ "price_change_52week%20%3C%3D%204105%29]&"
-				+ "restype=company&ei=_NBEVYGRJMS0sQerq4DwBw&"
-				+ "sortas=MarketCap";		
+				+ "restype=company&ei=_NBEVYGRJMS0sQerq4DwBw&";
+				//+ "sortas=MarketCap";		
 		
 		return query;
 	}
@@ -203,8 +224,8 @@ public class QueryBuilder {
 						"dividend_yield%20%3E%3D%200%29%20%26%20%28"+
 						"dividend_yield%20%3C%3D%201921%29%20%26%20%28"+
 						"price_change_52week%20%3E%3D%20-99.97%29%20%26%20%28"+
-						"price_change_52week%20%3C%3D%201334%29]&restype=company&ei=kBhCVenZONLJsQfMuoGgDA&"+
-						"sortas=MarketCap";
+						"price_change_52week%20%3C%3D%201334%29]&restype=company&ei=kBhCVenZONLJsQfMuoGgDA&";
+						//+"sortas=MarketCap";
 		
 		return query;
 	}
@@ -231,8 +252,8 @@ public class QueryBuilder {
 				+ "dividend_yield%20%3E%3D%200%29%20%26%20%28"
 				+ "dividend_yield%20%3C%3D%2084.17%29%20%26%20%28"
 				+ "price_change_52week%20%3E%3D%20-67.16%29%20%26%20%28"
-				+ "price_change_52week%20%3C%3D%20180%29]&restype=company&ei=_NBEVYGRJMS0sQerq4DwBw&"
-				+ "sortas=MarketCap";		
+				+ "price_change_52week%20%3C%3D%20180%29]&restype=company&ei=_NBEVYGRJMS0sQerq4DwBw&";
+				//+ "sortas=MarketCap";		
 		return query;
 	}
 
@@ -258,8 +279,8 @@ public class QueryBuilder {
     			+ "dividend_yield%20%3E%3D%200%29%20%26%20%28"
     			+ "dividend_yield%20%3C%3D%202097%29%20%26%20%28"
     			+ "price_change_52week%20%3E%3D%20-84.35%29%20%26%20%28"
-    			+ "price_change_52week%20%3C%3D%20122%29]&restype=company&ei=sWRHVdmSDPTisQfXjYDwDw&"
-    			+ "sortas=MarketCap";
+    			+ "price_change_52week%20%3C%3D%20122%29]&restype=company&ei=sWRHVdmSDPTisQfXjYDwDw&";
+    			//+ "sortas=MarketCap";
     	
 		return query;
 	}
@@ -287,8 +308,8 @@ public class QueryBuilder {
 				+ "dividend_yield%20%3C%3D%2017.35%29%20%26%20%28"
 				+ "price_change_52week%20%3E%3D%20-92.73%29%20%26%20%28"
 				+ "price_change_52week%20%3C%3D%20645%29]&"
-				+ "restype=company&ei=lFxTVZmhHNb_mAHZiYGQCw&"
-				+ "sortas=MarketCap";
+				+ "restype=company&ei=lFxTVZmhHNb_mAHZiYGQCw&";
+				//+ "sortas=MarketCap";
 		
 		return query;
 	}
@@ -315,8 +336,8 @@ public class QueryBuilder {
 				+ "dividend_yield%20%3E%3D%200%29%20%26%20%28"
 				+ "dividend_yield%20%3C%3D%208.69%29%20%26%20%28"
 				+ "price_change_52week%20%3E%3D%20-95.01%29%20%26%20%28"
-				+ "price_change_52week%20%3C%3D%20142%29]&restype=company&ei=lFxTVZmhHNb_mAHZiYGQCw&"
-				+ "sortas=MarketCap";
+				+ "price_change_52week%20%3C%3D%20142%29]&restype=company&ei=lFxTVZmhHNb_mAHZiYGQCw&";
+				//+ "sortas=MarketCap";
 		
 		return query;
 	}
@@ -344,8 +365,8 @@ public class QueryBuilder {
 				+ "dividend_yield%20%3E%3D%200%29%20%26%20%28"
 				+ "dividend_yield%20%3C%3D%2040.93%29%20%26%20%28"
 				+ "price_change_52week%20%3E%3D%20-97.93%29%20%26%20%28"
-				+ "price_change_52week%20%3C%3D%2063901%29]&restype=company&ei=YIRUVYj2OeCEeZrHgIAC&"
-				+ "sortas=MarketCap";
+				+ "price_change_52week%20%3C%3D%2063901%29]&restype=company&ei=YIRUVYj2OeCEeZrHgIAC&";
+				//+ "sortas=MarketCap";
 		
 		return query;
 	}
@@ -375,8 +396,8 @@ public class QueryBuilder {
 				+ "dividend_yield%20%3E%3D%200%29%20%26%20%28"
 				+ "dividend_yield%20%3C%3D%2015.14%29%20%26%20%28"
 				+ "price_change_52week%20%3E%3D%20-94.97%29%20%26%20%28"
-				+ "price_change_52week%20%3C%3D%20512%29]&restype=company&ei=TSlVVbnDG4eVe_mogcAB&"
-				+ "sortas=MarketCap";
+				+ "price_change_52week%20%3C%3D%20512%29]&restype=company&ei=TSlVVbnDG4eVe_mogcAB&";
+				//+ "sortas=MarketCap";
 	
 		
 		return query;
@@ -403,8 +424,8 @@ public class QueryBuilder {
 				+ "dividend_yield%20%3E%3D%200%29%20%26%20%28"
 				+ "dividend_yield%20%3C%3D%2056.03%29%20%26%20%28"
 				+ "price_change_52week%20%3E%3D%20-82.24%29%20%26%20%28"
-				+ "price_change_52week%20%3C%3D%202372%29]&restype=company&ei=V5hcVaG8IMXcmAHK8ICwCg&"
-				+ "sortas=MarketCap";
+				+ "price_change_52week%20%3C%3D%202372%29]&restype=company&ei=V5hcVaG8IMXcmAHK8ICwCg&";
+				//+ "sortas=MarketCap";
 		
 		return query;
 	}
@@ -430,8 +451,8 @@ public class QueryBuilder {
 				+ "dividend_yield%20%3C%3D%20219%29%20%26%20%28"
 				+ "price_change_52week%20%3E%3D%20-90.01%29%20%26%20%28"
 				+ "price_change_52week%20%3C%3D%201123"
-				+ "%29]&restype=company&ei=V5hcVaG8IMXcmAHK8ICwCg&"
-				+ "sortas=MarketCap";
+				+ "%29]&restype=company&ei=V5hcVaG8IMXcmAHK8ICwCg&";
+				//+ "sortas=MarketCap";
 		
 		return query;
 	}
@@ -458,8 +479,8 @@ public class QueryBuilder {
 				+ "dividend_yield%20%3C%3D%2071.44%29%20%26%20%28"
 				+ "price_change_52week%20%3E%3D%20-99.91%29%20%26%20%28"
 				+ "price_change_52week%20%3C%3D%201845"
-				+ "%29]&restype=company&ei=V5hcVaG8IMXcmAHK8ICwCg&"
-				+ "sortas=MarketCap";
+				+ "%29]&restype=company&ei=V5hcVaG8IMXcmAHK8ICwCg&";
+				//+ "sortas=MarketCap";
 		
 		return query;
 	}
@@ -485,8 +506,8 @@ public class QueryBuilder {
     			+ "dividend_yield%20%3E%3D%200%29%20%26%20%28"
     			+ "dividend_yield%20%3C%3D%205.13%29%20%26%20%28"
     			+ "price_change_52week%20%3E%3D%20-37.34%29%20%26%20%28"
-    			+ "price_change_52week%20%3C%3D%201680%29]&restype=company&ei=V5hcVaG8IMXcmAHK8ICwCg&"
-    			+ "sortas=MarketCap";
+    			+ "price_change_52week%20%3C%3D%201680%29]&restype=company&ei=V5hcVaG8IMXcmAHK8ICwCg&";
+    			//+ "sortas=MarketCap";
     	
     	return query;
 	}
@@ -512,8 +533,8 @@ public class QueryBuilder {
     			+ "dividend_yield%20%3E%3D%200%29%20%26%20%28"
     			+ "dividend_yield%20%3C%3D%2016.19%29%20%26%20%28"
     			+ "price_change_52week%20%3E%3D%20-62.61%29%20%26%20%28"
-    			+ "price_change_52week%20%3C%3D%20893%29]&restype=company&ei=V5hcVaG8IMXcmAHK8ICwCg&"
-    			+ "sortas=MarketCap";
+    			+ "price_change_52week%20%3C%3D%20893%29]&restype=company&ei=V5hcVaG8IMXcmAHK8ICwCg&";
+    			//+ "sortas=MarketCap";
 
     	return query;
 	}
@@ -540,8 +561,8 @@ public class QueryBuilder {
 				+ "dividend_yield%20%3E%3D%200%29%20%26%20%28"
 				+ "dividend_yield%20%3C%3D%2089.13%29%20%26%20%28"
 				+ "price_change_52week%20%3E%3D%20-96.95%29%20%26%20%28"
-				+ "price_change_52week%20%3C%3D%20289%29]&restype=company&ei=GspsVZnID8T4evyYg8gG&"
-				+ "sortas=MarketCap";
+				+ "price_change_52week%20%3C%3D%20289%29]&restype=company&ei=GspsVZnID8T4evyYg8gG&";
+				//+ "sortas=MarketCap";
 		
 		
 		return query;
@@ -568,8 +589,8 @@ public class QueryBuilder {
 				+ "dividend_yield%20%3E%3D%200%29%20%26%20%28"
 				+ "dividend_yield%20%3C%3D%2022.24%29%20%26%20%28"
 				+ "price_change_52week%20%3E%3D%20-93.8%29%20%26%20%28"
-				+ "price_change_52week%20%3C%3D%20489%29]&restype=company&ei=GspsVZnID8T4evyYg8gG&"
-				+ "sortas=MarketCap";
+				+ "price_change_52week%20%3C%3D%20489%29]&restype=company&ei=GspsVZnID8T4evyYg8gG&";
+				//+ "sortas=MarketCap";
 		
 		return query;
 	}
@@ -596,8 +617,8 @@ public class QueryBuilder {
     			+ "dividend_yield%20%3E%3D%200%29%20%26%20%28"
     			+ "dividend_yield%20%3C%3D%2072.04%29%20%26%20%28"
     			+ "price_change_52week%20%3E%3D%20-95.27%29%20%26%20%28"
-    			+ "price_change_52week%20%3C%3D%20313%29]&restype=company&ei=GspsVZnID8T4evyYg8gG&"
-    			+ "sortas=MarketCap";
+    			+ "price_change_52week%20%3C%3D%20313%29]&restype=company&ei=GspsVZnID8T4evyYg8gG&";
+    			//+ "sortas=MarketCap";
     	
     	return query;
 	}
@@ -626,8 +647,8 @@ public class QueryBuilder {
 				+ "dividend_yield%20%3E%3D%200%29%20%26%20%28"
 				+ "dividend_yield%20%3C%3D%2089.3%29%20%26%20%28"
 				+ "price_change_52week%20%3E%3D%20-96.57%29%20%26%20%28"
-				+ "price_change_52week%20%3C%3D%20436%29]&restype=company&ei=GspsVZnID8T4evyYg8gG&"
-				+ "sortas=MarketCap";
+				+ "price_change_52week%20%3C%3D%20436%29]&restype=company&ei=GspsVZnID8T4evyYg8gG&";
+				//+ "sortas=MarketCap";
 		
 		return query;
 	}
@@ -652,8 +673,8 @@ public class QueryBuilder {
 				+ "dividend_yield%20%3E%3D%200%29%20%26%20%28"
 				+ "dividend_yield%20%3C%3D%2025.75%29%20%26%20%28"
 				+ "price_change_52week%20%3E%3D%20-86.7%29%20%26%20%28"
-				+ "price_change_52week%20%3C%3D%20357%29]&restype=company&ei=GspsVZnID8T4evyYg8gG&"
-				+ "sortas=MarketCap";
+				+ "price_change_52week%20%3C%3D%20357%29]&restype=company&ei=GspsVZnID8T4evyYg8gG&";
+				//+ "sortas=MarketCap";
 		
 		return query;
 	}

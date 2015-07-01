@@ -1,12 +1,15 @@
 package com.prediccion.acciones2.domain;
-import org.springframework.roo.addon.javabean.RooJavaBean;
-import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
-import org.springframework.roo.addon.tostring.RooToString;
-import org.springframework.roo.addon.json.RooJson;
 import java.util.Date;
+
+import javax.persistence.Column;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.roo.addon.javabean.RooJavaBean;
+import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
+import org.springframework.roo.addon.json.RooJson;
+import org.springframework.roo.addon.tostring.RooToString;
 
 @RooJavaBean
 @RooToString
@@ -37,4 +40,11 @@ public class QueryLog {
     /**
      */
     private Integer forecastFail;
+    //@Column(length=200000)
+    private String data;
+    
+    public synchronized void setForecastFail(Integer forecastFail) {
+        this.forecastFail = forecastFail;
+    }
+    
 }

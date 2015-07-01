@@ -32,6 +32,7 @@ privileged aspect CompanyHistoricDataOnDemand_Roo_DataOnDemand {
     
     public CompanyHistoric CompanyHistoricDataOnDemand.getNewTransientCompanyHistoric(int index) {
         CompanyHistoric obj = new CompanyHistoric();
+        setCity(obj, index);
         setCompanyId(obj, index);
         setExchange(obj, index);
         setFechaCreacion(obj, index);
@@ -84,6 +85,11 @@ privileged aspect CompanyHistoricDataOnDemand_Roo_DataOnDemand {
         return obj;
     }
     
+    public void CompanyHistoricDataOnDemand.setCity(CompanyHistoric obj, int index) {
+        String city = "city_" + index;
+        obj.setCity(city);
+    }
+    
     public void CompanyHistoricDataOnDemand.setCompanyId(CompanyHistoric obj, int index) {
         String companyId = "companyId_" + index;
         obj.setCompanyId(companyId);
@@ -110,7 +116,7 @@ privileged aspect CompanyHistoricDataOnDemand_Roo_DataOnDemand {
     }
     
     public void CompanyHistoricDataOnDemand.setMarketCap(CompanyHistoric obj, int index) {
-        Double marketCap = new Integer(index).doubleValue();
+        String marketCap = "marketCap_" + index;
         obj.setMarketCap(marketCap);
     }
     

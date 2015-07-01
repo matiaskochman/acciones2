@@ -136,11 +136,11 @@ privileged aspect Company_Roo_JavaBean {
         this.fechaModificacion = fechaModificacion;
     }
     
-    public Double Company.getMarketCap() {
+    public String Company.getMarketCap() {
         return this.marketCap;
     }
     
-    public void Company.setMarketCap(Double marketCap) {
+    public void Company.setMarketCap(String marketCap) {
         this.marketCap = marketCap;
     }
     

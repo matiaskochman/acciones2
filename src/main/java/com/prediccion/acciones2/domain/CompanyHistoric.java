@@ -34,7 +34,7 @@ public class CompanyHistoric {
 			Integer recomendacionBuy, Integer recomendacionOutPerform,
 			Integer recomendacionHold, Integer recomendacionUnderPerform,
 			Integer recomendacionSell, Integer recomendacionNoOpinion,
-			String volumenNegociado, Date fechaCreacion, Double marketCap,
+			String volumenNegociado, Date fechaCreacion, String marketCap,
 			Double pe, String exchange, String companyId,
 			String localCurrencySymbol, Double recomendacionAverage_last_year,
 			Integer recomendacionBuy_last_year,
@@ -155,7 +155,7 @@ public class CompanyHistoric {
     @DateTimeFormat(pattern = "dd/MM/yyyy")
     private Date fechaCreacion;
     @Column
-    private Double marketCap;
+    private String marketCap;
     @Column
     private Double pe;
     @Column

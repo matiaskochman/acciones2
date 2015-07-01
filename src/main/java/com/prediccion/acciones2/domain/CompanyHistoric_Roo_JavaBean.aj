@@ -168,11 +168,11 @@ privileged aspect CompanyHistoric_Roo_JavaBean {
         this.fechaCreacion = fechaCreacion;
     }
     
-    public Double CompanyHistoric.getMarketCap() {
+    public String CompanyHistoric.getMarketCap() {
         return this.marketCap;
     }
     
-    public void CompanyHistoric.setMarketCap(Double marketCap) {
+    public void CompanyHistoric.setMarketCap(String marketCap) {
         this.marketCap = marketCap;
     }
     
@@ -398,6 +398,14 @@ privileged aspect CompanyHistoric_Roo_JavaBean {
     
     public void CompanyHistoric.setRecomendacionSell_last_4weeks(Integer recomendacionSell_last_4weeks) {
         this.recomendacionSell_last_4weeks = recomendacionSell_last_4weeks;
+    }
+    
+    public String CompanyHistoric.getCity() {
+        return this.city;
+    }
+    
+    public void CompanyHistoric.setCity(String city) {
+        this.city = city;
     }
     
 }

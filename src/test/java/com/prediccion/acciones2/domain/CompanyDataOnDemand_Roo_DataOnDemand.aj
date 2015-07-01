@@ -129,7 +129,8 @@ privileged aspect CompanyDataOnDemand_Roo_DataOnDemand {
     }
     
     public void CompanyDataOnDemand.setMarketCap(Company obj, int index) {
-        Double marketCap = new Integer(index).doubleValue();
+    	String marketCap = "marketCap_"+index;
+
         obj.setMarketCap(marketCap);
     }
     
