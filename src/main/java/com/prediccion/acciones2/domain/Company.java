@@ -84,7 +84,6 @@ public class Company {
     public Company() {
 		super();
 		this.fechaCreacion = new Date();
-		this.fechaModificacion = this.fechaCreacion;
 		
 		// TODO Auto-generated constructor stub
 	}

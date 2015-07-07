@@ -4,9 +4,11 @@ import java.util.Date;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.transaction.Transactional;
 
 import org.dozer.DozerBeanMapper;
 import org.dozer.Mapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 
 import com.googlecode.ehcache.annotations.Cacheable;
@@ -18,6 +20,9 @@ public class CompanyServiceImpl implements CompanyService {
 	private Mapper mapper = new DozerBeanMapper();
 	
 	
+	@Autowired
+	private CompanyHistoricService companyHistoricService;
+	
 	@Cacheable(cacheName="companies")
     public List<Company> findAllCompanys() {
         return Company.findAllCompanys();
@@ -25,6 +30,7 @@ public class CompanyServiceImpl implements CompanyService {
     
 
 	@Override
+	@Transactional
 	public void saveOrUpdate(Company c) {
 		EntityManager em =  c.getEntityManager();
 		Company comp = null;
@@ -32,6 +38,8 @@ public class CompanyServiceImpl implements CompanyService {
 		try{
 			
 			comp = Company.findCompanysByCompanyIdEquals(c.getCompanyId()).getSingleResult();
+			
+			companyHistoricService.createHistoricForCompany(comp);
 			c.setId(comp.getId());
 			mapper.map(c, comp);
 			comp.setVersion(comp.getVersion());

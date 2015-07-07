@@ -9,4 +9,5 @@ import com.prediccion.acciones2.domain.Company;
 public interface CompanyHistoricService {
 	
 	public void createHistotic(List<Company> companyList);
+	public void createHistoricForCompany(Company company);
 }

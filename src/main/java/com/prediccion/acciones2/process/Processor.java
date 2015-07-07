@@ -1,16 +1,11 @@
 package com.prediccion.acciones2.process;
 
-import java.net.URLEncoder;
-import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.List;
 import java.util.Set;
 import java.util.concurrent.CountDownLatch;
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import com.prediccion.acciones2.domain.Company;
-import com.prediccion.acciones2.domain.LogCompanyQuery;
 import com.prediccion.acciones2.domain.QueryLog;
 import com.prediccion.acciones2.exception.BusinessException;
 import com.prediccion.acciones2.utils.HttpConectionUtils;
@@ -45,32 +40,7 @@ public class Processor implements Runnable{
 	public void run() {
 		try {
 			
-			StringBuffer sb = new StringBuffer();
-			
-			String baseUrl = "http://query.yahooapis.com/v1/public/yql?q=";
-			
-			final String financialTimes = "http://markets.ft.com/research/Markets/Tearsheets/Forecasts?s="+this.company.getTicker()+this.company.getMarket();
-			
-			sb.append("select * from html where url='");
-			sb.append(financialTimes);
-			sb.append("' ");
-			sb.append("and xpath='");
-			sb.append(ParsingUtils.porcentajeForecast);
-			sb.append("|");
-			sb.append(ParsingUtils.latestRecomendations);
-			sb.append("|");
-			sb.append(ParsingUtils.precioAccion);
-			sb.append("|");
-			sb.append(ParsingUtils.sharesTraded);
-			sb.append("|");
-			sb.append(ParsingUtils.valoresForecast);
-			sb.append("|");
-			sb.append(ParsingUtils.latestRecomentations_buy);
-			sb.append("'");
-			
-			final String fullUrlStr = baseUrl + URLEncoder.encode(sb.toString(), "UTF-8") + "&format=json";
-			
-			System.out.println(fullUrlStr);
+			final String fullUrlStr = ParsingUtils.getFullUrl(this.company);
 			
 			data = HttpConectionUtils.getData(fullUrlStr);
 			
@@ -85,9 +55,7 @@ public class Processor implements Runnable{
 			
 			ParsingUtils.extract_forecast_porcentaje(data, company);
 			
-			treeSet.add(company);
 			 
-			System.out.println("parseo nro: "+treeSet.size());
 
 			ParsingUtils.extract_recommendationsPopup_lastYear(data, company);
 			
@@ -117,6 +85,8 @@ public class Processor implements Runnable{
 			company.setVolumenNegociado(ParsingUtils.extract_volumen_negociado(ParsingUtils.volumen_negociado,data,company));
 			company.setFechaCreacion(cal.getTime());
 			
+			treeSet.add(company);
+			System.out.println("parseo nro: "+treeSet.size());
 			System.out.println("equity symbol: "+company.getTicker()+":"+company.getMarket()+"   "+data);
 			System.out.println(countDownLatch.getCount());
 			
@@ -148,8 +118,6 @@ public class Processor implements Runnable{
 			e.printStackTrace();
 		} catch (Exception e) {
 			queryLog.setForecastFail(queryLog.getForecastFail()+1);
-			
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}finally{
 			
@@ -158,6 +126,7 @@ public class Processor implements Runnable{
 		
 		
 	}
+
 
 
 }

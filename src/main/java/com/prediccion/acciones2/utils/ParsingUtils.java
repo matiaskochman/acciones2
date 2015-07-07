@@ -1,5 +1,7 @@
 package com.prediccion.acciones2.utils;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -499,6 +501,35 @@ public class ParsingUtils {
 	}
 	
 	
+	public static String getFullUrl(Company company) throws UnsupportedEncodingException {
+		StringBuffer sb = new StringBuffer();
+		
+		String baseUrl = "http://query.yahooapis.com/v1/public/yql?q=";
+		
+		final String financialTimes = "http://markets.ft.com/research/Markets/Tearsheets/Forecasts?s="+company.getTicker()+company.getMarket();
+		
+		sb.append("select * from html where url='");
+		sb.append(financialTimes);
+		sb.append("' ");
+		sb.append("and xpath='");
+		sb.append(ParsingUtils.porcentajeForecast);
+		sb.append("|");
+		sb.append(ParsingUtils.latestRecomendations);
+		sb.append("|");
+		sb.append(ParsingUtils.precioAccion);
+		sb.append("|");
+		sb.append(ParsingUtils.sharesTraded);
+		sb.append("|");
+		sb.append(ParsingUtils.valoresForecast);
+		sb.append("|");
+		sb.append(ParsingUtils.latestRecomentations_buy);
+		sb.append("'");
+		
+		final String fullUrlStr = baseUrl + URLEncoder.encode(sb.toString(), "UTF-8") + "&format=json";
+		
+		System.out.println(fullUrlStr);
+		return fullUrlStr;
+	}
 	
 	
 	
