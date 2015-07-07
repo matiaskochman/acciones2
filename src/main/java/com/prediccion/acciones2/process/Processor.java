@@ -2,6 +2,7 @@ package com.prediccion.acciones2.process;
 
 import java.util.Calendar;
 import java.util.Set;
+import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.CountDownLatch;
 import java.util.regex.Pattern;
 
@@ -25,13 +26,15 @@ public class Processor implements Runnable{
 	Pattern recomendacion_sell = Pattern.compile("Underperform"+ParsingUtils.common);
 	Pattern recomendacion_no_opinion = Pattern.compile("No opinion"+ParsingUtils.common);
 			
-	Set<Company> treeSet;
+	//Set<Company> treeSet;
 
-	public Processor(CountDownLatch countDownLatch,Company company,Set<Company> set,Calendar cal, QueryLog queryLog) {
+	BlockingQueue<Company> queue;
+	
+	public Processor(CountDownLatch countDownLatch,Company company,BlockingQueue<Company> queue,Calendar cal, QueryLog queryLog) {
 		super();
 		this.company=company;
 		this.countDownLatch = countDownLatch;
-		this.treeSet = set;
+		this.queue = queue;
 		this.cal = cal;
 		this.queryLog = queryLog;
 	}
@@ -85,8 +88,8 @@ public class Processor implements Runnable{
 			company.setVolumenNegociado(ParsingUtils.extract_volumen_negociado(ParsingUtils.volumen_negociado,data,company));
 			company.setFechaCreacion(cal.getTime());
 			
-			treeSet.add(company);
-			System.out.println("parseo nro: "+treeSet.size());
+			queue.add(company);
+			System.out.println("parseo nro: "+queue.size());
 			System.out.println("equity symbol: "+company.getTicker()+":"+company.getMarket()+"   "+data);
 			System.out.println(countDownLatch.getCount());
 			

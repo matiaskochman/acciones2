@@ -3122,3 +3122,203 @@ INFO main org.dozer.DozerBeanMapper - Initializing a new instance of dozer bean 
 INFO Thread-4 org.springframework.context.support.GenericApplicationContext - Closing org.springframework.context.support.GenericApplicationContext@58ecb281: startup date [Tue Jul 07 15:15:19 ART 2015]; root of context hierarchy
 INFO Thread-4 org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'persistenceUnit'
 INFO Thread-4 org.springframework.cache.ehcache.EhCacheManagerFactoryBean - Shutting down EhCache CacheManager
+INFO main org.springframework.test.context.support.DefaultTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@d8d9850, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@4b0ab323, org.springframework.test.context.support.DirtiesContextTestExecutionListener@2b76e552]
+INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/spring/applicationContext.xml]
+INFO main org.springframework.context.support.GenericApplicationContext - Refreshing org.springframework.context.support.GenericApplicationContext@1bbb60c3: startup date [Tue Jul 07 15:55:09 ART 2015]; root of context hierarchy
+INFO main org.springframework.context.support.PropertySourcesPlaceholderConfigurer - Loading properties file from file [D:\desarrollo\github_repo\acciones2\target\classes\META-INF\spring\database.properties]
+INFO main org.springframework.cache.ehcache.EhCacheManagerFactoryBean - Initializing EhCache CacheManager
+INFO main org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'persistenceUnit'
+INFO main org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: persistenceUnit
+	...]
+INFO main org.hibernate.Version - HHH000412: Hibernate Core {4.3.6.Final}
+INFO main org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+INFO main org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+INFO main org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+INFO main org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+INFO main org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 4.3.2.Final
+INFO main org.hibernate.tool.hbm2ddl.SchemaExport - HHH000227: Running hbm2ddl schema export
+INFO main org.hibernate.tool.hbm2ddl.SchemaExport - HHH000230: Schema export complete
+INFO main org.dozer.config.GlobalSettings - Trying to find Dozer configuration file: dozer.properties
+WARN main org.dozer.config.GlobalSettings - Dozer configuration file not found: dozer.properties.  Using defaults for all Dozer global properties.
+INFO main org.dozer.DozerInitializer - Initializing Dozer. Version: 5.5.0, Thread Name: main
+INFO main org.dozer.jmx.JMXPlatformImpl - Dozer JMX MBean [org.dozer.jmx:type=DozerStatisticsController] auto registered with the Platform MBean Server
+INFO main org.dozer.jmx.JMXPlatformImpl - Dozer JMX MBean [org.dozer.jmx:type=DozerAdminController] auto registered with the Platform MBean Server
+INFO main org.dozer.DozerBeanMapper - Initializing a new instance of dozer bean mapper.
+INFO main org.dozer.DozerBeanMapper - Initializing a new instance of dozer bean mapper.
+INFO main org.springframework.test.context.support.DefaultTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@4b0ab323, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@2b76e552, org.springframework.test.context.support.DirtiesContextTestExecutionListener@ac980c9]
+INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/spring/applicationContext.xml]
+INFO main org.springframework.context.support.GenericApplicationContext - Refreshing org.springframework.context.support.GenericApplicationContext@676bd8ea: startup date [Tue Jul 07 16:14:07 ART 2015]; root of context hierarchy
+INFO main org.springframework.context.support.PropertySourcesPlaceholderConfigurer - Loading properties file from file [D:\desarrollo\github_repo\acciones2\target\classes\META-INF\spring\database.properties]
+INFO main org.springframework.cache.ehcache.EhCacheManagerFactoryBean - Initializing EhCache CacheManager
+INFO main org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'persistenceUnit'
+INFO main org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: persistenceUnit
+	...]
+INFO main org.hibernate.Version - HHH000412: Hibernate Core {4.3.6.Final}
+INFO main org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+INFO main org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+INFO main org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+INFO main org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+INFO main org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 4.3.2.Final
+INFO main org.hibernate.tool.hbm2ddl.SchemaExport - HHH000227: Running hbm2ddl schema export
+INFO main org.hibernate.tool.hbm2ddl.SchemaExport - HHH000230: Schema export complete
+INFO main org.dozer.config.GlobalSettings - Trying to find Dozer configuration file: dozer.properties
+WARN main org.dozer.config.GlobalSettings - Dozer configuration file not found: dozer.properties.  Using defaults for all Dozer global properties.
+INFO main org.dozer.DozerInitializer - Initializing Dozer. Version: 5.5.0, Thread Name: main
+INFO main org.dozer.jmx.JMXPlatformImpl - Dozer JMX MBean [org.dozer.jmx:type=DozerStatisticsController] auto registered with the Platform MBean Server
+INFO main org.dozer.jmx.JMXPlatformImpl - Dozer JMX MBean [org.dozer.jmx:type=DozerAdminController] auto registered with the Platform MBean Server
+INFO main org.dozer.DozerBeanMapper - Initializing a new instance of dozer bean mapper.
+INFO main org.dozer.DozerBeanMapper - Initializing a new instance of dozer bean mapper.
+INFO main org.springframework.test.context.support.DefaultTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2b76e552, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@ac980c9, org.springframework.test.context.support.DirtiesContextTestExecutionListener@332611a7]
+INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/spring/applicationContext.xml]
+INFO main org.springframework.context.support.GenericApplicationContext - Refreshing org.springframework.context.support.GenericApplicationContext@596e1fb1: startup date [Tue Jul 07 16:26:02 ART 2015]; root of context hierarchy
+INFO main org.springframework.context.support.PropertySourcesPlaceholderConfigurer - Loading properties file from file [D:\desarrollo\github_repo\acciones2\target\classes\META-INF\spring\database.properties]
+INFO main org.springframework.cache.ehcache.EhCacheManagerFactoryBean - Initializing EhCache CacheManager
+INFO main org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'persistenceUnit'
+INFO main org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: persistenceUnit
+	...]
+INFO main org.hibernate.Version - HHH000412: Hibernate Core {4.3.6.Final}
+INFO main org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+INFO main org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+INFO main org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+INFO main org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+INFO main org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 4.3.2.Final
+INFO main org.hibernate.tool.hbm2ddl.SchemaExport - HHH000227: Running hbm2ddl schema export
+INFO main org.hibernate.tool.hbm2ddl.SchemaExport - HHH000230: Schema export complete
+INFO main org.dozer.config.GlobalSettings - Trying to find Dozer configuration file: dozer.properties
+WARN main org.dozer.config.GlobalSettings - Dozer configuration file not found: dozer.properties.  Using defaults for all Dozer global properties.
+INFO main org.dozer.DozerInitializer - Initializing Dozer. Version: 5.5.0, Thread Name: main
+INFO main org.dozer.jmx.JMXPlatformImpl - Dozer JMX MBean [org.dozer.jmx:type=DozerStatisticsController] auto registered with the Platform MBean Server
+INFO main org.dozer.jmx.JMXPlatformImpl - Dozer JMX MBean [org.dozer.jmx:type=DozerAdminController] auto registered with the Platform MBean Server
+INFO main org.dozer.DozerBeanMapper - Initializing a new instance of dozer bean mapper.
+INFO main org.dozer.DozerBeanMapper - Initializing a new instance of dozer bean mapper.
+INFO Thread-4 org.springframework.context.support.GenericApplicationContext - Closing org.springframework.context.support.GenericApplicationContext@596e1fb1: startup date [Tue Jul 07 16:26:02 ART 2015]; root of context hierarchy
+INFO Thread-4 org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'persistenceUnit'
+INFO Thread-4 org.springframework.cache.ehcache.EhCacheManagerFactoryBean - Shutting down EhCache CacheManager
+INFO main org.springframework.test.context.support.DefaultTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@851052d, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@7f2ad19e, org.springframework.test.context.support.DirtiesContextTestExecutionListener@54281d4b]
+INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/spring/applicationContext.xml]
+INFO main org.springframework.context.support.GenericApplicationContext - Refreshing org.springframework.context.support.GenericApplicationContext@16bdb503: startup date [Tue Jul 07 16:28:59 ART 2015]; root of context hierarchy
+INFO main org.springframework.context.support.PropertySourcesPlaceholderConfigurer - Loading properties file from file [D:\desarrollo\github_repo\acciones2\target\classes\META-INF\spring\database.properties]
+INFO main org.springframework.cache.ehcache.EhCacheManagerFactoryBean - Initializing EhCache CacheManager
+INFO main org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'persistenceUnit'
+INFO main org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: persistenceUnit
+	...]
+INFO main org.hibernate.Version - HHH000412: Hibernate Core {4.3.6.Final}
+INFO main org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+INFO main org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+INFO main org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+INFO main org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+INFO main org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 4.3.2.Final
+INFO main org.hibernate.tool.hbm2ddl.SchemaExport - HHH000227: Running hbm2ddl schema export
+INFO main org.hibernate.tool.hbm2ddl.SchemaExport - HHH000230: Schema export complete
+INFO main org.dozer.config.GlobalSettings - Trying to find Dozer configuration file: dozer.properties
+WARN main org.dozer.config.GlobalSettings - Dozer configuration file not found: dozer.properties.  Using defaults for all Dozer global properties.
+INFO main org.dozer.DozerInitializer - Initializing Dozer. Version: 5.5.0, Thread Name: main
+INFO main org.dozer.jmx.JMXPlatformImpl - Dozer JMX MBean [org.dozer.jmx:type=DozerStatisticsController] auto registered with the Platform MBean Server
+INFO main org.dozer.jmx.JMXPlatformImpl - Dozer JMX MBean [org.dozer.jmx:type=DozerAdminController] auto registered with the Platform MBean Server
+INFO main org.dozer.DozerBeanMapper - Initializing a new instance of dozer bean mapper.
+INFO main org.dozer.DozerBeanMapper - Initializing a new instance of dozer bean mapper.
+INFO main org.springframework.test.context.support.DefaultTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@d8d9850, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@4b0ab323, org.springframework.test.context.support.DirtiesContextTestExecutionListener@2b76e552]
+INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/spring/applicationContext.xml]
+INFO main org.springframework.context.support.GenericApplicationContext - Refreshing org.springframework.context.support.GenericApplicationContext@47315d34: startup date [Tue Jul 07 16:32:57 ART 2015]; root of context hierarchy
+INFO main org.springframework.context.support.PropertySourcesPlaceholderConfigurer - Loading properties file from file [D:\desarrollo\github_repo\acciones2\target\classes\META-INF\spring\database.properties]
+INFO main org.springframework.cache.ehcache.EhCacheManagerFactoryBean - Initializing EhCache CacheManager
+INFO main org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'persistenceUnit'
+INFO main org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: persistenceUnit
+	...]
+INFO main org.hibernate.Version - HHH000412: Hibernate Core {4.3.6.Final}
+INFO main org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+INFO main org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+INFO main org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+INFO main org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+INFO main org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 4.3.2.Final
+INFO main org.hibernate.tool.hbm2ddl.SchemaExport - HHH000227: Running hbm2ddl schema export
+INFO main org.hibernate.tool.hbm2ddl.SchemaExport - HHH000230: Schema export complete
+INFO main org.dozer.config.GlobalSettings - Trying to find Dozer configuration file: dozer.properties
+WARN main org.dozer.config.GlobalSettings - Dozer configuration file not found: dozer.properties.  Using defaults for all Dozer global properties.
+INFO main org.dozer.DozerInitializer - Initializing Dozer. Version: 5.5.0, Thread Name: main
+INFO main org.dozer.jmx.JMXPlatformImpl - Dozer JMX MBean [org.dozer.jmx:type=DozerStatisticsController] auto registered with the Platform MBean Server
+INFO main org.dozer.jmx.JMXPlatformImpl - Dozer JMX MBean [org.dozer.jmx:type=DozerAdminController] auto registered with the Platform MBean Server
+INFO main org.dozer.DozerBeanMapper - Initializing a new instance of dozer bean mapper.
+INFO main org.dozer.DozerBeanMapper - Initializing a new instance of dozer bean mapper.
+INFO main org.springframework.test.context.support.DefaultTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@46b8c8e6, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@d8d9850, org.springframework.test.context.support.DirtiesContextTestExecutionListener@4b0ab323]
+INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/spring/applicationContext.xml]
+INFO main org.springframework.context.support.GenericApplicationContext - Refreshing org.springframework.context.support.GenericApplicationContext@47315d34: startup date [Tue Jul 07 16:34:36 ART 2015]; root of context hierarchy
+INFO main org.springframework.context.support.PropertySourcesPlaceholderConfigurer - Loading properties file from file [D:\desarrollo\github_repo\acciones2\target\classes\META-INF\spring\database.properties]
+INFO main org.springframework.cache.ehcache.EhCacheManagerFactoryBean - Initializing EhCache CacheManager
+INFO main org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'persistenceUnit'
+INFO main org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: persistenceUnit
+	...]
+INFO main org.hibernate.Version - HHH000412: Hibernate Core {4.3.6.Final}
+INFO main org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+INFO main org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+INFO main org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+INFO main org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+INFO main org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 4.3.2.Final
+INFO main org.hibernate.tool.hbm2ddl.SchemaExport - HHH000227: Running hbm2ddl schema export
+INFO main org.hibernate.tool.hbm2ddl.SchemaExport - HHH000230: Schema export complete
+INFO main org.dozer.config.GlobalSettings - Trying to find Dozer configuration file: dozer.properties
+WARN main org.dozer.config.GlobalSettings - Dozer configuration file not found: dozer.properties.  Using defaults for all Dozer global properties.
+INFO main org.dozer.DozerInitializer - Initializing Dozer. Version: 5.5.0, Thread Name: main
+INFO main org.dozer.jmx.JMXPlatformImpl - Dozer JMX MBean [org.dozer.jmx:type=DozerStatisticsController] auto registered with the Platform MBean Server
+INFO main org.dozer.jmx.JMXPlatformImpl - Dozer JMX MBean [org.dozer.jmx:type=DozerAdminController] auto registered with the Platform MBean Server
+INFO main org.dozer.DozerBeanMapper - Initializing a new instance of dozer bean mapper.
+INFO main org.dozer.DozerBeanMapper - Initializing a new instance of dozer bean mapper.
+INFO Thread-4 org.springframework.context.support.GenericApplicationContext - Closing org.springframework.context.support.GenericApplicationContext@47315d34: startup date [Tue Jul 07 16:34:36 ART 2015]; root of context hierarchy
+INFO Thread-4 org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'persistenceUnit'
+INFO Thread-4 org.springframework.cache.ehcache.EhCacheManagerFactoryBean - Shutting down EhCache CacheManager
+INFO main org.springframework.test.context.support.DefaultTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@d8d9850, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@4b0ab323, org.springframework.test.context.support.DirtiesContextTestExecutionListener@2b76e552]
+INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/spring/applicationContext.xml]
+INFO main org.springframework.context.support.GenericApplicationContext - Refreshing org.springframework.context.support.GenericApplicationContext@47315d34: startup date [Tue Jul 07 16:52:17 ART 2015]; root of context hierarchy
+INFO main org.springframework.context.support.PropertySourcesPlaceholderConfigurer - Loading properties file from file [D:\desarrollo\github_repo\acciones2\target\classes\META-INF\spring\database.properties]
+INFO main org.springframework.cache.ehcache.EhCacheManagerFactoryBean - Initializing EhCache CacheManager
+INFO main org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'persistenceUnit'
+INFO main org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: persistenceUnit
+	...]
+INFO main org.hibernate.Version - HHH000412: Hibernate Core {4.3.6.Final}
+INFO main org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+INFO main org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+INFO main org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+INFO main org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+INFO main org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 4.3.2.Final
+INFO main org.springframework.test.context.support.DefaultTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@d8d9850, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@4b0ab323, org.springframework.test.context.support.DirtiesContextTestExecutionListener@2b76e552]
+INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/spring/applicationContext.xml]
+INFO main org.springframework.context.support.GenericApplicationContext - Refreshing org.springframework.context.support.GenericApplicationContext@676bd8ea: startup date [Tue Jul 07 16:53:00 ART 2015]; root of context hierarchy
+INFO main org.springframework.context.support.PropertySourcesPlaceholderConfigurer - Loading properties file from file [D:\desarrollo\github_repo\acciones2\target\classes\META-INF\spring\database.properties]
+INFO main org.springframework.cache.ehcache.EhCacheManagerFactoryBean - Initializing EhCache CacheManager
+INFO main org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'persistenceUnit'
+INFO main org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: persistenceUnit
+	...]
+INFO main org.hibernate.Version - HHH000412: Hibernate Core {4.3.6.Final}
+INFO main org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+INFO main org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+INFO main org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+INFO main org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+INFO main org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 4.3.2.Final
+INFO main org.hibernate.tool.hbm2ddl.SchemaExport - HHH000227: Running hbm2ddl schema export
+INFO main org.hibernate.tool.hbm2ddl.SchemaExport - HHH000230: Schema export complete
+INFO main org.dozer.config.GlobalSettings - Trying to find Dozer configuration file: dozer.properties
+WARN main org.dozer.config.GlobalSettings - Dozer configuration file not found: dozer.properties.  Using defaults for all Dozer global properties.
+INFO main org.dozer.DozerInitializer - Initializing Dozer. Version: 5.5.0, Thread Name: main
+INFO main org.dozer.jmx.JMXPlatformImpl - Dozer JMX MBean [org.dozer.jmx:type=DozerStatisticsController] auto registered with the Platform MBean Server
+INFO main org.dozer.jmx.JMXPlatformImpl - Dozer JMX MBean [org.dozer.jmx:type=DozerAdminController] auto registered with the Platform MBean Server
+INFO main org.dozer.DozerBeanMapper - Initializing a new instance of dozer bean mapper.
+INFO main org.dozer.DozerBeanMapper - Initializing a new instance of dozer bean mapper.
+INFO Thread-4 org.springframework.context.support.GenericApplicationContext - Closing org.springframework.context.support.GenericApplicationContext@676bd8ea: startup date [Tue Jul 07 16:53:00 ART 2015]; root of context hierarchy
+INFO Thread-4 org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'persistenceUnit'
+INFO Thread-4 org.springframework.cache.ehcache.EhCacheManagerFactoryBean - Shutting down EhCache CacheManager

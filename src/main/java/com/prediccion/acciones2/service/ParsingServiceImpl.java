@@ -8,6 +8,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
+import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -95,7 +96,7 @@ public class ParsingServiceImpl implements ParsingService{
 	      return string.matches("^[-+]?\\d+(\\.\\d+)?$");
 	}	
 	
-	public void getSocksFromGoogleFinance(String query, Integer amountOfThreads,Set<Company> set){
+	public void getSocksFromGoogleFinance(String query, Integer amountOfThreads,BlockingQueue<Company> queue){
 		List<Company> companyList = null;
 		
 		if(amountOfThreads!=null){
@@ -149,7 +150,7 @@ public class ParsingServiceImpl implements ParsingService{
 				
 				try {
 					for (Company company : companyList) {
-						executorService.submit(new Processor(countDownLatch,company,set,cal,queryLog));
+						executorService.submit(new Processor(countDownLatch,company,queue,cal,queryLog));
 					}
 					countDownLatch.await();
 				} catch (InterruptedException e) {
@@ -167,11 +168,11 @@ public class ParsingServiceImpl implements ParsingService{
 		
 		
 		String market=null;
-		if(set!=null && !set.isEmpty()){
-			market = set.iterator().next().getExchange();
+		if(queue!=null && !queue.isEmpty()){
+			market = queue.iterator().next().getExchange();
 			System.out.println("termino de parsear para market: "+market);
 			queryLog.setFechaQuery(new Date());
-			queryLog.setForecastOk(String.valueOf(set.size()));
+			queryLog.setForecastOk(String.valueOf(queue.size()));
 			queryLog.setMarket(market);
 			//queryLog.setData(result);
 			queryLogService.saveQueryLog(queryLog);
