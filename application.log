@@ -3322,3 +3322,414 @@ INFO main org.dozer.DozerBeanMapper - Initializing a new instance of dozer bean 
 INFO Thread-4 org.springframework.context.support.GenericApplicationContext - Closing org.springframework.context.support.GenericApplicationContext@676bd8ea: startup date [Tue Jul 07 16:53:00 ART 2015]; root of context hierarchy
 INFO Thread-4 org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'persistenceUnit'
 INFO Thread-4 org.springframework.cache.ehcache.EhCacheManagerFactoryBean - Shutting down EhCache CacheManager
+INFO Thread-4 org.springframework.context.support.GenericApplicationContext - Closing org.springframework.context.support.GenericApplicationContext@58ecb281: startup date [Tue Jul 07 11:23:46 ART 2015]; root of context hierarchy
+INFO Thread-4 org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'persistenceUnit'
+INFO Thread-4 org.springframework.cache.ehcache.EhCacheManagerFactoryBean - Shutting down EhCache CacheManager
+INFO main org.springframework.test.context.support.DefaultTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@d8d9850, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@4b0ab323, org.springframework.test.context.support.DirtiesContextTestExecutionListener@2b76e552]
+INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/spring/applicationContext.xml]
+INFO main org.springframework.context.support.GenericApplicationContext - Refreshing org.springframework.context.support.GenericApplicationContext@1bbb60c3: startup date [Wed Jul 08 12:33:54 ART 2015]; root of context hierarchy
+INFO main org.springframework.context.support.PropertySourcesPlaceholderConfigurer - Loading properties file from file [D:\desarrollo\github_repo\acciones2\target\classes\META-INF\spring\database.properties]
+INFO main org.springframework.cache.ehcache.EhCacheManagerFactoryBean - Initializing EhCache CacheManager
+INFO main org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'persistenceUnit'
+INFO main org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: persistenceUnit
+	...]
+INFO main org.hibernate.Version - HHH000412: Hibernate Core {4.3.6.Final}
+INFO main org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+INFO main org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+INFO main org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+INFO main org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+INFO main org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 4.3.2.Final
+INFO main org.hibernate.tool.hbm2ddl.SchemaExport - HHH000227: Running hbm2ddl schema export
+INFO main org.hibernate.tool.hbm2ddl.SchemaExport - HHH000230: Schema export complete
+INFO main org.dozer.config.GlobalSettings - Trying to find Dozer configuration file: dozer.properties
+WARN main org.dozer.config.GlobalSettings - Dozer configuration file not found: dozer.properties.  Using defaults for all Dozer global properties.
+INFO main org.dozer.DozerInitializer - Initializing Dozer. Version: 5.5.0, Thread Name: main
+INFO main org.dozer.jmx.JMXPlatformImpl - Dozer JMX MBean [org.dozer.jmx:type=DozerStatisticsController] auto registered with the Platform MBean Server
+INFO main org.dozer.jmx.JMXPlatformImpl - Dozer JMX MBean [org.dozer.jmx:type=DozerAdminController] auto registered with the Platform MBean Server
+INFO main org.dozer.DozerBeanMapper - Initializing a new instance of dozer bean mapper.
+INFO main org.dozer.DozerBeanMapper - Initializing a new instance of dozer bean mapper.
+INFO Thread-4 org.springframework.context.support.GenericApplicationContext - Closing org.springframework.context.support.GenericApplicationContext@1bbb60c3: startup date [Wed Jul 08 12:33:54 ART 2015]; root of context hierarchy
+INFO Thread-4 org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'persistenceUnit'
+INFO Thread-4 org.springframework.cache.ehcache.EhCacheManagerFactoryBean - Shutting down EhCache CacheManager
+INFO main org.springframework.test.context.support.DefaultTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@d8d9850, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@4b0ab323, org.springframework.test.context.support.DirtiesContextTestExecutionListener@2b76e552]
+INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/spring/applicationContext.xml]
+INFO main org.springframework.context.support.GenericApplicationContext - Refreshing org.springframework.context.support.GenericApplicationContext@1bbb60c3: startup date [Wed Jul 08 16:07:36 ART 2015]; root of context hierarchy
+INFO main org.springframework.context.support.PropertySourcesPlaceholderConfigurer - Loading properties file from file [D:\desarrollo\github_repo\acciones2\target\classes\META-INF\spring\database.properties]
+INFO main org.springframework.cache.ehcache.EhCacheManagerFactoryBean - Initializing EhCache CacheManager
+INFO main org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'persistenceUnit'
+INFO main org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: persistenceUnit
+	...]
+INFO main org.hibernate.Version - HHH000412: Hibernate Core {4.3.6.Final}
+INFO main org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+INFO main org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+INFO main org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+INFO main org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+INFO main org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 4.3.2.Final
+INFO main org.hibernate.tool.hbm2ddl.SchemaValidator - HHH000229: Running schema validator
+INFO main org.hibernate.tool.hbm2ddl.SchemaValidator - HHH000102: Fetching database metadata
+INFO main org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: acciones3.company
+INFO main org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [recomendacion_hold_last_3months, recomendacion_hold, recomendacion_out_perform_last_year, recomendacion_hold_last_4weeks, recomendacion_sell_last_2months, city, recomendacion_sell_last_3months, recomendacion_sell_last_4weeks, recomendacion_out_perform_last_3months, ticker, recomendacion_average, exchange, recomendacion_buy_last_3months, pe, med_forecast_value, recomendacion_average_last_4weeks, market, recomendacion_out_perform_last_2months, max_forecast_percentage_value, recomendacion_sell, min_forecast_percentage_value, company_id, recomendacion_buy_last_year, med_forecast_percentage_value, recomendacion_hold_last_year, recomendacion_under_perform, recomendacion_out_perform, version, id, recomendacion_buy_last_4weeks, recomendacion_no_opinion, title, recomendacion_buy_last_2months, recomendacion_under_perform_last_3months, min_forecast_value, recomendacion_average_last_3months, fecha_creacion, stock_value, recomendacion_under_perform_last_2months, max_forecast_value, recomendacion_average_last_2months, recomendacion_sell_last_year, recomendacion_hold_last_2months, market_cap, recomendacion_buy, fecha_modificacion, local_currency_symbol, recomendacion_out_perform_last_4weeks, price52week_perc_change, recomendacion_under_perform_last_4weeks, volumen_negociado, recomendacion_under_perform_last_year, recomendacion_average_last_year]
+INFO main org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: acciones3.company_historic
+INFO main org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [recomendacion_hold_last_3months, recomendacion_hold, recomendacion_out_perform_last_year, recomendacion_hold_last_4weeks, recomendacion_sell_last_2months, city, recomendacion_sell_last_3months, recomendacion_sell_last_4weeks, recomendacion_out_perform_last_3months, ticker, recomendacion_average, exchange, recomendacion_buy_last_3months, pe, med_forecast_value, recomendacion_average_last_4weeks, market, recomendacion_out_perform_last_2months, max_forecast_percentage_value, recomendacion_sell, min_forecast_percentage_value, company_id, recomendacion_buy_last_year, med_forecast_percentage_value, recomendacion_hold_last_year, recomendacion_under_perform, recomendacion_out_perform, version, recomendacion_buy_last_4weeks, id, recomendacion_no_opinion, title, recomendacion_buy_last_2months, recomendacion_under_perform_last_3months, min_forecast_value, recomendacion_average_last_3months, fecha_creacion, stock_value, recomendacion_under_perform_last_2months, max_forecast_value, recomendacion_average_last_2months, recomendacion_sell_last_year, recomendacion_hold_last_2months, market_cap, recomendacion_buy, local_currency_symbol, recomendacion_out_perform_last_4weeks, price52week_perc_change, recomendacion_under_perform_last_4weeks, volumen_negociado, recomendacion_under_perform_last_year, recomendacion_average_last_year]
+INFO main org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: acciones3.log_company_query
+INFO main org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, query, query_result, version]
+INFO main org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: acciones3.query_log
+INFO main org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, market, forecast_fail, forecast_ok, data, fecha_query, version]
+INFO main org.dozer.config.GlobalSettings - Trying to find Dozer configuration file: dozer.properties
+WARN main org.dozer.config.GlobalSettings - Dozer configuration file not found: dozer.properties.  Using defaults for all Dozer global properties.
+INFO main org.dozer.DozerInitializer - Initializing Dozer. Version: 5.5.0, Thread Name: main
+INFO main org.dozer.jmx.JMXPlatformImpl - Dozer JMX MBean [org.dozer.jmx:type=DozerStatisticsController] auto registered with the Platform MBean Server
+INFO main org.dozer.jmx.JMXPlatformImpl - Dozer JMX MBean [org.dozer.jmx:type=DozerAdminController] auto registered with the Platform MBean Server
+INFO main org.dozer.DozerBeanMapper - Initializing a new instance of dozer bean mapper.
+INFO main org.dozer.DozerBeanMapper - Initializing a new instance of dozer bean mapper.
+INFO Thread-4 org.springframework.context.support.GenericApplicationContext - Closing org.springframework.context.support.GenericApplicationContext@1bbb60c3: startup date [Wed Jul 08 16:07:36 ART 2015]; root of context hierarchy
+INFO Thread-4 org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'persistenceUnit'
+INFO Thread-4 org.springframework.cache.ehcache.EhCacheManagerFactoryBean - Shutting down EhCache CacheManager
+INFO main org.springframework.test.context.support.DefaultTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@46b8c8e6, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@d8d9850, org.springframework.test.context.support.DirtiesContextTestExecutionListener@4b0ab323]
+INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/spring/applicationContext.xml]
+INFO main org.springframework.context.support.GenericApplicationContext - Refreshing org.springframework.context.support.GenericApplicationContext@58ecb281: startup date [Wed Jul 08 16:14:32 ART 2015]; root of context hierarchy
+INFO main org.springframework.context.support.PropertySourcesPlaceholderConfigurer - Loading properties file from file [D:\desarrollo\github_repo\acciones2\target\classes\META-INF\spring\database.properties]
+INFO main org.springframework.cache.ehcache.EhCacheManagerFactoryBean - Initializing EhCache CacheManager
+INFO main org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'persistenceUnit'
+INFO main org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: persistenceUnit
+	...]
+INFO main org.hibernate.Version - HHH000412: Hibernate Core {4.3.6.Final}
+INFO main org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+INFO main org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+INFO main org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+INFO main org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+INFO main org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 4.3.2.Final
+INFO main org.hibernate.tool.hbm2ddl.SchemaValidator - HHH000229: Running schema validator
+INFO main org.hibernate.tool.hbm2ddl.SchemaValidator - HHH000102: Fetching database metadata
+INFO main org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: acciones3.company
+INFO main org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [recomendacion_hold_last_3months, recomendacion_hold, recomendacion_out_perform_last_year, recomendacion_hold_last_4weeks, recomendacion_sell_last_2months, city, recomendacion_sell_last_3months, recomendacion_sell_last_4weeks, recomendacion_out_perform_last_3months, ticker, recomendacion_average, exchange, recomendacion_buy_last_3months, pe, med_forecast_value, recomendacion_average_last_4weeks, market, recomendacion_out_perform_last_2months, max_forecast_percentage_value, recomendacion_sell, min_forecast_percentage_value, company_id, recomendacion_buy_last_year, med_forecast_percentage_value, recomendacion_hold_last_year, recomendacion_under_perform, recomendacion_out_perform, version, id, recomendacion_buy_last_4weeks, recomendacion_no_opinion, title, recomendacion_buy_last_2months, recomendacion_under_perform_last_3months, min_forecast_value, recomendacion_average_last_3months, fecha_creacion, stock_value, recomendacion_under_perform_last_2months, max_forecast_value, recomendacion_average_last_2months, recomendacion_sell_last_year, recomendacion_hold_last_2months, market_cap, recomendacion_buy, fecha_modificacion, local_currency_symbol, recomendacion_out_perform_last_4weeks, price52week_perc_change, recomendacion_under_perform_last_4weeks, volumen_negociado, recomendacion_under_perform_last_year, recomendacion_average_last_year]
+INFO main org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: acciones3.company_historic
+INFO main org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [recomendacion_hold_last_3months, recomendacion_hold, recomendacion_out_perform_last_year, recomendacion_hold_last_4weeks, recomendacion_sell_last_2months, city, recomendacion_sell_last_3months, recomendacion_sell_last_4weeks, recomendacion_out_perform_last_3months, ticker, recomendacion_average, exchange, recomendacion_buy_last_3months, pe, med_forecast_value, recomendacion_average_last_4weeks, market, recomendacion_out_perform_last_2months, max_forecast_percentage_value, recomendacion_sell, min_forecast_percentage_value, company_id, recomendacion_buy_last_year, med_forecast_percentage_value, recomendacion_hold_last_year, recomendacion_under_perform, recomendacion_out_perform, version, recomendacion_buy_last_4weeks, id, recomendacion_no_opinion, title, recomendacion_buy_last_2months, recomendacion_under_perform_last_3months, min_forecast_value, recomendacion_average_last_3months, fecha_creacion, stock_value, recomendacion_under_perform_last_2months, max_forecast_value, recomendacion_average_last_2months, recomendacion_sell_last_year, recomendacion_hold_last_2months, market_cap, recomendacion_buy, local_currency_symbol, recomendacion_out_perform_last_4weeks, price52week_perc_change, recomendacion_under_perform_last_4weeks, volumen_negociado, recomendacion_under_perform_last_year, recomendacion_average_last_year]
+INFO main org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: acciones3.log_company_query
+INFO main org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, query, query_result, version]
+INFO main org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: acciones3.query_log
+INFO main org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, market, forecast_fail, forecast_ok, data, fecha_query, version]
+INFO main org.dozer.config.GlobalSettings - Trying to find Dozer configuration file: dozer.properties
+WARN main org.dozer.config.GlobalSettings - Dozer configuration file not found: dozer.properties.  Using defaults for all Dozer global properties.
+INFO main org.dozer.DozerInitializer - Initializing Dozer. Version: 5.5.0, Thread Name: main
+INFO main org.dozer.jmx.JMXPlatformImpl - Dozer JMX MBean [org.dozer.jmx:type=DozerStatisticsController] auto registered with the Platform MBean Server
+INFO main org.dozer.jmx.JMXPlatformImpl - Dozer JMX MBean [org.dozer.jmx:type=DozerAdminController] auto registered with the Platform MBean Server
+INFO main org.dozer.DozerBeanMapper - Initializing a new instance of dozer bean mapper.
+INFO main org.dozer.DozerBeanMapper - Initializing a new instance of dozer bean mapper.
+INFO main org.springframework.test.context.support.DefaultTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2b76e552, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@ac980c9, org.springframework.test.context.support.DirtiesContextTestExecutionListener@332611a7]
+INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/spring/applicationContext.xml]
+INFO main org.springframework.context.support.GenericApplicationContext - Refreshing org.springframework.context.support.GenericApplicationContext@25fa1bb6: startup date [Wed Jul 08 17:15:22 ART 2015]; root of context hierarchy
+INFO main org.springframework.context.support.PropertySourcesPlaceholderConfigurer - Loading properties file from file [D:\desarrollo\github_repo\acciones2\target\classes\META-INF\spring\database.properties]
+INFO main org.springframework.cache.ehcache.EhCacheManagerFactoryBean - Initializing EhCache CacheManager
+INFO main org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'persistenceUnit'
+INFO main org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: persistenceUnit
+	...]
+INFO main org.hibernate.Version - HHH000412: Hibernate Core {4.3.6.Final}
+INFO main org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+INFO main org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+INFO main org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+INFO main org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+INFO main org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 4.3.2.Final
+INFO main org.hibernate.tool.hbm2ddl.SchemaValidator - HHH000229: Running schema validator
+INFO main org.hibernate.tool.hbm2ddl.SchemaValidator - HHH000102: Fetching database metadata
+INFO main org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: acciones3.company
+INFO main org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [recomendacion_hold_last_3months, recomendacion_hold, recomendacion_out_perform_last_year, recomendacion_hold_last_4weeks, recomendacion_sell_last_2months, city, recomendacion_sell_last_3months, recomendacion_sell_last_4weeks, recomendacion_out_perform_last_3months, ticker, recomendacion_average, exchange, recomendacion_buy_last_3months, pe, med_forecast_value, recomendacion_average_last_4weeks, market, recomendacion_out_perform_last_2months, max_forecast_percentage_value, recomendacion_sell, min_forecast_percentage_value, company_id, recomendacion_buy_last_year, med_forecast_percentage_value, recomendacion_hold_last_year, recomendacion_under_perform, recomendacion_out_perform, version, id, recomendacion_buy_last_4weeks, recomendacion_no_opinion, title, recomendacion_buy_last_2months, recomendacion_under_perform_last_3months, min_forecast_value, recomendacion_average_last_3months, fecha_creacion, stock_value, recomendacion_under_perform_last_2months, max_forecast_value, recomendacion_average_last_2months, recomendacion_sell_last_year, recomendacion_hold_last_2months, market_cap, recomendacion_buy, fecha_modificacion, local_currency_symbol, recomendacion_out_perform_last_4weeks, price52week_perc_change, recomendacion_under_perform_last_4weeks, volumen_negociado, recomendacion_under_perform_last_year, recomendacion_average_last_year]
+INFO main org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: acciones3.company_historic
+INFO main org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [recomendacion_hold_last_3months, recomendacion_hold, recomendacion_out_perform_last_year, recomendacion_hold_last_4weeks, recomendacion_sell_last_2months, city, recomendacion_sell_last_3months, recomendacion_sell_last_4weeks, recomendacion_out_perform_last_3months, ticker, recomendacion_average, exchange, recomendacion_buy_last_3months, pe, med_forecast_value, recomendacion_average_last_4weeks, market, recomendacion_out_perform_last_2months, max_forecast_percentage_value, recomendacion_sell, min_forecast_percentage_value, company_id, recomendacion_buy_last_year, med_forecast_percentage_value, recomendacion_hold_last_year, recomendacion_under_perform, recomendacion_out_perform, version, recomendacion_buy_last_4weeks, id, recomendacion_no_opinion, title, recomendacion_buy_last_2months, recomendacion_under_perform_last_3months, min_forecast_value, recomendacion_average_last_3months, fecha_creacion, stock_value, recomendacion_under_perform_last_2months, max_forecast_value, recomendacion_average_last_2months, recomendacion_sell_last_year, recomendacion_hold_last_2months, market_cap, recomendacion_buy, local_currency_symbol, recomendacion_out_perform_last_4weeks, price52week_perc_change, recomendacion_under_perform_last_4weeks, volumen_negociado, recomendacion_under_perform_last_year, recomendacion_average_last_year]
+INFO main org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: acciones3.log_company_query
+INFO main org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, query, query_result, version]
+INFO main org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: acciones3.query_log
+INFO main org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, market, forecast_fail, forecast_ok, data, fecha_query, version]
+INFO main org.dozer.config.GlobalSettings - Trying to find Dozer configuration file: dozer.properties
+WARN main org.dozer.config.GlobalSettings - Dozer configuration file not found: dozer.properties.  Using defaults for all Dozer global properties.
+INFO main org.dozer.DozerInitializer - Initializing Dozer. Version: 5.5.0, Thread Name: main
+INFO main org.dozer.jmx.JMXPlatformImpl - Dozer JMX MBean [org.dozer.jmx:type=DozerStatisticsController] auto registered with the Platform MBean Server
+INFO main org.dozer.jmx.JMXPlatformImpl - Dozer JMX MBean [org.dozer.jmx:type=DozerAdminController] auto registered with the Platform MBean Server
+INFO main org.dozer.DozerBeanMapper - Initializing a new instance of dozer bean mapper.
+INFO main org.dozer.DozerBeanMapper - Initializing a new instance of dozer bean mapper.
+INFO Thread-4 org.springframework.context.support.GenericApplicationContext - Closing org.springframework.context.support.GenericApplicationContext@25fa1bb6: startup date [Wed Jul 08 17:15:22 ART 2015]; root of context hierarchy
+INFO Thread-4 org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'persistenceUnit'
+INFO Thread-4 org.springframework.cache.ehcache.EhCacheManagerFactoryBean - Shutting down EhCache CacheManager
+INFO main org.springframework.test.context.support.DefaultTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@d8d9850, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@4b0ab323, org.springframework.test.context.support.DirtiesContextTestExecutionListener@2b76e552]
+INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/spring/applicationContext.xml]
+INFO main org.springframework.context.support.GenericApplicationContext - Refreshing org.springframework.context.support.GenericApplicationContext@1bbb60c3: startup date [Thu Jul 09 13:31:25 ART 2015]; root of context hierarchy
+INFO main org.springframework.context.support.PropertySourcesPlaceholderConfigurer - Loading properties file from file [D:\desarrollo\github_repo\acciones2\target\classes\META-INF\spring\database.properties]
+INFO main org.springframework.cache.ehcache.EhCacheManagerFactoryBean - Initializing EhCache CacheManager
+INFO main org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'persistenceUnit'
+INFO main org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: persistenceUnit
+	...]
+INFO main org.hibernate.Version - HHH000412: Hibernate Core {4.3.6.Final}
+INFO main org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+INFO main org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+INFO main org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+INFO main org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+INFO main org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 4.3.2.Final
+INFO main org.hibernate.tool.hbm2ddl.SchemaValidator - HHH000229: Running schema validator
+INFO main org.hibernate.tool.hbm2ddl.SchemaValidator - HHH000102: Fetching database metadata
+INFO main org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: acciones3.company
+INFO main org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [recomendacion_hold_last_3months, recomendacion_hold, recomendacion_out_perform_last_year, recomendacion_hold_last_4weeks, recomendacion_sell_last_2months, city, recomendacion_sell_last_3months, recomendacion_sell_last_4weeks, recomendacion_out_perform_last_3months, ticker, recomendacion_average, exchange, recomendacion_buy_last_3months, pe, med_forecast_value, recomendacion_average_last_4weeks, market, recomendacion_out_perform_last_2months, max_forecast_percentage_value, recomendacion_sell, min_forecast_percentage_value, company_id, recomendacion_buy_last_year, med_forecast_percentage_value, recomendacion_hold_last_year, recomendacion_under_perform, recomendacion_out_perform, version, id, recomendacion_buy_last_4weeks, recomendacion_no_opinion, title, recomendacion_buy_last_2months, recomendacion_under_perform_last_3months, min_forecast_value, recomendacion_average_last_3months, fecha_creacion, stock_value, recomendacion_under_perform_last_2months, max_forecast_value, recomendacion_average_last_2months, recomendacion_sell_last_year, recomendacion_hold_last_2months, market_cap, recomendacion_buy, fecha_modificacion, local_currency_symbol, recomendacion_out_perform_last_4weeks, price52week_perc_change, recomendacion_under_perform_last_4weeks, volumen_negociado, recomendacion_under_perform_last_year, recomendacion_average_last_year]
+INFO main org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: acciones3.company_historic
+INFO main org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [recomendacion_hold_last_3months, recomendacion_hold, recomendacion_out_perform_last_year, recomendacion_hold_last_4weeks, recomendacion_sell_last_2months, city, recomendacion_sell_last_3months, recomendacion_sell_last_4weeks, recomendacion_out_perform_last_3months, ticker, recomendacion_average, exchange, recomendacion_buy_last_3months, pe, med_forecast_value, recomendacion_average_last_4weeks, market, recomendacion_out_perform_last_2months, max_forecast_percentage_value, recomendacion_sell, min_forecast_percentage_value, company_id, recomendacion_buy_last_year, med_forecast_percentage_value, recomendacion_hold_last_year, recomendacion_under_perform, recomendacion_out_perform, version, recomendacion_buy_last_4weeks, id, recomendacion_no_opinion, title, recomendacion_buy_last_2months, recomendacion_under_perform_last_3months, min_forecast_value, recomendacion_average_last_3months, fecha_creacion, stock_value, recomendacion_under_perform_last_2months, max_forecast_value, recomendacion_average_last_2months, recomendacion_sell_last_year, recomendacion_hold_last_2months, market_cap, recomendacion_buy, local_currency_symbol, recomendacion_out_perform_last_4weeks, price52week_perc_change, recomendacion_under_perform_last_4weeks, volumen_negociado, recomendacion_under_perform_last_year, recomendacion_average_last_year]
+INFO main org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: acciones3.log_company_query
+INFO main org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, query, query_result, version]
+INFO main org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: acciones3.query_log
+INFO main org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, market, forecast_fail, forecast_ok, data, fecha_query, version]
+INFO main org.dozer.config.GlobalSettings - Trying to find Dozer configuration file: dozer.properties
+WARN main org.dozer.config.GlobalSettings - Dozer configuration file not found: dozer.properties.  Using defaults for all Dozer global properties.
+INFO main org.dozer.DozerInitializer - Initializing Dozer. Version: 5.5.0, Thread Name: main
+INFO main org.dozer.jmx.JMXPlatformImpl - Dozer JMX MBean [org.dozer.jmx:type=DozerStatisticsController] auto registered with the Platform MBean Server
+INFO main org.dozer.jmx.JMXPlatformImpl - Dozer JMX MBean [org.dozer.jmx:type=DozerAdminController] auto registered with the Platform MBean Server
+INFO main org.dozer.DozerBeanMapper - Initializing a new instance of dozer bean mapper.
+INFO main org.dozer.DozerBeanMapper - Initializing a new instance of dozer bean mapper.
+INFO Thread-4 org.springframework.context.support.GenericApplicationContext - Closing org.springframework.context.support.GenericApplicationContext@1bbb60c3: startup date [Thu Jul 09 13:31:25 ART 2015]; root of context hierarchy
+INFO Thread-4 org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'persistenceUnit'
+INFO Thread-4 org.springframework.cache.ehcache.EhCacheManagerFactoryBean - Shutting down EhCache CacheManager
+INFO main org.springframework.test.context.support.DefaultTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@d8d9850, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@4b0ab323, org.springframework.test.context.support.DirtiesContextTestExecutionListener@2b76e552]
+INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/spring/applicationContext.xml]
+INFO main org.springframework.context.support.GenericApplicationContext - Refreshing org.springframework.context.support.GenericApplicationContext@1bbb60c3: startup date [Thu Jul 09 13:39:38 ART 2015]; root of context hierarchy
+INFO main org.springframework.context.support.PropertySourcesPlaceholderConfigurer - Loading properties file from file [D:\desarrollo\github_repo\acciones2\target\classes\META-INF\spring\database.properties]
+INFO main org.springframework.cache.ehcache.EhCacheManagerFactoryBean - Initializing EhCache CacheManager
+INFO main org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'persistenceUnit'
+INFO main org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: persistenceUnit
+	...]
+INFO main org.hibernate.Version - HHH000412: Hibernate Core {4.3.6.Final}
+INFO main org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+INFO main org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+INFO main org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+INFO main org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+INFO main org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 4.3.2.Final
+INFO main org.hibernate.tool.hbm2ddl.SchemaValidator - HHH000229: Running schema validator
+INFO main org.hibernate.tool.hbm2ddl.SchemaValidator - HHH000102: Fetching database metadata
+INFO main org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: acciones3.company
+INFO main org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [recomendacion_hold_last_3months, recomendacion_hold, recomendacion_out_perform_last_year, recomendacion_hold_last_4weeks, recomendacion_sell_last_2months, city, recomendacion_sell_last_3months, recomendacion_sell_last_4weeks, recomendacion_out_perform_last_3months, ticker, recomendacion_average, exchange, recomendacion_buy_last_3months, pe, med_forecast_value, recomendacion_average_last_4weeks, market, recomendacion_out_perform_last_2months, max_forecast_percentage_value, recomendacion_sell, min_forecast_percentage_value, company_id, recomendacion_buy_last_year, med_forecast_percentage_value, recomendacion_hold_last_year, recomendacion_under_perform, recomendacion_out_perform, version, id, recomendacion_buy_last_4weeks, recomendacion_no_opinion, title, recomendacion_buy_last_2months, recomendacion_under_perform_last_3months, min_forecast_value, recomendacion_average_last_3months, fecha_creacion, stock_value, recomendacion_under_perform_last_2months, max_forecast_value, recomendacion_average_last_2months, recomendacion_sell_last_year, recomendacion_hold_last_2months, market_cap, recomendacion_buy, fecha_modificacion, local_currency_symbol, recomendacion_out_perform_last_4weeks, price52week_perc_change, recomendacion_under_perform_last_4weeks, volumen_negociado, recomendacion_under_perform_last_year, recomendacion_average_last_year]
+INFO main org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: acciones3.company_historic
+INFO main org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [recomendacion_hold_last_3months, recomendacion_hold, recomendacion_out_perform_last_year, recomendacion_hold_last_4weeks, recomendacion_sell_last_2months, city, recomendacion_sell_last_3months, recomendacion_sell_last_4weeks, recomendacion_out_perform_last_3months, ticker, recomendacion_average, exchange, recomendacion_buy_last_3months, pe, med_forecast_value, recomendacion_average_last_4weeks, market, recomendacion_out_perform_last_2months, max_forecast_percentage_value, recomendacion_sell, min_forecast_percentage_value, company_id, recomendacion_buy_last_year, med_forecast_percentage_value, recomendacion_hold_last_year, recomendacion_under_perform, recomendacion_out_perform, version, recomendacion_buy_last_4weeks, id, recomendacion_no_opinion, title, recomendacion_buy_last_2months, recomendacion_under_perform_last_3months, min_forecast_value, recomendacion_average_last_3months, fecha_creacion, stock_value, recomendacion_under_perform_last_2months, max_forecast_value, recomendacion_average_last_2months, recomendacion_sell_last_year, recomendacion_hold_last_2months, market_cap, recomendacion_buy, local_currency_symbol, recomendacion_out_perform_last_4weeks, price52week_perc_change, recomendacion_under_perform_last_4weeks, volumen_negociado, recomendacion_under_perform_last_year, recomendacion_average_last_year]
+INFO main org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: acciones3.log_company_query
+INFO main org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, query, query_result, version]
+INFO main org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: acciones3.query_log
+INFO main org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, market, forecast_fail, forecast_ok, data, fecha_query, version]
+INFO main org.dozer.config.GlobalSettings - Trying to find Dozer configuration file: dozer.properties
+WARN main org.dozer.config.GlobalSettings - Dozer configuration file not found: dozer.properties.  Using defaults for all Dozer global properties.
+INFO main org.dozer.DozerInitializer - Initializing Dozer. Version: 5.5.0, Thread Name: main
+INFO main org.dozer.jmx.JMXPlatformImpl - Dozer JMX MBean [org.dozer.jmx:type=DozerStatisticsController] auto registered with the Platform MBean Server
+INFO main org.dozer.jmx.JMXPlatformImpl - Dozer JMX MBean [org.dozer.jmx:type=DozerAdminController] auto registered with the Platform MBean Server
+INFO main org.dozer.DozerBeanMapper - Initializing a new instance of dozer bean mapper.
+INFO main org.dozer.DozerBeanMapper - Initializing a new instance of dozer bean mapper.
+INFO Thread-4 org.springframework.context.support.GenericApplicationContext - Closing org.springframework.context.support.GenericApplicationContext@1bbb60c3: startup date [Thu Jul 09 13:39:38 ART 2015]; root of context hierarchy
+INFO Thread-4 org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'persistenceUnit'
+INFO Thread-4 org.springframework.cache.ehcache.EhCacheManagerFactoryBean - Shutting down EhCache CacheManager
+INFO main org.springframework.test.context.support.DefaultTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@d8d9850, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@4b0ab323, org.springframework.test.context.support.DirtiesContextTestExecutionListener@2b76e552]
+INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/spring/applicationContext.xml]
+INFO main org.springframework.context.support.GenericApplicationContext - Refreshing org.springframework.context.support.GenericApplicationContext@1bbb60c3: startup date [Thu Jul 09 14:15:19 ART 2015]; root of context hierarchy
+INFO main org.springframework.context.support.PropertySourcesPlaceholderConfigurer - Loading properties file from file [D:\desarrollo\github_repo\acciones2\target\classes\META-INF\spring\database.properties]
+INFO main org.springframework.cache.ehcache.EhCacheManagerFactoryBean - Initializing EhCache CacheManager
+INFO main org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'persistenceUnit'
+INFO main org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: persistenceUnit
+	...]
+INFO main org.hibernate.Version - HHH000412: Hibernate Core {4.3.6.Final}
+INFO main org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+INFO main org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+INFO main org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+INFO main org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+INFO main org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 4.3.2.Final
+INFO main org.hibernate.tool.hbm2ddl.SchemaValidator - HHH000229: Running schema validator
+INFO main org.hibernate.tool.hbm2ddl.SchemaValidator - HHH000102: Fetching database metadata
+INFO main java.sql.DatabaseMetaData - HHH000262: Table not found: company
+WARN main org.springframework.context.support.GenericApplicationContext - Exception encountered during context initialization - cancelling refresh attempt
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [META-INF/spring/applicationContext.xml]: Invocation of init method failed; nested exception is org.hibernate.HibernateException: Missing table: company
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1574)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:956)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:747)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:125)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:60)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:109)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:261)
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:68)
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:86)
+	at org.springframework.test.context.DefaultTestContext.getApplicationContext(DefaultTestContext.java:72)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:117)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:212)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:200)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:259)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:261)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:219)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:83)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:68)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:163)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: org.hibernate.HibernateException: Missing table: company
+	at org.hibernate.cfg.Configuration.validateSchema(Configuration.java:1333)
+	at org.hibernate.tool.hbm2ddl.SchemaValidator.validate(SchemaValidator.java:155)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:525)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1857)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$4.perform(EntityManagerFactoryBuilderImpl.java:850)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$4.perform(EntityManagerFactoryBuilderImpl.java:843)
+	at org.hibernate.boot.registry.classloading.internal.ClassLoaderServiceImpl.withTccl(ClassLoaderServiceImpl.java:398)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:842)
+	at org.hibernate.jpa.HibernatePersistenceProvider.createContainerEntityManagerFactory(HibernatePersistenceProvider.java:152)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:343)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:318)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1633)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1570)
+	... 40 more
+INFO main org.springframework.cache.ehcache.EhCacheManagerFactoryBean - Shutting down EhCache CacheManager
+ERROR main org.springframework.test.context.TestContextManager - Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@4b0ab323] to prepare test instance [com.prediccion.acciones2.service.ParsingServiceTest@580a00fd]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:94)
+	at org.springframework.test.context.DefaultTestContext.getApplicationContext(DefaultTestContext.java:72)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:117)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:212)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:200)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:259)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:261)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:219)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:83)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:68)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:163)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [META-INF/spring/applicationContext.xml]: Invocation of init method failed; nested exception is org.hibernate.HibernateException: Missing table: company
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1574)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:956)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:747)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:125)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:60)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:109)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:261)
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:68)
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:86)
+	... 25 more
+Caused by: org.hibernate.HibernateException: Missing table: company
+	at org.hibernate.cfg.Configuration.validateSchema(Configuration.java:1333)
+	at org.hibernate.tool.hbm2ddl.SchemaValidator.validate(SchemaValidator.java:155)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:525)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1857)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$4.perform(EntityManagerFactoryBuilderImpl.java:850)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$4.perform(EntityManagerFactoryBuilderImpl.java:843)
+	at org.hibernate.boot.registry.classloading.internal.ClassLoaderServiceImpl.withTccl(ClassLoaderServiceImpl.java:398)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:842)
+	at org.hibernate.jpa.HibernatePersistenceProvider.createContainerEntityManagerFactory(HibernatePersistenceProvider.java:152)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:343)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:318)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1633)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1570)
+	... 40 more
+INFO main org.springframework.test.context.support.DefaultTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@46b8c8e6, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@d8d9850, org.springframework.test.context.support.DirtiesContextTestExecutionListener@4b0ab323]
+INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/spring/applicationContext.xml]
+INFO main org.springframework.context.support.GenericApplicationContext - Refreshing org.springframework.context.support.GenericApplicationContext@58ecb281: startup date [Thu Jul 09 14:16:16 ART 2015]; root of context hierarchy
+INFO main org.springframework.context.support.PropertySourcesPlaceholderConfigurer - Loading properties file from file [D:\desarrollo\github_repo\acciones2\target\classes\META-INF\spring\database.properties]
+INFO main org.springframework.cache.ehcache.EhCacheManagerFactoryBean - Initializing EhCache CacheManager
+INFO main org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'persistenceUnit'
+INFO main org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: persistenceUnit
+	...]
+INFO main org.hibernate.Version - HHH000412: Hibernate Core {4.3.6.Final}
+INFO main org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+INFO main org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+INFO main org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+INFO main org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+INFO main org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 4.3.2.Final
+INFO main org.hibernate.tool.hbm2ddl.SchemaExport - HHH000227: Running hbm2ddl schema export
+INFO main org.hibernate.tool.hbm2ddl.SchemaExport - HHH000230: Schema export complete
+INFO main org.dozer.config.GlobalSettings - Trying to find Dozer configuration file: dozer.properties
+WARN main org.dozer.config.GlobalSettings - Dozer configuration file not found: dozer.properties.  Using defaults for all Dozer global properties.
+INFO main org.dozer.DozerInitializer - Initializing Dozer. Version: 5.5.0, Thread Name: main
+INFO main org.dozer.jmx.JMXPlatformImpl - Dozer JMX MBean [org.dozer.jmx:type=DozerStatisticsController] auto registered with the Platform MBean Server
+INFO main org.dozer.jmx.JMXPlatformImpl - Dozer JMX MBean [org.dozer.jmx:type=DozerAdminController] auto registered with the Platform MBean Server
+INFO main org.dozer.DozerBeanMapper - Initializing a new instance of dozer bean mapper.
+INFO main org.dozer.DozerBeanMapper - Initializing a new instance of dozer bean mapper.
+INFO Thread-4 org.springframework.context.support.GenericApplicationContext - Closing org.springframework.context.support.GenericApplicationContext@58ecb281: startup date [Thu Jul 09 14:16:16 ART 2015]; root of context hierarchy
+INFO Thread-4 org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'persistenceUnit'
+INFO Thread-4 org.springframework.cache.ehcache.EhCacheManagerFactoryBean - Shutting down EhCache CacheManager
+INFO main org.springframework.test.context.support.DefaultTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@7f2ad19e, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@54281d4b, org.springframework.test.context.support.DirtiesContextTestExecutionListener@159b5217]
+INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/spring/applicationContext.xml]
+INFO main org.springframework.context.support.GenericApplicationContext - Refreshing org.springframework.context.support.GenericApplicationContext@596e1fb1: startup date [Fri Jul 10 08:54:37 ART 2015]; root of context hierarchy
+INFO main org.springframework.context.support.PropertySourcesPlaceholderConfigurer - Loading properties file from file [D:\desarrollo\github_repo\acciones2\target\classes\META-INF\spring\database.properties]
+INFO main org.springframework.cache.ehcache.EhCacheManagerFactoryBean - Initializing EhCache CacheManager
+INFO main org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'persistenceUnit'
+INFO main org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: persistenceUnit
+	...]
+INFO main org.hibernate.Version - HHH000412: Hibernate Core {4.3.6.Final}
+INFO main org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+INFO main org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+INFO main org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+INFO main org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+INFO main org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 4.3.2.Final
+INFO main org.hibernate.tool.hbm2ddl.SchemaValidator - HHH000229: Running schema validator
+INFO main org.hibernate.tool.hbm2ddl.SchemaValidator - HHH000102: Fetching database metadata
+INFO main org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: acciones4.company
+INFO main org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [recomendacion_hold_last_3months, recomendacion_hold, recomendacion_out_perform_last_year, recomendacion_hold_last_4weeks, recomendacion_sell_last_2months, city, recomendacion_sell_last_3months, recomendacion_sell_last_4weeks, recomendacion_out_perform_last_3months, ticker, recomendacion_average, exchange, recomendacion_buy_last_3months, pe, med_forecast_value, recomendacion_average_last_4weeks, market, recomendacion_out_perform_last_2months, max_forecast_percentage_value, recomendacion_sell, min_forecast_percentage_value, company_id, recomendacion_buy_last_year, med_forecast_percentage_value, recomendacion_hold_last_year, recomendacion_under_perform, recomendacion_out_perform, version, id, recomendacion_buy_last_4weeks, recomendacion_no_opinion, title, recomendacion_buy_last_2months, recomendacion_under_perform_last_3months, min_forecast_value, recomendacion_average_last_3months, fecha_creacion, stock_value, recomendacion_under_perform_last_2months, max_forecast_value, recomendacion_average_last_2months, recomendacion_sell_last_year, recomendacion_hold_last_2months, market_cap, recomendacion_buy, fecha_modificacion, local_currency_symbol, recomendacion_out_perform_last_4weeks, price52week_perc_change, recomendacion_under_perform_last_4weeks, volumen_negociado, recomendacion_under_perform_last_year, recomendacion_average_last_year]
+INFO main org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: acciones4.company_historic
+INFO main org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [recomendacion_hold_last_3months, recomendacion_hold, recomendacion_out_perform_last_year, recomendacion_hold_last_4weeks, recomendacion_sell_last_2months, city, recomendacion_sell_last_3months, recomendacion_sell_last_4weeks, recomendacion_out_perform_last_3months, ticker, recomendacion_average, exchange, recomendacion_buy_last_3months, pe, med_forecast_value, recomendacion_average_last_4weeks, market, recomendacion_out_perform_last_2months, max_forecast_percentage_value, recomendacion_sell, min_forecast_percentage_value, company_id, recomendacion_buy_last_year, med_forecast_percentage_value, recomendacion_hold_last_year, recomendacion_under_perform, recomendacion_out_perform, version, recomendacion_buy_last_4weeks, id, recomendacion_no_opinion, title, recomendacion_buy_last_2months, recomendacion_under_perform_last_3months, min_forecast_value, recomendacion_average_last_3months, fecha_creacion, stock_value, recomendacion_under_perform_last_2months, max_forecast_value, recomendacion_average_last_2months, recomendacion_sell_last_year, recomendacion_hold_last_2months, market_cap, recomendacion_buy, local_currency_symbol, recomendacion_out_perform_last_4weeks, price52week_perc_change, recomendacion_under_perform_last_4weeks, volumen_negociado, recomendacion_under_perform_last_year, recomendacion_average_last_year]
+INFO main org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: acciones4.log_company_query
+INFO main org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, query, query_result, version]
+INFO main org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: acciones4.query_log
+INFO main org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, market, forecast_fail, forecast_ok, data, fecha_query, version]
+INFO main org.dozer.config.GlobalSettings - Trying to find Dozer configuration file: dozer.properties
+WARN main org.dozer.config.GlobalSettings - Dozer configuration file not found: dozer.properties.  Using defaults for all Dozer global properties.
+INFO main org.dozer.DozerInitializer - Initializing Dozer. Version: 5.5.0, Thread Name: main
+INFO main org.dozer.jmx.JMXPlatformImpl - Dozer JMX MBean [org.dozer.jmx:type=DozerStatisticsController] auto registered with the Platform MBean Server
+INFO main org.dozer.jmx.JMXPlatformImpl - Dozer JMX MBean [org.dozer.jmx:type=DozerAdminController] auto registered with the Platform MBean Server
+INFO main org.dozer.DozerBeanMapper - Initializing a new instance of dozer bean mapper.
+INFO main org.dozer.DozerBeanMapper - Initializing a new instance of dozer bean mapper.
+INFO Thread-4 org.springframework.context.support.GenericApplicationContext - Closing org.springframework.context.support.GenericApplicationContext@596e1fb1: startup date [Fri Jul 10 08:54:37 ART 2015]; root of context hierarchy
+INFO Thread-4 org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'persistenceUnit'
+INFO Thread-4 org.springframework.cache.ehcache.EhCacheManagerFactoryBean - Shutting down EhCache CacheManager

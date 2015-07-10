@@ -3,8 +3,6 @@ package com.prediccion.acciones2.service;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
-import java.util.concurrent.ArrayBlockingQueue;
-import java.util.concurrent.BlockingQueue;
 
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +10,6 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.AbstractJUnit4SpringContextTests;
 
 import com.prediccion.acciones2.domain.Company;
-import com.prediccion.acciones2.utils.QueryBuilder;
 
 @ContextConfiguration(locations = { "/META-INF/spring/applicationContext.xml" })
 public class ParsingServiceTest extends AbstractJUnit4SpringContextTests{
@@ -26,7 +23,10 @@ public class ParsingServiceTest extends AbstractJUnit4SpringContextTests{
     @Autowired
     CompanyHistoricService companyHistoricService;
     
-    BlockingQueue<Company> queue = new ArrayBlockingQueue<Company>(10000);
+    @Autowired
+    StoringServiceImpl storingService;
+    
+    //BlockingQueue<Company> queue = new ArrayBlockingQueue<Company>(10000);
     
     Thread t;
     
@@ -47,6 +47,7 @@ public class ParsingServiceTest extends AbstractJUnit4SpringContextTests{
     	Set<Company> resultSet = new HashSet<Company>();
 		Set<Company> set = Collections.synchronizedSet(resultSet);
 		
+		storingService.proceed();
 		/*
 		Set<Company> list21 = parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForSouthAfrica("350"),1); //237
 		
@@ -66,6 +67,11 @@ public class ParsingServiceTest extends AbstractJUnit4SpringContextTests{
 		parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForUS("5000", "90000000000", "2000000000000"),100,set);//21000
 		 */
 		
+		
+		
+		
+		/****************************************************/
+		/*
         Thread t1 = new Thread(new Runnable() {
             public void run() {
             	parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForJapan("4000"),100,queue); //3656
@@ -98,7 +104,9 @@ public class ParsingServiceTest extends AbstractJUnit4SpringContextTests{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		*/
 		
+		/************************************************************/
         
 		/*
         parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForBelgium("1500"),100,queue); //159
@@ -122,7 +130,7 @@ public class ParsingServiceTest extends AbstractJUnit4SpringContextTests{
     	parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForRussia("350"),60,set); //237
     	
 		 */
-    	Integer count =0 ;
+    	//Integer count =0 ;
     	//List<Company> listCompanies = companyService.findAllCompanys();
     	
     	//companyHistoricService.createHistotic(listCompanies);
@@ -136,11 +144,11 @@ public class ParsingServiceTest extends AbstractJUnit4SpringContextTests{
 		*/
     }
     
+    /*
     private void consumer() throws InterruptedException {
     	Integer count =0 ;
         
         while(true) {
-            //Thread.sleep(5);
             
             Company company = queue.take();
             
@@ -152,5 +160,5 @@ public class ParsingServiceTest extends AbstractJUnit4SpringContextTests{
     		companyService.saveOrUpdate(company);
             
         }
-    }    
+    }   */ 
 }
