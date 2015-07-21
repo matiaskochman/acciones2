@@ -83,7 +83,7 @@ public class StoringServiceImpl {
         });
         t1.start();
         
-        consumer();
+        //consumer();
         t2.start();
         try {
 			t1.join();
@@ -148,7 +148,7 @@ public class StoringServiceImpl {
 			}
             
         }
-        executorService.shutdown();
+        //executorService.shutdown();
     }
 
 }
