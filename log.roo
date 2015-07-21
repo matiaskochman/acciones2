@@ -110,3 +110,11 @@ field string --fieldName queryResult
 // Spring Roo 1.3.1.RELEASE [rev f4f5256] log opened at 2015-06-17 00:06:09
 // Spring Roo 1.3.1.RELEASE [rev f4f5256] log closed at 2015-06-19 16:12:07
 // Spring Roo 1.3.1.RELEASE [rev f4f5256] log opened at 2015-06-26 14:23:10
+// Spring Roo 1.3.1.RELEASE [rev f4f5256] log opened at 2015-07-21 15:02:07
+focus --class ~.domain.CompanyHistoric
+finder list 
+finder add --finderName findCompanyHistoricsByCompanyIdEquals
+finder add --finderName findCompanyHistoricsByCompanyIdAndfechaCreacionEquals
+finder add --finderName findCompanyHistoricsByCompanyIdEqualsAndfechaCreacionEquals
+finder list 
+finder add --finderName findCompanyHistoricsByCompanyIdEqualsAndFechaCreacionEquals
