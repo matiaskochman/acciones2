@@ -35,38 +35,38 @@ public class StoringServiceImpl {
         Thread t1 = new Thread(new Runnable() {
             public void run() {
             	/*
+            	 */
             	parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForCanada("6000"),40,queue);//6000
             	parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForParis("2500"),40,queue);//1500
-            	parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForGermany("6000"),40,queue); //1600
+            	parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForGermany("6000"),50,queue); //1600
             	parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForItaly("2000"),40,queue); //350
-        		parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForUS("5000", "10000000", "500000000"),40,queue);//21000
-        		parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForUS("5000", "500000000", "1000000000"),40,queue);//21000
+        		parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForUS("5000", "10000000", "500000000"),50,queue);//21000
+        		parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForUS("5000", "500000000", "1000000000"),50,queue);//21000
         		
-        		parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForUS("5000", "1000000000", "2000000000"),40,queue);//21000
-        		parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForUS("5000", "2000000000", "5000000000"),40,queue);//21000
-        		parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForUS("5000", "5000000000", "10000000000"),40,queue);//21000
-        		parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForUS("5000", "10000000000", "15000000000"),40,queue);//21000
+        		parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForUS("5000", "1000000000", "2000000000"),60,queue);//21000
+        		parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForUS("5000", "2000000000", "5000000000"),60,queue);//21000
+        		parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForUS("5000", "5000000000", "10000000000"),60,queue);//21000
+        		parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForUS("5000", "10000000000", "15000000000"),60,queue);//21000
         		
-        		parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForUS("5000", "15000000000", "90000000000"),40,queue);//21000
-        		parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForUS("5000", "90000000000", "2000000000000"),40,queue);//21000
+        		parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForUS("5000", "15000000000", "90000000000"),50,queue);//21000
+        		parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForUS("5000", "90000000000", "2000000000000"),50,queue);//21000
             	
-                parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForLondon("6000",null,null),40,queue);
-                parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForBelgium("1500"),40,queue); //159
-            	parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForSpain("2000"),40,queue); //160
-            	parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForBrasil("1800"),40,queue); //1000
-            	parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForNetherlands("1500"),40,queue); //126
-            	parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForAustralia("6000"),40,queue); //1964
+                parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForLondon("6000",null,null),50,queue);
+                parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForBelgium("1800"),50,queue); //159
+            	parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForSpain("2000"),50,queue); //160
+            	parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForBrasil("1800"),50,queue); //1000
+            	parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForNetherlands("1800"),50,queue); //126
+            	parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForAustralia("6000"),50,queue); //1964
             	parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForNewZeland("160"),40,queue); //152
             	parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForTaiwan("2500"),40,queue); //897
             	parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForSingapore("700"),40,queue); //759
             	parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForChina("3500"),40,queue); //2830
-            	parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForSwitzerland("400"),40,queue); //237
+            	parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForSwitzerland("400"),50,queue); //237
             	parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForPoland("400"),40,queue); //237
             	parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForTurkey("500"),40,queue); //237
             	parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForSweden("400"),40,queue); //237
             	parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForRussia("350"),40,queue); //237      
-            	 */
-            	parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForJapan("4000"),150,queue); //3656
+            	parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForJapan("4000"),60,queue); //3656
             	
             	Company poison = new Company();
             	poison.setCity("LANUS");

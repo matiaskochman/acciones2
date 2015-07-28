@@ -5,8 +5,13 @@
 
 <tiles-definitions>
 
+<!-- 
   <definition name="index" extends="default">
     <put-attribute name="body" value="/WEB-INF/views/index.jspx" />
+  </definition>
+ -->
+  <definition name="index" extends="tiles_template">
+    <put-attribute name="body" value="/WEB-INF/views/tabla.jsp" />
   </definition>
 
   <definition name="dataAccessFailure" extends="public">

@@ -160,7 +160,6 @@ public class ParsingServiceImpl implements ParsingService{
 					
 					executorService.shutdown();
 					executorService.awaitTermination(5, TimeUnit.HOURS);
-					//executorService.shutdownNow();
 				}
 			}
 			

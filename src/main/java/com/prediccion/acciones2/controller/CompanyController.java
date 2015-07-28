@@ -26,10 +26,25 @@ public class CompanyController {
     public ResponseEntity<String> listJson() {
         HttpHeaders headers = new HttpHeaders();
         headers.add("Content-Type", "application/json; charset=utf-8");
-        List<Company> result = companyService.findAllCompanys();
-        
+        //List<Company> result = companyService.findAllCompanys();
+        List<Company> result = Company.findCompanyEntries(1, 10, null, null);
         Gson gson = new Gson();
         String companies = gson.toJson(result);
+        
+        
+        /*
+        headers.add("Access-Control-Allow-Origin", "*");
+        headers.add("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE, HEAD, PUT");
+        headers.add("Access-Control-Allow-Credentials", "true");
+        headers.add("Access-Control-Allow-Headers", "x-requested-with"); 
+        headers.add("Access-Control-Max-Age", "3600");
+         */
+        
+        headers.add("Access-Control-Allow-Credentials", "true");
+        headers.add("Access-Control-Allow-Origin", "*");
+        headers.add("Access-Control-Allow-Methods", "POST, GET, PUT, DELETE, OPTIONS");
+        headers.add("Access-Control-Max-Age", "3600");
+        headers.add("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");        
         
         //String string_result = Company.toJsonArray(result);
         return new ResponseEntity<String>(companies, headers, HttpStatus.OK);
