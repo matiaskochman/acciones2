@@ -21,22 +21,13 @@
 				 <span class="label label-default">Min</span>
 			</div>
 			<div class="col-md-1">
-				 <span class="label label-default">Label</span>
+				 <span class="label label-default">Price change 52w</span>
 			</div>
 			<div class="col-md-1">
-				 <span class="label label-default">Label</span>
+				 <span class="label label-default">Shares traded</span>
 			</div>
-			<div class="col-md-1">
-				 <span class="label label-default">Label</span>
-			</div>
-			<div class="col-md-1">
-				 <span class="label label-default">Label</span>
-			</div>
-			<div class="col-md-1">
-				 <span class="label label-default">Label</span>
-			</div>
-			<div class="col-md-1">
-				 <span class="label label-default">Label</span>
+			<div class="col-md-4">
+				 <span class="label label-default">Title</span>
 			</div>
 		</div>
 		
@@ -62,16 +53,13 @@
 			{{company.minForecastPercentageValue}}
 			</div>
 			<div class="col-md-1">
+			{{company.price52WeekPercChange}}
 			</div>
 			<div class="col-md-1">
+			{{company.volumenNegociado}}
 			</div>
-			<div class="col-md-1">
-			</div>
-			<div class="col-md-1">
-			</div>
-			<div class="col-md-1">
-			</div>
-			<div class="col-md-1">
+			<div class="col-md-4">
+			{{company.title}}
 			</div>
 		  
 		</li>

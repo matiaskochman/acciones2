@@ -27,7 +27,7 @@ public class CompanyController {
         HttpHeaders headers = new HttpHeaders();
         headers.add("Content-Type", "application/json; charset=utf-8");
         //List<Company> result = companyService.findAllCompanys();
-        List<Company> result = Company.findCompanyEntries(1, 10, null, null);
+        List<Company> result = Company.findCompanyEntries(1, 50, "recomendacionAverage", "DESC");
         Gson gson = new Gson();
         String companies = gson.toJson(result);
         
