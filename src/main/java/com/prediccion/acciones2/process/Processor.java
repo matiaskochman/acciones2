@@ -1,7 +1,6 @@
 package com.prediccion.acciones2.process;
 
 import java.util.Calendar;
-import java.util.Set;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.CountDownLatch;
 import java.util.regex.Pattern;

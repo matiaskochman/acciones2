@@ -41,30 +41,37 @@ public class CompanyHistoricServiceImpl implements CompanyHistoricService {
 	public void createHistoricForCompany(Company company) {
 		CompanyHistoric ch = new CompanyHistoric();
 		
-		Calendar cal = Calendar.getInstance();
-		cal.clear(Calendar.MILLISECOND);
-		cal.clear(Calendar.SECOND);
-		cal.clear(Calendar.MINUTE);
-		cal.clear(Calendar.HOUR);
-		cal.clear(Calendar.HOUR_OF_DAY);
+		Calendar startdate = Calendar.getInstance();
+		startdate.clear(Calendar.MILLISECOND);
+		startdate.clear(Calendar.SECOND);
+		startdate.clear(Calendar.MINUTE);
+		startdate.clear(Calendar.HOUR);
+		startdate.clear(Calendar.HOUR_OF_DAY);
+		
+		Calendar enddate = Calendar.getInstance();
+		enddate.add(Calendar.MILLISECOND, 999);
+		enddate.add(Calendar.SECOND,59);
+		enddate.add(Calendar.MINUTE,59);
+		//enddate.add(Calendar.HOUR,53);
+		enddate.add(Calendar.HOUR_OF_DAY,23);
 
 		try{
 			
-			ch = CompanyHistoric.findCompanyHistoricsByCompanyIdEqualsAndFechaCreacionEquals(company.getCompanyId(), cal.getTime()).getSingleResult();
+			ch = CompanyHistoric.findCompanyHistoricsByCompanyIdEqualsAndFechaCreacionEquals(company.getCompanyId(),startdate.getTime(), enddate.getTime());
 			Integer version = ch.getVersion();
 			Long id = ch.getId();
 			
 			mapper.map(company, ch);
 			ch.setId(id);
 			ch.setVersion(version);
-			ch.setFechaCreacion(cal.getTime());
+			ch.setFechaCreacion(enddate.getTime());
 			ch.merge();
 		}catch( EmptyResultDataAccessException e){
 			try{
 				mapper.map(company, ch);
 				ch.setId(null);
 				ch.setVersion(null);
-				ch.setFechaCreacion(cal.getTime());
+				ch.setFechaCreacion(enddate.getTime());
 				ch.persist();
 				
 			}catch(Exception ex){

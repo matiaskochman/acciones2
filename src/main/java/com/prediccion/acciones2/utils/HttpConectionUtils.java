@@ -19,7 +19,7 @@ public class HttpConectionUtils {
 		conn.setConnectTimeout(50000);
 		  
 	    URL url = new URL(address);
-	    StringBuffer text = new StringBuffer();
+	    //StringBuffer text = new StringBuffer();
 	    StringBuilder sb = new StringBuilder();
 	    
 		conn.setRequestMethod("GET");

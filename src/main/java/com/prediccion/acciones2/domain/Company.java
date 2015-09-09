@@ -5,7 +5,9 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.EntityManager;
+import javax.persistence.Index;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
@@ -21,6 +23,8 @@ import org.springframework.roo.addon.tostring.RooToString;
 @RooToString
 @RooJson
 @RooJpaActiveRecord(finders = { "findCompanysByCompanyIdEquals" })
+@Table(name = "company",
+indexes = {@Index(name = "company_id_idx",  columnList="company_id", unique = true)})
 public class Company {
 
     public Company(EntityManager entityManager, String title, String ticker, String market, Double stockValue, Double maxForecastPercentageValue, Double medForecastPercentageValue, Double minForecastPercentageValue, Double maxForecastValue, Double medForecastValue, Double minForecastValue, Double price52WeekPercChange, Double recomendacionAverage, Integer recomendacionBuy, Integer recomendacionOutPerform, Integer recomendacionHold, Integer recomendacionUnderPerform, Integer recomendacionSell, Integer recomendacionNoOpinion, String volumenNegociado, Date fechaCreacion, String marketCap, Double pe, String exchange, String companyId, String localCurrencySymbol, Double recomendacionAverage_last_year, Integer recomendacionBuy_last_year, Integer recomendacionOutPerform_last_year, Integer recomendacionHold_last_year, Integer recomendacionUnderPerform_last_year, Integer recomendacionSell_last_year, Double recomendacionAverage_last_3months, Integer recomendacionBuy_last_3months, Integer recomendacionOutPerform_last_3months, Integer recomendacionHold_last_3months, Integer recomendacionUnderPerform_last_3months, Integer recomendacionSell_last_3months, Double recomendacionAverage_last_2months, Integer recomendacionBuy_last_2months, Integer recomendacionOutPerform_last_2months, Integer recomendacionHold_last_2months, Integer recomendacionUnderPerform_last_2months, Integer recomendacionSell_last_2months, Double recomendacionAverage_last_4weeks, Integer recomendacionBuy_last_4weeks, Integer recomendacionOutPerform_last_4weeks, Integer recomendacionHold_last_4weeks, Integer recomendacionUnderPerform_last_4weeks, Integer recomendacionSell_last_4weeks) {
@@ -168,7 +172,7 @@ public class Company {
     @NotNull
     private String exchange;
 
-    @Column(unique = true)
+    @Column(name = "company_id", nullable = false, unique=true)    
     private String companyId;
 
     @Column

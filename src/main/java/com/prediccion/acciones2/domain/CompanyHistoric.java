@@ -1,10 +1,15 @@
 package com.prediccion.acciones2.domain;
 import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.EntityManager;
+import javax.persistence.Index;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.TypedQuery;
+
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
@@ -15,6 +20,9 @@ import org.springframework.roo.addon.tostring.RooToString;
 @RooToString
 @RooJson
 @RooJpaActiveRecord(finders = { "findCompanyHistoricsByCompanyIdEquals", "findCompanyHistoricsByCompanyIdEqualsAndFechaCreacionEquals" })
+@Table(name = "company_historic",
+indexes = {@Index(name = "company_id_idx",  columnList="company_id", unique = true)/*,
+		@Index(name = "fecha_creacion_idx",  columnList="fecha_creacion", unique = true)*/})
 public class CompanyHistoric {
 
     @PersistenceContext
@@ -133,6 +141,7 @@ public class CompanyHistoric {
 
     @Temporal(TemporalType.DATE)
     @DateTimeFormat(pattern = "dd/MM/yyyy")
+    @Column(name = "fecha_creacion", nullable = false)
     private Date fechaCreacion;
 
     @Column
@@ -144,7 +153,7 @@ public class CompanyHistoric {
     @Column
     private String exchange;
 
-    @Column
+    @Column(name = "company_id", nullable = false)
     private String companyId;
 
     @Column
@@ -232,4 +241,26 @@ public class CompanyHistoric {
             entityManager.persist(this);
         }
     }
+    
+    public static CompanyHistoric findCompanyHistoricsByCompanyIdEqualsAndFechaCreacionEquals(String companyId, Date startDate, Date endDate) {
+        if (companyId == null || companyId.length() == 0) throw new IllegalArgumentException("The companyId argument is required");
+        if (startDate == null) throw new IllegalArgumentException("The startDate argument is required");
+        if (endDate == null) throw new IllegalArgumentException("The endDate argument is required");
+        
+        EntityManager em = CompanyHistoric.entityManager();
+        
+        
+        //String hqlQuery = "FROM EntityName WHERE fechaInicio BETWEEN :startDate AND :endDate";
+        TypedQuery<CompanyHistoric> q = em.createQuery("SELECT o FROM CompanyHistoric AS o WHERE o.companyId = :companyId  AND o.fechaCreacion BETWEEN :startDate AND :endDate",
+        		CompanyHistoric.class);
+        q.setParameter("companyId", companyId);
+        //q.setParameter("fechaCreacion", fechaCreacion);
+        q.setParameter("startDate", startDate);
+        q.setParameter("endDate", endDate);
+        /*
+        */
+        CompanyHistoric ch = q.getSingleResult(); 
+        return ch;
+    }
+    
 }
