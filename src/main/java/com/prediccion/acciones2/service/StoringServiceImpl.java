@@ -5,8 +5,6 @@ import java.util.TimerTask;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 import java.util.concurrent.Semaphore;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +26,7 @@ public class StoringServiceImpl {
     
     volatile boolean timerOn = true;
     
-	ExecutorService executorService = Executors.newFixedThreadPool(10);
+	//ExecutorService executorService = Executors.newFixedThreadPool(10);
     
     
     public void proceed(){
@@ -37,15 +35,14 @@ public class StoringServiceImpl {
             	/*
             	 */
             	
-            	Integer threads = 60;
+            	Integer threads = 180;
             	/*
+            	 */
             	parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForCanada("6000"),threads,queue);//6000
             	parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForParis("2500"),threads,queue);//1500
             	parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForGermany("6000"),threads,queue); //1600
             	parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForItaly("2000"),threads,queue); //350
-            	*/
         		parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForUS("5000", "10000000", "500000000"),threads,queue);//21000
-        		/*
         		parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForUS("5000", "500000000", "1000000000"),threads,queue);//21000
         		
         		parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForUS("5000", "1000000000", "2000000000"),threads,queue);//21000
@@ -72,6 +69,7 @@ public class StoringServiceImpl {
             	parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForSweden("400"),threads,queue); //237
             	parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForRussia("350"),threads,queue); //237      
             	parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForJapan("4000"),threads,queue); //3656
+            	/*
             	*/
             	Company poison = new Company();
             	poison.setCity("LANUS");

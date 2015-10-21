@@ -2,12 +2,9 @@ package com.prediccion.acciones2.service;
 
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
-import java.util.Set;
-import java.util.TreeSet;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
@@ -31,7 +28,7 @@ import com.prediccion.acciones2.utils.HttpConectionUtils;
 @Transactional
 public class ParsingServiceImpl implements ParsingService{
 
-	private int CONCURRENT_THREADS = 180;
+	private int CONCURRENT_THREADS = 50;
 
     @Autowired
     QueryLogService queryLogService;
