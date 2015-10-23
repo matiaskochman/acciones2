@@ -5,6 +5,8 @@ import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.CountDownLatch;
 import java.util.regex.Pattern;
 
+import org.springframework.web.client.HttpClientErrorException;
+
 import com.prediccion.acciones2.domain.Company;
 import com.prediccion.acciones2.domain.QueryLog;
 import com.prediccion.acciones2.exception.BusinessException;
@@ -91,6 +93,10 @@ public class Processor implements Runnable{
 			System.out.println("parseo nro: "+queue.size());
 			System.out.println("equity symbol: "+company.getTicker()+":"+company.getMarket()+"   "+data);
 			System.out.println(countDownLatch.getCount());
+			
+		}catch (HttpClientErrorException e) {
+			System.out.println(e.getMessage());
+			queryLog.setForecastFail(queryLog.getForecastFail()+1);
 			
 		}catch (BusinessException e) {
 			System.out.println(e.getMessage());
