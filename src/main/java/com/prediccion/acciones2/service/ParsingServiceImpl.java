@@ -22,6 +22,7 @@ import com.google.gson.Gson;
 import com.prediccion.acciones2.domain.Company;
 import com.prediccion.acciones2.domain.QueryLog;
 import com.prediccion.acciones2.process.Processor;
+import com.prediccion.acciones2.utils.ErrorCounterService;
 import com.prediccion.acciones2.utils.HttpConectionUtils;
 
 @Service
@@ -29,7 +30,8 @@ import com.prediccion.acciones2.utils.HttpConectionUtils;
 public class ParsingServiceImpl implements ParsingService{
 
 	private int CONCURRENT_THREADS = 50;
-
+	private ErrorCounterService errorCounterService = new ErrorCounterService();
+	
     @Autowired
     QueryLogService queryLogService;
 	

@@ -35,9 +35,7 @@ public class StoringServiceImpl {
             	/*
             	 */
             	
-            	Integer threads = 180;
-            	/*
-            	 */
+            	Integer threads = 80;
             	parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForCanada("6000"),threads,queue);//6000
             	parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForParis("2500"),threads,queue);//1500
             	parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForGermany("6000"),threads,queue); //1600
@@ -54,21 +52,25 @@ public class StoringServiceImpl {
         		parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForUS("5000", "90000000000", "2000000000000"),threads,queue);//21000
             	
                 parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForLondon("6000",null,null),threads,queue);
+                
+                
                 parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForBelgium("1800"),threads,queue); //159
             	parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForSpain("2000"),threads,queue); //160
             	parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForBrasil("1800"),threads,queue); //1000
             	parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForNetherlands("1800"),threads,queue); //126
-            	parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForAustralia("6000"),threads,queue); //1964
-            	parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForNewZeland("160"),threads,queue); //152
+            	parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForJapan("4000"),threads,queue); //3656
             	parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForTaiwan("2500"),threads,queue); //897
             	parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForSingapore("700"),threads,queue); //759
-            	parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForChina("3500"),threads,queue); //2830
+            	parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForAustralia("6000"),threads,queue); //1964
             	parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForSwitzerland("400"),threads,queue); //237
-            	parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForPoland("400"),threads,queue); //237
+            	parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForChina("3500"),threads,queue); //2830
             	parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForTurkey("500"),threads,queue); //237
             	parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForSweden("400"),threads,queue); //237
+            	parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForNewZeland("160"),threads,queue); //152
+            	parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForPoland("400"),threads,queue); //237
             	parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForRussia("350"),threads,queue); //237      
-            	parsingService.getSocksFromGoogleFinance(QueryBuilder.buildQueryForJapan("4000"),threads,queue); //3656
+            	/*
+            	 */
             	/*
             	*/
             	Company poison = new Company();

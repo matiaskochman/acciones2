@@ -39,13 +39,15 @@ public class CompanyServiceImpl implements CompanyService {
 			
 			comp = Company.findCompanysByCompanyIdEquals(c.getCompanyId()).getSingleResult();
 			Date creationDate = comp.getFechaCreacion();
-			companyHistoricService.createHistoricForCompany(comp);
+			comp.setFechaModificacion(new Date());
+			//comp.setVersion(comp.getVersion());
+			//comp.setFechaCreacion(creationDate);
 			c.setId(comp.getId());
 			mapper.map(c, comp);
-			comp.setVersion(comp.getVersion());
-			comp.setFechaModificacion(new Date());
-			comp.setFechaCreacion(creationDate);
 			comp.merge();
+			comp.setId(null);
+			//companyHistoricService.createHistoricForCompany(comp);
+			System.out.println("company id :"+comp.getId()+" merged.");
 		}catch( EmptyResultDataAccessException e){
 			try{
 				c.persist();

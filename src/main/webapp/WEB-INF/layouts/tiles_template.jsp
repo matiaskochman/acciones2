@@ -24,22 +24,8 @@
 	
 	    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.1/angular.min.js"></script>
 	
-	  <script type="text/javascript">
-			var app = angular.module("forecastApp", []);
-			app.config(function($httpProvider) {
-				//Enable cross domain calls
-				$httpProvider.defaults.useXDomain = true;
-			});		
-			app.controller("ForecastListCtrl", function($scope, $http) {
-			
-				$http.get("/acciones2/companys/json/list")
-				.success(function(data){
-					$scope.companies = data;
-				});
-				
-			});
-			
-	  </script>
+		<spring:url value="/resources/angularjs/js/app.js" var="app"/>
+		<script type="text/javascript" src="${app}"></script>
 	
 	</head>
 	

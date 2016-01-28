@@ -29,7 +29,7 @@ public class CompanyController {
         //headers.add("Content-Type", "application/json; charset=utf-8");
         headers.add("Content-Type", "application/javascript");
         //List<Company> result = companyService.findAllCompanys();
-        List<Company> result = Company.findCompanyEntries(1, 10, "recomendacionAverage", "DESC");
+        List<Company> result = Company.findCompanyEntries(1, 100, "minForecastPercentageValue", "DESC");
         Gson gson = new Gson();
         String companies = gson.toJson(result);
         

@@ -252,6 +252,23 @@ public class Company {
     @Column
     private String city;
 
+    
+    public static List<Company> findCompanyEntries(int firstResult, int maxResults, String sortFieldName, String sortOrder) {
+        String jpaQuery = "SELECT o FROM Company o"
+        		+ " where o.recomendacionAverage > 10"
+        		+ " and o.minForecastPercentageValue <= o.medForecastPercentageValue"
+        		+ " and o.medForecastPercentageValue <= o.maxForecastPercentageValue"
+        		+ " and o.recomendacionSell = 0"
+        		+ " and o.recomendacionUnderPerform < 2";
+        if (fieldNames4OrderClauseFilter.contains(sortFieldName)) {
+            jpaQuery = jpaQuery + " ORDER BY " + sortFieldName;
+            if ("ASC".equalsIgnoreCase(sortOrder) || "DESC".equalsIgnoreCase(sortOrder)) {
+                jpaQuery = jpaQuery + " " + sortOrder;
+            }
+        }
+        return entityManager().createQuery(jpaQuery, Company.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
+    }
+    
     public void setMarket(String exchange) {
         if (exchange.equalsIgnoreCase("NYSE")) {
             this.market = ":NYQ";
