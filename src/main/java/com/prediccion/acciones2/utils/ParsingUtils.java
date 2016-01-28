@@ -375,21 +375,8 @@ public class ParsingUtils {
 				 throw new BusinessException("problemas parseando max med y min forecast percentage values de ticker: "+company.getTicker());
 			 }
 
-			 /*
-			 if(company.getMaxForecastPercentageValue()!=null||company.getMinForecastPercentageValue()!=null||company.getMedForecastPercentageValue()!=null){
-				 if(company.getMaxForecastPercentageValue().equals(company.getMinForecastPercentageValue())&&company.getMaxForecastPercentageValue().equals(company.getMedForecastPercentageValue())){
-					throw new BusinessException("3 values are equal"); 
-				 }
-				 
-				 if(CompanyFilter.percentageForecastIntegrityValid(company)){
-				 }else{
-					throw new BusinessException("integrity of max med min percentages values broken."); 
-				 }
-			 }
-			 */
 		 }else{
 			 throw new BusinessException("forecast_porcentaje_pattern fail");
-			 //System.out.println("no encontro forecast_porcentaje_pattern");
 		 }
 	}
 	public static void extract_forecast_valoresAbsolutos(Pattern forecast_valores_absolutos, String data, Company company) {
